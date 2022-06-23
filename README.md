@@ -65,8 +65,8 @@ Customized application that have feature to backup your data with user preferenc
 
 # App Screenshoot
 <p align="left">
-<img width="480" height="240" src="https://github.com/Nicklas373/Office-Tools/main/Office%20Tools/Screenshots/Home.png">&nbsp;&nbsp;&nbsp;
-<img width="480" height="240" src="Office-Tools/main/Office%20Tools/Screenshots/App_information.png">&nbsp;&nbsp;&nbsp;
+<img width="480" height="240" src="https://raw.githubusercontent.com/Nicklas373/Office-Tools/main/Office%20Tools/Screenshots/Home.png">&nbsp;&nbsp;&nbsp;
+<img width="480" height="240" src="https://raw.githubusercontent.com/Nicklas373/Office-Tools/main/Office%20Tools/Screenshots/App_information.png">&nbsp;&nbsp;&nbsp;
 <img width="480" height="240" src="https://raw.githubusercontent.com/Nicklas373/Office-Tools/main/Office%20Tools/Screenshots/Weekly_scheduler.png">&nbsp;&nbsp;&nbsp;
 <img width="480" height="240" src="https://raw.githubusercontent.com/Nicklas373/Office-Tools/main/Office%20Tools/Screenshots/PDF_Compress.png">&nbsp;&nbsp;&nbsp;
 </p>
