@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Office Tools", "Office Tools\Office Tools.vbproj", "{06FB2411-CBF0-40C4-ADC8-68778EE6CAB2}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Office Tools Setup", "Office Tools Setup\Office Tools Setup.vdproj", "{B14CD104-296E-4353-A186-B2423A62AE42}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06FB2411-CBF0-40C4-ADC8-68778EE6CAB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06FB2411-CBF0-40C4-ADC8-68778EE6CAB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06FB2411-CBF0-40C4-ADC8-68778EE6CAB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06FB2411-CBF0-40C4-ADC8-68778EE6CAB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B14CD104-296E-4353-A186-B2423A62AE42}.Debug|Any CPU.ActiveCfg = Debug
+		{B14CD104-296E-4353-A186-B2423A62AE42}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1370DA59-8F33-439D-AA93-458617E80F0F}
+	EndGlobalSection
+EndGlobal

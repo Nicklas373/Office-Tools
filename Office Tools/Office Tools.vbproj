@@ -1,0 +1,151 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Office_Tools</RootNamespace>
+    <StartupObject>Sub Main</StartupObject>
+    <UseWindowsForms>true</UseWindowsForms>
+    <MyType>WindowsForms</MyType>
+    <ApplicationIcon>working_AAH_icon.ico</ApplicationIcon>
+    <Version>1.2.1</Version>
+    <Authors>Dicky Herlambang</Authors>
+    <Company>Hana-CI Build Project</Company>
+    <PackageId>Office_Tools</PackageId>
+    <Description>Office Tools (MigrateToGDrive)
+
+is a customized application that have feature to backup your data with user preference time frames, by using windows task scheduler library, also have support with archiving folder that have feature to encrypt your password by using SHA-256 encryption. In addition by request, it also have feature with compress PDF file by using SyncFusion Library.
+
+Additional library:
+- 7-Zip
+- SHA-256 (Encryption / Decryption)
+- SyncFusion
+- Windows Task Scheduler</Description>
+    <Copyright>HANA-CI Build Project 2016-2022</Copyright>
+    <RepositoryUrl>https://github.com/Nicklas373/Migrate-To-GDrive</RepositoryUrl>
+    <PackageIcon>working.png</PackageIcon>
+    <PackageIconUrl />
+    <RepositoryType>public</RepositoryType>
+    <PackageTags>#Migrate-To-GDrive, #OfficeTools</PackageTags>
+    <PackageReleaseNotes>v1.2.1 (20220623):
+- Fixup missalignment layout on low DPI display
+
+v1.2.0 (20220623):
+- Update 7-Zip library to v22.0
+- Rebrand to Office Tools (from MigrateToGDrive)
+- Re-design interface to Metro UWP theme 
+
+v1.1.7-EMS (20220621):
+- Add feature to compress PDF based on SyncFusion Library
+
+v1.1.6 (20220615):
+- Add options to backup for specific file only
+- Add /COMPRESS and /NOOFFLOAD algorithm for robocopy to solve issue slow data transfer while using SMB on WIFI
+
+v1.1.5 (20220603):
+- Fixup backup issue when 'from date' filter with case the first week of the month
+
+v1.1.4 (20220509):
+- Cleanup robocopy log when normal backup is running
+
+v1.1.3 (20220427):
+- Add Retry error flags for robocopy (Max: 5)
+- Dump robocopy log to specific log instead of main log
+- Fixup missed layout position on normal backup menu
+- Insert only robocopy statistic result on main log instead all of robocopy log
+- Reduce notification pop up for export log
+
+v1.1.2-rev2 (20220425):
+- Add ETA flags for robocopy
+- Misc UI changes on normal backup layout
+
+v1.1.2-rev1 (20220424):
+- Other misc changes
+- Re-design settings menu
+- Switch from xcopy library to robocopy library
+- Support new backup method with specific from &amp; to date
+
+v1.1.2 (20220423):
+- Code cleanup
+- Drop HMAC Encryption &amp; Decryption method (Issue with SHA-256 Decryption in some cases)
+- Re-design and use MdiParent layout
+- Support decryption for archive backup with several extensions (.7z &amp; .zip)
+
+v1.1.1 (20220420):
+- Code cleanup
+- Support vertical scrollbar on settings menu for unsupported display resolution
+- Support decryption for archive backup (SHA-256 or HMAC SHA-256)
+
+v1.1.0 (20220419):
+- Add more log for archive backup (success and error log)
+- Re-design several layout
+- Re-structure code to separate module
+- Support backup method to archive using 7zip command line (www.7-zip.org)
+  * Support extensions (.7z &amp; .zip)
+  * Support archive compression level (Native from 7za library)
+  * Support password encryption on archive backup (SHA-256 or HMAC SHA-256) 
+  * Decryption still work in progress
+
+v1.0.0 (20220416):
+- INITIAL RELEASE</PackageReleaseNotes>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <AssemblyVersion>1.2.1.0</AssemblyVersion>
+    <FileVersion>1.2.1.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <COMReference Include="TaskScheduler">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>e34cb9f1-c7f7-424c-be29-027dcc09363a</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.Pdf.WinForms" Version="20.1.0.61" />
+    <PackageReference Include="TaskScheduler" Version="2.10.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="My Project\Application.Designer.vb">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Update="My Project\Resources.Designer.vb">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="ico\working.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

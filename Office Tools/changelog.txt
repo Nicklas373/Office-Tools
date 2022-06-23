@@ -1,0 +1,61 @@
+v1.2.1 (20220623):
+- Fixup missalignment layout on low DPI display
+
+v1.2.0 (20220623):
+- Update 7-Zip library to v22.0
+- Rebrand to Office Tools (from MigrateToGDrive)
+- Re-design interface to Metro UWP theme 
+
+v1.1.7-EMS (20220621):
+- Add feature to compress PDF based on SyncFusion Library
+
+v1.1.6 (20220615):
+- Add options to backup for specific file only
+- Add /COMPRESS and /NOOFFLOAD algorithm for robocopy to solve issue slow data transfer while using SMB on WIFI
+
+v1.1.5 (20220603):
+- Fixup backup issue when 'from date' filter with case the first week of the month
+
+v1.1.4 (20220509):
+- Cleanup robocopy log when normal backup is running
+
+v1.1.3 (20220427):
+- Add Retry error flags for robocopy (Max: 5)
+- Dump robocopy log to specific log instead of main log
+- Fixup missed layout position on normal backup menu
+- Insert only robocopy statistic result on main log instead all of robocopy log
+- Reduce notification pop up for export log
+
+v1.1.2-rev2 (20220425):
+- Add ETA flags for robocopy
+- Misc UI changes on normal backup layout
+
+v1.1.2-rev1 (20220424):
+- Other misc changes
+- Re-design settings menu
+- Switch from xcopy library to robocopy library
+- Support new backup method with specific from & to date
+
+v1.1.2 (20220423):
+- Code cleanup
+- Drop HMAC Encryption & Decryption method (Issue with SHA-256 Decryption in some cases)
+- Re-design and use MdiParent layout
+- Support decryption for archive backup with several extensions (.7z & .zip)
+
+v1.1.1 (20220420):
+- Code cleanup
+- Support vertical scrollbar on settings menu for unsupported display resolution
+- Support decryption for archive backup (SHA-256 or HMAC SHA-256)
+
+v1.1.0 (20220419):
+- Add more log for archive backup (success and error log)
+- Re-design several layout
+- Re-structure code to separate module
+- Support backup method to archive using 7zip command line (www.7-zip.org)
+  * Support extensions (.7z & .zip)
+  * Support archive compression level (Native from 7za library)
+  * Support password encryption on archive backup (SHA-256 or HMAC SHA-256) 
+  * Decryption still work in progress
+
+v1.0.0 (20220416):
+- INITIAL RELEASE
