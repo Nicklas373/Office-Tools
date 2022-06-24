@@ -1,3 +1,17 @@
+v1.2.6 (20220625):
+- Hotfix update for backup menu
+  * Fixup encryption key browse error
+  * Properly guard encryption key type [Only use encryption key for SHA-256 method]
+- Import all default windows form into SyncFusion Metro UI form
+- Merge pdf config onto single config backup file
+- Misc fixes and code cleanup
+   
+v1.2.5 (20220624):
+- Fixup missalignment layout and design on all panel
+- Introduce PDF Settings (Open PDF Directly after compress, need to configure PDF Reader app on settings)
+- Treewide: Re-written all specific function into global modul (Reduce hardcoded function)
+- Treewide: Re-written naming convention globally (To easier work and update after it)
+
 v1.2.1 (20220623):
 - Fixup missalignment layout on low DPI display
 
