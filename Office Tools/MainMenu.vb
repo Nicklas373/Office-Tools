@@ -1,4 +1,14 @@
-﻿Public Class Form1
+﻿Imports Syncfusion.WinForms.Controls
+
+Public Class MainMenu
+    Inherits SfForm
+    Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        AllowTransparency = False
+        Style.TitleBar.IconBackColor = Color.FromArgb(15, 161, 212)
+        BackColor = Color.AliceBlue
+        Style.TitleBar.TextHorizontalAlignment = HorizontalAlignment.Center
+        Style.TitleBar.TextVerticalAlignment = VisualStyles.VerticalAlignment.Center
+    End Sub
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         Close()
     End Sub
