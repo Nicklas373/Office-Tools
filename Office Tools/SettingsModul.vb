@@ -493,4 +493,9 @@ Module SettingsModul
             End If
         End Using
     End Function
+    Public Sub WriteFile(filePath As String, noLine As Integer, newText As String)
+        Dim lines() As String = IO.File.ReadAllLines(filePath)
+        lines(noLine) = newText
+        IO.File.WriteAllLines(filePath, lines)
+    End Sub
 End Module

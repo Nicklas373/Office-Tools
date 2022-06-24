@@ -1,6 +1,8 @@
-﻿Imports System.IO
+﻿Imports Syncfusion.WinForms.Controls
+Imports System.IO
 Imports Microsoft.Win32.TaskScheduler
-Public Class settings_menu
+Public Class SettingsMenu
+    Inherits SfForm
     Dim openfiledialog As New OpenFileDialog
     Dim openfolderdialog As New FolderBrowserDialog
     Dim confPath As String = "conf/config"
@@ -12,6 +14,10 @@ Public Class settings_menu
     Dim cliProcessor As String = "conf/cli_backup/cliProcessor"
     Private Sub Settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AllowTransparency = False
+        Style.TitleBar.IconBackColor = Color.FromArgb(15, 161, 212)
+        BackColor = Color.AliceBlue
+        Style.TitleBar.TextHorizontalAlignment = HorizontalAlignment.Center
+        Style.TitleBar.TextVerticalAlignment = VisualStyles.VerticalAlignment.Center
         dir_bck_set.Visible = False
         daily_sched_pnl.Visible = False
         weekly_sched_pnl.Visible = False
@@ -120,18 +126,21 @@ Public Class settings_menu
                 MsgBox("Please select backup time !", MsgBoxStyle.Critical, "Office Tools")
             Else
                 If File.Exists(confPath) Then
-                    GC.Collect()
-                    GC.WaitForPendingFinalizers()
-                    File.Delete(confPath)
-                    File.Create(confPath).Dispose()
-                    Dim writer As New StreamWriter(confPath, True)
-                    writer.WriteLine("Office Tools Config v1.2")
-                    writer.WriteLine("Source Directory: " & TextBox1.Text)
-                    writer.WriteLine("Destination Directory: " & TextBox2.Text)
-                    writer.WriteLine("Backup Preferences: " & ComboBox1.Text)
-                    writer.Close()
-                    WriteForAutoBackup(confPath, cliSrcPath, cliDestPath, cliDatePath, timePath)
-                    MsgBox("Config created !", MsgBoxStyle.Information, "Office Tools")
+                    If File.ReadAllLines(confPath).Length < 1 Then
+                        File.Create(confPath).Dispose()
+                        Dim writer As New StreamWriter(confPath, True)
+                        writer.WriteLine("Office Tools Config v1.2")
+                        writer.WriteLine("Source Directory: " & TextBox1.Text)
+                        writer.WriteLine("Destination Directory: " & TextBox2.Text)
+                        writer.WriteLine("Backup Preferences: " & ComboBox1.Text)
+                        writer.Close()
+                        MsgBox("Config created !", MsgBoxStyle.Information, "Office Tools")
+                    Else
+                        WriteFile(confPath, 1, "Source Directory: " & TextBox1.Text)
+                        WriteFile(confPath, 2, "Destination Directory: " & TextBox2.Text)
+                        WriteFile(confPath, 3, "Backup Preferences: " & ComboBox1.Text)
+                        MsgBox("Config updated !", MsgBoxStyle.Information, "Office Tools")
+                    End If
                 Else
                     File.Create(confPath).Dispose()
                     Dim writer As New StreamWriter(confPath, True)
@@ -140,9 +149,9 @@ Public Class settings_menu
                     writer.WriteLine("Destination Directory: " & TextBox2.Text)
                     writer.WriteLine("Backup Preferences: " & ComboBox1.Text)
                     writer.Close()
-                    WriteForAutoBackup(confPath, cliSrcPath, cliDestPath, cliDatePath, timePath)
                     MsgBox("Config created !", MsgBoxStyle.Information, "Office Tools")
                 End If
+                WriteForAutoBackup(confPath, cliSrcPath, cliDestPath, cliDatePath, timePath)
                 TextBox1.ReadOnly = True
                 TextBox2.ReadOnly = True
                 Button1.Visible = False
@@ -307,7 +316,7 @@ Public Class settings_menu
         End If
     End Sub
     Private Sub Chk_Backup_Settings_Button(sender As Object, e As EventArgs) Handles Button22.Click
-        RichTextbox2.Text = ShowLog("Config", confPath)
+        RichTextBox2.Text = ShowLog("Config", confPath)
     End Sub
     Private Sub Remove_Backup_Settings_Button(sender As Object, e As EventArgs) Handles Button23.Click
         ClearLog(confPath, "Config")
@@ -350,7 +359,19 @@ Public Class settings_menu
         If TextBox5.Text = "" Then
             MsgBox("PDF Path is empty, please choose PDF Reader !", MsgBoxStyle.Information, "Office Tools")
         Else
-            CheckFileExist(pdfPath, TextBox5.Text)
+            If File.Exists(confPath) Then
+                If File.ReadAllLines(confPath).Length < 5 Then
+                    My.Computer.FileSystem.WriteAllText(confPath, "PDF Reader Preferences: " & TextBox5.Text, True)
+                    My.Computer.FileSystem.WriteAllText(confPath, vbCrLf & "Auto Open PDF: " & CheckBox8.Checked, True)
+                Else
+                    WriteFile(confPath, 4, "PDF Reader Preferences: " & TextBox5.Text)
+                    WriteFile(confPath, 5, "Auto Open PDF: " & CheckBox8.Checked)
+                End If
+                WriteForAutoBackup(confPath, cliSrcPath, cliDestPath, cliDatePath, timePath)
+                MsgBox("Config updated !", MsgBoxStyle.Information, "Office Tools")
+            Else
+                MsgBox("Config not found !, Please create on backup location settings !", MsgBoxStyle.Critical, "Office Tools")
+            End If
         End If
         Button27.Visible = False
         Button28.Visible = False
@@ -374,29 +395,39 @@ Public Class settings_menu
     End Sub
     Private Sub GetBackPref()
         If File.Exists(confPath) Then
-            If PathVal(confPath, 1).Equals("null") Then
-                TextBox1.Text = ""
-            Else
-                TextBox1.Text = Replace(PathVal(confPath, 1), "Source Directory: ", "")
-            End If
-            If PathVal(confPath, 2).Equals("null") Then
-                TextBox2.Text = ""
-            Else
-                TextBox2.Text = Replace(PathVal(confPath, 2), "Destination Directory: ", "")
-            End If
-            If PathVal(confPath, 3).Equals("null") Then
-                If PathVal(confPath, 3).Replace("Backup Preferences: ", "").Equals("Anytime") Then
-                    ComboBox1.SelectedIndex = 0
-                ElseIf PathVal(confPath, 3).Replace("Backup Preferences: ", "").Equals("Today") Then
-                    ComboBox1.SelectedIndex = 1
+            If File.ReadAllLines(confPath).Length < 5 Then
+                If PathVal(confPath, 1).Equals("null") Then
+                    TextBox1.Text = ""
+                Else
+                    TextBox1.Text = Replace(PathVal(confPath, 1), "Source Directory: ", "")
                 End If
-            End If
-        End If
-        If File.Exists(pdfPath) Then
-            If PathVal(pdfPath, 0).Equals("null") Then
-                TextBox5.Text = ""
+                If PathVal(confPath, 2).Equals("null") Then
+                    TextBox2.Text = ""
+                Else
+                    TextBox2.Text = Replace(PathVal(confPath, 2), "Destination Directory: ", "")
+                End If
+                If PathVal(confPath, 3).Equals("null") Then
+                    If PathVal(confPath, 3).Replace("Backup Preferences: ", "").Equals("Anytime") Then
+                        ComboBox1.Text = "Anytime"
+                    ElseIf PathVal(confPath, 3).Replace("Backup Preferences: ", "").Equals("Today") Then
+                        ComboBox1.Text = "Today"
+                    End If
+                End If
             Else
-                TextBox5.Text = PathVal(pdfPath, 0)
+                If PathVal(confPath, 4).Equals("null") Then
+                    TextBox5.Text = ""
+                Else
+                    TextBox5.Text = Replace(PathVal(confPath, 4), "PDF Reader Preferences: ", "")
+                End If
+                If PathVal(confPath, 5).Equals("null") Then
+                    CheckBox8.Checked = False
+                Else
+                    If PathVal(confPath, 5).Replace("Auto Open PDF: ", "").Equals("False") Then
+                        CheckBox8.Checked = False
+                    Else
+                        CheckBox8.Checked = True
+                    End If
+                End If
             End If
         End If
     End Sub
