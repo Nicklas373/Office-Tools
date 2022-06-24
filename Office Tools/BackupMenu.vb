@@ -5,8 +5,8 @@ Public Class BackupMenu
     Dim openfiledialog As New OpenFileDialog
     Dim openfolderdialog As New FolderBrowserDialog
     Dim savefiledialog As New SaveFileDialog
-    Dim logPath As String = "log/reslog"
-    Dim errPath As String = "log/reserr"
+    Dim logPath As String = "log/log"
+    Dim errPath As String = "log/err"
     Dim lastResult As String = "log/lastResult"
     Dim lastErr As String = "log/lastErr"
     Dim roboPath As String = "log/robolog"

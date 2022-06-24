@@ -1,6 +1,6 @@
 ﻿Imports System.IO
 Module AdvModul
-    Dim logPath As String = "log/reslog"
+    Dim logPath As String = "log/log"
     Dim lastResult As String = "log/lastResult"
     Dim lastErr As String = "log/lastErr"
     Dim roboPath As String = "log/robolog"
