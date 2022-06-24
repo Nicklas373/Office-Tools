@@ -1,8 +1,13 @@
-﻿Imports System.IO
-Public Class about_menu
+﻿Imports Syncfusion.WinForms.Controls
+Public Class AboutMenu
+    Inherits SfForm
     Dim changelog As String = "changelog.txt"
     Private Sub About_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AllowTransparency = False
+        Style.TitleBar.IconBackColor = Color.FromArgb(15, 161, 212)
+        BackColor = Color.AliceBlue
+        Style.TitleBar.TextHorizontalAlignment = HorizontalAlignment.Center
+        Style.TitleBar.TextVerticalAlignment = VisualStyles.VerticalAlignment.Center
         desc_pnl.Visible = False
         info_pnl.Visible = False
     End Sub
@@ -21,7 +26,7 @@ Public Class about_menu
         history_pnl.Visible = False
         TextBox1.Text = My.Application.Info.ProductName
         TextBox2.Text = My.Application.Info.Version.ToString
-        TextBox3.Text = "June, 24 2022"
+        TextBox3.Text = "June, 25 2022"
         TextBox4.Text = My.Application.Info.Copyright
         TextBox5.Text = My.Application.Info.DirectoryPath
         TextBox6.Text = "PLACEHOLDER"
