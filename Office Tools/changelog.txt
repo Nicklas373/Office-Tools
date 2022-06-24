@@ -1,3 +1,7 @@
+v1.2.6-rev1 (20220625):
+- Fixup robocopy log are not imported correctly
+- Remove multiple notifications while removing logs
+
 v1.2.6 (20220625):
 - Hotfix update for backup menu
   * Fixup encryption key browse error

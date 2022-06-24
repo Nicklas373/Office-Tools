@@ -204,10 +204,10 @@ Partial Class AboutMenu
         '
         Me.RichTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.RichTextBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.RichTextBox2.Location = New System.Drawing.Point(29, 107)
+        Me.RichTextBox2.Location = New System.Drawing.Point(16, 107)
         Me.RichTextBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RichTextBox2.Name = "RichTextBox2"
-        Me.RichTextBox2.Size = New System.Drawing.Size(662, 372)
+        Me.RichTextBox2.Size = New System.Drawing.Size(675, 372)
         Me.RichTextBox2.TabIndex = 4
         Me.RichTextBox2.Text = ""
         '
