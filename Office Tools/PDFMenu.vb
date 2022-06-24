@@ -1,12 +1,18 @@
 ﻿Imports System.IO
 Imports Syncfusion.Pdf
 Imports Syncfusion.Pdf.Parsing
-Public Class pdf_menu
+Imports Syncfusion.WinForms.Controls
+Public Class PDFMenu
+    Inherits SfForm
     Dim fileDialog As New OpenFileDialog
     Dim saveDialog As New SaveFileDialog
-    Dim pdfPath As String = "conf/pdf"
+    Dim confPath As String = "conf/config"
     Private Sub PDF_Compress_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AllowTransparency = False
+        Style.TitleBar.IconBackColor = Color.FromArgb(15, 161, 212)
+        BackColor = Color.AliceBlue
+        Style.TitleBar.TextHorizontalAlignment = HorizontalAlignment.Center
+        Style.TitleBar.TextVerticalAlignment = VisualStyles.VerticalAlignment.Center
         pdf_com_pnl.Visible = False
     End Sub
     Private Sub SourcePDF_folder(sender As Object, e As EventArgs) Handles Button8.Click
@@ -25,7 +31,7 @@ Public Class pdf_menu
                 TextBox1.Text = ""
             Else
                 TextBox1.Text = Path.GetFullPath(fileDialog.FileName.ToString)
-                Label8.Text = getFileSize(TextBox1.Text)
+                Label8.Text = GetFileSize(TextBox1.Text)
             End If
         End If
     End Sub
@@ -91,8 +97,10 @@ Public Class pdf_menu
         If File.Exists(TextBox2.Text) Then
             MsgBox("Compress PDF success !", MsgBoxStyle.Information, "Office Tools")
             Label10.Text = GetFileSize(TextBox2.Text)
-            If File.Exists(pdfPath) Then
-                Process.Start(PathVal(pdfPath, 0), TextBox2.Text)
+            If File.ReadAllLines(confPath).Length > 5 Then
+                If PathVal(confPath, 5).Replace("Auto Open PDF: ", "").Equals("True") Then
+                    Process.Start(PathVal(confPath, 4).Replace("PDF Reader Preferences: ", ""), TextBox2.Text)
+                End If
             End If
         Else
             MsgBox("Compress PDF failed !", MsgBoxStyle.Critical, "Office Tools")
