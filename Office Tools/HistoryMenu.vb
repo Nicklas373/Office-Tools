@@ -1,5 +1,8 @@
 ﻿Imports System.IO
-Public Class history_menu
+Imports Syncfusion.WinForms.Controls
+
+Public Class HistoryMenu
+    Inherits SfForm
     ReadOnly logPath As String = "log/log"
     ReadOnly advLogPath As String = "log/advlog"
     ReadOnly resLogPath As String = "log/reslog"
@@ -10,6 +13,10 @@ Public Class history_menu
     ReadOnly logCountPath As String = "log/expLog"
     Private Sub history_load(sender As Object, e As EventArgs) Handles MyBase.Load
         AllowTransparency = False
+        Style.TitleBar.IconBackColor = Color.FromArgb(15, 161, 212)
+        BackColor = Color.AliceBlue
+        Style.TitleBar.TextHorizontalAlignment = HorizontalAlignment.Center
+        Style.TitleBar.TextVerticalAlignment = VisualStyles.VerticalAlignment.Center
     End Sub
     Private Sub Close_Button(sender As Object, e As EventArgs) Handles Button4.Click
         Close()
