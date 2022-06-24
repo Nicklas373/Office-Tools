@@ -26,13 +26,17 @@ Module GlobalModul
             File.Create(path).Dispose()
         End If
     End Sub
-    Public Sub ClearLog(log As String, log2 As String)
+    Public Sub ClearLog(log As String, log2 As String, loopNotif As Boolean)
         If File.Exists(log) Then
             File.Delete(log)
             File.Create(log).Dispose()
-            MsgBox(log2 & " file reset !", MsgBoxStyle.Information, "MigrateToGDrive")
+            If loopNotif Then
+                MsgBox(log2 & " file reset !", MsgBoxStyle.Information, "Office Tools")
+            End If
         Else
-            MsgBox(log2 & " file is not exist !", MsgBoxStyle.Critical, "MigrateToGDrive")
+            If loopNotif Then
+                MsgBox(log2 & " file is not exist !", MsgBoxStyle.Critical, "Office Tools")
+            End If
         End If
     End Sub
     Public Sub ManualBackup(bat As String)

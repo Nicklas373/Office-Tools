@@ -59,13 +59,13 @@ Public Class HistoryMenu
         Dim validation As Integer
         validation = MsgBox("This will clear all history !", vbExclamation + vbYesNo + vbDefaultButton2, "Office Tools")
         If validation = vbYes Then
-            ClearLog(logPath, "Backup history")
-            ClearLog(advLogPath, "Archive history")
-            ClearLog(errPath, "Backup error history")
-            ClearLog(advErrPath, "Archive error history")
-            ClearLog(resLogPath, "Restore history")
-            ClearLog(resErrPath, "Restore error history")
-            ClearLog(roboLogPath, "Robocopy hustory")
+            ClearLog(logPath, "Backup history", False)
+            ClearLog(advLogPath, "Archive history", False)
+            ClearLog(errPath, "Backup error history", False)
+            ClearLog(advErrPath, "Archive error history", False)
+            ClearLog(resLogPath, "Restore history", False)
+            ClearLog(resErrPath, "Restore error history", False)
+            ClearLog(roboLogPath, "Robocopy history", False)
             If New FileInfo(logPath).Length.Equals(0) Or New FileInfo(advLogPath).Length.Equals(0) Or New FileInfo(resLogPath).Length.Equals(0) Or New FileInfo(errPath).Length.Equals(0) Or New FileInfo(advErrPath).Length.Equals(0) Or New FileInfo(resErrPath).Length.Equals(0) Then
                 MsgBox("All history cleared !", MsgBoxStyle.Information, "Office Tools")
                 RichTextBox1.Text = ""

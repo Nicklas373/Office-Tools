@@ -319,7 +319,7 @@ Public Class SettingsMenu
         RichTextBox2.Text = ShowLog("Config", confPath)
     End Sub
     Private Sub Remove_Backup_Settings_Button(sender As Object, e As EventArgs) Handles Button23.Click
-        ClearLog(confPath, "Config")
+        ClearLog(confPath, "Config", True)
         If File.Exists(timePath) Then
             GC.Collect()
             GC.WaitForPendingFinalizers()
