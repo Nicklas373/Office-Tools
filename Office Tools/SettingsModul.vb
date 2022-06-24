@@ -403,4 +403,94 @@ Module SettingsModul
             End If
         End Using
     End Sub
+    Public Function Cb1(Cmbx1 As Boolean) As DaysOfTheWeek
+        Dim monday As DaysOfTheWeek
+        If Cmbx1 Then
+            monday = DaysOfTheWeek.Monday
+            Return monday
+        Else
+            monday = DaysOfTheWeek.Sunday
+            Return monday
+        End If
+    End Function
+    Public Function Cb2(Cmbx2 As Boolean) As DaysOfTheWeek
+        Dim tuesday As DaysOfTheWeek
+        If Cmbx2 Then
+            tuesday = DaysOfTheWeek.Tuesday
+            Return tuesday
+        Else
+            tuesday = DaysOfTheWeek.Sunday
+            Return tuesday
+        End If
+    End Function
+    Public Function Cb3(Cmbx3 As Boolean) As DaysOfTheWeek
+        Dim wednesday As DaysOfTheWeek
+        If Cmbx3 Then
+            wednesday = DaysOfTheWeek.Wednesday
+            Return wednesday
+        Else
+            wednesday = DaysOfTheWeek.Sunday
+            Return wednesday
+        End If
+    End Function
+    Public Function Cb4(Cmbx4 As Boolean) As DaysOfTheWeek
+        Dim thursday As DaysOfTheWeek
+        If Cmbx4 Then
+            thursday = DaysOfTheWeek.Thursday
+            Return thursday
+        Else
+            thursday = DaysOfTheWeek.Sunday
+            Return thursday
+        End If
+    End Function
+    Public Function Cb5(cmbx5 As Boolean) As DaysOfTheWeek
+        Dim friday As DaysOfTheWeek
+        If cmbx5 Then
+            friday = DaysOfTheWeek.Friday
+            Return friday
+        Else
+            friday = DaysOfTheWeek.Sunday
+            Return friday
+        End If
+    End Function
+    Public Function Cb6(cmbx6 As Boolean) As DaysOfTheWeek
+        Dim saturday As DaysOfTheWeek
+        If cmbx6 Then
+            saturday = DaysOfTheWeek.Saturday
+            Return saturday
+        Else
+            saturday = DaysOfTheWeek.Sunday
+            Return saturday
+        End If
+    End Function
+    Public Function Cb7(cmbx7 As Boolean) As DaysOfTheWeek
+        Dim sunday As DaysOfTheWeek
+        If cmbx7 Then
+            sunday = DaysOfTheWeek.Sunday
+            Return sunday
+        Else
+            sunday = DaysOfTheWeek.Sunday
+            Return sunday
+        End If
+    End Function
+    Public Function ShowTask(taskName As String) As String
+        Dim value As String
+        Using tService As New TaskService()
+            Dim tTask As Task = tService.GetTask(taskName)
+            If tTask Is Nothing Then
+                MsgBox("Office Task scheduler not exist !", MsgBoxStyle.Critical, "Office Tools")
+                MsgBox("Please create new scheduler first !", MsgBoxStyle.Critical, "Office Tools")
+                value = ""
+                Return value
+            Else
+                value = "Task Name: " & tTask.Name & vbCrLf & "Task State: " & tTask.State.ToString & vbCrLf &
+                                    "Task Path: " & tTask.Path.ToString & vbCrLf &
+                                    "Next Runtime: " & tTask.NextRunTime.ToLongDateString & " " & tTask.NextRunTime.ToLongTimeString & vbCrLf &
+                                    "Last Runtime: " & tTask.LastRunTime.ToLongDateString & " " & tTask.LastRunTime.ToLongTimeString & vbCrLf &
+                                    "Last Task Result: " & tTask.LastTaskResult.ToString & vbCrLf &
+                                    "Total Failed Task: " & tTask.NumberOfMissedRuns.ToString & vbCrLf
+                Return value
+            End If
+        End Using
+    End Function
 End Module

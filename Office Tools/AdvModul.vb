@@ -1,4 +1,187 @@
-﻿Module AdvModul
+﻿Imports System.IO
+Module AdvModul
+    Dim logPath As String = "log/reslog"
+    Dim lastResult As String = "log/lastResult"
+    Dim lastErr As String = "log/lastErr"
+    Dim roboPath As String = "log/robolog"
+    Dim uiSrcPath As String = "conf/nrm_backup/nrmSrcPath"
+    Dim uiDestPath As String = "conf/nrm_backup/nrmDestPath"
+    Dim uiFrDatePath As String = "conf/nrm_backup/nrmFrDatePath"
+    Dim uiReDatePath As String = "conf/nrm_backup/nrmReDatePath"
+    Dim uiToDatePath As String = "conf/nrm_backup/nrmToDatePath"
+    Public Sub BeginCopy(Cmbx1 As String, Lbl7 As String, Tbx2 As String, Dtp1 As Date, Dtp2 As Date)
+        If File.Exists(roboPath) Then
+            PrepareNotif(roboPath)
+        End If
+        If Cmbx1 = "Anytime" Then
+            Dim uiTrimSrc As String
+            Dim uiTrimDest As String
+            uiTrimSrc = Lbl7
+            uiTrimDest = Tbx2
+            If Directory.Exists(uiTrimSrc) Then
+                If Directory.Exists(uiTrimDest) Then
+                    CheckFileExist(uiSrcPath, uiTrimSrc)
+                    CheckFileExist(uiDestPath, uiTrimDest)
+                    PrepareNotif(lastResult)
+                    PrepareNotif(lastErr)
+                    ManualBackup("bat/MigrateToGDrive_AT_MN.bat")
+                    WriteFrRobo()
+                Else
+                    CheckFileExist(lastResult, "err")
+                    CheckFileExist(lastErr, "Destination folder not exist !")
+                End If
+            Else
+                CheckFileExist(lastResult, "err")
+                CheckFileExist(lastErr, "Source folder not exist !")
+            End If
+        ElseIf Cmbx1 = "Today" Then
+            If File.Exists(uiReDatePath) Then
+                GC.Collect()
+                GC.WaitForPendingFinalizers()
+                File.Delete(uiReDatePath)
+                File.Create(uiReDatePath).Dispose()
+                Dim destWriter As New StreamWriter(uiReDatePath, True)
+                Dim dt As Date = Today
+                destWriter.WriteLine(dt.ToString("yyyyMMdd"))
+                destWriter.Close()
+            Else
+                File.Create(uiReDatePath).Dispose()
+                Dim destWriter As New StreamWriter(uiReDatePath, True)
+                Dim dt As Date = Today
+                destWriter.WriteLine(dt.ToString("yyyyMMdd"))
+                destWriter.Close()
+            End If
+            Dim uiTrimSrc As String
+            Dim uiTrimDest As String
+            uiTrimSrc = Lbl7
+            uiTrimDest = Tbx2
+            If Directory.Exists(uiTrimSrc) Then
+                If Directory.Exists(uiTrimDest) Then
+                    CheckFileExist(uiSrcPath, uiTrimSrc)
+                    CheckFileExist(uiDestPath, uiTrimDest)
+                    PrepareNotif(lastResult)
+                    PrepareNotif(lastErr)
+                    ManualBackup("bat/MigrateToGDrive_TD_MN.bat")
+                    WriteFrRobo()
+                Else
+                    CheckFileExist(lastResult, "err")
+                    CheckFileExist(lastErr, "Destination folder not exist !")
+                End If
+            Else
+                CheckFileExist(lastResult, "err")
+                CheckFileExist(lastErr, "Source folder not exist !")
+            End If
+        ElseIf Cmbx1 = "From Date" Then
+            If File.Exists(uiFrDatePath) Then
+                GC.Collect()
+                GC.WaitForPendingFinalizers()
+                File.Delete(uiFrDatePath)
+                File.Create(uiFrDatePath).Dispose()
+                Dim destWriter As New StreamWriter(uiFrDatePath, True)
+                Dim dt As Date = Dtp1.ToShortDateString
+                destWriter.WriteLine(dt.ToString("yyyyMMdd"))
+                destWriter.Close()
+            Else
+                File.Create(uiFrDatePath).Dispose()
+                Dim destWriter As New StreamWriter(uiFrDatePath, True)
+                Dim dt As Date = Dtp1.ToShortDateString
+                destWriter.WriteLine(dt.ToString("yyyyMMdd"))
+                destWriter.Close()
+            End If
+            If File.Exists(uiToDatePath) Then
+                GC.Collect()
+                GC.WaitForPendingFinalizers()
+                File.Delete(uiToDatePath)
+                File.Create(uiToDatePath).Dispose()
+                Dim destWriter As New StreamWriter(uiToDatePath, True)
+                Dim dt As Date = Dtp2.ToShortDateString
+                Dim newDate As Integer = Integer.Parse(dt.ToString("dd") + 1)
+                If newDate < 10 Then
+                    Dim newAffixDate = "0" + newDate.ToString
+                    Dim newMonthYear As String = dt.ToString("yyyyMM")
+                    destWriter.WriteLine(newMonthYear + newAffixDate.ToString)
+                Else
+                    Dim newMonthYear As String = dt.ToString("yyyyMM")
+                    destWriter.WriteLine(newMonthYear + newDate.ToString)
+                End If
+                destWriter.Close()
+            Else
+                File.Create(uiToDatePath).Dispose()
+                Dim destWriter As New StreamWriter(uiToDatePath, True)
+                Dim dt As Date = Dtp2.ToShortDateString
+                Dim newDate As Integer = Integer.Parse(dt.ToString("dd") + 1)
+                If newDate < 10 Then
+                    Dim newAffixDate = "0" + newDate.ToString
+                    Dim newMonthYear As String = dt.ToString("yyyyMM")
+                    destWriter.WriteLine(newMonthYear + newAffixDate.ToString)
+                Else
+                    Dim newMonthYear As String = dt.ToString("yyyyMM")
+                    destWriter.WriteLine(newMonthYear + newDate.ToString)
+                End If
+                destWriter.Close()
+            End If
+            Dim uiTrimSrc As String
+            Dim uiTrimDest As String
+            uiTrimSrc = Lbl7
+            uiTrimDest = Tbx2
+            If Directory.Exists(uiTrimSrc) Then
+                If Directory.Exists(uiTrimDest) Then
+                    CheckFileExist(uiSrcPath, uiTrimSrc)
+                    CheckFileExist(uiDestPath, uiTrimDest)
+                    PrepareNotif(lastResult)
+                    PrepareNotif(lastErr)
+                    ManualBackup("bat/MigrateToGDrive_FD_MN.bat")
+                    WriteFrRobo()
+                Else
+                    CheckFileExist(lastResult, "err")
+                    CheckFileExist(lastErr, "Destination folder not exist !")
+                End If
+            Else
+                CheckFileExist(lastResult, "err")
+                CheckFileExist(lastErr, "Source folder not exist !")
+            End If
+        End If
+    End Sub
+    Public Sub WriteFrRobo()
+        Dim destWriter As New StreamWriter(logPath, True)
+        destWriter.WriteLine(PathVal(roboPath, 1))
+        destWriter.WriteLine(PathVal(roboPath, 2))
+        destWriter.WriteLine(PathVal(roboPath, 3))
+        destWriter.WriteLine(PathVal(roboPath, CInt(File.ReadAllLines(roboPath).Length) - 11))
+        destWriter.WriteLine(PathVal(roboPath, CInt(File.ReadAllLines(roboPath).Length) - 10))
+        destWriter.WriteLine(PathVal(roboPath, CInt(File.ReadAllLines(roboPath).Length) - 9))
+        destWriter.WriteLine(PathVal(roboPath, CInt(File.ReadAllLines(roboPath).Length) - 8))
+        destWriter.WriteLine(PathVal(roboPath, CInt(File.ReadAllLines(roboPath).Length) - 7))
+        destWriter.WriteLine(PathVal(roboPath, CInt(File.ReadAllLines(roboPath).Length) - 6))
+        destWriter.WriteLine(PathVal(roboPath, CInt(File.ReadAllLines(roboPath).Length) - 5))
+        destWriter.WriteLine(PathVal(roboPath, CInt(File.ReadAllLines(roboPath).Length) - 4))
+        destWriter.WriteLine(PathVal(roboPath, CInt(File.ReadAllLines(roboPath).Length) - 3))
+        destWriter.WriteLine(PathVal(roboPath, CInt(File.ReadAllLines(roboPath).Length) - 2))
+        destWriter.Close()
+    End Sub
+    Public Sub ShowNotif(result As String, lastResult As String, lastErr As String)
+        If File.Exists(lastResult) Then
+            Dim lastRest As String = PathVal(lastResult, 0)
+            If PathVal(lastResult, 0).Equals("success") Then
+                MsgBox(result & " success !", MsgBoxStyle.Information, "Office Tools")
+            ElseIf PathVal(lastResult, 0).Equals("err") Then
+                MsgBox(result & " error !", MsgBoxStyle.Critical, "Office Tools")
+                If File.Exists(lastErr) Then
+                    If PathVal(lastErr, 0).Equals("") Then
+                        MsgBox("Unknown error reason !", MsgBoxStyle.Critical, "Office Tools")
+                    Else
+                        MsgBox(PathVal(lastErr, 0), MsgBoxStyle.Critical, "Office Tools")
+                    End If
+                Else
+                    MsgBox("Error file not found !", MsgBoxStyle.Critical, "Office Tools")
+                End If
+            Else
+                MsgBox("Unknown result status !", MsgBoxStyle.Critical, "Office Tools")
+            End If
+        Else
+            MsgBox("Result file not found !", MsgBoxStyle.Critical, "Office Tools")
+        End If
+    End Sub
     Public Function RandomString(ByRef Length As String) As String
         Dim str As String = Nothing
         Dim rnd As New Random

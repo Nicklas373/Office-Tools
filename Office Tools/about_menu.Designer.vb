@@ -68,10 +68,9 @@ Partial Class about_menu
         Me.Panel3.BackColor = System.Drawing.Color.DimGray
         Me.Panel3.Controls.Add(Me.info_pnl)
         Me.Panel3.Controls.Add(Me.desc_pnl)
-        Me.Panel3.Location = New System.Drawing.Point(231, -4)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel3.Location = New System.Drawing.Point(264, -4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(621, 432)
+        Me.Panel3.Size = New System.Drawing.Size(710, 575)
         Me.Panel3.TabIndex = 6
         '
         'info_pnl
@@ -96,30 +95,27 @@ Partial Class about_menu
         Me.info_pnl.Controls.Add(Me.TextBox1)
         Me.info_pnl.Controls.Add(Me.Label7)
         Me.info_pnl.Controls.Add(Me.Label2)
-        Me.info_pnl.Location = New System.Drawing.Point(0, 5)
-        Me.info_pnl.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.info_pnl.Location = New System.Drawing.Point(0, 3)
         Me.info_pnl.Name = "info_pnl"
-        Me.info_pnl.Size = New System.Drawing.Size(619, 424)
+        Me.info_pnl.Size = New System.Drawing.Size(707, 569)
         Me.info_pnl.TabIndex = 5
         '
         'history_pnl
         '
         Me.history_pnl.Controls.Add(Me.RichTextBox2)
         Me.history_pnl.Controls.Add(Me.Label12)
-        Me.history_pnl.Location = New System.Drawing.Point(-3, 2)
-        Me.history_pnl.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.history_pnl.Location = New System.Drawing.Point(-3, 0)
         Me.history_pnl.Name = "history_pnl"
-        Me.history_pnl.Size = New System.Drawing.Size(621, 424)
+        Me.history_pnl.Size = New System.Drawing.Size(710, 568)
         Me.history_pnl.TabIndex = 30
         '
         'RichTextBox2
         '
         Me.RichTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.RichTextBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.RichTextBox2.Location = New System.Drawing.Point(8, 83)
-        Me.RichTextBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.RichTextBox2.Location = New System.Drawing.Point(9, 111)
         Me.RichTextBox2.Name = "RichTextBox2"
-        Me.RichTextBox2.Size = New System.Drawing.Size(604, 315)
+        Me.RichTextBox2.Size = New System.Drawing.Size(690, 420)
         Me.RichTextBox2.TabIndex = 4
         Me.RichTextBox2.Text = ""
         '
@@ -128,9 +124,9 @@ Partial Class about_menu
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Segoe UI Semibold", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label12.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label12.Location = New System.Drawing.Point(206, 12)
+        Me.Label12.Location = New System.Drawing.Point(235, 16)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(190, 45)
+        Me.Label12.Size = New System.Drawing.Size(235, 54)
         Me.Label12.TabIndex = 3
         Me.Label12.Text = "Office Tools"
         '
@@ -138,10 +134,11 @@ Partial Class about_menu
         '
         Me.TextBox9.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.TextBox9.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.TextBox9.Location = New System.Drawing.Point(190, 352)
+        Me.TextBox9.Location = New System.Drawing.Point(217, 469)
+        Me.TextBox9.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox9.Name = "TextBox9"
         Me.TextBox9.ReadOnly = True
-        Me.TextBox9.Size = New System.Drawing.Size(414, 26)
+        Me.TextBox9.Size = New System.Drawing.Size(473, 30)
         Me.TextBox9.TabIndex = 29
         '
         'Label9
@@ -150,9 +147,9 @@ Partial Class about_menu
         Me.Label9.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.Label9.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label9.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label9.Location = New System.Drawing.Point(10, 352)
+        Me.Label9.Location = New System.Drawing.Point(11, 469)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(78, 19)
+        Me.Label9.Size = New System.Drawing.Size(93, 23)
         Me.Label9.TabIndex = 28
         Me.Label9.Text = "OS Version"
         '
@@ -160,10 +157,11 @@ Partial Class about_menu
         '
         Me.TextBox8.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.TextBox8.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.TextBox8.Location = New System.Drawing.Point(190, 321)
+        Me.TextBox8.Location = New System.Drawing.Point(217, 428)
+        Me.TextBox8.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.ReadOnly = True
-        Me.TextBox8.Size = New System.Drawing.Size(414, 26)
+        Me.TextBox8.Size = New System.Drawing.Size(473, 30)
         Me.TextBox8.TabIndex = 27
         '
         'Label8
@@ -172,9 +170,9 @@ Partial Class about_menu
         Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label8.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label8.Location = New System.Drawing.Point(10, 321)
+        Me.Label8.Location = New System.Drawing.Point(11, 428)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(69, 19)
+        Me.Label8.Size = New System.Drawing.Size(83, 23)
         Me.Label8.TabIndex = 26
         Me.Label8.Text = "OS Name"
         '
@@ -182,10 +180,11 @@ Partial Class about_menu
         '
         Me.TextBox6.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.TextBox6.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.TextBox6.Location = New System.Drawing.Point(190, 290)
+        Me.TextBox6.Location = New System.Drawing.Point(217, 387)
+        Me.TextBox6.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.ReadOnly = True
-        Me.TextBox6.Size = New System.Drawing.Size(414, 26)
+        Me.TextBox6.Size = New System.Drawing.Size(473, 30)
         Me.TextBox6.TabIndex = 25
         '
         'Label10
@@ -194,9 +193,9 @@ Partial Class about_menu
         Me.Label10.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.Label10.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label10.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label10.Location = New System.Drawing.Point(10, 290)
+        Me.Label10.Location = New System.Drawing.Point(11, 387)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(68, 19)
+        Me.Label10.Size = New System.Drawing.Size(84, 23)
         Me.Label10.TabIndex = 24
         Me.Label10.Text = "Company"
         '
@@ -204,10 +203,11 @@ Partial Class about_menu
         '
         Me.TextBox7.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.TextBox7.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.TextBox7.Location = New System.Drawing.Point(190, 259)
+        Me.TextBox7.Location = New System.Drawing.Point(217, 345)
+        Me.TextBox7.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.ReadOnly = True
-        Me.TextBox7.Size = New System.Drawing.Size(414, 26)
+        Me.TextBox7.Size = New System.Drawing.Size(473, 30)
         Me.TextBox7.TabIndex = 23
         '
         'Label11
@@ -216,9 +216,9 @@ Partial Class about_menu
         Me.Label11.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.Label11.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label11.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label11.Location = New System.Drawing.Point(10, 259)
+        Me.Label11.Location = New System.Drawing.Point(11, 345)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(37, 19)
+        Me.Label11.Size = New System.Drawing.Size(44, 23)
         Me.Label11.TabIndex = 22
         Me.Label11.Text = "User"
         '
@@ -226,10 +226,11 @@ Partial Class about_menu
         '
         Me.TextBox5.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.TextBox5.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.TextBox5.Location = New System.Drawing.Point(190, 224)
+        Me.TextBox5.Location = New System.Drawing.Point(217, 299)
+        Me.TextBox5.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.ReadOnly = True
-        Me.TextBox5.Size = New System.Drawing.Size(414, 26)
+        Me.TextBox5.Size = New System.Drawing.Size(473, 30)
         Me.TextBox5.TabIndex = 21
         '
         'Label5
@@ -238,9 +239,9 @@ Partial Class about_menu
         Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label5.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label5.Location = New System.Drawing.Point(10, 224)
+        Me.Label5.Location = New System.Drawing.Point(11, 299)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(111, 19)
+        Me.Label5.Size = New System.Drawing.Size(134, 23)
         Me.Label5.TabIndex = 20
         Me.Label5.Text = "Installation Path"
         '
@@ -248,10 +249,11 @@ Partial Class about_menu
         '
         Me.TextBox4.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.TextBox4.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.TextBox4.Location = New System.Drawing.Point(190, 189)
+        Me.TextBox4.Location = New System.Drawing.Point(217, 252)
+        Me.TextBox4.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.ReadOnly = True
-        Me.TextBox4.Size = New System.Drawing.Size(414, 26)
+        Me.TextBox4.Size = New System.Drawing.Size(473, 30)
         Me.TextBox4.TabIndex = 19
         '
         'Label4
@@ -260,9 +262,9 @@ Partial Class about_menu
         Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label4.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label4.Location = New System.Drawing.Point(10, 189)
+        Me.Label4.Location = New System.Drawing.Point(11, 252)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(71, 19)
+        Me.Label4.Size = New System.Drawing.Size(86, 23)
         Me.Label4.TabIndex = 18
         Me.Label4.Text = "Copyright"
         '
@@ -270,10 +272,11 @@ Partial Class about_menu
         '
         Me.TextBox3.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.TextBox3.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.TextBox3.Location = New System.Drawing.Point(190, 154)
+        Me.TextBox3.Location = New System.Drawing.Point(217, 205)
+        Me.TextBox3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.ReadOnly = True
-        Me.TextBox3.Size = New System.Drawing.Size(414, 26)
+        Me.TextBox3.Size = New System.Drawing.Size(473, 30)
         Me.TextBox3.TabIndex = 17
         '
         'Label3
@@ -282,9 +285,9 @@ Partial Class about_menu
         Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label3.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label3.Location = New System.Drawing.Point(10, 154)
+        Me.Label3.Location = New System.Drawing.Point(11, 205)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(89, 19)
+        Me.Label3.Size = New System.Drawing.Size(109, 23)
         Me.Label3.TabIndex = 16
         Me.Label3.Text = "Release Date"
         '
@@ -292,10 +295,11 @@ Partial Class about_menu
         '
         Me.TextBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.TextBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.TextBox2.Location = New System.Drawing.Point(190, 119)
+        Me.TextBox2.Location = New System.Drawing.Point(217, 159)
+        Me.TextBox2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(414, 26)
+        Me.TextBox2.Size = New System.Drawing.Size(473, 30)
         Me.TextBox2.TabIndex = 15
         '
         'Label6
@@ -304,9 +308,9 @@ Partial Class about_menu
         Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label6.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label6.Location = New System.Drawing.Point(10, 119)
+        Me.Label6.Location = New System.Drawing.Point(11, 159)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(131, 19)
+        Me.Label6.Size = New System.Drawing.Size(157, 23)
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "Application Version"
         '
@@ -314,10 +318,11 @@ Partial Class about_menu
         '
         Me.TextBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.TextBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.TextBox1.Location = New System.Drawing.Point(190, 83)
+        Me.TextBox1.Location = New System.Drawing.Point(217, 111)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(414, 26)
+        Me.TextBox1.Size = New System.Drawing.Size(473, 30)
         Me.TextBox1.TabIndex = 13
         '
         'Label7
@@ -326,9 +331,9 @@ Partial Class about_menu
         Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label7.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label7.Location = New System.Drawing.Point(10, 85)
+        Me.Label7.Location = New System.Drawing.Point(11, 113)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(122, 19)
+        Me.Label7.Size = New System.Drawing.Size(147, 23)
         Me.Label7.TabIndex = 12
         Me.Label7.Text = "Application Name"
         '
@@ -337,9 +342,9 @@ Partial Class about_menu
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label2.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label2.Location = New System.Drawing.Point(194, 14)
+        Me.Label2.Location = New System.Drawing.Point(222, 19)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(190, 45)
+        Me.Label2.Size = New System.Drawing.Size(235, 54)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Office Tools"
         '
@@ -347,10 +352,9 @@ Partial Class about_menu
         '
         Me.desc_pnl.Controls.Add(Me.RichTextBox1)
         Me.desc_pnl.Controls.Add(Me.Label1)
-        Me.desc_pnl.Location = New System.Drawing.Point(3, 5)
-        Me.desc_pnl.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.desc_pnl.Location = New System.Drawing.Point(0, 3)
         Me.desc_pnl.Name = "desc_pnl"
-        Me.desc_pnl.Size = New System.Drawing.Size(619, 427)
+        Me.desc_pnl.Size = New System.Drawing.Size(710, 573)
         Me.desc_pnl.TabIndex = 0
         '
         'RichTextBox1
@@ -358,10 +362,11 @@ Partial Class about_menu
         Me.RichTextBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.RichTextBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.RichTextBox1.Location = New System.Drawing.Point(8, 104)
+        Me.RichTextBox1.Location = New System.Drawing.Point(9, 139)
+        Me.RichTextBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.ReadOnly = True
-        Me.RichTextBox1.Size = New System.Drawing.Size(598, 274)
+        Me.RichTextBox1.Size = New System.Drawing.Size(683, 365)
         Me.RichTextBox1.TabIndex = 4
         Me.RichTextBox1.Text = ""
         '
@@ -370,9 +375,9 @@ Partial Class about_menu
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label1.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label1.Location = New System.Drawing.Point(192, 27)
+        Me.Label1.Location = New System.Drawing.Point(219, 36)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(190, 45)
+        Me.Label1.Size = New System.Drawing.Size(235, 54)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Office Tools"
         '
@@ -385,10 +390,9 @@ Partial Class about_menu
         Me.Panel1.Controls.Add(Me.Button4)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.ImeMode = System.Windows.Forms.ImeMode.Off
-        Me.Panel1.Location = New System.Drawing.Point(-9, -18)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel1.Location = New System.Drawing.Point(-10, -24)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(240, 446)
+        Me.Panel1.Size = New System.Drawing.Size(274, 595)
         Me.Panel1.TabIndex = 5
         '
         'Button2
@@ -399,10 +403,9 @@ Partial Class about_menu
         Me.Button2.ForeColor = System.Drawing.Color.AliceBlue
         Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(11, 112)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button2.Location = New System.Drawing.Point(13, 149)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(228, 37)
+        Me.Button2.Size = New System.Drawing.Size(261, 49)
         Me.Button2.TabIndex = 7
         Me.Button2.Text = "  App History"
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -416,10 +419,9 @@ Partial Class about_menu
         Me.Button1.ForeColor = System.Drawing.Color.AliceBlue
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(12, 67)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button1.Location = New System.Drawing.Point(14, 89)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(228, 41)
+        Me.Button1.Size = New System.Drawing.Size(261, 55)
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "  App Information"
         Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -432,11 +434,10 @@ Partial Class about_menu
         Me.Button5.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Button5.ForeColor = System.Drawing.Color.AliceBlue
         Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
-        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.Button5.Location = New System.Drawing.Point(11, 19)
-        Me.Button5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button5.Location = New System.Drawing.Point(13, 25)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(228, 44)
+        Me.Button5.Size = New System.Drawing.Size(261, 59)
         Me.Button5.TabIndex = 5
         Me.Button5.Text = "  Description"
         Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -449,30 +450,28 @@ Partial Class about_menu
         Me.Button4.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Button4.ForeColor = System.Drawing.Color.AliceBlue
         Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
-        Me.Button4.Location = New System.Drawing.Point(11, 405)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button4.Location = New System.Drawing.Point(13, 540)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(228, 38)
+        Me.Button4.Size = New System.Drawing.Size(261, 51)
         Me.Button4.TabIndex = 4
         Me.Button4.UseVisualStyleBackColor = True
         '
         'Panel2
         '
-        Me.Panel2.Location = New System.Drawing.Point(237, 19)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel2.Location = New System.Drawing.Point(271, 25)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(626, 421)
+        Me.Panel2.Size = New System.Drawing.Size(715, 561)
         Me.Panel2.TabIndex = 1
         '
         'about_menu
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(850, 427)
+        Me.ClientSize = New System.Drawing.Size(971, 569)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "about_menu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Menu About"

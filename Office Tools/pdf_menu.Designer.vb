@@ -59,10 +59,9 @@ Partial Class pdf_menu
         '
         Me.Panel3.BackColor = System.Drawing.Color.DimGray
         Me.Panel3.Controls.Add(Me.pdf_com_pnl)
-        Me.Panel3.Location = New System.Drawing.Point(230, -1)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel3.Location = New System.Drawing.Point(263, -1)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(621, 428)
+        Me.Panel3.Size = New System.Drawing.Size(710, 571)
         Me.Panel3.TabIndex = 6
         '
         'pdf_com_pnl
@@ -88,18 +87,16 @@ Partial Class pdf_menu
         Me.pdf_com_pnl.Controls.Add(Me.Button7)
         Me.pdf_com_pnl.Controls.Add(Me.Label1)
         Me.pdf_com_pnl.Controls.Add(Me.Button8)
-        Me.pdf_com_pnl.Location = New System.Drawing.Point(3, 2)
-        Me.pdf_com_pnl.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.pdf_com_pnl.Location = New System.Drawing.Point(3, 0)
         Me.pdf_com_pnl.Name = "pdf_com_pnl"
-        Me.pdf_com_pnl.Size = New System.Drawing.Size(616, 423)
+        Me.pdf_com_pnl.Size = New System.Drawing.Size(704, 567)
         Me.pdf_com_pnl.TabIndex = 0
         '
         'ProgressBar1
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(7, 339)
-        Me.ProgressBar1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ProgressBar1.Location = New System.Drawing.Point(8, 452)
         Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(600, 22)
+        Me.ProgressBar1.Size = New System.Drawing.Size(686, 29)
         Me.ProgressBar1.TabIndex = 35
         Me.ProgressBar1.Visible = False
         '
@@ -109,9 +106,9 @@ Partial Class pdf_menu
         Me.Label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label10.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label10.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label10.Location = New System.Drawing.Point(191, 280)
+        Me.Label10.Location = New System.Drawing.Point(218, 373)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(0, 19)
+        Me.Label10.Size = New System.Drawing.Size(0, 23)
         Me.Label10.TabIndex = 28
         '
         'CheckBox4
@@ -119,10 +116,9 @@ Partial Class pdf_menu
         Me.CheckBox4.AutoSize = True
         Me.CheckBox4.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.CheckBox4.ForeColor = System.Drawing.Color.AliceBlue
-        Me.CheckBox4.Location = New System.Drawing.Point(7, 206)
-        Me.CheckBox4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.CheckBox4.Location = New System.Drawing.Point(8, 275)
         Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(141, 23)
+        Me.CheckBox4.Size = New System.Drawing.Size(174, 27)
         Me.CheckBox4.TabIndex = 28
         Me.CheckBox4.Text = "Remove Metadata"
         Me.CheckBox4.UseVisualStyleBackColor = True
@@ -133,9 +129,9 @@ Partial Class pdf_menu
         Me.Label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label9.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label9.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label9.Location = New System.Drawing.Point(7, 280)
+        Me.Label9.Location = New System.Drawing.Point(8, 373)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(115, 19)
+        Me.Label9.Size = New System.Drawing.Size(139, 23)
         Me.Label9.TabIndex = 27
         Me.Label9.Text = "Compressed Size"
         '
@@ -143,10 +139,9 @@ Partial Class pdf_menu
         '
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Items.AddRange(New Object() {"Highest", "High", "Normal", "Low", "Lowest"})
-        Me.ComboBox2.Location = New System.Drawing.Point(177, 82)
-        Me.ComboBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ComboBox2.Location = New System.Drawing.Point(202, 109)
         Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(155, 23)
+        Me.ComboBox2.Size = New System.Drawing.Size(177, 28)
         Me.ComboBox2.TabIndex = 24
         '
         'Label8
@@ -155,9 +150,9 @@ Partial Class pdf_menu
         Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label8.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label8.Location = New System.Drawing.Point(191, 249)
+        Me.Label8.Location = New System.Drawing.Point(218, 332)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(0, 19)
+        Me.Label8.Size = New System.Drawing.Size(0, 23)
         Me.Label8.TabIndex = 26
         '
         'CheckBox5
@@ -165,10 +160,9 @@ Partial Class pdf_menu
         Me.CheckBox5.AutoSize = True
         Me.CheckBox5.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.CheckBox5.ForeColor = System.Drawing.Color.AliceBlue
-        Me.CheckBox5.Location = New System.Drawing.Point(7, 132)
-        Me.CheckBox5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.CheckBox5.Location = New System.Drawing.Point(8, 176)
         Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(232, 23)
+        Me.CheckBox5.Size = New System.Drawing.Size(283, 27)
         Me.CheckBox5.TabIndex = 29
         Me.CheckBox5.Text = "Enable Incremental Compression"
         Me.CheckBox5.UseVisualStyleBackColor = True
@@ -179,9 +173,9 @@ Partial Class pdf_menu
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label2.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label2.Location = New System.Drawing.Point(7, 249)
+        Me.Label2.Location = New System.Drawing.Point(8, 332)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(90, 19)
+        Me.Label2.Size = New System.Drawing.Size(105, 23)
         Me.Label2.TabIndex = 25
         Me.Label2.Text = "Original Size"
         '
@@ -190,10 +184,9 @@ Partial Class pdf_menu
         Me.CheckBox3.AutoSize = True
         Me.CheckBox3.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.CheckBox3.ForeColor = System.Drawing.Color.AliceBlue
-        Me.CheckBox3.Location = New System.Drawing.Point(7, 182)
-        Me.CheckBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.CheckBox3.Location = New System.Drawing.Point(8, 243)
         Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(180, 23)
+        Me.CheckBox3.Size = New System.Drawing.Size(218, 27)
         Me.CheckBox3.TabIndex = 27
         Me.CheckBox3.Text = "Optimize Page Contents"
         Me.CheckBox3.UseVisualStyleBackColor = True
@@ -204,9 +197,9 @@ Partial Class pdf_menu
         Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label4.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label4.Location = New System.Drawing.Point(7, 86)
+        Me.Label4.Location = New System.Drawing.Point(8, 115)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(155, 19)
+        Me.Label4.Size = New System.Drawing.Size(189, 23)
         Me.Label4.TabIndex = 22
         Me.Label4.Text = "PDF Compression Level"
         '
@@ -215,10 +208,9 @@ Partial Class pdf_menu
         Me.CheckBox2.AutoSize = True
         Me.CheckBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.CheckBox2.ForeColor = System.Drawing.Color.AliceBlue
-        Me.CheckBox2.Location = New System.Drawing.Point(7, 157)
-        Me.CheckBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.CheckBox2.Location = New System.Drawing.Point(8, 209)
         Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(124, 23)
+        Me.CheckBox2.Size = New System.Drawing.Size(148, 27)
         Me.CheckBox2.TabIndex = 26
         Me.CheckBox2.Text = "Optimize Fonts"
         Me.CheckBox2.UseVisualStyleBackColor = True
@@ -232,10 +224,10 @@ Partial Class pdf_menu
         Me.Button6.ForeColor = System.Drawing.Color.AliceBlue
         Me.Button6.Image = CType(resources.GetObject("Button6.Image"), System.Drawing.Image)
         Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button6.Location = New System.Drawing.Point(248, 370)
-        Me.Button6.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.Button6.Location = New System.Drawing.Point(283, 493)
+        Me.Button6.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(135, 45)
+        Me.Button6.Size = New System.Drawing.Size(154, 60)
         Me.Button6.TabIndex = 34
         Me.Button6.Text = "  Compress"
         Me.Button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -246,10 +238,10 @@ Partial Class pdf_menu
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label7.Location = New System.Drawing.Point(531, 69)
+        Me.Label7.Location = New System.Drawing.Point(607, 92)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(0, 15)
+        Me.Label7.Size = New System.Drawing.Size(0, 20)
         Me.Label7.TabIndex = 19
         '
         'Label6
@@ -258,9 +250,9 @@ Partial Class pdf_menu
         Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label6.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label6.Location = New System.Drawing.Point(7, 46)
+        Me.Label6.Location = New System.Drawing.Point(8, 61)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(96, 19)
+        Me.Label6.Size = New System.Drawing.Size(116, 23)
         Me.Label6.TabIndex = 18
         Me.Label6.Text = "Save Location"
         '
@@ -270,38 +262,36 @@ Partial Class pdf_menu
         Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label5.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label5.Location = New System.Drawing.Point(7, 8)
+        Me.Label5.Location = New System.Drawing.Point(8, 11)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(81, 19)
+        Me.Label5.Size = New System.Drawing.Size(98, 23)
         Me.Label5.TabIndex = 17
         Me.Label5.Text = "Source PDF"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(177, 9)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TextBox1.Location = New System.Drawing.Point(202, 12)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
-        Me.TextBox1.Size = New System.Drawing.Size(276, 23)
+        Me.TextBox1.Size = New System.Drawing.Size(315, 27)
         Me.TextBox1.TabIndex = 1
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label3.Location = New System.Drawing.Point(531, 28)
+        Me.Label3.Location = New System.Drawing.Point(607, 37)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(0, 15)
+        Me.Label3.Size = New System.Drawing.Size(0, 20)
         Me.Label3.TabIndex = 20
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(177, 46)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TextBox2.Location = New System.Drawing.Point(202, 61)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
-        Me.TextBox2.Size = New System.Drawing.Size(276, 23)
+        Me.TextBox2.Size = New System.Drawing.Size(315, 27)
         Me.TextBox2.TabIndex = 4
         '
         'Button7
@@ -312,10 +302,9 @@ Partial Class pdf_menu
         Me.Button7.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue
         Me.Button7.FlatAppearance.BorderSize = 0
         Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button7.Location = New System.Drawing.Point(467, 40)
-        Me.Button7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button7.Location = New System.Drawing.Point(534, 53)
         Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(42, 34)
+        Me.Button7.Size = New System.Drawing.Size(48, 45)
         Me.Button7.TabIndex = 3
         Me.Button7.UseVisualStyleBackColor = False
         '
@@ -323,9 +312,9 @@ Partial Class pdf_menu
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.Location = New System.Drawing.Point(531, 74)
+        Me.Label1.Location = New System.Drawing.Point(607, 99)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(0, 15)
+        Me.Label1.Size = New System.Drawing.Size(0, 20)
         Me.Label1.TabIndex = 10
         '
         'Button8
@@ -336,12 +325,10 @@ Partial Class pdf_menu
         Me.Button8.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue
         Me.Button8.FlatAppearance.BorderSize = 0
         Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button8.Location = New System.Drawing.Point(467, 2)
-        Me.Button8.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button8.Location = New System.Drawing.Point(534, 3)
         Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(42, 34)
+        Me.Button8.Size = New System.Drawing.Size(48, 45)
         Me.Button8.TabIndex = 0
-        Me.Button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button8.UseVisualStyleBackColor = False
         '
         'Panel1
@@ -352,9 +339,8 @@ Partial Class pdf_menu
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.ImeMode = System.Windows.Forms.ImeMode.Off
         Me.Panel1.Location = New System.Drawing.Point(-1, -1)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(231, 428)
+        Me.Panel1.Size = New System.Drawing.Size(264, 571)
         Me.Panel1.TabIndex = 5
         '
         'Button5
@@ -364,11 +350,10 @@ Partial Class pdf_menu
         Me.Button5.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Button5.ForeColor = System.Drawing.Color.AliceBlue
         Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
-        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.Button5.Location = New System.Drawing.Point(3, 2)
-        Me.Button5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button5.Location = New System.Drawing.Point(3, 3)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(228, 43)
+        Me.Button5.Size = New System.Drawing.Size(261, 57)
         Me.Button5.TabIndex = 5
         Me.Button5.Text = "  PDF Compress"
         Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -381,30 +366,28 @@ Partial Class pdf_menu
         Me.Button4.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Button4.ForeColor = System.Drawing.Color.AliceBlue
         Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
-        Me.Button4.Location = New System.Drawing.Point(0, 384)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button4.Location = New System.Drawing.Point(0, 512)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(228, 42)
+        Me.Button4.Size = New System.Drawing.Size(261, 56)
         Me.Button4.TabIndex = 4
         Me.Button4.UseVisualStyleBackColor = True
         '
         'Panel2
         '
-        Me.Panel2.Location = New System.Drawing.Point(228, 2)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel2.Location = New System.Drawing.Point(261, 3)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(626, 425)
+        Me.Panel2.Size = New System.Drawing.Size(715, 567)
         Me.Panel2.TabIndex = 1
         '
         'pdf_menu
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(850, 427)
+        Me.ClientSize = New System.Drawing.Size(971, 569)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "pdf_menu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "PDF Menu"

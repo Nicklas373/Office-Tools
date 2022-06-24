@@ -1,9 +1,10 @@
 ﻿Imports System.IO
 Imports Microsoft.Win32.TaskScheduler
-
 Public Class settings_menu
-    Dim filedialog As New FolderBrowserDialog
+    Dim openfiledialog As New OpenFileDialog
+    Dim openfolderdialog As New FolderBrowserDialog
     Dim confPath As String = "conf/config"
+    Dim pdfPath As String = "conf/pdf"
     Dim timePath As String = "conf/cli_backup/cliTimeInit"
     Dim cliSrcPath As String = "conf/cli_backup/cliSrcPath"
     Dim cliDestPath As String = "conf/cli_backup/cliDestPath"
@@ -23,7 +24,7 @@ Public Class settings_menu
         GetBackPref()
         WriteLogicalCount(cliProcessor)
     End Sub
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Edit_Folder_Backup_Dir_Settings_Handler(sender As Object, e As EventArgs) Handles Button2.Click
         TextBox1.ReadOnly = False
         TextBox2.ReadOnly = False
         Button1.Visible = True
@@ -36,57 +37,80 @@ Public Class settings_menu
         dir_bck_set.Visible = True
         daily_sched_pnl.Visible = False
         weekly_sched_pnl.Visible = False
+        bck_info_pnl.Visible = False
         tsk_info_panel.Visible = False
+        pdf_set_pnl.Visible = False
     End Sub
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         dir_bck_set.Visible = True
         daily_sched_pnl.Visible = True
         weekly_sched_pnl.Visible = False
+        bck_info_pnl.Visible = False
         tsk_info_panel.Visible = False
+        pdf_set_pnl.Visible = False
     End Sub
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        dir_bck_set.Visible = True
+        daily_sched_pnl.Visible = True
         weekly_sched_pnl.Visible = True
         bck_info_pnl.Visible = False
         tsk_info_panel.Visible = False
+        pdf_set_pnl.Visible = False
     End Sub
     Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
-        tsk_info_panel.Visible = True
+        dir_bck_set.Visible = True
+        daily_sched_pnl.Visible = True
+        weekly_sched_pnl.Visible = True
         bck_info_pnl.Visible = True
+        tsk_info_panel.Visible = False
+        pdf_set_pnl.Visible = False
     End Sub
-    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
-        bck_info_pnl.Visible = False
+    Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
+        dir_bck_set.Visible = True
+        daily_sched_pnl.Visible = True
+        weekly_sched_pnl.Visible = True
+        bck_info_pnl.Visible = True
         tsk_info_panel.Visible = True
+        pdf_set_pnl.Visible = False
+    End Sub
+    Private Sub Button24_Click(sender As Object, e As EventArgs) Handles Button24.Click
+        dir_bck_set.Visible = True
+        daily_sched_pnl.Visible = True
+        weekly_sched_pnl.Visible = True
+        bck_info_pnl.Visible = True
+        tsk_info_panel.Visible = True
+        pdf_set_pnl.Visible = True
     End Sub
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Me.Close()
+        Close()
     End Sub
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+    Private Sub Source_Folder_Backup_Dir_Settings_Button(sender As Object, e As EventArgs) Handles Button7.Click
         If TextBox1.ReadOnly = True Then
             MsgBox("Configuration menu is locked, Please click edit !", MsgBoxStyle.Information, "Office Tools")
         Else
-            filedialog.InitialDirectory = Environment.SpecialFolder.UserProfile
-            filedialog.ShowDialog()
+            openfolderdialog.InitialDirectory = Environment.SpecialFolder.UserProfile
+            openfolderdialog.ShowDialog()
         End If
     End Sub
-    Private Sub FolderBrowserDialog1_Disposed(sender As Object, e As EventArgs) Handles Button7.Click
+    Private Sub Source_Folder_Backup_Dir_Settings_Handler(sender As Object, e As EventArgs) Handles Button7.Click
         If TextBox1.ReadOnly = False Then
-            TextBox1.Text = filedialog.SelectedPath.ToString
+            TextBox1.Text = openfolderdialog.SelectedPath.ToString
         End If
     End Sub
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+    Private Sub Destination_Folder_Backup_Dir_Settings_Button(sender As Object, e As EventArgs) Handles Button6.Click
         If TextBox2.ReadOnly = True Then
             MsgBox("Configuration menu is locked, Please click edit !", MsgBoxStyle.Information, "Office Tools")
         Else
-            filedialog.InitialDirectory = Environment.SpecialFolder.UserProfile
-            filedialog.ShowDialog()
+            openfolderdialog.InitialDirectory = Environment.SpecialFolder.UserProfile
+            openfolderdialog.ShowDialog()
         End If
     End Sub
-    Private Sub FolderBrowserDialog2_Disposed(sender As Object, e As EventArgs) Handles Button6.Click
+    Private Sub Destination_Folder_Backup_Dir_Settings_Handler(sender As Object, e As EventArgs) Handles Button6.Click
         If TextBox2.ReadOnly = False Then
-            TextBox2.Text = filedialog.SelectedPath.ToString
+            TextBox2.Text = openfolderdialog.SelectedPath.ToString
         End If
     End Sub
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Save_Folder_Backup_Dir_Settings_Handler(sender As Object, e As EventArgs) Handles Button3.Click
         If TextBox1.Text = "" Then
             MsgBox("Please fill source folder !", MsgBoxStyle.Critical, "Office Tools")
         ElseIf TextBox2.Text = "" Then
@@ -129,7 +153,7 @@ Public Class settings_menu
             End If
         End If
     End Sub
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Cancel_Folder_Backup_Dir_Settings_Handler(sender As Object, e As EventArgs) Handles Button1.Click
         TextBox1.ReadOnly = True
         TextBox1.Text = ""
         TextBox2.Text = ""
@@ -141,7 +165,7 @@ Public Class settings_menu
         Label7.Visible = False
         ComboBox1.Visible = False
     End Sub
-    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+    Private Sub Edit_Daily_Sched_Settings_Handler(sender As Object, e As EventArgs) Handles Button9.Click
         Button11.Visible = True
         Button9.Visible = False
         Button10.Visible = True
@@ -149,7 +173,7 @@ Public Class settings_menu
         ComboBox4.ResetText()
         ComboBox5.ResetText()
     End Sub
-    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+    Private Sub Cancel_Daily_Sched_Settings_Handler(sender As Object, e As EventArgs) Handles Button10.Click
         Button11.Visible = False
         Button9.Visible = True
         Button10.Visible = False
@@ -157,7 +181,7 @@ Public Class settings_menu
         ComboBox4.ResetText()
         ComboBox5.ResetText()
     End Sub
-    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+    Private Sub Save_Daily_Sched_Settings_Handler(sender As Object, e As EventArgs) Handles Button11.Click
         If TextBox3.Text = "" Then
             MsgBox("Recurs day can not empty !", MsgBoxStyle.Critical, "Office Tools")
         Else
@@ -244,17 +268,17 @@ Public Class settings_menu
                     ComboBox6.ResetText()
                     MsgBox("If repeat duration is disabled, then repeat task will be disable", vbExclamation, "Office Tools")
                 End If
-                WeeklyTrigger(custdate, 1, CInt(TextBox4.Text), CustRepDurValWeek(ComboBox6.Text), CustRepDurIntWeek(ComboBox7.Text), Cb1, Cb2, Cb3, Cb4, Cb5, Cb6, Cb7, ComboBox6.Text, ComboBox7.Text)
+                WeeklyTrigger(custdate, 1, CInt(TextBox4.Text), CustRepDurValWeek(ComboBox6.Text), CustRepDurIntWeek(ComboBox7.Text), Cb1(CheckBox1.Checked), Cb2(CheckBox2.Checked), Cb3(CheckBox3.Checked), Cb4(CheckBox4.Checked), Cb5(CheckBox5.Checked), Cb6(CheckBox6.Checked), Cb7(CheckBox7.Checked), ComboBox6.Text, ComboBox7.Text)
                 Button6.Visible = False
                 Button7.Visible = True
                 Button8.Visible = False
             End If
         End If
     End Sub
-    Private Sub Button19_Click(sender As Object, e As EventArgs) Handles Button19.Click
-        ShowTask("Office Tools")
+    Private Sub Chk_Task_Settings_Button(sender As Object, e As EventArgs) Handles Button19.Click
+        RichTextBox1.Text = ShowTask("Office Tools")
     End Sub
-    Private Sub Button20_Click(sender As Object, e As EventArgs) Handles Button20.Click
+    Private Sub Remove_Task_Settings_Button(sender As Object, e As EventArgs) Handles Button20.Click
         Using tService As New TaskService()
             Dim tTask As Task = tService.GetTask("Office Tools")
             If tTask Is Nothing Then
@@ -266,7 +290,7 @@ Public Class settings_menu
             End If
         End Using
     End Sub
-    Private Sub Button17_Click(sender As Object, e As EventArgs) Handles Button17.Click
+    Private Sub Run_Task_Settings_Button(sender As Object, e As EventArgs) Handles Button17.Click
         If File.Exists(confPath) Then
             Using tService As New TaskService()
                 Dim tTask As Task = tService.GetTask("Office Tools")
@@ -282,22 +306,10 @@ Public Class settings_menu
             MsgBox("Config file is not exist !, Please configure directory first !", MsgBoxStyle.Critical, "Office Tools")
         End If
     End Sub
-    Private Sub Button22_Click(sender As Object, e As EventArgs) Handles Button22.Click
-        ShowLog("Config", confPath)
+    Private Sub Chk_Backup_Settings_Button(sender As Object, e As EventArgs) Handles Button22.Click
+        RichTextbox2.Text = ShowLog("Config", confPath)
     End Sub
-    Private Sub ShowLog(log As String, path As String)
-        RichTextBox2.Text = ""
-        If File.Exists(path) Then
-            If New FileInfo(path).Length.Equals(0) Then
-                MsgBox(log & " file is empty !", MsgBoxStyle.Critical, "MigrateToGDrive")
-            Else
-                RichTextBox2.Text = File.ReadAllText(path)
-            End If
-        Else
-            MsgBox(log & " file does not exist !", MsgBoxStyle.Critical, "MigrateToGDrive")
-        End If
-    End Sub
-    Private Sub Button23_Click(sender As Object, e As EventArgs) Handles Button23.Click
+    Private Sub Remove_Backup_Settings_Button(sender As Object, e As EventArgs) Handles Button23.Click
         ClearLog(confPath, "Config")
         If File.Exists(timePath) Then
             GC.Collect()
@@ -321,76 +333,45 @@ Public Class settings_menu
         ComboBox1.ResetText()
         RichTextBox2.Text = ""
     End Sub
-    Private Function Cb1() As DaysOfTheWeek
-        Dim monday As DaysOfTheWeek
-        If CheckBox1.Checked Then
-            monday = DaysOfTheWeek.Monday
-            Return monday
+    Private Sub Edit_PDF_Browse_Settings(sender As Object, e As EventArgs) Handles Button26.Click
+        TextBox5.ReadOnly = False
+        Button28.Visible = True
+        Button27.Visible = True
+        Button26.Visible = False
+    End Sub
+    Private Sub Cancel_PDF_Browse_Settings(sender As Object, e As EventArgs) Handles Button27.Click
+        TextBox5.Text = ""
+        TextBox5.ReadOnly = True
+        Button27.Visible = False
+        Button28.Visible = False
+        Button26.Visible = True
+    End Sub
+    Private Sub Save_PDF_Browse_Settings(sender As Object, e As EventArgs) Handles Button28.Click
+        If TextBox5.Text = "" Then
+            MsgBox("PDF Path is empty, please choose PDF Reader !", MsgBoxStyle.Information, "Office Tools")
         Else
-            monday = DaysOfTheWeek.Sunday
-            Return monday
+            CheckFileExist(pdfPath, TextBox5.Text)
         End If
-    End Function
-    Private Function Cb2() As DaysOfTheWeek
-        Dim tuesday As DaysOfTheWeek
-        If CheckBox2.Checked Then
-            tuesday = DaysOfTheWeek.Tuesday
-            Return tuesday
+        Button27.Visible = False
+        Button28.Visible = False
+        TextBox5.ReadOnly = True
+        Button26.Visible = True
+    End Sub
+    Private Sub Pdf_Settings_Browse_Button(sender As Object, e As EventArgs) Handles Button25.Click
+        If TextBox5.ReadOnly = True Then
+            MsgBox("Configuration menu is locked, Please click edit !", MsgBoxStyle.Information, "Office Tools")
         Else
-            tuesday = DaysOfTheWeek.Sunday
-            Return tuesday
+            openfiledialog.InitialDirectory = Environment.SpecialFolder.UserProfile
+            openfiledialog.DefaultExt = ".exe"
+            openfiledialog.Filter = "Executables Files|*.exe"
+            openfiledialog.ShowDialog()
         End If
-    End Function
-    Private Function Cb3() As DaysOfTheWeek
-        Dim wednesday As DaysOfTheWeek
-        If CheckBox3.Checked Then
-            wednesday = DaysOfTheWeek.Wednesday
-            Return wednesday
-        Else
-            wednesday = DaysOfTheWeek.Sunday
-            Return wednesday
+    End Sub
+    Private Sub Pdf_Settings_Browse_Handler(sender As Object, e As EventArgs) Handles Button25.Click
+        If TextBox5.ReadOnly = False Then
+            TextBox5.Text = openfiledialog.FileName.ToString
         End If
-    End Function
-    Private Function Cb4() As DaysOfTheWeek
-        Dim thursday As DaysOfTheWeek
-        If CheckBox4.Checked Then
-            thursday = DaysOfTheWeek.Thursday
-            Return thursday
-        Else
-            thursday = DaysOfTheWeek.Sunday
-            Return thursday
-        End If
-    End Function
-    Private Function Cb5() As DaysOfTheWeek
-        Dim friday As DaysOfTheWeek
-        If CheckBox5.Checked Then
-            friday = DaysOfTheWeek.Friday
-            Return friday
-        Else
-            friday = DaysOfTheWeek.Sunday
-            Return friday
-        End If
-    End Function
-    Private Function Cb6() As DaysOfTheWeek
-        Dim saturday As DaysOfTheWeek
-        If CheckBox6.Checked Then
-            saturday = DaysOfTheWeek.Saturday
-            Return saturday
-        Else
-            saturday = DaysOfTheWeek.Sunday
-            Return saturday
-        End If
-    End Function
-    Private Function Cb7() As DaysOfTheWeek
-        Dim sunday As DaysOfTheWeek
-        If CheckBox7.Checked Then
-            sunday = DaysOfTheWeek.Sunday
-            Return sunday
-        Else
-            sunday = DaysOfTheWeek.Sunday
-            Return sunday
-        End If
-    End Function
+    End Sub
     Private Sub GetBackPref()
         If File.Exists(confPath) Then
             If PathVal(confPath, 1).Equals("null") Then
@@ -403,28 +384,20 @@ Public Class settings_menu
             Else
                 TextBox2.Text = Replace(PathVal(confPath, 2), "Destination Directory: ", "")
             End If
-            If PathVal(confPath, 3).Replace("Backup Preferences: ", "").Equals("Anytime") Then
-                ComboBox1.SelectedIndex = 0
-            ElseIf PathVal(confPath, 3).Replace("Backup Preferences: ", "").Equals("Today") Then
-                ComboBox1.SelectedIndex = 1
+            If PathVal(confPath, 3).Equals("null") Then
+                If PathVal(confPath, 3).Replace("Backup Preferences: ", "").Equals("Anytime") Then
+                    ComboBox1.SelectedIndex = 0
+                ElseIf PathVal(confPath, 3).Replace("Backup Preferences: ", "").Equals("Today") Then
+                    ComboBox1.SelectedIndex = 1
+                End If
             End If
         End If
-    End Sub
-    Private Sub ShowTask(taskName As String)
-        Using tService As New TaskService()
-            Dim tTask As Task = tService.GetTask(taskName)
-            If tTask Is Nothing Then
-                MsgBox("Office Task scheduler not exist !", MsgBoxStyle.Critical, "Office Tools")
-                MsgBox("Please create new scheduler first !", MsgBoxStyle.Critical, "Office Tools")
-                RichTextBox1.Text = ""
+        If File.Exists(pdfPath) Then
+            If PathVal(pdfPath, 0).Equals("null") Then
+                TextBox5.Text = ""
             Else
-                RichTextBox1.Text = "Task Name: " & tTask.Name & vbCrLf & "Task State: " & tTask.State.ToString & vbCrLf &
-                                    "Task Path: " & tTask.Path.ToString & vbCrLf &
-                                    "Next Runtime: " & tTask.NextRunTime.ToLongDateString & " " & tTask.NextRunTime.ToLongTimeString & vbCrLf &
-                                    "Last Runtime: " & tTask.LastRunTime.ToLongDateString & " " & tTask.LastRunTime.ToLongTimeString & vbCrLf &
-                                    "Last Task Result: " & tTask.LastTaskResult.ToString & vbCrLf &
-                                    "Total Failed Task: " & tTask.NumberOfMissedRuns.ToString & vbCrLf
+                TextBox5.Text = PathVal(pdfPath, 0)
             End If
-        End Using
+        End If
     End Sub
 End Class

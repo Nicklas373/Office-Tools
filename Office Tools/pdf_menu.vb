@@ -1,15 +1,15 @@
 ﻿Imports System.IO
 Imports Syncfusion.Pdf
 Imports Syncfusion.Pdf.Parsing
-
 Public Class pdf_menu
     Dim fileDialog As New OpenFileDialog
     Dim saveDialog As New SaveFileDialog
-    Private Sub pdf_compress_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Dim pdfPath As String = "conf/pdf"
+    Private Sub PDF_Compress_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AllowTransparency = False
         pdf_com_pnl.Visible = False
     End Sub
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+    Private Sub SourcePDF_folder(sender As Object, e As EventArgs) Handles Button8.Click
         If TextBox1.ReadOnly = True Then
             MsgBox("Configuration menu is locked, Please click edit !", MsgBoxStyle.Information, "Office Tools")
         Else
@@ -19,7 +19,7 @@ Public Class pdf_menu
             fileDialog.ShowDialog()
         End If
     End Sub
-    Private Sub OpenFileDialog_Disposed(sender As Object, e As EventArgs) Handles Button8.Click
+    Private Sub OpenFileDialog_SourcePDF(sender As Object, e As EventArgs) Handles Button8.Click
         If TextBox1.ReadOnly = False Then
             If fileDialog.FileName.ToString = "" Then
                 TextBox1.Text = ""
@@ -29,7 +29,7 @@ Public Class pdf_menu
             End If
         End If
     End Sub
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+    Private Sub SavePDF_folder(sender As Object, e As EventArgs) Handles Button7.Click
         If TextBox2.ReadOnly = True Then
             MsgBox("Configuration menu is locked, Please click edit !", MsgBoxStyle.Information, "Office Tools")
         Else
@@ -39,7 +39,7 @@ Public Class pdf_menu
             saveDialog.ShowDialog()
         End If
     End Sub
-    Private Sub SaveFileDialog_Disposed(sender As Object, e As EventArgs) Handles Button7.Click
+    Private Sub SaveFileDialog_file(sender As Object, e As EventArgs) Handles Button7.Click
         If TextBox2.ReadOnly = False Then
             If saveDialog.FileName.ToString = "" Then
                 TextBox2.Text = ""
@@ -48,25 +48,25 @@ Public Class pdf_menu
             End If
         End If
     End Sub
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+    Private Sub Compress_Button(sender As Object, e As EventArgs) Handles Button6.Click
         If TextBox1.Text = "" Then
-            MsgBox("No PDF file was selected !, please select PDF file first !", MsgBoxStyle.Critical, "MigrateToGDrive")
+            MsgBox("No PDF file was selected !, please select PDF file first !", MsgBoxStyle.Critical, "Office Tools")
         Else
             If TextBox2.Text = "" Then
-                MsgBox("Destination PDF file location was not selected !, please select destination location first !", MsgBoxStyle.Critical, "MigrateToGDrive")
+                MsgBox("Destination PDF file location was not selected !, please select destination location first !", MsgBoxStyle.Critical, "Office Tools")
             Else
                 If ComboBox2.Text = "" Then
                     MsgBox("Please select compression level !", MsgBoxStyle.Critical, "MigrateToGDrive")
                 Else
-                    CompressPDF(TextBox1.Text, TextBox2.Text, True, imgCompLvlVal, pdfFoOptVal, pdfOpcOptVal, pdfMtOptVal, pdfIncUpdVal)
+                    CompressPDF(TextBox1.Text, TextBox2.Text, True, ImgCompLvlVal(ComboBox2.Text), PdfFoOptVal(CheckBox5.Checked), PdfOpcOptVal(CheckBox4.Checked), PdfMtOptVal(CheckBox3.Checked), PdfIncUpdVal(CheckBox2.Checked))
                 End If
             End If
         End If
     End Sub
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Me.Close()
+    Private Sub Close_Button(sender As Object, e As EventArgs) Handles Button4.Click
+        Close()
     End Sub
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub PDF_Panel_Button(sender As Object, e As EventArgs) Handles Button5.Click
         pdf_com_pnl.Visible = True
     End Sub
     Private Async Sub CompressPDF(pdfPathIn As String, pdfPathOut As String, pdfCompOpt As Boolean, pdfImgQtyOpt As Integer, pdfOfOpt As Boolean, pdfOpcOpt As Boolean, pdfRmOpt As Boolean, pdfIncUpd As Boolean)
@@ -75,12 +75,13 @@ Public Class pdf_menu
         ProgressBar1.MarqueeAnimationSpeed = 40
         ProgressBar1.Refresh()
         Dim ldoc As New PdfLoadedDocument(pdfPathIn)
-        Dim options As PdfCompressionOptions = New PdfCompressionOptions
-        options.CompressImages = pdfCompOpt
-        options.ImageQuality = pdfImgQtyOpt
-        options.OptimizeFont = pdfOfOpt
-        options.OptimizePageContents = pdfOpcOpt
-        options.RemoveMetadata = pdfRmOpt
+        Dim options As New PdfCompressionOptions With {
+            .CompressImages = pdfCompOpt,
+            .ImageQuality = pdfImgQtyOpt,
+            .OptimizeFont = pdfOfOpt,
+            .OptimizePageContents = pdfOpcOpt,
+            .RemoveMetadata = pdfRmOpt
+        }
         ldoc.FileStructure.IncrementalUpdate = pdfIncUpd
         ldoc.CompressionOptions = options
         Await Task.Run(Sub() ldoc.Save(pdfPathOut))
@@ -88,68 +89,13 @@ Public Class pdf_menu
         ProgressBar1.Value = 100
         ldoc.Close(True)
         If File.Exists(TextBox2.Text) Then
-            MsgBox("Compress PDF success !", MsgBoxStyle.Information, "MigrateToGDrive")
-            Label10.Text = getFileSize(TextBox2.Text)
+            MsgBox("Compress PDF success !", MsgBoxStyle.Information, "Office Tools")
+            Label10.Text = GetFileSize(TextBox2.Text)
+            If File.Exists(pdfPath) Then
+                Process.Start(PathVal(pdfPath, 0), TextBox2.Text)
+            End If
         Else
-            MsgBox("Compress PDF failed !", MsgBoxStyle.Critical, "MigrateToGDrive")
+            MsgBox("Compress PDF failed !", MsgBoxStyle.Critical, "Office Tools")
         End If
     End Sub
-    Private Function imgCompLvlVal() As Integer
-        Dim value As Integer
-        If ComboBox2.Text = "Highest" Then
-            value = 20
-        ElseIf ComboBox2.Text = "High" Then
-            value = 40
-        ElseIf ComboBox2.Text = "Normal" Then
-            value = 60
-        ElseIf ComboBox2.Text = "Low" Then
-            value = 80
-        ElseIf ComboBox2.Text = "Lowest" Then
-            value = 100
-        Else
-            value = 0
-        End If
-
-        Return value
-    End Function
-    Private Function pdfIncUpdVal() As Boolean
-        Dim value As Boolean
-        If CheckBox5.Checked Then
-            value = True
-        Else
-            value = False
-        End If
-
-        Return value
-    End Function
-    Private Function pdfMtOptVal() As Boolean
-        Dim value As Boolean
-        If CheckBox4.Checked Then
-            value = True
-        Else
-            value = False
-        End If
-
-        Return value
-    End Function
-    Private Function pdfFoOptVal() As Boolean
-        Dim value As Boolean
-        If CheckBox2.Checked Then
-            value = True
-        Else
-            value = False
-        End If
-
-        Return value
-    End Function
-    Private Function pdfOpcOptVal() As Boolean
-        Dim value As Boolean
-        If CheckBox3.Checked Then
-            value = True
-        Else
-            value = False
-        End If
-
-        Return value
-    End Function
 End Class

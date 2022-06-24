@@ -1,6 +1,5 @@
 ﻿Imports System.IO
 Public Class backup_menu
-    Dim filedialog As New FolderBrowserDialog
     Dim openfiledialog As New OpenFileDialog
     Dim openfolderdialog As New FolderBrowserDialog
     Dim savefiledialog As New SaveFileDialog
@@ -8,6 +7,7 @@ Public Class backup_menu
     Dim errPath As String = "log/reserr"
     Dim lastResult As String = "log/lastResult"
     Dim lastErr As String = "log/lastErr"
+    Dim roboPath As String = "log/robolog"
     Dim resSrcPath As String = "conf/res_backup/resSrcPath"
     Dim resDestPath As String = "conf/res_backup/resDestPath"
     Dim resInstPath As String = "conf/res_backup/resInstPath"
@@ -24,12 +24,6 @@ Public Class backup_menu
     Dim advInstPath As String = "conf/adv_backup/advInstPath"
     Dim advRanStrg As String = "conf/adv_backup/advRandomStrg"
     Dim advTempPass As String = "conf/adv_backup/advTempPass"
-    Dim roboPath As String = "log/robolog"
-    Dim uiSrcPath As String = "conf/nrm_backup/nrmSrcPath"
-    Dim uiDestPath As String = "conf/nrm_backup/nrmDestPath"
-    Dim uiFrDatePath As String = "conf/nrm_backup/nrmFrDatePath"
-    Dim uiReDatePath As String = "conf/nrm_backup/nrmReDatePath"
-    Dim uiToDatePath As String = "conf/nrm_backup/nrmToDatePath"
     Dim uiProcessorCount As String = "conf/nrm_backup/nrmProcessor"
     Dim uiSpecFilePath As String = "conf/nrm_backup/nrmSpecfilePath"
     Dim actualDir As String
@@ -38,10 +32,11 @@ Public Class backup_menu
     Dim compressExt As String
     Dim key As String = RandomString(10)
     Dim MyKey As String = "YOUR_KEY_HERE"
-    Private Sub backup_menu_load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Backup_menu_load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim dt As Date = Today
         AllowTransparency = False
         Label4.Visible = False
+        Panel3.Visible = True
         Std_bck_pnl.Visible = False
         arc_bck_pnl.Visible = False
         arc_res_pnl.Visible = False
@@ -57,28 +52,28 @@ Public Class backup_menu
         DateTimePicker2.CustomFormat = "MM-dd-yyyy"
         WriteLogicalCount(uiProcessorCount)
     End Sub
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Standard_Backup_Button(sender As Object, e As EventArgs) Handles Button1.Click
         Std_bck_pnl.Visible = True
         arc_bck_pnl.Visible = False
         arc_res_pnl.Visible = False
     End Sub
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Archive_Backup_Button(sender As Object, e As EventArgs) Handles Button2.Click
         Std_bck_pnl.Visible = True
         arc_bck_pnl.Visible = True
         arc_res_pnl.Visible = False
     End Sub
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Archive_Restore_Button(sender As Object, e As EventArgs) Handles Button3.Click
         Std_bck_pnl.Visible = True
         arc_bck_pnl.Visible = True
         arc_res_pnl.Visible = True
     End Sub
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Me.Close()
+    Private Sub Close_Button(sender As Object, e As EventArgs) Handles Button4.Click
+        Close()
     End Sub
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub Open_Folder_File_Std_Backup_Button(sender As Object, e As EventArgs) Handles Button5.Click
         If ComboBox2.Text = "Backup Folder" Then
-            filedialog.InitialDirectory = Environment.SpecialFolder.UserProfile
-            filedialog.ShowDialog()
+            openfolderdialog.InitialDirectory = Environment.SpecialFolder.UserProfile
+            openfolderdialog.ShowDialog()
         ElseIf ComboBox2.Text = "Backup File" Then
             openfiledialog.InitialDirectory = Environment.SpecialFolder.UserProfile
             openfiledialog.ShowDialog()
@@ -86,11 +81,11 @@ Public Class backup_menu
             MsgBox("Backup options was not selected !, Please select copy options first !", MsgBoxStyle.Critical, "Office Tools")
         End If
     End Sub
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-        filedialog.InitialDirectory = Environment.SpecialFolder.UserProfile
-        filedialog.ShowDialog()
+    Private Sub Save_Folder_Std_Backup_Button(sender As Object, e As EventArgs) Handles Button6.Click
+        openfolderdialog.InitialDirectory = Environment.SpecialFolder.UserProfile
+        openfolderdialog.ShowDialog()
     End Sub
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+    Private Sub Save_Std_Backup_Button(sender As Object, e As EventArgs) Handles Button7.Click
         If TextBox1.Text = "" Then
             MsgBox("Source data is empty !, please fill source data location", MsgBoxStyle.Critical, "Office Tools")
         Else
@@ -104,7 +99,7 @@ Public Class backup_menu
                     ProgressBar1.Style = ProgressBarStyle.Marquee
                     ProgressBar1.MarqueeAnimationSpeed = 40
                     CheckFileExist(uiSpecFilePath, "*")
-                    beginCopy()
+                    BeginCopy(ComboBox1.Text, Label7.Text, TextBox2.Text, DateTimePicker1.Value, DateTimePicker2.Value)
                     ProgressBar1.Value = 100
                     ProgressBar1.Style = ProgressBarStyle.Blocks
                 ElseIf ComboBox2.Text = "Backup File" Then
@@ -112,17 +107,17 @@ Public Class backup_menu
                     ProgressBar1.Style = ProgressBarStyle.Marquee
                     ProgressBar1.MarqueeAnimationSpeed = 40
                     CheckFileExist(uiSpecFilePath, TextBox1.Text.ToString)
-                    beginCopy()
+                    BeginCopy(ComboBox1.Text, Label7.Text, TextBox2.Text, DateTimePicker1.Value, DateTimePicker2.Value)
                     ProgressBar1.Value = 100
                     ProgressBar1.Style = ProgressBarStyle.Blocks
                 Else
                     MsgBox("Backup options was not selected !, Please select backup options first !", MsgBoxStyle.Critical, "Office Tools")
                 End If
-                ShowNotif("Backup")
+                ShowNotif("Backup", lastResult, lastErr)
             End If
         End If
     End Sub
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+    Private Sub Save_Archive_Backup_Button(sender As Object, e As EventArgs) Handles Button8.Click
         ProgressBar2.Visible = True
         ProgressBar2.Style = ProgressBarStyle.Marquee
         ProgressBar2.MarqueeAnimationSpeed = 40
@@ -167,7 +162,7 @@ Public Class backup_menu
                                 CheckFileExist(lastErr, "Source drive not exist !")
                             End If
                         End If
-                        ShowNotif("Archive backup")
+                        ShowNotif("Archive backup", lastResult, lastErr)
                     End If
                 ElseIf ComboBox6.Text = "Archive + Password" Then
                     If ComboBox3.Text = "" Then
@@ -231,7 +226,7 @@ Public Class backup_menu
                                         End If
                                         PrepareNotif(advTempPass)
                                     End If
-                                    ShowNotif("Archive backup")
+                                    ShowNotif("Archive backup", lastResult, lastErr)
                                 Else
                                     MsgBox("Please save the password to proceed backup !", vbInformation, "Office Tools")
                                 End If
@@ -244,7 +239,7 @@ Public Class backup_menu
         ProgressBar2.Value = 100
         ProgressBar2.Style = ProgressBarStyle.Blocks
     End Sub
-    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+    Private Sub Extract_Restore_Backup_Button(sender As Object, e As EventArgs) Handles Button9.Click
         If Button20.Enabled = False Then
             MsgBox("Password has been set, please cancel to change this option !", vbExclamation, "Office Tools")
         Else
@@ -252,33 +247,33 @@ Public Class backup_menu
             openfolderdialog.ShowDialog()
         End If
     End Sub
-    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+    Private Sub Destination_Archive_Backup_Button(sender As Object, e As EventArgs) Handles Button11.Click
         If ComboBox6.SelectedIndex = 0 Then
-            filedialog.InitialDirectory = Environment.SpecialFolder.UserProfile
-            filedialog.ShowDialog()
+            openfolderdialog.InitialDirectory = Environment.SpecialFolder.UserProfile
+            openfolderdialog.ShowDialog()
         Else
             If Button14.Enabled = False Then
                 MsgBox("Password has been set, please cancel to change this option !", vbExclamation, "Office Tools")
             Else
-                filedialog.InitialDirectory = Environment.SpecialFolder.UserProfile
-                filedialog.ShowDialog()
+                openfolderdialog.InitialDirectory = Environment.SpecialFolder.UserProfile
+                openfolderdialog.ShowDialog()
             End If
         End If
     End Sub
-    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+    Private Sub Source_Archive_Backup_Button(sender As Object, e As EventArgs) Handles Button12.Click
         If ComboBox6.SelectedIndex = 0 Then
-            filedialog.InitialDirectory = Environment.SpecialFolder.UserProfile
-            filedialog.ShowDialog()
+            openfolderdialog.InitialDirectory = Environment.SpecialFolder.UserProfile
+            openfolderdialog.ShowDialog()
         Else
             If Button14.Enabled = False Then
                 MsgBox("Password has been set, please cancel to change this option !", vbExclamation, "Office Tools")
             Else
-                filedialog.InitialDirectory = Environment.SpecialFolder.UserProfile
-                filedialog.ShowDialog()
+                openfolderdialog.InitialDirectory = Environment.SpecialFolder.UserProfile
+                openfolderdialog.ShowDialog()
             End If
         End If
     End Sub
-    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
+    Private Sub Cancel_Archive_Pass_Button(sender As Object, e As EventArgs) Handles Button13.Click
         TextBox3.ReadOnly = False
         TextBox6.ReadOnly = False
         TextBox7.Text = ""
@@ -295,7 +290,7 @@ Public Class backup_menu
         ComboBox6.ResetText()
         Button14.Enabled = True
     End Sub
-    Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
+    Private Sub Save_Archive_Pass_Button(sender As Object, e As EventArgs) Handles Button14.Click
         If TextBox8.Text = "" Then
             MsgBox("Please fill your password !", vbInformation, "Office Tools")
         Else
@@ -319,7 +314,7 @@ Public Class backup_menu
             End If
         End If
     End Sub
-    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
+    Private Sub Enc_Key_Restore_Backup_Button(sender As Object, e As EventArgs) Handles Button16.Click
         If Button20.Enabled = False Then
             MsgBox("Password has been set, please cancel to change this option !", vbExclamation, "Office Tools")
         Else
@@ -327,13 +322,13 @@ Public Class backup_menu
                 MsgBox("Encryption method set as no encryption, no key file needed !", vbExclamation, "Office Tools")
             Else
                 openfiledialog.InitialDirectory = Environment.SpecialFolder.UserProfile
-                openfiledialog.DefaultExt = ".ofk"
-                openfiledialog.Filter = "Office Tools Encrypted Key|*.ofk"
+                openfiledialog.DefaultExt = ".ofk|.mtg"
+                openfiledialog.Filter = "Office Tools Encrypted Key|*.ofk, MigrateToGDrive Encrypted Key|*.mtg"
                 openfiledialog.ShowDialog()
             End If
         End If
     End Sub
-    Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
+    Private Sub Archive_File_Restore_Backup(sender As Object, e As EventArgs) Handles Button18.Click
         If Button20.Enabled = False Then
             MsgBox("Password has been set, please cancel to change this option !", vbExclamation, "Office Tools")
         Else
@@ -343,7 +338,7 @@ Public Class backup_menu
             openfiledialog.ShowDialog()
         End If
     End Sub
-    Private Sub Button19_Click(sender As Object, e As EventArgs) Handles Button19.Click
+    Private Sub Cancel_Pass_Restore_Backup(sender As Object, e As EventArgs) Handles Button19.Click
         TextBox11.ReadOnly = False
         TextBox4.ReadOnly = False
         TextBox5.ReadOnly = False
@@ -355,7 +350,7 @@ Public Class backup_menu
         ComboBox7.ResetText()
         Button20.Enabled = True
     End Sub
-    Private Sub Button20_Click(sender As Object, e As EventArgs) Handles Button20.Click
+    Private Sub Save_Pass_Restore_Backup(sender As Object, e As EventArgs) Handles Button20.Click
         If TextBox13.Text = "" Then
             MsgBox("Please fill your password !", vbExclamation, "Office Tools")
         Else
@@ -377,7 +372,7 @@ Public Class backup_menu
             End If
         End If
     End Sub
-    Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
+    Private Sub Restore_Archive_Button(sender As Object, e As EventArgs) Handles Button21.Click
         ProgressBar3.Visible = True
         ProgressBar3.Style = ProgressBarStyle.Marquee
         ProgressBar3.MarqueeAnimationSpeed = 40
@@ -530,19 +525,19 @@ Public Class backup_menu
                         End If
                     End If
                 End If
-                ShowNotif("Restore archive")
+                ShowNotif("Restore archive", lastResult, lastErr)
             End If
         End If
         ProgressBar3.Value = 100
         ProgressBar3.Style = ProgressBarStyle.Blocks
     End Sub
-    Private Sub FolderBrowserDialog1_Disposed(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub Open_Folder_File_Std_Backup_Handler(sender As Object, e As EventArgs) Handles Button5.Click
         If ComboBox2.Text = "Backup Folder" Then
-            TextBox1.Text = filedialog.SelectedPath.ToString
-            Label7.Text = filedialog.SelectedPath.ToString
+            TextBox1.Text = openfolderdialog.SelectedPath.ToString
+            Label7.Text = openfolderdialog.SelectedPath.ToString
         ElseIf ComboBox2.Text = "Backup File" Then
             TextBox1.Text = Path.GetFileName(openfiledialog.FileName.ToString)
-            If (openfiledialog.FileName.ToString) = "" Then
+            If openfiledialog.FileName.ToString = "" Then
                 Label7.Text = ""
             Else
                 actualDir = Path.GetFullPath(openfiledialog.FileName.ToString)
@@ -550,31 +545,31 @@ Public Class backup_menu
             End If
         End If
     End Sub
-    Private Sub FolderBrowserDialog2_Disposed(sender As Object, e As EventArgs) Handles Button6.Click
-        TextBox2.Text = filedialog.SelectedPath.ToString
+    Private Sub Save_Folder_Std_Backup_Handler(sender As Object, e As EventArgs) Handles Button6.Click
+        TextBox2.Text = openfolderdialog.SelectedPath.ToString
     End Sub
-    Private Sub FolderBrowserDialog9_Disposed(sender As Object, e As EventArgs) Handles Button9.Click
+    Private Sub Extract_Restore_Backup_Handler(sender As Object, e As EventArgs) Handles Button9.Click
         TextBox4.Text = openfolderdialog.SelectedPath.ToString
     End Sub
-    Private Sub FolderBrowserDialog11_Disposed(sender As Object, e As EventArgs) Handles Button11.Click
+    Private Sub Destination_Archive_Backup_Handler(sender As Object, e As EventArgs) Handles Button11.Click
         If ComboBox6.SelectedIndex = 0 Then
-            TextBox6.Text = filedialog.SelectedPath.ToString
+            TextBox6.Text = openfolderdialog.SelectedPath.ToString
         Else
             If Button4.Enabled = True Then
-                TextBox6.Text = filedialog.SelectedPath.ToString
+                TextBox6.Text = openfolderdialog.SelectedPath.ToString
             End If
         End If
     End Sub
-    Private Sub FolderBrowserDialog12_Disposed(sender As Object, e As EventArgs) Handles Button12.Click
+    Private Sub Source_Archive_Backup_Handler(sender As Object, e As EventArgs) Handles Button12.Click
         If ComboBox6.SelectedIndex = 0 Then
-            TextBox3.Text = filedialog.SelectedPath.ToString
+            TextBox3.Text = openfolderdialog.SelectedPath.ToString
         Else
             If Button4.Enabled = True Then
-                TextBox3.Text = filedialog.SelectedPath.ToString
+                TextBox3.Text = openfolderdialog.SelectedPath.ToString
             End If
         End If
     End Sub
-    Private Sub FileSaveDialog16_Disposed(sender As Object, e As EventArgs) Handles Button16.Click
+    Private Sub Enc_Key_Restore_Backup_Handler(sender As Object, e As EventArgs) Handles Button16.Click
         If ComboBox7.SelectedIndex = 1 Then
             If openfiledialog.FileName.ToString.Remove(0, openfiledialog.FileName.ToString.Length - 3).Equals("ofk") Then
                 TextBox5.Text = openfiledialog.FileName.ToString
@@ -583,10 +578,10 @@ Public Class backup_menu
             End If
         End If
     End Sub
-    Private Sub FileBrowserDialog18_Disposed(sender As Object, e As EventArgs) Handles Button18.Click
+    Private Sub Archive_File_Restore_Handler(sender As Object, e As EventArgs) Handles Button18.Click
         TextBox11.Text = openfiledialog.FileName.ToString
     End Sub
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+    Private Sub Backup_Period_Handler(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
         If ComboBox1.Text = "From Date" Then
             DateTimePicker1.Visible = True
             DateTimePicker2.Visible = True
@@ -597,7 +592,7 @@ Public Class backup_menu
             Label1.Visible = False
         End If
     End Sub
-    Private Sub ComboBox6_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox6.SelectedIndexChanged
+    Private Sub Backup_Method_Handler(sender As Object, e As EventArgs) Handles ComboBox6.SelectedIndexChanged
         If ComboBox6.Text = "Archive" Then
             Label20.Visible = False
             Label19.Visible = False
@@ -616,7 +611,7 @@ Public Class backup_menu
             ComboBox5.Enabled = True
         End If
     End Sub
-    Private Sub ComboBox7_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox7.SelectedIndexChanged
+    Private Sub Enc_Key_Method_Handler(sender As Object, e As EventArgs) Handles ComboBox7.SelectedIndexChanged
         If Button20.Enabled = False Then
             MsgBox("Password has been set, please cancel to change this option !", vbExclamation, "Office Tools")
         Else
@@ -630,139 +625,6 @@ Public Class backup_menu
                 TextBox5.Text = ""
                 Button16.Enabled = True
                 TextBox5.ReadOnly = False
-            End If
-        End If
-    End Sub
-    Private Sub beginCopy()
-        If File.Exists(roboPath) Then
-            PrepareNotif(roboPath)
-        End If
-        If ComboBox1.Text = "Anytime" Then
-            Dim uiTrimSrc As String
-            Dim uiTrimDest As String
-            uiTrimSrc = Label7.Text
-            uiTrimDest = TextBox2.Text
-            If Directory.Exists(uiTrimSrc) Then
-                If Directory.Exists(uiTrimDest) Then
-                    CheckFileExist(uiSrcPath, uiTrimSrc)
-                    CheckFileExist(uiDestPath, uiTrimDest)
-                    PrepareNotif(lastResult)
-                    PrepareNotif(lastErr)
-                    ManualBackup("bat/MigrateToGDrive_AT_MN.bat")
-                    WriteFrRobo()
-                Else
-                    CheckFileExist(lastResult, "err")
-                    CheckFileExist(lastErr, "Destination folder not exist !")
-                End If
-            Else
-                CheckFileExist(lastResult, "err")
-                CheckFileExist(lastErr, "Source folder not exist !")
-            End If
-        ElseIf ComboBox1.Text = "Today" Then
-            If File.Exists(uiReDatePath) Then
-                GC.Collect()
-                GC.WaitForPendingFinalizers()
-                File.Delete(uiReDatePath)
-                File.Create(uiReDatePath).Dispose()
-                Dim destWriter As New StreamWriter(uiReDatePath, True)
-                Dim dt As Date = Today
-                destWriter.WriteLine(dt.ToString("yyyyMMdd"))
-                destWriter.Close()
-            Else
-                File.Create(uiReDatePath).Dispose()
-                Dim destWriter As New StreamWriter(uiReDatePath, True)
-                Dim dt As Date = Today
-                destWriter.WriteLine(dt.ToString("yyyyMMdd"))
-                destWriter.Close()
-            End If
-            Dim uiTrimSrc As String
-            Dim uiTrimDest As String
-            uiTrimSrc = Label7.Text
-            uiTrimDest = TextBox2.Text
-            If Directory.Exists(uiTrimSrc) Then
-                If Directory.Exists(uiTrimDest) Then
-                    CheckFileExist(uiSrcPath, uiTrimSrc)
-                    CheckFileExist(uiDestPath, uiTrimDest)
-                    PrepareNotif(lastResult)
-                    PrepareNotif(lastErr)
-                    ManualBackup("bat/MigrateToGDrive_TD_MN.bat")
-                    WriteFrRobo()
-                Else
-                    CheckFileExist(lastResult, "err")
-                    CheckFileExist(lastErr, "Destination folder not exist !")
-                End If
-            Else
-                CheckFileExist(lastResult, "err")
-                CheckFileExist(lastErr, "Source folder not exist !")
-            End If
-        ElseIf ComboBox1.Text = "From Date" Then
-            If File.Exists(uiFrDatePath) Then
-                GC.Collect()
-                GC.WaitForPendingFinalizers()
-                File.Delete(uiFrDatePath)
-                File.Create(uiFrDatePath).Dispose()
-                Dim destWriter As New StreamWriter(uiFrDatePath, True)
-                Dim dt As Date = DateTimePicker1.Value.ToShortDateString
-                destWriter.WriteLine(dt.ToString("yyyyMMdd"))
-                destWriter.Close()
-            Else
-                File.Create(uiFrDatePath).Dispose()
-                Dim destWriter As New StreamWriter(uiFrDatePath, True)
-                Dim dt As Date = DateTimePicker1.Value.ToShortDateString
-                destWriter.WriteLine(dt.ToString("yyyyMMdd"))
-                destWriter.Close()
-            End If
-            If File.Exists(uiToDatePath) Then
-                GC.Collect()
-                GC.WaitForPendingFinalizers()
-                File.Delete(uiToDatePath)
-                File.Create(uiToDatePath).Dispose()
-                Dim destWriter As New StreamWriter(uiToDatePath, True)
-                Dim dt As Date = DateTimePicker2.Value.ToShortDateString
-                Dim newDate As Integer = Integer.Parse(dt.ToString("dd") + 1)
-                If newDate < 10 Then
-                    Dim newAffixDate = "0" + newDate.ToString
-                    Dim newMonthYear As String = dt.ToString("yyyyMM")
-                    destWriter.WriteLine(newMonthYear + newAffixDate.ToString)
-                Else
-                    Dim newMonthYear As String = dt.ToString("yyyyMM")
-                    destWriter.WriteLine(newMonthYear + newDate.ToString)
-                End If
-                destWriter.Close()
-            Else
-                File.Create(uiToDatePath).Dispose()
-                Dim destWriter As New StreamWriter(uiToDatePath, True)
-                Dim dt As Date = DateTimePicker2.Value.ToShortDateString
-                Dim newDate As Integer = Integer.Parse(dt.ToString("dd") + 1)
-                If newDate < 10 Then
-                    Dim newAffixDate = "0" + newDate.ToString
-                    Dim newMonthYear As String = dt.ToString("yyyyMM")
-                    destWriter.WriteLine(newMonthYear + newAffixDate.ToString)
-                Else
-                    Dim newMonthYear As String = dt.ToString("yyyyMM")
-                    destWriter.WriteLine(newMonthYear + newDate.ToString)
-                End If
-                destWriter.Close()
-            End If
-            Dim uiTrimSrc As String
-            Dim uiTrimDest As String
-            uiTrimSrc = Label7.Text
-            uiTrimDest = TextBox2.Text
-            If Directory.Exists(uiTrimSrc) Then
-                If Directory.Exists(uiTrimDest) Then
-                    CheckFileExist(uiSrcPath, uiTrimSrc)
-                    CheckFileExist(uiDestPath, uiTrimDest)
-                    PrepareNotif(lastResult)
-                    PrepareNotif(lastErr)
-                    ManualBackup("bat/MigrateToGDrive_FD_MN.bat")
-                    WriteFrRobo()
-                Else
-                    CheckFileExist(lastResult, "err")
-                    CheckFileExist(lastErr, "Destination folder not exist !")
-                End If
-            Else
-                CheckFileExist(lastResult, "err")
-                CheckFileExist(lastErr, "Source folder not exist !")
             End If
         End If
     End Sub
@@ -782,54 +644,5 @@ Public Class backup_menu
         PrepareNotif(resDecResult)
         PrepareNotif(resZipLog)
         PrepareNotif(resDecMtd)
-    End Sub
-    Private Sub ShowNotif(result As String)
-        If File.Exists(lastResult) Then
-            Dim lastRest As String = PathVal(lastResult, 0)
-            If PathVal(lastResult, 0).Equals("success") Then
-                MsgBox(result & " success !", MsgBoxStyle.Information, "Office Tools")
-            ElseIf PathVal(lastResult, 0).Equals("err") Then
-                MsgBox(result & " error !", MsgBoxStyle.Critical, "Office Tools")
-                If File.Exists(lastErr) Then
-                    If PathVal(lastErr, 0).Equals("") Then
-                        MsgBox("Unknown error reason !", MsgBoxStyle.Critical, "Office Tools")
-                    Else
-                        MsgBox(PathVal(lastErr, 0), MsgBoxStyle.Critical, "Office Tools")
-                    End If
-                Else
-                    MsgBox("Error file not found !", MsgBoxStyle.Critical, "Office Tools")
-                End If
-            Else
-                MsgBox("Unknown result status !", MsgBoxStyle.Critical, "Office Tools")
-            End If
-        Else
-            MsgBox("Result file not found !", MsgBoxStyle.Critical, "Office Tools")
-        End If
-    End Sub
-    Private Sub ShowLog(log As String, path As String)
-        If File.Exists(path) Then
-            If New FileInfo(path).Length.Equals(0) Then
-                MsgBox(log & " File is empty !", MsgBoxStyle.Critical, "Office Tools")
-            End If
-        Else
-            MsgBox(log & " File does not exist !", MsgBoxStyle.Critical, "Office Tools")
-        End If
-    End Sub
-    Private Sub WriteFrRobo()
-        Dim destWriter As New StreamWriter(logPath, True)
-        destWriter.WriteLine(PathVal(roboPath, 1))
-        destWriter.WriteLine(PathVal(roboPath, 2))
-        destWriter.WriteLine(PathVal(roboPath, 3))
-        destWriter.WriteLine(PathVal(roboPath, CInt(File.ReadAllLines(roboPath).Length) - 11))
-        destWriter.WriteLine(PathVal(roboPath, CInt(File.ReadAllLines(roboPath).Length) - 10))
-        destWriter.WriteLine(PathVal(roboPath, CInt(File.ReadAllLines(roboPath).Length) - 9))
-        destWriter.WriteLine(PathVal(roboPath, CInt(File.ReadAllLines(roboPath).Length) - 8))
-        destWriter.WriteLine(PathVal(roboPath, CInt(File.ReadAllLines(roboPath).Length) - 7))
-        destWriter.WriteLine(PathVal(roboPath, CInt(File.ReadAllLines(roboPath).Length) - 6))
-        destWriter.WriteLine(PathVal(roboPath, CInt(File.ReadAllLines(roboPath).Length) - 5))
-        destWriter.WriteLine(PathVal(roboPath, CInt(File.ReadAllLines(roboPath).Length) - 4))
-        destWriter.WriteLine(PathVal(roboPath, CInt(File.ReadAllLines(roboPath).Length) - 3))
-        destWriter.WriteLine(PathVal(roboPath, CInt(File.ReadAllLines(roboPath).Length) - 2))
-        destWriter.Close()
     End Sub
 End Class

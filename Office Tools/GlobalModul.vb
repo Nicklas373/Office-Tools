@@ -1,5 +1,4 @@
 ﻿Imports System.IO
-
 Module GlobalModul
     Public Sub CheckFileExist(path As String, trim As String)
         If File.Exists(path) Then
@@ -37,12 +36,13 @@ Module GlobalModul
         End If
     End Sub
     Public Sub ManualBackup(bat As String)
-        Dim psi As New ProcessStartInfo(bat)
-        psi.RedirectStandardError = False
-        psi.RedirectStandardOutput = False
-        psi.CreateNoWindow = True
-        psi.WindowStyle = ProcessWindowStyle.Hidden
-        psi.UseShellExecute = False
+        Dim psi As New ProcessStartInfo(bat) With {
+            .RedirectStandardError = False,
+            .RedirectStandardOutput = False,
+            .CreateNoWindow = True,
+            .WindowStyle = ProcessWindowStyle.Hidden,
+            .UseShellExecute = False
+        }
         Dim process As Process = Process.Start(psi)
         process.WaitForExit()
     End Sub
@@ -56,7 +56,7 @@ Module GlobalModul
             Return value
         End If
     End Function
-    Public Function getFileSize(file As String) As String
+    Public Function GetFileSize(file As String) As String
         Dim srcFile As String
         If file = "" Then
             srcFile = ""
@@ -118,4 +118,51 @@ Module GlobalModul
             destWriter.Close()
         End If
     End Sub
+    Public Sub ExportLog(logpath As String, filename As String, logname As String, logCountPath As String)
+        Dim logCount As Integer
+        Dim curCount As Integer
+        Dim totalCount As Integer
+        If File.Exists(logpath) Then
+            If File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) & "/" & filename & ".txt") Then
+                File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) & "/" & filename & ".txt")
+                File.Copy(logpath, Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) & "/" & filename & ".txt")
+            Else
+                File.Copy(logpath, Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) & "/" & filename & ".txt")
+            End If
+            logCount += 1
+        End If
+        curCount = CheckNull(logCountPath)
+        totalCount = curCount + logCount
+        PrepareNotif(logCountPath)
+        Dim destwriter As New StreamWriter(logCountPath, True)
+        destwriter.WriteLine(totalCount)
+        destwriter.Close()
+    End Sub
+    Public Function CheckNull(curCount As String) As Integer
+        Dim result As Integer
+        If PathVal(curCount, 0).Equals("null") Then
+            result = 0
+            Return result
+        Else
+            result = CInt(PathVal(curCount, 0))
+            Return result
+        End If
+    End Function
+    Public Function ShowLog(log As String, path As String) As String
+        Dim value As String
+        If File.Exists(path) Then
+            If New FileInfo(path).Length.Equals(0) Then
+                MsgBox(log & " is empty !", MsgBoxStyle.Critical, "Office Tools")
+                value = ""
+                Return value
+            Else
+                value = File.ReadAllText(path)
+                Return value
+            End If
+        Else
+            MsgBox(log & " does not exist !", MsgBoxStyle.Critical, "Office Tools")
+            value = ""
+            Return value
+        End If
+    End Function
 End Module

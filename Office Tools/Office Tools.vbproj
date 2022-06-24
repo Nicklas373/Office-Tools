@@ -7,8 +7,8 @@
     <StartupObject>Sub Main</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
-    <ApplicationIcon>working_AAH_icon.ico</ApplicationIcon>
-    <Version>1.2.1</Version>
+    <ApplicationIcon>ico\working_AAH_icon.ico</ApplicationIcon>
+    <Version>1.2.5</Version>
     <Authors>Dicky Herlambang</Authors>
     <Company>Hana-CI Build Project</Company>
     <PackageId>Office_Tools</PackageId>
@@ -23,7 +23,7 @@ Additional library:
 - Windows Task Scheduler</Description>
     <Copyright>HANA-CI Build Project 2016-2022</Copyright>
     <RepositoryUrl>https://github.com/Nicklas373/Migrate-To-GDrive</RepositoryUrl>
-    <PackageIcon>working.png</PackageIcon>
+    <PackageIcon>working (1).png</PackageIcon>
     <PackageIconUrl />
     <RepositoryType>public</RepositoryType>
     <PackageTags>#Migrate-To-GDrive, #OfficeTools</PackageTags>
@@ -89,8 +89,8 @@ v1.1.0 (20220419):
 v1.0.0 (20220416):
 - INITIAL RELEASE</PackageReleaseNotes>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <AssemblyVersion>1.2.1.0</AssemblyVersion>
-    <FileVersion>1.2.1.0</FileVersion>
+    <AssemblyVersion>1.2.5.0</AssemblyVersion>
+    <FileVersion>1.2.5.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -142,7 +142,7 @@ v1.0.0 (20220416):
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
-    <None Include="ico\working.png">
+    <None Include="ico\working (1).png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>

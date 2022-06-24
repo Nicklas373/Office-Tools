@@ -40,10 +40,9 @@ Partial Class Form1
         'Panel3
         '
         Me.Panel3.Controls.Add(Me.Label1)
-        Me.Panel3.Location = New System.Drawing.Point(229, 1)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel3.Location = New System.Drawing.Point(262, -2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(621, 423)
+        Me.Panel3.Size = New System.Drawing.Size(710, 567)
         Me.Panel3.TabIndex = 4
         '
         'Label1
@@ -51,9 +50,9 @@ Partial Class Form1
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label1.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label1.Location = New System.Drawing.Point(216, 168)
+        Me.Label1.Location = New System.Drawing.Point(247, 224)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(190, 45)
+        Me.Label1.Size = New System.Drawing.Size(235, 54)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Office Tools"
         '
@@ -69,9 +68,8 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.ImeMode = System.Windows.Forms.ImeMode.Off
         Me.Panel1.Location = New System.Drawing.Point(-2, 1)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(231, 428)
+        Me.Panel1.Size = New System.Drawing.Size(264, 571)
         Me.Panel1.TabIndex = 0
         '
         'Button6
@@ -82,10 +80,9 @@ Partial Class Form1
         Me.Button6.ForeColor = System.Drawing.Color.AliceBlue
         Me.Button6.Image = CType(resources.GetObject("Button6.Image"), System.Drawing.Image)
         Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button6.Location = New System.Drawing.Point(3, 176)
-        Me.Button6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button6.Location = New System.Drawing.Point(3, 235)
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(228, 43)
+        Me.Button6.Size = New System.Drawing.Size(261, 57)
         Me.Button6.TabIndex = 9
         Me.Button6.Text = "  About"
         Me.Button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -98,11 +95,10 @@ Partial Class Form1
         Me.Button3.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Button3.ForeColor = System.Drawing.Color.AliceBlue
         Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
-        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.Button3.Location = New System.Drawing.Point(3, 129)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button3.Location = New System.Drawing.Point(3, 172)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(228, 43)
+        Me.Button3.Size = New System.Drawing.Size(261, 57)
         Me.Button3.TabIndex = 8
         Me.Button3.Text = "  Settings"
         Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -115,11 +111,10 @@ Partial Class Form1
         Me.Button2.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Button2.ForeColor = System.Drawing.Color.AliceBlue
         Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.Button2.Location = New System.Drawing.Point(3, 79)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(3, 105)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(228, 46)
+        Me.Button2.Size = New System.Drawing.Size(261, 61)
         Me.Button2.TabIndex = 7
         Me.Button2.Text = "  PDF Tools"
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -132,11 +127,10 @@ Partial Class Form1
         Me.Button1.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Button1.ForeColor = System.Drawing.Color.AliceBlue
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.Button1.Location = New System.Drawing.Point(3, 42)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(3, 56)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(228, 42)
+        Me.Button1.Size = New System.Drawing.Size(261, 56)
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "  History"
         Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -149,11 +143,10 @@ Partial Class Form1
         Me.Button5.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Button5.ForeColor = System.Drawing.Color.AliceBlue
         Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
-        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.BottomLeft
-        Me.Button5.Location = New System.Drawing.Point(3, 2)
-        Me.Button5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button5.Location = New System.Drawing.Point(3, 3)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(228, 44)
+        Me.Button5.Size = New System.Drawing.Size(261, 59)
         Me.Button5.TabIndex = 5
         Me.Button5.Text = "  Backup and Restore"
         Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -166,32 +159,30 @@ Partial Class Form1
         Me.Button4.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Button4.ForeColor = System.Drawing.Color.AliceBlue
         Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
-        Me.Button4.Location = New System.Drawing.Point(0, 382)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button4.Location = New System.Drawing.Point(0, 509)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(228, 44)
+        Me.Button4.Size = New System.Drawing.Size(261, 59)
         Me.Button4.TabIndex = 4
         Me.Button4.UseVisualStyleBackColor = True
         '
         'Panel2
         '
-        Me.Panel2.Location = New System.Drawing.Point(228, 2)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel2.Location = New System.Drawing.Point(261, 3)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(626, 425)
+        Me.Panel2.Size = New System.Drawing.Size(715, 567)
         Me.Panel2.TabIndex = 1
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DimGray
-        Me.ClientSize = New System.Drawing.Size(850, 427)
+        Me.ClientSize = New System.Drawing.Size(971, 569)
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Main Menu"
