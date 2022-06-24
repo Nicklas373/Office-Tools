@@ -1,5 +1,7 @@
-﻿Imports System.IO
-Public Class backup_menu
+﻿Imports Syncfusion.WinForms.Controls
+Imports System.IO
+Public Class BackupMenu
+    Inherits SfForm
     Dim openfiledialog As New OpenFileDialog
     Dim openfolderdialog As New FolderBrowserDialog
     Dim savefiledialog As New SaveFileDialog
@@ -35,6 +37,10 @@ Public Class backup_menu
     Private Sub Backup_menu_load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim dt As Date = Today
         AllowTransparency = False
+        Style.TitleBar.IconBackColor = Color.FromArgb(15, 161, 212)
+        BackColor = Color.AliceBlue
+        Style.TitleBar.TextHorizontalAlignment = HorizontalAlignment.Center
+        Style.TitleBar.TextVerticalAlignment = VisualStyles.VerticalAlignment.Center
         Label4.Visible = False
         Panel3.Visible = True
         Std_bck_pnl.Visible = False
@@ -75,8 +81,8 @@ Public Class backup_menu
             openfolderdialog.InitialDirectory = Environment.SpecialFolder.UserProfile
             openfolderdialog.ShowDialog()
         ElseIf ComboBox2.Text = "Backup File" Then
-            openfiledialog.InitialDirectory = Environment.SpecialFolder.UserProfile
-            openfiledialog.ShowDialog()
+            OpenFileDialog.InitialDirectory = Environment.SpecialFolder.UserProfile
+            OpenFileDialog.ShowDialog()
         Else
             MsgBox("Backup options was not selected !, Please select copy options first !", MsgBoxStyle.Critical, "Office Tools")
         End If
@@ -318,13 +324,13 @@ Public Class backup_menu
         If Button20.Enabled = False Then
             MsgBox("Password has been set, please cancel to change this option !", vbExclamation, "Office Tools")
         Else
-            If ComboBox7.SelectedIndex = 0 Then
+            If ComboBox7.Text = "Password (No Encryption)" Or ComboBox7.Text = "" Then
                 MsgBox("Encryption method set as no encryption, no key file needed !", vbExclamation, "Office Tools")
             Else
-                openfiledialog.InitialDirectory = Environment.SpecialFolder.UserProfile
-                openfiledialog.DefaultExt = ".ofk|.mtg"
-                openfiledialog.Filter = "Office Tools Encrypted Key|*.ofk, MigrateToGDrive Encrypted Key|*.mtg"
-                openfiledialog.ShowDialog()
+                OpenFileDialog.InitialDirectory = Environment.SpecialFolder.UserProfile
+                OpenFileDialog.DefaultExt = ".ofk;.mtg"
+                OpenFileDialog.Filter = "Office Tools Encrypted Key|*.ofk;*.mtg"
+                OpenFileDialog.ShowDialog()
             End If
         End If
     End Sub
@@ -332,10 +338,10 @@ Public Class backup_menu
         If Button20.Enabled = False Then
             MsgBox("Password has been set, please cancel to change this option !", vbExclamation, "Office Tools")
         Else
-            openfiledialog.InitialDirectory = Environment.SpecialFolder.UserProfile
-            openfiledialog.DefaultExt = ".7z"
-            openfiledialog.Filter = "7-ZIP Supported Format|*.7z;*.zip"
-            openfiledialog.ShowDialog()
+            OpenFileDialog.InitialDirectory = Environment.SpecialFolder.UserProfile
+            OpenFileDialog.DefaultExt = ".7z"
+            OpenFileDialog.Filter = "7-ZIP Supported Format|*.7z;*.zip"
+            OpenFileDialog.ShowDialog()
         End If
     End Sub
     Private Sub Cancel_Pass_Restore_Backup(sender As Object, e As EventArgs) Handles Button19.Click
@@ -536,11 +542,11 @@ Public Class backup_menu
             TextBox1.Text = openfolderdialog.SelectedPath.ToString
             Label7.Text = openfolderdialog.SelectedPath.ToString
         ElseIf ComboBox2.Text = "Backup File" Then
-            TextBox1.Text = Path.GetFileName(openfiledialog.FileName.ToString)
-            If openfiledialog.FileName.ToString = "" Then
+            TextBox1.Text = Path.GetFileName(OpenFileDialog.FileName.ToString)
+            If OpenFileDialog.FileName.ToString = "" Then
                 Label7.Text = ""
             Else
-                actualDir = Path.GetFullPath(openfiledialog.FileName.ToString)
+                actualDir = Path.GetFullPath(OpenFileDialog.FileName.ToString)
                 Label7.Text = Path.GetDirectoryName(actualDir)
             End If
         End If
@@ -571,15 +577,15 @@ Public Class backup_menu
     End Sub
     Private Sub Enc_Key_Restore_Backup_Handler(sender As Object, e As EventArgs) Handles Button16.Click
         If ComboBox7.SelectedIndex = 1 Then
-            If openfiledialog.FileName.ToString.Remove(0, openfiledialog.FileName.ToString.Length - 3).Equals("ofk") Then
-                TextBox5.Text = openfiledialog.FileName.ToString
+            If OpenFileDialog.FileName.ToString.Remove(0, OpenFileDialog.FileName.ToString.Length - 3).Equals("ofk") Or OpenFileDialog.FileName.ToString.Remove(0, OpenFileDialog.FileName.ToString.Length - 3).Equals("mtg") Then
+                TextBox5.Text = OpenFileDialog.FileName.ToString
             Else
                 MsgBox("Please select a valid Office Tools encrypted key file !", vbCritical, "Office Tools")
             End If
         End If
     End Sub
     Private Sub Archive_File_Restore_Handler(sender As Object, e As EventArgs) Handles Button18.Click
-        TextBox11.Text = openfiledialog.FileName.ToString
+        TextBox11.Text = OpenFileDialog.FileName.ToString
     End Sub
     Private Sub Backup_Period_Handler(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
         If ComboBox1.Text = "From Date" Then
