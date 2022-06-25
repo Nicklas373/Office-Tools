@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class BackupMenu
+Partial Class BackupMenu_2
     Inherits Syncfusion.WinForms.Controls.SfForm
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class BackupMenu
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BackupMenu))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BackupMenu_2))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -74,13 +74,14 @@ Partial Class BackupMenu
         Me.Button11 = New System.Windows.Forms.Button()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Button12 = New System.Windows.Forms.Button()
+        Me.SfDateTimeEdit2 = New Syncfusion.WinForms.Input.SfDateTimeEdit()
+        Me.SfDateTimeEdit1 = New Syncfusion.WinForms.Input.SfDateTimeEdit()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
@@ -88,7 +89,6 @@ Partial Class BackupMenu
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Button6 = New System.Windows.Forms.Button()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -108,11 +108,11 @@ Partial Class BackupMenu
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.ImeMode = System.Windows.Forms.ImeMode.Off
-        Me.Panel1.Location = New System.Drawing.Point(0, -3)
+        Me.Panel1.Location = New System.Drawing.Point(-1, 4)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(231, 514)
-        Me.Panel1.TabIndex = 6
+        Me.Panel1.TabIndex = 7
         '
         'Button4
         '
@@ -197,22 +197,23 @@ Partial Class BackupMenu
         '
         Me.Panel3.BackColor = System.Drawing.Color.DimGray
         Me.Panel3.Controls.Add(Me.Std_bck_pnl)
-        Me.Panel3.Location = New System.Drawing.Point(231, 1)
+        Me.Panel3.Location = New System.Drawing.Point(230, 4)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(723, 508)
-        Me.Panel3.TabIndex = 7
+        Me.Panel3.Size = New System.Drawing.Size(724, 508)
+        Me.Panel3.TabIndex = 9
         '
         'Std_bck_pnl
         '
         Me.Std_bck_pnl.Controls.Add(Me.arc_bck_pnl)
+        Me.Std_bck_pnl.Controls.Add(Me.SfDateTimeEdit2)
+        Me.Std_bck_pnl.Controls.Add(Me.SfDateTimeEdit1)
         Me.Std_bck_pnl.Controls.Add(Me.ProgressBar1)
         Me.Std_bck_pnl.Controls.Add(Me.Label7)
         Me.Std_bck_pnl.Controls.Add(Me.Label3)
         Me.Std_bck_pnl.Controls.Add(Me.Label1)
         Me.Std_bck_pnl.Controls.Add(Me.ComboBox2)
         Me.Std_bck_pnl.Controls.Add(Me.Label8)
-        Me.Std_bck_pnl.Controls.Add(Me.DateTimePicker2)
         Me.Std_bck_pnl.Controls.Add(Me.TextBox1)
         Me.Std_bck_pnl.Controls.Add(Me.Label6)
         Me.Std_bck_pnl.Controls.Add(Me.TextBox2)
@@ -220,15 +221,14 @@ Partial Class BackupMenu
         Me.Std_bck_pnl.Controls.Add(Me.Button5)
         Me.Std_bck_pnl.Controls.Add(Me.Label4)
         Me.Std_bck_pnl.Controls.Add(Me.Button6)
-        Me.Std_bck_pnl.Controls.Add(Me.DateTimePicker1)
         Me.Std_bck_pnl.Controls.Add(Me.ComboBox1)
         Me.Std_bck_pnl.Controls.Add(Me.Button7)
         Me.Std_bck_pnl.Controls.Add(Me.Label2)
-        Me.Std_bck_pnl.Location = New System.Drawing.Point(0, 0)
+        Me.Std_bck_pnl.Location = New System.Drawing.Point(-3, 0)
         Me.Std_bck_pnl.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Std_bck_pnl.Name = "Std_bck_pnl"
-        Me.Std_bck_pnl.Size = New System.Drawing.Size(720, 506)
-        Me.Std_bck_pnl.TabIndex = 0
+        Me.Std_bck_pnl.Size = New System.Drawing.Size(724, 514)
+        Me.Std_bck_pnl.TabIndex = 1
         '
         'arc_bck_pnl
         '
@@ -255,11 +255,11 @@ Partial Class BackupMenu
         Me.arc_bck_pnl.Controls.Add(Me.Button11)
         Me.arc_bck_pnl.Controls.Add(Me.TextBox6)
         Me.arc_bck_pnl.Controls.Add(Me.Button12)
-        Me.arc_bck_pnl.Location = New System.Drawing.Point(0, -4)
+        Me.arc_bck_pnl.Location = New System.Drawing.Point(0, -10)
         Me.arc_bck_pnl.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.arc_bck_pnl.Name = "arc_bck_pnl"
-        Me.arc_bck_pnl.Size = New System.Drawing.Size(717, 512)
-        Me.arc_bck_pnl.TabIndex = 48
+        Me.arc_bck_pnl.Size = New System.Drawing.Size(724, 524)
+        Me.arc_bck_pnl.TabIndex = 50
         '
         'arc_res_pnl
         '
@@ -286,8 +286,8 @@ Partial Class BackupMenu
         Me.arc_res_pnl.Location = New System.Drawing.Point(0, 0)
         Me.arc_res_pnl.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.arc_res_pnl.Name = "arc_res_pnl"
-        Me.arc_res_pnl.Size = New System.Drawing.Size(726, 510)
-        Me.arc_res_pnl.TabIndex = 43
+        Me.arc_res_pnl.Size = New System.Drawing.Size(727, 514)
+        Me.arc_res_pnl.TabIndex = 44
         '
         'ProgressBar3
         '
@@ -308,7 +308,7 @@ Partial Class BackupMenu
         Me.Button21.ForeColor = System.Drawing.Color.AliceBlue
         Me.Button21.Image = CType(resources.GetObject("Button21.Image"), System.Drawing.Image)
         Me.Button21.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button21.Location = New System.Drawing.Point(275, 370)
+        Me.Button21.Location = New System.Drawing.Point(275, 374)
         Me.Button21.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button21.Name = "Button21"
         Me.Button21.Size = New System.Drawing.Size(149, 46)
@@ -358,7 +358,7 @@ Partial Class BackupMenu
         Me.TextBox12.Location = New System.Drawing.Point(365, 233)
         Me.TextBox12.Name = "TextBox12"
         Me.TextBox12.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBox12.Size = New System.Drawing.Size(144, 25)
+        Me.TextBox12.Size = New System.Drawing.Size(144, 23)
         Me.TextBox12.TabIndex = 38
         Me.TextBox12.UseSystemPasswordChar = True
         '
@@ -367,7 +367,7 @@ Partial Class BackupMenu
         Me.TextBox13.Location = New System.Drawing.Point(365, 199)
         Me.TextBox13.Name = "TextBox13"
         Me.TextBox13.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBox13.Size = New System.Drawing.Size(144, 25)
+        Me.TextBox13.Size = New System.Drawing.Size(144, 23)
         Me.TextBox13.TabIndex = 37
         Me.TextBox13.UseSystemPasswordChar = True
         '
@@ -402,7 +402,7 @@ Partial Class BackupMenu
         Me.TextBox11.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TextBox11.Name = "TextBox11"
         Me.TextBox11.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
-        Me.TextBox11.Size = New System.Drawing.Size(356, 25)
+        Me.TextBox11.Size = New System.Drawing.Size(356, 23)
         Me.TextBox11.TabIndex = 19
         '
         'Label24
@@ -473,7 +473,7 @@ Partial Class BackupMenu
         Me.ComboBox7.Location = New System.Drawing.Point(153, 140)
         Me.ComboBox7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ComboBox7.Name = "ComboBox7"
-        Me.ComboBox7.Size = New System.Drawing.Size(202, 25)
+        Me.ComboBox7.Size = New System.Drawing.Size(202, 23)
         Me.ComboBox7.TabIndex = 27
         '
         'Label12
@@ -512,7 +512,7 @@ Partial Class BackupMenu
         Me.TextBox5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
-        Me.TextBox5.Size = New System.Drawing.Size(356, 25)
+        Me.TextBox5.Size = New System.Drawing.Size(356, 23)
         Me.TextBox5.TabIndex = 23
         '
         'TextBox4
@@ -521,7 +521,7 @@ Partial Class BackupMenu
         Me.TextBox4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
-        Me.TextBox4.Size = New System.Drawing.Size(356, 25)
+        Me.TextBox4.Size = New System.Drawing.Size(356, 23)
         Me.TextBox4.TabIndex = 25
         '
         'Label11
@@ -607,7 +607,7 @@ Partial Class BackupMenu
         Me.TextBox7.Location = New System.Drawing.Point(472, 173)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBox7.Size = New System.Drawing.Size(144, 25)
+        Me.TextBox7.Size = New System.Drawing.Size(144, 23)
         Me.TextBox7.TabIndex = 38
         Me.TextBox7.UseSystemPasswordChar = True
         Me.TextBox7.Visible = False
@@ -617,7 +617,7 @@ Partial Class BackupMenu
         Me.TextBox8.Location = New System.Drawing.Point(472, 142)
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBox8.Size = New System.Drawing.Size(144, 25)
+        Me.TextBox8.Size = New System.Drawing.Size(144, 23)
         Me.TextBox8.TabIndex = 37
         Me.TextBox8.UseSystemPasswordChar = True
         Me.TextBox8.Visible = False
@@ -776,7 +776,7 @@ Partial Class BackupMenu
         Me.TextBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
-        Me.TextBox3.Size = New System.Drawing.Size(337, 25)
+        Me.TextBox3.Size = New System.Drawing.Size(337, 23)
         Me.TextBox3.TabIndex = 1
         '
         'Button11
@@ -799,7 +799,7 @@ Partial Class BackupMenu
         Me.TextBox6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
-        Me.TextBox6.Size = New System.Drawing.Size(337, 25)
+        Me.TextBox6.Size = New System.Drawing.Size(337, 23)
         Me.TextBox6.TabIndex = 4
         '
         'Button12
@@ -818,9 +818,31 @@ Partial Class BackupMenu
         Me.Button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button12.UseVisualStyleBackColor = False
         '
+        'SfDateTimeEdit2
+        '
+        Me.SfDateTimeEdit2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.SfDateTimeEdit2.Format = "MM-dd-yyyy"
+        Me.SfDateTimeEdit2.Location = New System.Drawing.Point(370, 177)
+        Me.SfDateTimeEdit2.Name = "SfDateTimeEdit2"
+        Me.SfDateTimeEdit2.ShowUpDown = True
+        Me.SfDateTimeEdit2.Size = New System.Drawing.Size(145, 30)
+        Me.SfDateTimeEdit2.TabIndex = 49
+        Me.SfDateTimeEdit2.Watermark = "Choose date"
+        '
+        'SfDateTimeEdit1
+        '
+        Me.SfDateTimeEdit1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.SfDateTimeEdit1.Format = "MM-dd-yyyy"
+        Me.SfDateTimeEdit1.Location = New System.Drawing.Point(172, 177)
+        Me.SfDateTimeEdit1.Name = "SfDateTimeEdit1"
+        Me.SfDateTimeEdit1.ShowUpDown = True
+        Me.SfDateTimeEdit1.Size = New System.Drawing.Size(145, 30)
+        Me.SfDateTimeEdit1.TabIndex = 48
+        Me.SfDateTimeEdit1.Watermark = "Choose date"
+        '
         'ProgressBar1
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(10, 240)
+        Me.ProgressBar1.Location = New System.Drawing.Point(10, 271)
         Me.ProgressBar1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ProgressBar1.Name = "ProgressBar1"
         Me.ProgressBar1.Size = New System.Drawing.Size(685, 22)
@@ -832,7 +854,7 @@ Partial Class BackupMenu
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(3, 191)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(0, 17)
+        Me.Label7.Size = New System.Drawing.Size(0, 15)
         Me.Label7.TabIndex = 46
         Me.Label7.Visible = False
         '
@@ -841,7 +863,7 @@ Partial Class BackupMenu
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(3, 176)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(0, 17)
+        Me.Label3.Size = New System.Drawing.Size(0, 15)
         Me.Label3.TabIndex = 45
         Me.Label3.Visible = False
         '
@@ -850,7 +872,7 @@ Partial Class BackupMenu
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label1.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label1.Location = New System.Drawing.Point(7, 172)
+        Me.Label1.Location = New System.Drawing.Point(6, 184)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(150, 19)
         Me.Label1.TabIndex = 44
@@ -864,7 +886,7 @@ Partial Class BackupMenu
         Me.ComboBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Items.AddRange(New Object() {"Backup Folder", "Backup File"})
-        Me.ComboBox2.Location = New System.Drawing.Point(172, 139)
+        Me.ComboBox2.Location = New System.Drawing.Point(172, 143)
         Me.ComboBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(145, 23)
@@ -875,19 +897,11 @@ Partial Class BackupMenu
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label8.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label8.Location = New System.Drawing.Point(7, 142)
+        Me.Label8.Location = New System.Drawing.Point(7, 146)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(108, 19)
         Me.Label8.TabIndex = 42
         Me.Label8.Text = "Backup Options"
-        '
-        'DateTimePicker2
-        '
-        Me.DateTimePicker2.CustomFormat = ""
-        Me.DateTimePicker2.Location = New System.Drawing.Point(407, 172)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(200, 25)
-        Me.DateTimePicker2.TabIndex = 41
         '
         'TextBox1
         '
@@ -895,7 +909,7 @@ Partial Class BackupMenu
         Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
-        Me.TextBox1.Size = New System.Drawing.Size(349, 25)
+        Me.TextBox1.Size = New System.Drawing.Size(349, 23)
         Me.TextBox1.TabIndex = 31
         '
         'Label6
@@ -916,7 +930,7 @@ Partial Class BackupMenu
         Me.TextBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
-        Me.TextBox2.Size = New System.Drawing.Size(349, 25)
+        Me.TextBox2.Size = New System.Drawing.Size(349, 23)
         Me.TextBox2.TabIndex = 33
         '
         'Label5
@@ -952,7 +966,7 @@ Partial Class BackupMenu
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label4.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label4.Location = New System.Drawing.Point(377, 176)
+        Me.Label4.Location = New System.Drawing.Point(334, 182)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(24, 19)
         Me.Label4.TabIndex = 38
@@ -971,14 +985,6 @@ Partial Class BackupMenu
         Me.Button6.Size = New System.Drawing.Size(42, 34)
         Me.Button6.TabIndex = 32
         Me.Button6.UseVisualStyleBackColor = False
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.CustomFormat = ""
-        Me.DateTimePicker1.Location = New System.Drawing.Point(172, 172)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 25)
-        Me.DateTimePicker1.TabIndex = 37
         '
         'ComboBox1
         '
@@ -1003,7 +1009,7 @@ Partial Class BackupMenu
         Me.Button7.ForeColor = System.Drawing.Color.AliceBlue
         Me.Button7.Image = CType(resources.GetObject("Button7.Image"), System.Drawing.Image)
         Me.Button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button7.Location = New System.Drawing.Point(270, 285)
+        Me.Button7.Location = New System.Drawing.Point(270, 316)
         Me.Button7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(181, 46)
@@ -1023,7 +1029,7 @@ Partial Class BackupMenu
         Me.Label2.TabIndex = 36
         Me.Label2.Text = "Backup Period"
         '
-        'BackupMenu
+        'BackupMenu_2
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
         Me.AutoSize = True
@@ -1032,10 +1038,9 @@ Partial Class BackupMenu
         Me.ClientSize = New System.Drawing.Size(944, 501)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
-        Me.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
-        Me.Name = "BackupMenu"
+        Me.Name = "BackupMenu_2"
         Me.Style.BackColor = System.Drawing.Color.AliceBlue
         Me.Style.MdiChild.IconHorizontalAlignment = System.Windows.Forms.HorizontalAlignment.Center
         Me.Style.MdiChild.IconVerticalAlignment = System.Windows.Forms.VisualStyles.VerticalAlignment.Center
@@ -1060,27 +1065,25 @@ Partial Class BackupMenu
     Friend WithEvents Button1 As Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Std_bck_pnl As Panel
+    Friend WithEvents SfDateTimeEdit2 As Syncfusion.WinForms.Input.SfDateTimeEdit
+    Friend WithEvents SfDateTimeEdit1 As Syncfusion.WinForms.Input.SfDateTimeEdit
+    Friend WithEvents ProgressBar1 As ProgressBar
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Button6 As Button
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Button7 As Button
+    Friend WithEvents Label2 As Label
     Friend WithEvents arc_bck_pnl As Panel
-    Friend WithEvents arc_res_pnl As Panel
-    Friend WithEvents ProgressBar3 As ProgressBar
-    Friend WithEvents Button21 As Button
-    Friend WithEvents Button19 As Button
-    Friend WithEvents Button20 As Button
-    Friend WithEvents TextBox12 As TextBox
-    Friend WithEvents TextBox13 As TextBox
-    Friend WithEvents Label25 As Label
-    Friend WithEvents Label26 As Label
-    Friend WithEvents TextBox11 As TextBox
-    Friend WithEvents Label24 As Label
-    Friend WithEvents Button16 As Button
-    Friend WithEvents Button18 As Button
-    Friend WithEvents Label17 As Label
-    Friend WithEvents ComboBox7 As ComboBox
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Button9 As Button
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents Label11 As Label
     Friend WithEvents ProgressBar2 As ProgressBar
     Friend WithEvents Button8 As Button
     Friend WithEvents Button13 As Button
@@ -1103,22 +1106,24 @@ Partial Class BackupMenu
     Friend WithEvents Button11 As Button
     Friend WithEvents TextBox6 As TextBox
     Friend WithEvents Button12 As Button
-    Friend WithEvents ProgressBar1 As ProgressBar
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents Label8 As Label
-    Friend WithEvents DateTimePicker2 As DateTimePicker
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Button6 As Button
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Button7 As Button
-    Friend WithEvents Label2 As Label
+    Friend WithEvents arc_res_pnl As Panel
+    Friend WithEvents ProgressBar3 As ProgressBar
+    Friend WithEvents Button21 As Button
+    Friend WithEvents Button19 As Button
+    Friend WithEvents Button20 As Button
+    Friend WithEvents TextBox12 As TextBox
+    Friend WithEvents TextBox13 As TextBox
+    Friend WithEvents Label25 As Label
+    Friend WithEvents Label26 As Label
+    Friend WithEvents TextBox11 As TextBox
+    Friend WithEvents Label24 As Label
+    Friend WithEvents Button16 As Button
+    Friend WithEvents Button18 As Button
+    Friend WithEvents Label17 As Label
+    Friend WithEvents ComboBox7 As ComboBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Button9 As Button
+    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents Label11 As Label
 End Class

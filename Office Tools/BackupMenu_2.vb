@@ -1,6 +1,8 @@
 ﻿Imports Syncfusion.WinForms.Controls
+Imports Syncfusion.Windows.Forms
+Imports Syncfusion.WinForms.Input.Enums
 Imports System.IO
-Public Class BackupMenu
+Public Class BackupMenu_2
     Inherits SfForm
     Dim openfiledialog As New OpenFileDialog
     Dim openfolderdialog As New FolderBrowserDialog
@@ -41,6 +43,7 @@ Public Class BackupMenu
         BackColor = Color.AliceBlue
         Style.TitleBar.TextHorizontalAlignment = HorizontalAlignment.Center
         Style.TitleBar.TextVerticalAlignment = VisualStyles.VerticalAlignment.Center
+        Label1.Visible = False
         Label4.Visible = False
         Panel3.Visible = True
         Std_bck_pnl.Visible = False
@@ -50,13 +53,18 @@ Public Class BackupMenu
         TextBox2.ReadOnly = True
         TextBox3.ReadOnly = True
         TextBox6.ReadOnly = True
-        DateTimePicker1.Visible = False
-        DateTimePicker1.Format = DateTimePickerFormat.Custom
-        DateTimePicker1.CustomFormat = "MM-dd-yyyy"
-        DateTimePicker2.Visible = False
-        DateTimePicker2.Format = DateTimePickerFormat.Custom
-        DateTimePicker2.CustomFormat = "MM-dd-yyyy"
+        SfDateTimeEdit1.Visible = False
+        SfDateTimeEdit1.ShowUpDown = True
+        SfDateTimeEdit1.DateTimeEditingMode = DateTimeEditingMode.Mask
+        SfDateTimeEdit1.AllowNull = True
+        SfDateTimeEdit1.Watermark = "Choose a date"
+        SfDateTimeEdit2.Visible = False
+        SfDateTimeEdit2.ShowUpDown = True
+        SfDateTimeEdit2.DateTimeEditingMode = DateTimeEditingMode.Mask
+        SfDateTimeEdit2.AllowNull = True
+        SfDateTimeEdit2.Watermark = "Choose a date"
         WriteLogicalCount(uiProcessorCount)
+        MessageBoxAdv.MessageBoxStyle = MessageBoxAdv.Style.Metro
     End Sub
     Private Sub Standard_Backup_Button(sender As Object, e As EventArgs) Handles Button1.Click
         Std_bck_pnl.Visible = True
@@ -81,10 +89,10 @@ Public Class BackupMenu
             openfolderdialog.InitialDirectory = Environment.SpecialFolder.UserProfile
             openfolderdialog.ShowDialog()
         ElseIf ComboBox2.Text = "Backup File" Then
-            OpenFileDialog.InitialDirectory = Environment.SpecialFolder.UserProfile
-            OpenFileDialog.ShowDialog()
+            openfiledialog.InitialDirectory = Environment.SpecialFolder.UserProfile
+            openfiledialog.ShowDialog()
         Else
-            MsgBox("Backup options was not selected !, Please select copy options first !", MsgBoxStyle.Critical, "Office Tools")
+            MessageBoxAdv.Show("Backup options was not selected !, Please select copy options first !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
     End Sub
     Private Sub Save_Folder_Std_Backup_Button(sender As Object, e As EventArgs) Handles Button6.Click
@@ -93,33 +101,38 @@ Public Class BackupMenu
     End Sub
     Private Sub Save_Std_Backup_Button(sender As Object, e As EventArgs) Handles Button7.Click
         If TextBox1.Text = "" Then
-            MsgBox("Source data is empty !, please fill source data location", MsgBoxStyle.Critical, "Office Tools")
+            MessageBoxAdv.Show("Source data is empty !, please fill source data location", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             If TextBox2.Text = "" Then
-                MsgBox("Destination folder is empty !, Please fill destination folder location", MsgBoxStyle.Critical, "Office Tools")
+                MessageBoxAdv.Show("Destination folder is empty !, Please fill destination folder location", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
             ElseIf ComboBox2.Text = "" Then
-                MsgBox("Backup options was not selected  !, Please select backup options first !", MsgBoxStyle.Critical, "Office Tools")
+                MessageBoxAdv.Show("Backup options was not selected  !, Please select backup options first !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
-                If ComboBox2.Text = "Backup Folder" Then
-                    ProgressBar1.Visible = True
-                    ProgressBar1.Style = ProgressBarStyle.Marquee
-                    ProgressBar1.MarqueeAnimationSpeed = 40
-                    CheckFileExist(uiSpecFilePath, "*")
-                    BeginCopy(ComboBox1.Text, Label7.Text, TextBox2.Text, DateTimePicker1.Value, DateTimePicker2.Value)
-                    ProgressBar1.Value = 100
-                    ProgressBar1.Style = ProgressBarStyle.Blocks
-                ElseIf ComboBox2.Text = "Backup File" Then
-                    ProgressBar1.Visible = True
-                    ProgressBar1.Style = ProgressBarStyle.Marquee
-                    ProgressBar1.MarqueeAnimationSpeed = 40
-                    CheckFileExist(uiSpecFilePath, TextBox1.Text.ToString)
-                    BeginCopy(ComboBox1.Text, Label7.Text, TextBox2.Text, DateTimePicker1.Value, DateTimePicker2.Value)
-                    ProgressBar1.Value = 100
-                    ProgressBar1.Style = ProgressBarStyle.Blocks
+                Dim Dtcompare As Integer = DateTime.Compare(SfDateTimeEdit2.Value, SfDateTimeEdit1.Value)
+                If Dtcompare < 0 Then
+                    MessageBoxAdv.Show("To date can't be earlier than from date !, Please choose another date !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Else
-                    MsgBox("Backup options was not selected !, Please select backup options first !", MsgBoxStyle.Critical, "Office Tools")
+                    If ComboBox2.Text = "Backup Folder" Then
+                        ProgressBar1.Visible = True
+                        ProgressBar1.Style = ProgressBarStyle.Marquee
+                        ProgressBar1.MarqueeAnimationSpeed = 40
+                        CheckFileExist(uiSpecFilePath, "*")
+                        BeginCopy(ComboBox1.Text, Label7.Text, TextBox2.Text, SfDateTimeEdit1.Value, SfDateTimeEdit2.Value)
+                        ProgressBar1.Value = 100
+                        ProgressBar1.Style = ProgressBarStyle.Blocks
+                    ElseIf ComboBox2.Text = "Backup File" Then
+                        ProgressBar1.Visible = True
+                        ProgressBar1.Style = ProgressBarStyle.Marquee
+                        ProgressBar1.MarqueeAnimationSpeed = 40
+                        CheckFileExist(uiSpecFilePath, TextBox1.Text.ToString)
+                        BeginCopy(ComboBox1.Text, Label7.Text, TextBox2.Text, SfDateTimeEdit1.Value, SfDateTimeEdit2.Value)
+                        ProgressBar1.Value = 100
+                        ProgressBar1.Style = ProgressBarStyle.Blocks
+                    Else
+                        MessageBoxAdv.Show("Backup options was not selected !, Please select backup options first !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                    ShowNotif("Backup", lastResult, lastErr)
                 End If
-                ShowNotif("Backup", lastResult, lastErr)
             End If
         End If
     End Sub
@@ -130,20 +143,20 @@ Public Class BackupMenu
         Dim uiTrimSrc As String
         Dim uiTrimDest As String
         If TextBox3.Text = "" Then
-            MsgBox("Source data is empty !, please fill source data location", MsgBoxStyle.Critical, "Office Tools")
+            MessageBoxAdv.Show("Source data is empty !, please fill source data location", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             If TextBox6.Text = "" Then
-                MsgBox("Destination folder is empty !, Please fill destination folder location", MsgBoxStyle.Critical, "Office Tools")
+                MessageBoxAdv.Show("Destination folder is empty !, Please fill destination folder location", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 If ComboBox6.Text = "" Then
-                    MsgBox("Backup type is empty !, Please select backup type first !", MsgBoxStyle.Critical, "Office Tools")
+                    MessageBoxAdv.Show("Backup type is empty !, Please select backup type first !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 ElseIf ComboBox6.Text = "Archive" Then
                     If ComboBox3.Text = "" Then
-                        MsgBox("Compression level is empty, please select compression type !", MsgBoxStyle.Critical, "Office Tools")
+                        MessageBoxAdv.Show("Compression level is empty, please select compression type !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Else
                         InitComp()
                         If ComboBox4.Text = "" Then
-                            MsgBox("Compression type is empty, please select compression type !", MsgBoxStyle.Critical, "Office Tools")
+                            MessageBoxAdv.Show("Compression type is empty, please select compression type !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         Else
                             uiTrimSrc = TextBox3.Text
                             uiTrimDest = TextBox6.Text
@@ -172,14 +185,14 @@ Public Class BackupMenu
                     End If
                 ElseIf ComboBox6.Text = "Archive + Password" Then
                     If ComboBox3.Text = "" Then
-                        MsgBox("Compression level is empty, please select compression type !", MsgBoxStyle.Critical, "Office Tools")
+                        MessageBoxAdv.Show("Compression level is empty, please select compression type !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Else
                         If ComboBox4.Text = "" Then
-                            MsgBox("Compression type is empty, please select compression type !", MsgBoxStyle.Critical, "Office Tools")
+                            MessageBoxAdv.Show("Compression type is empty, please select compression type !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         Else
                             compressType = CompType(ComboBox4.Text)
                             If ComboBox5.Text = "" Then
-                                MsgBox("Password type is empty, please select password type !", MsgBoxStyle.Critical, "Office Tools")
+                                MessageBoxAdv.Show("Password type is empty, please select password type !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                             Else
                                 If Button14.Enabled = False Then
                                     InitComp()
@@ -234,7 +247,7 @@ Public Class BackupMenu
                                     End If
                                     ShowNotif("Archive backup", lastResult, lastErr)
                                 Else
-                                    MsgBox("Please save the password to proceed backup !", vbInformation, "Office Tools")
+                                    MessageBoxAdv.Show("Please save the password to proceed backup !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                 End If
                             End If
                         End If
@@ -247,7 +260,7 @@ Public Class BackupMenu
     End Sub
     Private Sub Extract_Restore_Backup_Button(sender As Object, e As EventArgs) Handles Button9.Click
         If Button20.Enabled = False Then
-            MsgBox("Password has been set, please cancel to change this option !", vbExclamation, "Office Tools")
+            MessageBoxAdv.Show("Password has been set, please cancel to change this option !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
             openfolderdialog.InitialDirectory = Environment.SpecialFolder.UserProfile
             openfolderdialog.ShowDialog()
@@ -259,7 +272,7 @@ Public Class BackupMenu
             openfolderdialog.ShowDialog()
         Else
             If Button14.Enabled = False Then
-                MsgBox("Password has been set, please cancel to change this option !", vbExclamation, "Office Tools")
+                MessageBoxAdv.Show("Password has been set, please cancel to change this option !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Else
                 openfolderdialog.InitialDirectory = Environment.SpecialFolder.UserProfile
                 openfolderdialog.ShowDialog()
@@ -272,7 +285,7 @@ Public Class BackupMenu
             openfolderdialog.ShowDialog()
         Else
             If Button14.Enabled = False Then
-                MsgBox("Password has been set, please cancel to change this option !", vbExclamation, "Office Tools")
+                MessageBoxAdv.Show("Password has been set, please cancel to change this option !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Else
                 openfolderdialog.InitialDirectory = Environment.SpecialFolder.UserProfile
                 openfolderdialog.ShowDialog()
@@ -298,10 +311,10 @@ Public Class BackupMenu
     End Sub
     Private Sub Save_Archive_Pass_Button(sender As Object, e As EventArgs) Handles Button14.Click
         If TextBox8.Text = "" Then
-            MsgBox("Please fill your password !", vbInformation, "Office Tools")
+            MessageBoxAdv.Show("Please fill your password !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
             If TextBox7.Text = "" Then
-                MsgBox("Please complete your password !", vbInformation, "Office Tools")
+                MessageBoxAdv.Show("Please complete your password !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
                 If TextBox8.Text = TextBox7.Text Then
                     TextBox3.ReadOnly = True
@@ -313,35 +326,35 @@ Public Class BackupMenu
                     ComboBox4.Enabled = False
                     ComboBox5.Enabled = False
                     ComboBox6.Enabled = False
-                    MsgBox("Password locked !", vbInformation, "Office Tools")
+                    MessageBoxAdv.Show("Password locked !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
-                    MsgBox("Password not match !", vbExclamation, "Office Tools")
+                    MessageBoxAdv.Show("Password not match !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
             End If
         End If
     End Sub
     Private Sub Enc_Key_Restore_Backup_Button(sender As Object, e As EventArgs) Handles Button16.Click
         If Button20.Enabled = False Then
-            MsgBox("Password has been set, please cancel to change this option !", vbExclamation, "Office Tools")
+            MessageBoxAdv.Show("Password has been set, please cancel to change this option !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
             If ComboBox7.Text = "Password (No Encryption)" Or ComboBox7.Text = "" Then
-                MsgBox("Encryption method set as no encryption, no key file needed !", vbExclamation, "Office Tools")
+                MessageBoxAdv.Show("Encryption method set as no encryption, no key file needed !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Else
-                OpenFileDialog.InitialDirectory = Environment.SpecialFolder.UserProfile
-                OpenFileDialog.DefaultExt = ".ofk;.mtg"
-                OpenFileDialog.Filter = "Office Tools Encrypted Key|*.ofk;*.mtg"
-                OpenFileDialog.ShowDialog()
+                openfiledialog.InitialDirectory = Environment.SpecialFolder.UserProfile
+                openfiledialog.DefaultExt = ".ofk;.mtg"
+                openfiledialog.Filter = "Office Tools Encrypted Key|*.ofk;*.mtg"
+                openfiledialog.ShowDialog()
             End If
         End If
     End Sub
     Private Sub Archive_File_Restore_Backup(sender As Object, e As EventArgs) Handles Button18.Click
         If Button20.Enabled = False Then
-            MsgBox("Password has been set, please cancel to change this option !", vbExclamation, "Office Tools")
+            MessageBoxAdv.Show("Password has been set, please cancel to change this option !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
-            OpenFileDialog.InitialDirectory = Environment.SpecialFolder.UserProfile
-            OpenFileDialog.DefaultExt = ".7z"
-            OpenFileDialog.Filter = "7-ZIP Supported Format|*.7z;*.zip"
-            OpenFileDialog.ShowDialog()
+            openfiledialog.InitialDirectory = Environment.SpecialFolder.UserProfile
+            openfiledialog.DefaultExt = ".7z"
+            openfiledialog.Filter = "7-ZIP Supported Format|*.7z;*.zip"
+            openfiledialog.ShowDialog()
         End If
     End Sub
     Private Sub Cancel_Pass_Restore_Backup(sender As Object, e As EventArgs) Handles Button19.Click
@@ -358,10 +371,10 @@ Public Class BackupMenu
     End Sub
     Private Sub Save_Pass_Restore_Backup(sender As Object, e As EventArgs) Handles Button20.Click
         If TextBox13.Text = "" Then
-            MsgBox("Please fill your password !", vbExclamation, "Office Tools")
+            MessageBoxAdv.Show("Please fill your password !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
             If TextBox12.Text = "" Then
-                MsgBox("Please fill your password !", vbExclamation, "Office Tools")
+                MessageBoxAdv.Show("Please complete your password !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
                 If TextBox13.Text = TextBox12.Text Then
                     TextBox11.ReadOnly = True
@@ -371,9 +384,9 @@ Public Class BackupMenu
                     TextBox12.ReadOnly = True
                     ComboBox7.Enabled = False
                     Button20.Enabled = False
-                    MsgBox("Password locked !", vbInformation, "Office Tools")
+                    MessageBoxAdv.Show("Password locked !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
-                    MsgBox("Password not match !", vbCritical, "Office Tools")
+                    MessageBoxAdv.Show("Password not match !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
             End If
         End If
@@ -391,10 +404,10 @@ Public Class BackupMenu
         Dim decKeyPass As String
         Dim decAesKey As String
         If TextBox11.Text = "" Then
-            MsgBox("Archive file path is empty !, please select file", MsgBoxStyle.Critical, "Office Tools")
+            MessageBoxAdv.Show("Archive file path is empty !, please select file", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             If TextBox4.Text = "" Then
-                MsgBox("Destination folder is empty !, please fill destination folder location", MsgBoxStyle.Critical, "Office Tools")
+                MessageBoxAdv.Show("Destination folder is empty !, please fill destination folder location", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 srcFile = TextBox11.Text
                 destFolder = TextBox4.Text
@@ -456,7 +469,7 @@ Public Class BackupMenu
                     End If
                 Else
                     If TextBox5.Text = "" Then
-                        MsgBox("Encryption key path is empty, please select encryption key file !", MsgBoxStyle.Critical, "Office Tools")
+                        MessageBoxAdv.Show("Encryption key path is empty, please select encryption key file !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Else
                         If Button20.Visible = True Then
                             If ComboBox7.SelectedIndex = 1 Then
@@ -542,11 +555,11 @@ Public Class BackupMenu
             TextBox1.Text = openfolderdialog.SelectedPath.ToString
             Label7.Text = openfolderdialog.SelectedPath.ToString
         ElseIf ComboBox2.Text = "Backup File" Then
-            TextBox1.Text = Path.GetFileName(OpenFileDialog.FileName.ToString)
-            If OpenFileDialog.FileName.ToString = "" Then
+            TextBox1.Text = Path.GetFileName(openfiledialog.FileName.ToString)
+            If openfiledialog.FileName.ToString = "" Then
                 Label7.Text = ""
             Else
-                actualDir = Path.GetFullPath(OpenFileDialog.FileName.ToString)
+                actualDir = Path.GetFullPath(openfiledialog.FileName.ToString)
                 Label7.Text = Path.GetDirectoryName(actualDir)
             End If
         End If
@@ -577,25 +590,27 @@ Public Class BackupMenu
     End Sub
     Private Sub Enc_Key_Restore_Backup_Handler(sender As Object, e As EventArgs) Handles Button16.Click
         If ComboBox7.SelectedIndex = 1 Then
-            If OpenFileDialog.FileName.ToString.Remove(0, OpenFileDialog.FileName.ToString.Length - 3).Equals("ofk") Or OpenFileDialog.FileName.ToString.Remove(0, OpenFileDialog.FileName.ToString.Length - 3).Equals("mtg") Then
-                TextBox5.Text = OpenFileDialog.FileName.ToString
+            If openfiledialog.FileName.ToString.Remove(0, openfiledialog.FileName.ToString.Length - 3).Equals("ofk") Or openfiledialog.FileName.ToString.Remove(0, openfiledialog.FileName.ToString.Length - 3).Equals("mtg") Then
+                TextBox5.Text = openfiledialog.FileName.ToString
             Else
-                MsgBox("Please select a valid Office Tools encrypted key file !", vbCritical, "Office Tools")
+                MessageBoxAdv.Show("Please select a valid Office Tools encrypted key file !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         End If
     End Sub
     Private Sub Archive_File_Restore_Handler(sender As Object, e As EventArgs) Handles Button18.Click
-        TextBox11.Text = OpenFileDialog.FileName.ToString
+        TextBox11.Text = openfiledialog.FileName.ToString
     End Sub
     Private Sub Backup_Period_Handler(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
         If ComboBox1.Text = "From Date" Then
-            DateTimePicker1.Visible = True
-            DateTimePicker2.Visible = True
+            SfDateTimeEdit1.Visible = True
+            SfDateTimeEdit2.Visible = True
             Label1.Visible = True
+            Label4.Visible = True
         Else
-            DateTimePicker1.Visible = False
-            DateTimePicker2.Visible = False
+            SfDateTimeEdit1.Visible = False
+            SfDateTimeEdit2.Visible = False
             Label1.Visible = False
+            Label4.Visible = False
         End If
     End Sub
     Private Sub Backup_Method_Handler(sender As Object, e As EventArgs) Handles ComboBox6.SelectedIndexChanged
@@ -619,7 +634,7 @@ Public Class BackupMenu
     End Sub
     Private Sub Enc_Key_Method_Handler(sender As Object, e As EventArgs) Handles ComboBox7.SelectedIndexChanged
         If Button20.Enabled = False Then
-            MsgBox("Password has been set, please cancel to change this option !", vbExclamation, "Office Tools")
+            MessageBoxAdv.Show("Password has been set, please cancel to change this option !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
             If ComboBox7.SelectedIndex = 0 Then
                 TextBox5.Enabled = False

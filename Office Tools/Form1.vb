@@ -3,7 +3,7 @@
         Close()
     End Sub
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        Dim menu_backup = New BackupMenu
+        Dim menu_backup = New BackupMenu_2
         menu_backup.Show()
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
