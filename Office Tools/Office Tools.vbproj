@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -8,7 +8,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
     <ApplicationIcon>ico\working_AAH_icon.ico</ApplicationIcon>
-    <Version>1.2.6.1</Version>
+    <Version>1.2.7</Version>
     <Authors>Dicky Herlambang</Authors>
     <Company>Hana-CI Build Project</Company>
     <PackageId>Office_Tools</PackageId>
@@ -27,19 +27,19 @@ Additional library:
     <PackageIconUrl />
     <RepositoryType>public</RepositoryType>
     <PackageTags>#Migrate-To-GDrive, #OfficeTools</PackageTags>
-    <PackageReleaseNotes>v1.2.6-rev1 (20220625):
+    <PackageReleaseNotes>v1.2.7 (20220625):
 - Fixup robocopy log are not imported correctly
-- Remove multiple notifications while removing logs
-
-v1.2.6 (20220625):
 - Hotfix update for backup menu
   * Fixup encryption key browse error
   * Properly guard encryption key type [Only use encryption key for SHA-256 method]
+- Introduce initcheck function to check all required config on every startup (Reduce error while config was corrupted)
 - Import all default windows form into SyncFusion Metro UI form
 - Merge pdf config onto single config backup file
 - Misc fixes and code cleanup
+- Use datetimepicker and msgbox library from SyncFusion
+- Remove multiple notifications while removing logs
 
-v1.2.5 (20220524):
+v1.2.5 (20220624):
 - Fixup missalignment layout and design on all panel
 - Introduce PDF Settings (Open PDF Directly after compress, need to configure PDF Reader app on settings)
 - Treewide: Re-written all specific function into global modul (Reduce hardcoded function)
@@ -107,8 +107,8 @@ v1.1.0 (20220419):
 v1.0.0 (20220416):
 - INITIAL RELEASE</PackageReleaseNotes>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <AssemblyVersion>1.2.6.1</AssemblyVersion>
-    <FileVersion>1.2.6.1</FileVersion>
+    <AssemblyVersion>1.2.7.0</AssemblyVersion>
+    <FileVersion>1.2.7.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -134,7 +134,9 @@ v1.0.0 (20220416):
     <PackageReference Include="Syncfusion.Pdf.WinForms" Version="20.1.0.61" />
     <PackageReference Include="Syncfusion.Shared.Base" Version="20.1.0.61" />
     <PackageReference Include="TaskScheduler" Version="2.10.1" />
-  </ItemGroup>
+      <PackageReference Include="Syncfusion.SfInput.WinForms" Version="20.1.0.61" />
+    <PackageReference Include="Syncfusion.Tools.Windows" Version="20.1.0.61" />
+</ItemGroup>
 
   <ItemGroup>
     <Compile Update="My Project\Application.Designer.vb">

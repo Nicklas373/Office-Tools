@@ -1,15 +1,15 @@
-v1.2.6-rev1 (20220625):
+v1.2.7 (20220625):
 - Fixup robocopy log are not imported correctly
-- Remove multiple notifications while removing logs
-
-v1.2.6 (20220625):
 - Hotfix update for backup menu
   * Fixup encryption key browse error
   * Properly guard encryption key type [Only use encryption key for SHA-256 method]
+- Introduce initcheck function to check all required config on every startup (Reduce error while config was corrupted)
 - Import all default windows form into SyncFusion Metro UI form
 - Merge pdf config onto single config backup file
 - Misc fixes and code cleanup
-   
+- Use datetimepicker and msgbox library from SyncFusion
+- Remove multiple notifications while removing logs
+
 v1.2.5 (20220624):
 - Fixup missalignment layout and design on all panel
 - Introduce PDF Settings (Open PDF Directly after compress, need to configure PDF Reader app on settings)
