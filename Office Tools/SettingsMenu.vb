@@ -1,12 +1,13 @@
 ﻿Imports Syncfusion.WinForms.Controls
 Imports System.IO
 Imports Microsoft.Win32.TaskScheduler
+Imports Syncfusion.Windows.Forms
+
 Public Class SettingsMenu
     Inherits SfForm
     Dim openfiledialog As New OpenFileDialog
     Dim openfolderdialog As New FolderBrowserDialog
     Dim confPath As String = "conf/config"
-    Dim pdfPath As String = "conf/pdf"
     Dim timePath As String = "conf/cli_backup/cliTimeInit"
     Dim cliSrcPath As String = "conf/cli_backup/cliSrcPath"
     Dim cliDestPath As String = "conf/cli_backup/cliDestPath"
@@ -29,6 +30,7 @@ Public Class SettingsMenu
         DateTimePicker6.ShowUpDown = True
         GetBackPref()
         WriteLogicalCount(cliProcessor)
+        MessageBoxAdv.MessageBoxStyle = MessageBoxAdv.Style.Metro
     End Sub
     Private Sub Edit_Folder_Backup_Dir_Settings_Handler(sender As Object, e As EventArgs) Handles Button2.Click
         TextBox1.ReadOnly = False
@@ -92,7 +94,7 @@ Public Class SettingsMenu
     End Sub
     Private Sub Source_Folder_Backup_Dir_Settings_Button(sender As Object, e As EventArgs) Handles Button7.Click
         If TextBox1.ReadOnly = True Then
-            MsgBox("Configuration menu is locked, Please click edit !", MsgBoxStyle.Information, "Office Tools")
+            MessageBoxAdv.Show("Configuration menu is locked, Please click edit !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
             openfolderdialog.InitialDirectory = Environment.SpecialFolder.UserProfile
             openfolderdialog.ShowDialog()
@@ -105,7 +107,7 @@ Public Class SettingsMenu
     End Sub
     Private Sub Destination_Folder_Backup_Dir_Settings_Button(sender As Object, e As EventArgs) Handles Button6.Click
         If TextBox2.ReadOnly = True Then
-            MsgBox("Configuration menu is locked, Please click edit !", MsgBoxStyle.Information, "Office Tools")
+            MessageBoxAdv.Show("Configuration menu is locked, Please click edit !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
             openfolderdialog.InitialDirectory = Environment.SpecialFolder.UserProfile
             openfolderdialog.ShowDialog()
@@ -118,12 +120,12 @@ Public Class SettingsMenu
     End Sub
     Private Sub Save_Folder_Backup_Dir_Settings_Handler(sender As Object, e As EventArgs) Handles Button3.Click
         If TextBox1.Text = "" Then
-            MsgBox("Please fill source folder !", MsgBoxStyle.Critical, "Office Tools")
+            MessageBoxAdv.Show("Please fill source folder !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
         ElseIf TextBox2.Text = "" Then
-            MsgBox("Please fill destination folder !", MsgBoxStyle.Critical, "Office Tools")
+            MessageBoxAdv.Show("Please fill destination folder !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             If ComboBox1.Text = "" Then
-                MsgBox("Please select backup time !", MsgBoxStyle.Critical, "Office Tools")
+                MessageBoxAdv.Show("Please select backup time !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 If File.Exists(confPath) Then
                     If File.ReadAllLines(confPath).Length < 1 Then
@@ -134,12 +136,12 @@ Public Class SettingsMenu
                         writer.WriteLine("Destination Directory: " & TextBox2.Text)
                         writer.WriteLine("Backup Preferences: " & ComboBox1.Text)
                         writer.Close()
-                        MsgBox("Config created !", MsgBoxStyle.Information, "Office Tools")
+                        MessageBoxAdv.Show("Config created !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Else
                         WriteFile(confPath, 1, "Source Directory: " & TextBox1.Text)
                         WriteFile(confPath, 2, "Destination Directory: " & TextBox2.Text)
                         WriteFile(confPath, 3, "Backup Preferences: " & ComboBox1.Text)
-                        MsgBox("Config updated !", MsgBoxStyle.Information, "Office Tools")
+                        MessageBoxAdv.Show("Config updated !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     End If
                 Else
                     File.Create(confPath).Dispose()
@@ -149,7 +151,7 @@ Public Class SettingsMenu
                     writer.WriteLine("Destination Directory: " & TextBox2.Text)
                     writer.WriteLine("Backup Preferences: " & ComboBox1.Text)
                     writer.Close()
-                    MsgBox("Config created !", MsgBoxStyle.Information, "Office Tools")
+                    MessageBoxAdv.Show("Config created !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
                 WriteForAutoBackup(confPath, cliSrcPath, cliDestPath, cliDatePath, timePath)
                 TextBox1.ReadOnly = True
@@ -192,17 +194,17 @@ Public Class SettingsMenu
     End Sub
     Private Sub Save_Daily_Sched_Settings_Handler(sender As Object, e As EventArgs) Handles Button11.Click
         If TextBox3.Text = "" Then
-            MsgBox("Recurs day can not empty !", MsgBoxStyle.Critical, "Office Tools")
+            MessageBoxAdv.Show("Recurs day can not empty !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             Dim custdate As String = DateTimePicker3.Value.ToLongDateString & " " & DateTimePicker4.Value.ToLongTimeString
             If ComboBox4.Text = "Disabled" Then
                 ComboBox5.ResetText()
-                MsgBox("If repeat task is disabled, then repeat duration will be disable", vbExclamation, "Office Tools")
+                MessageBoxAdv.Show("If repeat task is disabled, then repeat duration will be disable", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             End If
             If ComboBox5.Text = "Disabled" Then
                 ComboBox4.ResetText()
                 ComboBox5.ResetText()
-                MsgBox("If repeat duration is disabled, then repeat task will be disable", vbExclamation, "Office Tools")
+                MessageBoxAdv.Show("If repeat duration is disabled, then repeat task will be disable", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             End If
             DailyTrigger(custdate, 1, CInt(TextBox3.Text), CustRepDurValDaily(ComboBox5.Text), CustRepDurIntDaily(ComboBox4.Text), ComboBox5.Text, ComboBox4.Text)
             Button10.Visible = False
@@ -212,22 +214,22 @@ Public Class SettingsMenu
     End Sub
     Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles TextBox3.TextChanged
         If TextBox3.Text = "0" Then
-            MsgBox("Can not set 0 days for recurs day !", MsgBoxStyle.Critical, "Office Tools")
-            MsgBox("Please set another value", MsgBoxStyle.Information, "Office Tools")
+            MessageBoxAdv.Show("Can not set 0 days for recurs day !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBoxAdv.Show("Please set another value", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
             TextBox3.Text = ""
         End If
     End Sub
     Private Sub ComboBox4_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox4.SelectedIndexChanged
         If ComboBox4.Text = "Disabled" Then
             ComboBox5.ResetText()
-            MsgBox("If repeat task is disabled, then repeat duration will be disable", vbExclamation, "Office Tools")
+            MessageBoxAdv.Show("If repeat task is disabled, then repeat duration will be disable", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
     End Sub
     Private Sub ComboBox5_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox5.SelectedIndexChanged
         If ComboBox5.Text = "Disabled" Then
             ComboBox4.ResetText()
             ComboBox5.ResetText()
-            MsgBox("If repeat duration is disabled, then repeat task will be disable", vbExclamation, "Office Tools")
+            MessageBoxAdv.Show("If repeat duration is disabled, then repeat task will be disable", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
     End Sub
     Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
@@ -262,20 +264,20 @@ Public Class SettingsMenu
     End Sub
     Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
         If TextBox4.Text = "" Then
-            MsgBox("Recurs week can not empty !", MsgBoxStyle.Critical, "Office Tools")
+            MessageBoxAdv.Show("Recurs week can not empty !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             If CheckBox7.Checked = False And CheckBox1.Checked = False And CheckBox2.Checked = False And CheckBox3.Checked = False And CheckBox4.Checked = False And CheckBox5.Checked = False And CheckBox6.Checked = False Then
-                MsgBox("Recurs in day can not empty !", vbCritical, "Office Tools")
+                MessageBoxAdv.Show("Recurs in day can not empty !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 Dim custdate As String = DateTimePicker5.Value.ToLongDateString & " " & DateTimePicker6.Value.ToLongTimeString
                 If ComboBox7.Text = "Disabled" Then
                     ComboBox6.ResetText()
-                    MsgBox("If repeat task is disabled, then repeat duration will be disable", vbExclamation, "Office Tools")
+                    MessageBoxAdv.Show("If repeat task is disabled, then repeat duration will be disable", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 End If
                 If ComboBox6.Text = "Disabled" Then
                     ComboBox7.ResetText()
                     ComboBox6.ResetText()
-                    MsgBox("If repeat duration is disabled, then repeat task will be disable", vbExclamation, "Office Tools")
+                    MessageBoxAdv.Show("If repeat duration is disabled, then repeat task will be disable", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 End If
                 WeeklyTrigger(custdate, 1, CInt(TextBox4.Text), CustRepDurValWeek(ComboBox6.Text), CustRepDurIntWeek(ComboBox7.Text), Cb1(CheckBox1.Checked), Cb2(CheckBox2.Checked), Cb3(CheckBox3.Checked), Cb4(CheckBox4.Checked), Cb5(CheckBox5.Checked), Cb6(CheckBox6.Checked), Cb7(CheckBox7.Checked), ComboBox6.Text, ComboBox7.Text)
                 Button6.Visible = False
@@ -291,11 +293,11 @@ Public Class SettingsMenu
         Using tService As New TaskService()
             Dim tTask As Task = tService.GetTask("Office Tools")
             If tTask Is Nothing Then
-                MsgBox("Office Tools scheduler not exist !", MsgBoxStyle.Information, "Office Tools")
+                MessageBoxAdv.Show("Office Tools scheduler not exist !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
                 tService.RootFolder.DeleteTask("Office Tools")
                 RichTextBox1.Text = ""
-                MsgBox("Office Tools scheduler removed !", MsgBoxStyle.Information, "Office Tools")
+                MessageBoxAdv.Show("Office Tools scheduler removed !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         End Using
     End Sub
@@ -304,15 +306,15 @@ Public Class SettingsMenu
             Using tService As New TaskService()
                 Dim tTask As Task = tService.GetTask("Office Tools")
                 If tTask Is Nothing Then
-                    MsgBox("Office Tools scheduler not exist !", MsgBoxStyle.Critical, "Office Tools")
-                    MsgBox("Please create new scheduler first !", MsgBoxStyle.Critical, "Office Tools")
+                    MessageBoxAdv.Show("Office Tools scheduler not exist !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    MessageBoxAdv.Show("Please create new scheduler first !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Else
                     tTask.Run()
-                    MsgBox("Office Tools is running !", MsgBoxStyle.Information, "Office Tools")
+                    MessageBoxAdv.Show("Office Tools is running !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End Using
         Else
-            MsgBox("Config file is not exist !, Please configure directory first !", MsgBoxStyle.Critical, "Office Tools")
+            MessageBoxAdv.Show("Config file is not exist !, Please configure directory first !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
     Private Sub Chk_Backup_Settings_Button(sender As Object, e As EventArgs) Handles Button22.Click
@@ -368,9 +370,9 @@ Public Class SettingsMenu
                     WriteFile(confPath, 5, "Auto Open PDF: " & CheckBox8.Checked)
                 End If
                 WriteForAutoBackup(confPath, cliSrcPath, cliDestPath, cliDatePath, timePath)
-                MsgBox("Config updated !", MsgBoxStyle.Information, "Office Tools")
+                MessageBoxAdv.Show("Config updated !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
-                MsgBox("Config not found !, Please create on backup location settings !", MsgBoxStyle.Critical, "Office Tools")
+                MessageBoxAdv.Show("Config not found !, Please create on backup location settings !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         End If
         Button27.Visible = False
@@ -380,7 +382,7 @@ Public Class SettingsMenu
     End Sub
     Private Sub Pdf_Settings_Browse_Button(sender As Object, e As EventArgs) Handles Button25.Click
         If TextBox5.ReadOnly = True Then
-            MsgBox("Configuration menu is locked, Please click edit !", MsgBoxStyle.Information, "Office Tools")
+            MessageBoxAdv.Show("Configuration menu is locked, Please click edit !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
             openfiledialog.InitialDirectory = Environment.SpecialFolder.UserProfile
             openfiledialog.DefaultExt = ".exe"

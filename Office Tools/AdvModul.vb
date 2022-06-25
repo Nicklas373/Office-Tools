@@ -1,4 +1,6 @@
 ﻿Imports System.IO
+Imports Syncfusion.Windows.Forms
+
 Module AdvModul
     Dim logPath As String = "log/log"
     Dim lastResult As String = "log/lastResult"
@@ -160,26 +162,27 @@ Module AdvModul
         destWriter.Close()
     End Sub
     Public Sub ShowNotif(result As String, lastResult As String, lastErr As String)
+        MessageBoxAdv.MessageBoxStyle = MessageBoxAdv.Style.Metro
         If File.Exists(lastResult) Then
             Dim lastRest As String = PathVal(lastResult, 0)
             If PathVal(lastResult, 0).Equals("success") Then
-                MsgBox(result & " success !", MsgBoxStyle.Information, "Office Tools")
+                MessageBoxAdv.Show(result & " success !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
             ElseIf PathVal(lastResult, 0).Equals("err") Then
-                MsgBox(result & " error !", MsgBoxStyle.Critical, "Office Tools")
+                MessageBoxAdv.Show(result & " error !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 If File.Exists(lastErr) Then
                     If PathVal(lastErr, 0).Equals("") Then
-                        MsgBox("Unknown error reason !", MsgBoxStyle.Critical, "Office Tools")
+                        MessageBoxAdv.Show("Unknown error reason !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Else
-                        MsgBox(PathVal(lastErr, 0), MsgBoxStyle.Critical, "Office Tools")
+                        MessageBoxAdv.Show(PathVal(lastErr, 0), "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
                 Else
-                    MsgBox("Error file not found !", MsgBoxStyle.Critical, "Office Tools")
+                    MessageBoxAdv.Show("Error file not found !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
             Else
-                MsgBox("Unknown result status !", MsgBoxStyle.Critical, "Office Tools")
+                MessageBoxAdv.Show("Unknown result status !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         Else
-            MsgBox("Result file not found !", MsgBoxStyle.Critical, "Office Tools")
+            MessageBoxAdv.Show("Result file not found !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
     Public Function RandomString(ByRef Length As String) As String

@@ -1,6 +1,7 @@
 ﻿Imports System.IO
 Imports Syncfusion.Pdf
 Imports Syncfusion.Pdf.Parsing
+Imports Syncfusion.Windows.Forms
 Imports Syncfusion.WinForms.Controls
 Public Class PDFMenu
     Inherits SfForm
@@ -14,10 +15,11 @@ Public Class PDFMenu
         Style.TitleBar.TextHorizontalAlignment = HorizontalAlignment.Center
         Style.TitleBar.TextVerticalAlignment = VisualStyles.VerticalAlignment.Center
         pdf_com_pnl.Visible = False
+        MessageBoxAdv.MessageBoxStyle = MessageBoxAdv.Style.Metro
     End Sub
     Private Sub SourcePDF_folder(sender As Object, e As EventArgs) Handles Button8.Click
         If TextBox1.ReadOnly = True Then
-            MsgBox("Configuration menu is locked, Please click edit !", MsgBoxStyle.Information, "Office Tools")
+            MessageBoxAdv.Show("Configuration menu is locked, Please click edit !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
             fileDialog.DefaultExt = ".pdf"
             fileDialog.Filter = "PDF File | *.pdf"
@@ -37,7 +39,7 @@ Public Class PDFMenu
     End Sub
     Private Sub SavePDF_folder(sender As Object, e As EventArgs) Handles Button7.Click
         If TextBox2.ReadOnly = True Then
-            MsgBox("Configuration menu is locked, Please click edit !", MsgBoxStyle.Information, "Office Tools")
+            MessageBoxAdv.Show("Configuration menu is locked, Please click edit !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
             saveDialog.DefaultExt = ".pdf"
             saveDialog.Filter = "PDF File | *.pdf"
@@ -56,13 +58,13 @@ Public Class PDFMenu
     End Sub
     Private Sub Compress_Button(sender As Object, e As EventArgs) Handles Button6.Click
         If TextBox1.Text = "" Then
-            MsgBox("No PDF file was selected !, please select PDF file first !", MsgBoxStyle.Critical, "Office Tools")
+            MessageBoxAdv.Show("No PDF file was selected !, please select PDF file first !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             If TextBox2.Text = "" Then
-                MsgBox("Destination PDF file location was not selected !, please select destination location first !", MsgBoxStyle.Critical, "Office Tools")
+                MessageBoxAdv.Show("Destination PDF file location was not selected !, please select destination location first !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 If ComboBox2.Text = "" Then
-                    MsgBox("Please select compression level !", MsgBoxStyle.Critical, "MigrateToGDrive")
+                    MessageBoxAdv.Show("Please select compression level !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Else
                     CompressPDF(TextBox1.Text, TextBox2.Text, True, ImgCompLvlVal(ComboBox2.Text), PdfFoOptVal(CheckBox5.Checked), PdfOpcOptVal(CheckBox4.Checked), PdfMtOptVal(CheckBox3.Checked), PdfIncUpdVal(CheckBox2.Checked))
                 End If
@@ -95,7 +97,7 @@ Public Class PDFMenu
         ProgressBar1.Value = 100
         ldoc.Close(True)
         If File.Exists(TextBox2.Text) Then
-            MsgBox("Compress PDF success !", MsgBoxStyle.Information, "Office Tools")
+            MessageBoxAdv.Show("Compress PDF success !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Label10.Text = GetFileSize(TextBox2.Text)
             If File.ReadAllLines(confPath).Length > 5 Then
                 If PathVal(confPath, 5).Replace("Auto Open PDF: ", "").Equals("True") Then
@@ -103,7 +105,7 @@ Public Class PDFMenu
                 End If
             End If
         Else
-            MsgBox("Compress PDF failed !", MsgBoxStyle.Critical, "Office Tools")
+            MessageBoxAdv.Show("Compress PDF failed !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 End Class

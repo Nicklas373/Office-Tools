@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports Syncfusion.Windows.Forms
 Imports Syncfusion.WinForms.Controls
 
 Public Class HistoryMenu
@@ -17,6 +18,7 @@ Public Class HistoryMenu
         BackColor = Color.AliceBlue
         Style.TitleBar.TextHorizontalAlignment = HorizontalAlignment.Center
         Style.TitleBar.TextVerticalAlignment = VisualStyles.VerticalAlignment.Center
+        MessageBoxAdv.MessageBoxStyle = MessageBoxAdv.Style.Metro
     End Sub
     Private Sub Close_Button(sender As Object, e As EventArgs) Handles Button4.Click
         Close()
@@ -35,7 +37,7 @@ Public Class HistoryMenu
     End Sub
     Private Sub Success_Specified_Button(sender As Object, e As EventArgs) Handles Button19.Click
         If Label1.Text = "" Then
-            MsgBox("Please choose log menu on the left !", MsgBoxStyle.Information, "Office Tools")
+            MessageBoxAdv.Show("Please choose log menu on the left !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
         ElseIf Label1.Text = "Backup" Then
             RichTextBox1.Text = ShowLog("Backup history", logPath)
         ElseIf Label1.Text = "Archive" Then
@@ -46,7 +48,7 @@ Public Class HistoryMenu
     End Sub
     Private Sub Error_Specified_Button(sender As Object, e As EventArgs) Handles Button20.Click
         If Label1.Text = "" Then
-            MsgBox("Please choose log menu on the left !", MsgBoxStyle.Information, "Office Tools")
+            MessageBoxAdv.Show("Please choose log menu on the left !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
         ElseIf Label1.Text = "Backup" Then
             RichTextBox1.Text = ShowLog("Backup error history", errPath)
         ElseIf Label1.Text = "Archive" Then
@@ -57,7 +59,7 @@ Public Class HistoryMenu
     End Sub
     Private Sub Clear_Log_Button(sender As Object, e As EventArgs) Handles Button3.Click
         Dim validation As Integer
-        validation = MsgBox("This will clear all history !", vbExclamation + vbYesNo + vbDefaultButton2, "Office Tools")
+        validation = MessageBoxAdv.Show("This will clear all history !", "Office Tools", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
         If validation = vbYes Then
             ClearLog(logPath, "Backup history", False)
             ClearLog(advLogPath, "Archive history", False)
@@ -67,16 +69,16 @@ Public Class HistoryMenu
             ClearLog(resErrPath, "Restore error history", False)
             ClearLog(roboLogPath, "Robocopy history", False)
             If New FileInfo(logPath).Length.Equals(0) Or New FileInfo(advLogPath).Length.Equals(0) Or New FileInfo(resLogPath).Length.Equals(0) Or New FileInfo(errPath).Length.Equals(0) Or New FileInfo(advErrPath).Length.Equals(0) Or New FileInfo(resErrPath).Length.Equals(0) Then
-                MsgBox("All history cleared !", MsgBoxStyle.Information, "Office Tools")
+                MessageBoxAdv.Show("All history cleared !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 RichTextBox1.Text = ""
             End If
         Else
-            MsgBox("Cancel clear history !", MsgBoxStyle.Information, "Office Tools")
+            MessageBoxAdv.Show("Cancel clear history !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
     Private Sub Export_Log_Button(sender As Object, e As EventArgs) Handles Button6.Click
         Dim validation As Integer
-        validation = MsgBox("This will export all log !", vbExclamation + vbYesNo + vbDefaultButton2, "Office Tools")
+        validation = MessageBoxAdv.Show("This will export all log !", "Office Tools", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
         If validation = vbYes Then
             ExportLog(logPath, "log", "Backup history", logCountPath)
             ExportLog(advLogPath, "advLog", "Archive history", logCountPath)
@@ -86,14 +88,14 @@ Public Class HistoryMenu
             ExportLog(resErrPath, "resErr", "Restore error history", logCountPath)
             ExportLog(roboLogPath, "robolog", "Robolog history", logCountPath)
             If CInt(PathVal(logCountPath, 0)) = 7 Then
-                MsgBox("All log exported !", MsgBoxStyle.Information, "Office Tools")
+                MessageBoxAdv.Show("All log exported !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
-                MsgBox("Export log error !", MsgBoxStyle.Critical, "Office Tools")
+                MessageBoxAdv.Show("Export log error !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
             PrepareNotif(logCountPath)
             RichTextBox1.Text = ""
         Else
-            MsgBox("Cancel export log!", MsgBoxStyle.Information, "Office Tools")
+            MessageBoxAdv.Show("Cancel export log!", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 End Class
