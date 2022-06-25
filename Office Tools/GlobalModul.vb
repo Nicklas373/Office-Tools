@@ -1,5 +1,54 @@
 ﻿Imports System.IO
 Module GlobalModul
+    Dim resSrcPath As String = "conf/res_backup/resSrcPath"
+    Dim resDestPath As String = "conf/res_backup/resDestPath"
+    Dim resInstPath As String = "conf/res_backup/resInstPath"
+    Dim resTempPass As String = "conf/res_backup/resTempKey"
+    Dim resDecResult As String = "conf/res_backup/resDecResult"
+    Dim resZipLog As String = "conf/res_backup/resZipLog"
+    Dim resDecMtd As String = "conf/res_backup/resDecType"
+    Dim advSrcPath As String = "conf/adv_backup/advSrcPath"
+    Dim advDestPath As String = "conf/adv_backup/advDestPath"
+    Dim advCompExt As String = "conf/adv_backup/advCompExt"
+    Dim advCompLevel As String = "conf/adv_backup/advCompLvl"
+    Dim advCompType As String = "conf/adv_backup/advCompType"
+    Dim advEncType As String = "conf/adv_backup/advEncType"
+    Dim advInstPath As String = "conf/adv_backup/advInstPath"
+    Dim advRanStrg As String = "conf/adv_backup/advRandomStrg"
+    Dim advTempPass As String = "conf/adv_backup/advTempPass"
+    Dim uiProcessorCount As String = "conf/nrm_backup/nrmProcessor"
+    Dim uiSpecFilePath As String = "conf/nrm_backup/nrmSpecfilePath"
+    Dim uiDatePath As String = "conf/nrm_backup/nrmDatePath"
+    Dim uiDestPath As String = "conf/nrm_backup/nrmDestPath"
+    Dim uiFrDatePath As String = "conf/nrm_backup/nrmFrDatePath"
+    Dim uiReDatePath As String = "conf/nrm_backup/nrmReDatePath"
+    Dim uiSrcPath As String = "conf/nrm_backup/nrmSrcPath"
+    Dim uiToDatePath As String = "conf/nrm_backup/nrmToDatePath"
+    Dim cliSrcPath As String = "conf/cli_backup/cliSrcPath"
+    Dim cliDestPath As String = "conf/cli_backup/cliDestPath"
+    Dim cliDatePath As String = "conf/cli_backup/cliDatePath"
+    Dim cliProcessor As String = "conf/cli_backup/cliProcessor"
+    Dim cliTimeInit As String = "conf/cli_backup/cliTimeInit"
+    Public Sub InitCheck()
+        Dim num As Integer() = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+                                17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28}
+        Dim conf As String() = {resSrcPath, resDestPath, resInstPath, resTempPass, resDecResult,
+                                resZipLog, resDecMtd, advSrcPath, advDestPath, advCompExt, advCompLevel,
+                                advEncType, advInstPath, advRanStrg, advTempPass, uiProcessorCount, uiSpecFilePath,
+                                uiDatePath, uiDestPath, uiFrDatePath, uiSrcPath, uiReDatePath, uiToDatePath, cliSrcPath,
+                                cliDestPath, cliDatePath, cliProcessor, cliTimeInit}
+        For Each number As Integer In num
+            For Each letter As String In conf
+                CheckCoreComponent(letter)
+            Next
+        Next
+    End Sub
+    Public Sub CheckCoreComponent(path As String)
+        If File.Exists(path) Then
+        Else
+            PrepareNotif(path)
+        End If
+    End Sub
     Public Sub CheckFileExist(path As String, trim As String)
         If File.Exists(path) Then
             GC.Collect()

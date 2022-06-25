@@ -4,6 +4,7 @@ Public Class MainMenu
     Inherits SfForm
     Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AllowTransparency = False
+        InitCheck()
         Style.TitleBar.IconBackColor = Color.FromArgb(15, 161, 212)
         BackColor = Color.AliceBlue
         Style.TitleBar.TextHorizontalAlignment = HorizontalAlignment.Center
@@ -13,7 +14,7 @@ Public Class MainMenu
         Close()
     End Sub
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        Dim menu_backup = New BackupMenu
+        Dim menu_backup = New BackupMenu_2
         menu_backup.Show()
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
