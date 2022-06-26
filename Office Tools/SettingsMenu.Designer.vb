@@ -33,6 +33,8 @@ Partial Class SettingsMenu
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.dir_bck_set = New System.Windows.Forms.Panel()
+        Me.daily_sched_pnl = New System.Windows.Forms.Panel()
         Me.weekly_sched_pnl = New System.Windows.Forms.Panel()
         Me.bck_info_pnl = New System.Windows.Forms.Panel()
         Me.tsk_info_panel = New System.Windows.Forms.Panel()
@@ -51,6 +53,7 @@ Partial Class SettingsMenu
         Me.Button22 = New System.Windows.Forms.Button()
         Me.Button23 = New System.Windows.Forms.Button()
         Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
+        Me.SfDateTimeEdit2 = New Syncfusion.WinForms.Input.SfDateTimeEdit()
         Me.ComboBox6 = New System.Windows.Forms.ComboBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.ComboBox7 = New System.Windows.Forms.ComboBox()
@@ -66,15 +69,13 @@ Partial Class SettingsMenu
         Me.Label16 = New System.Windows.Forms.Label()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.DateTimePicker5 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePicker6 = New System.Windows.Forms.DateTimePicker()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Button13 = New System.Windows.Forms.Button()
         Me.Button14 = New System.Windows.Forms.Button()
         Me.Button15 = New System.Windows.Forms.Button()
-        Me.dir_bck_set = New System.Windows.Forms.Panel()
-        Me.daily_sched_pnl = New System.Windows.Forms.Panel()
+        Me.SfDateTimeEdit1 = New Syncfusion.WinForms.Input.SfDateTimeEdit()
         Me.Button9 = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Button10 = New System.Windows.Forms.Button()
@@ -85,7 +86,6 @@ Partial Class SettingsMenu
         Me.Label11 = New System.Windows.Forms.Label()
         Me.ComboBox4 = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePicker4 = New System.Windows.Forms.DateTimePicker()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -102,12 +102,12 @@ Partial Class SettingsMenu
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.dir_bck_set.SuspendLayout()
+        Me.daily_sched_pnl.SuspendLayout()
         Me.weekly_sched_pnl.SuspendLayout()
         Me.bck_info_pnl.SuspendLayout()
         Me.tsk_info_panel.SuspendLayout()
         Me.pdf_set_pnl.SuspendLayout()
-        Me.dir_bck_set.SuspendLayout()
-        Me.daily_sched_pnl.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -265,7 +265,6 @@ Partial Class SettingsMenu
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.DimGray
-        Me.Panel2.Controls.Add(Me.weekly_sched_pnl)
         Me.Panel2.Controls.Add(Me.dir_bck_set)
         Me.Panel2.Location = New System.Drawing.Point(232, 4)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -273,9 +272,53 @@ Partial Class SettingsMenu
         Me.Panel2.Size = New System.Drawing.Size(719, 498)
         Me.Panel2.TabIndex = 1
         '
+        'dir_bck_set
+        '
+        Me.dir_bck_set.Controls.Add(Me.daily_sched_pnl)
+        Me.dir_bck_set.Controls.Add(Me.TextBox2)
+        Me.dir_bck_set.Controls.Add(Me.TextBox1)
+        Me.dir_bck_set.Controls.Add(Me.Button2)
+        Me.dir_bck_set.Controls.Add(Me.Button6)
+        Me.dir_bck_set.Controls.Add(Me.Button7)
+        Me.dir_bck_set.Controls.Add(Me.Label5)
+        Me.dir_bck_set.Controls.Add(Me.Label4)
+        Me.dir_bck_set.Controls.Add(Me.Label7)
+        Me.dir_bck_set.Controls.Add(Me.ComboBox1)
+        Me.dir_bck_set.Controls.Add(Me.Button1)
+        Me.dir_bck_set.Controls.Add(Me.Button3)
+        Me.dir_bck_set.Location = New System.Drawing.Point(0, 1)
+        Me.dir_bck_set.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dir_bck_set.Name = "dir_bck_set"
+        Me.dir_bck_set.Size = New System.Drawing.Size(713, 495)
+        Me.dir_bck_set.TabIndex = 54
+        '
+        'daily_sched_pnl
+        '
+        Me.daily_sched_pnl.Controls.Add(Me.weekly_sched_pnl)
+        Me.daily_sched_pnl.Controls.Add(Me.SfDateTimeEdit1)
+        Me.daily_sched_pnl.Controls.Add(Me.Button9)
+        Me.daily_sched_pnl.Controls.Add(Me.Label13)
+        Me.daily_sched_pnl.Controls.Add(Me.Button10)
+        Me.daily_sched_pnl.Controls.Add(Me.Button11)
+        Me.daily_sched_pnl.Controls.Add(Me.TextBox3)
+        Me.daily_sched_pnl.Controls.Add(Me.Label12)
+        Me.daily_sched_pnl.Controls.Add(Me.ComboBox5)
+        Me.daily_sched_pnl.Controls.Add(Me.Label11)
+        Me.daily_sched_pnl.Controls.Add(Me.ComboBox4)
+        Me.daily_sched_pnl.Controls.Add(Me.Label8)
+        Me.daily_sched_pnl.Controls.Add(Me.DateTimePicker4)
+        Me.daily_sched_pnl.Controls.Add(Me.Label9)
+        Me.daily_sched_pnl.Controls.Add(Me.Label10)
+        Me.daily_sched_pnl.Location = New System.Drawing.Point(1, -1)
+        Me.daily_sched_pnl.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.daily_sched_pnl.Name = "daily_sched_pnl"
+        Me.daily_sched_pnl.Size = New System.Drawing.Size(710, 497)
+        Me.daily_sched_pnl.TabIndex = 29
+        '
         'weekly_sched_pnl
         '
         Me.weekly_sched_pnl.Controls.Add(Me.bck_info_pnl)
+        Me.weekly_sched_pnl.Controls.Add(Me.SfDateTimeEdit2)
         Me.weekly_sched_pnl.Controls.Add(Me.ComboBox6)
         Me.weekly_sched_pnl.Controls.Add(Me.Label19)
         Me.weekly_sched_pnl.Controls.Add(Me.ComboBox7)
@@ -291,18 +334,17 @@ Partial Class SettingsMenu
         Me.weekly_sched_pnl.Controls.Add(Me.Label16)
         Me.weekly_sched_pnl.Controls.Add(Me.TextBox4)
         Me.weekly_sched_pnl.Controls.Add(Me.Label17)
-        Me.weekly_sched_pnl.Controls.Add(Me.DateTimePicker5)
         Me.weekly_sched_pnl.Controls.Add(Me.DateTimePicker6)
         Me.weekly_sched_pnl.Controls.Add(Me.Label14)
         Me.weekly_sched_pnl.Controls.Add(Me.Label15)
         Me.weekly_sched_pnl.Controls.Add(Me.Button13)
         Me.weekly_sched_pnl.Controls.Add(Me.Button14)
         Me.weekly_sched_pnl.Controls.Add(Me.Button15)
-        Me.weekly_sched_pnl.Location = New System.Drawing.Point(0, 0)
+        Me.weekly_sched_pnl.Location = New System.Drawing.Point(-1, 0)
         Me.weekly_sched_pnl.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.weekly_sched_pnl.Name = "weekly_sched_pnl"
-        Me.weekly_sched_pnl.Size = New System.Drawing.Size(710, 498)
-        Me.weekly_sched_pnl.TabIndex = 55
+        Me.weekly_sched_pnl.Size = New System.Drawing.Size(713, 500)
+        Me.weekly_sched_pnl.TabIndex = 56
         '
         'bck_info_pnl
         '
@@ -313,8 +355,8 @@ Partial Class SettingsMenu
         Me.bck_info_pnl.Location = New System.Drawing.Point(0, 0)
         Me.bck_info_pnl.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.bck_info_pnl.Name = "bck_info_pnl"
-        Me.bck_info_pnl.Size = New System.Drawing.Size(710, 498)
-        Me.bck_info_pnl.TabIndex = 46
+        Me.bck_info_pnl.Size = New System.Drawing.Size(711, 500)
+        Me.bck_info_pnl.TabIndex = 54
         '
         'tsk_info_panel
         '
@@ -341,7 +383,7 @@ Partial Class SettingsMenu
         Me.pdf_set_pnl.Location = New System.Drawing.Point(0, 0)
         Me.pdf_set_pnl.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.pdf_set_pnl.Name = "pdf_set_pnl"
-        Me.pdf_set_pnl.Size = New System.Drawing.Size(707, 494)
+        Me.pdf_set_pnl.Size = New System.Drawing.Size(716, 499)
         Me.pdf_set_pnl.TabIndex = 49
         '
         'CheckBox8
@@ -566,8 +608,19 @@ Partial Class SettingsMenu
         Me.RichTextBox2.TabIndex = 46
         Me.RichTextBox2.Text = ""
         '
+        'SfDateTimeEdit2
+        '
+        Me.SfDateTimeEdit2.Enabled = False
+        Me.SfDateTimeEdit2.Format = "MM/dd/yyyy"
+        Me.SfDateTimeEdit2.Location = New System.Drawing.Point(147, 9)
+        Me.SfDateTimeEdit2.Name = "SfDateTimeEdit2"
+        Me.SfDateTimeEdit2.ShowUpDown = True
+        Me.SfDateTimeEdit2.Size = New System.Drawing.Size(228, 31)
+        Me.SfDateTimeEdit2.TabIndex = 53
+        '
         'ComboBox6
         '
+        Me.ComboBox6.Enabled = False
         Me.ComboBox6.FormattingEnabled = True
         Me.ComboBox6.Items.AddRange(New Object() {"Disabled", "15 Minutes", "30 Minutes", "1 Hours", "12 Hours", "1 Day"})
         Me.ComboBox6.Location = New System.Drawing.Point(147, 233)
@@ -589,6 +642,7 @@ Partial Class SettingsMenu
         '
         'ComboBox7
         '
+        Me.ComboBox7.Enabled = False
         Me.ComboBox7.FormattingEnabled = True
         Me.ComboBox7.Items.AddRange(New Object() {"Disabled", "5 Minutes", "10 Minutes", "15 Minutes", "30 Minutes", "1 Hours"})
         Me.ComboBox7.Location = New System.Drawing.Point(147, 194)
@@ -622,6 +676,7 @@ Partial Class SettingsMenu
         'CheckBox6
         '
         Me.CheckBox6.AutoSize = True
+        Me.CheckBox6.Enabled = False
         Me.CheckBox6.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.CheckBox6.ForeColor = System.Drawing.Color.AliceBlue
         Me.CheckBox6.Location = New System.Drawing.Point(147, 161)
@@ -635,6 +690,7 @@ Partial Class SettingsMenu
         'CheckBox5
         '
         Me.CheckBox5.AutoSize = True
+        Me.CheckBox5.Enabled = False
         Me.CheckBox5.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.CheckBox5.ForeColor = System.Drawing.Color.AliceBlue
         Me.CheckBox5.Location = New System.Drawing.Point(517, 128)
@@ -648,6 +704,7 @@ Partial Class SettingsMenu
         'CheckBox4
         '
         Me.CheckBox4.AutoSize = True
+        Me.CheckBox4.Enabled = False
         Me.CheckBox4.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.CheckBox4.ForeColor = System.Drawing.Color.AliceBlue
         Me.CheckBox4.Location = New System.Drawing.Point(426, 128)
@@ -661,6 +718,7 @@ Partial Class SettingsMenu
         'CheckBox3
         '
         Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Enabled = False
         Me.CheckBox3.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.CheckBox3.ForeColor = System.Drawing.Color.AliceBlue
         Me.CheckBox3.Location = New System.Drawing.Point(319, 128)
@@ -674,6 +732,7 @@ Partial Class SettingsMenu
         'CheckBox2
         '
         Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Enabled = False
         Me.CheckBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.CheckBox2.ForeColor = System.Drawing.Color.AliceBlue
         Me.CheckBox2.Location = New System.Drawing.Point(234, 128)
@@ -687,6 +746,7 @@ Partial Class SettingsMenu
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Enabled = False
         Me.CheckBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.CheckBox1.ForeColor = System.Drawing.Color.AliceBlue
         Me.CheckBox1.Location = New System.Drawing.Point(147, 128)
@@ -700,6 +760,7 @@ Partial Class SettingsMenu
         'CheckBox7
         '
         Me.CheckBox7.AutoSize = True
+        Me.CheckBox7.Enabled = False
         Me.CheckBox7.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.CheckBox7.ForeColor = System.Drawing.Color.AliceBlue
         Me.CheckBox7.Location = New System.Drawing.Point(234, 161)
@@ -715,7 +776,7 @@ Partial Class SettingsMenu
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label16.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label16.Location = New System.Drawing.Point(202, 94)
+        Me.Label16.Location = New System.Drawing.Point(202, 93)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(50, 19)
         Me.Label16.TabIndex = 40
@@ -723,6 +784,7 @@ Partial Class SettingsMenu
         '
         'TextBox4
         '
+        Me.TextBox4.Enabled = False
         Me.TextBox4.Location = New System.Drawing.Point(147, 89)
         Me.TextBox4.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox4.Name = "TextBox4"
@@ -740,19 +802,14 @@ Partial Class SettingsMenu
         Me.Label17.TabIndex = 38
         Me.Label17.Text = "Recurs Every"
         '
-        'DateTimePicker5
-        '
-        Me.DateTimePicker5.Location = New System.Drawing.Point(147, 11)
-        Me.DateTimePicker5.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.DateTimePicker5.Name = "DateTimePicker5"
-        Me.DateTimePicker5.Size = New System.Drawing.Size(228, 25)
-        Me.DateTimePicker5.TabIndex = 35
-        '
         'DateTimePicker6
         '
+        Me.DateTimePicker6.Enabled = False
+        Me.DateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Time
         Me.DateTimePicker6.Location = New System.Drawing.Point(147, 50)
         Me.DateTimePicker6.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.DateTimePicker6.Name = "DateTimePicker6"
+        Me.DateTimePicker6.ShowUpDown = True
         Me.DateTimePicker6.Size = New System.Drawing.Size(228, 25)
         Me.DateTimePicker6.TabIndex = 37
         '
@@ -836,47 +893,15 @@ Partial Class SettingsMenu
         Me.Button15.UseVisualStyleBackColor = False
         Me.Button15.Visible = False
         '
-        'dir_bck_set
+        'SfDateTimeEdit1
         '
-        Me.dir_bck_set.Controls.Add(Me.daily_sched_pnl)
-        Me.dir_bck_set.Controls.Add(Me.TextBox2)
-        Me.dir_bck_set.Controls.Add(Me.TextBox1)
-        Me.dir_bck_set.Controls.Add(Me.Button2)
-        Me.dir_bck_set.Controls.Add(Me.Button6)
-        Me.dir_bck_set.Controls.Add(Me.Button7)
-        Me.dir_bck_set.Controls.Add(Me.Label5)
-        Me.dir_bck_set.Controls.Add(Me.Label4)
-        Me.dir_bck_set.Controls.Add(Me.Label7)
-        Me.dir_bck_set.Controls.Add(Me.ComboBox1)
-        Me.dir_bck_set.Controls.Add(Me.Button1)
-        Me.dir_bck_set.Controls.Add(Me.Button3)
-        Me.dir_bck_set.Location = New System.Drawing.Point(0, 1)
-        Me.dir_bck_set.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.dir_bck_set.Name = "dir_bck_set"
-        Me.dir_bck_set.Size = New System.Drawing.Size(713, 495)
-        Me.dir_bck_set.TabIndex = 54
-        '
-        'daily_sched_pnl
-        '
-        Me.daily_sched_pnl.Controls.Add(Me.Button9)
-        Me.daily_sched_pnl.Controls.Add(Me.Label13)
-        Me.daily_sched_pnl.Controls.Add(Me.Button10)
-        Me.daily_sched_pnl.Controls.Add(Me.Button11)
-        Me.daily_sched_pnl.Controls.Add(Me.TextBox3)
-        Me.daily_sched_pnl.Controls.Add(Me.Label12)
-        Me.daily_sched_pnl.Controls.Add(Me.ComboBox5)
-        Me.daily_sched_pnl.Controls.Add(Me.Label11)
-        Me.daily_sched_pnl.Controls.Add(Me.ComboBox4)
-        Me.daily_sched_pnl.Controls.Add(Me.Label8)
-        Me.daily_sched_pnl.Controls.Add(Me.DateTimePicker3)
-        Me.daily_sched_pnl.Controls.Add(Me.DateTimePicker4)
-        Me.daily_sched_pnl.Controls.Add(Me.Label9)
-        Me.daily_sched_pnl.Controls.Add(Me.Label10)
-        Me.daily_sched_pnl.Location = New System.Drawing.Point(0, -1)
-        Me.daily_sched_pnl.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.daily_sched_pnl.Name = "daily_sched_pnl"
-        Me.daily_sched_pnl.Size = New System.Drawing.Size(710, 497)
-        Me.daily_sched_pnl.TabIndex = 28
+        Me.SfDateTimeEdit1.Enabled = False
+        Me.SfDateTimeEdit1.Format = "MM/dd/yyyy"
+        Me.SfDateTimeEdit1.Location = New System.Drawing.Point(164, 6)
+        Me.SfDateTimeEdit1.Name = "SfDateTimeEdit1"
+        Me.SfDateTimeEdit1.ShowUpDown = True
+        Me.SfDateTimeEdit1.Size = New System.Drawing.Size(228, 33)
+        Me.SfDateTimeEdit1.TabIndex = 30
         '
         'Button9
         '
@@ -949,6 +974,7 @@ Partial Class SettingsMenu
         '
         'TextBox3
         '
+        Me.TextBox3.Enabled = False
         Me.TextBox3.Location = New System.Drawing.Point(164, 87)
         Me.TextBox3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TextBox3.Name = "TextBox3"
@@ -968,6 +994,7 @@ Partial Class SettingsMenu
         '
         'ComboBox5
         '
+        Me.ComboBox5.Enabled = False
         Me.ComboBox5.FormattingEnabled = True
         Me.ComboBox5.Items.AddRange(New Object() {"Disabled", "15 Minutes", "30 Minutes", "1 Hours", "12 Hours", "1 Day"})
         Me.ComboBox5.Location = New System.Drawing.Point(164, 172)
@@ -989,6 +1016,7 @@ Partial Class SettingsMenu
         '
         'ComboBox4
         '
+        Me.ComboBox4.Enabled = False
         Me.ComboBox4.FormattingEnabled = True
         Me.ComboBox4.Items.AddRange(New Object() {"Disabled", "5 Minutes", "10 Minutes", "15 Minutes", "30 Minutes", "1 Hours"})
         Me.ComboBox4.Location = New System.Drawing.Point(164, 127)
@@ -1008,19 +1036,14 @@ Partial Class SettingsMenu
         Me.Label8.TabIndex = 23
         Me.Label8.Text = "Repeat Task Every"
         '
-        'DateTimePicker3
-        '
-        Me.DateTimePicker3.Location = New System.Drawing.Point(164, 9)
-        Me.DateTimePicker3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.DateTimePicker3.Name = "DateTimePicker3"
-        Me.DateTimePicker3.Size = New System.Drawing.Size(228, 25)
-        Me.DateTimePicker3.TabIndex = 20
-        '
         'DateTimePicker4
         '
+        Me.DateTimePicker4.Enabled = False
+        Me.DateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Time
         Me.DateTimePicker4.Location = New System.Drawing.Point(164, 48)
         Me.DateTimePicker4.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.DateTimePicker4.Name = "DateTimePicker4"
+        Me.DateTimePicker4.ShowUpDown = True
         Me.DateTimePicker4.Size = New System.Drawing.Size(228, 25)
         Me.DateTimePicker4.TabIndex = 22
         '
@@ -1073,7 +1096,7 @@ Partial Class SettingsMenu
         Me.Button2.ForeColor = System.Drawing.Color.AliceBlue
         Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button2.Location = New System.Drawing.Point(496, 154)
+        Me.Button2.Location = New System.Drawing.Point(509, 154)
         Me.Button2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(97, 44)
@@ -1216,16 +1239,16 @@ Partial Class SettingsMenu
         Me.Text = "Settings Menu | Office Tools"
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
+        Me.dir_bck_set.ResumeLayout(False)
+        Me.dir_bck_set.PerformLayout()
+        Me.daily_sched_pnl.ResumeLayout(False)
+        Me.daily_sched_pnl.PerformLayout()
         Me.weekly_sched_pnl.ResumeLayout(False)
         Me.weekly_sched_pnl.PerformLayout()
         Me.bck_info_pnl.ResumeLayout(False)
         Me.tsk_info_panel.ResumeLayout(False)
         Me.pdf_set_pnl.ResumeLayout(False)
         Me.pdf_set_pnl.PerformLayout()
-        Me.dir_bck_set.ResumeLayout(False)
-        Me.dir_bck_set.PerformLayout()
-        Me.daily_sched_pnl.ResumeLayout(False)
-        Me.daily_sched_pnl.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1240,23 +1263,20 @@ Partial Class SettingsMenu
     Friend WithEvents Button5 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents dir_bck_set As Panel
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button6 As Button
+    Friend WithEvents Button7 As Button
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents daily_sched_pnl As Panel
     Friend WithEvents weekly_sched_pnl As Panel
-    Friend WithEvents bck_info_pnl As Panel
-    Friend WithEvents tsk_info_panel As Panel
-    Friend WithEvents pdf_set_pnl As Panel
-    Friend WithEvents Button26 As Button
-    Friend WithEvents Button27 As Button
-    Friend WithEvents Button28 As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents Button25 As Button
-    Friend WithEvents Button17 As Button
-    Friend WithEvents Button19 As Button
-    Friend WithEvents Button20 As Button
-    Friend WithEvents RichTextBox1 As RichTextBox
-    Friend WithEvents Button22 As Button
-    Friend WithEvents Button23 As Button
-    Friend WithEvents RichTextBox2 As RichTextBox
     Friend WithEvents ComboBox6 As ComboBox
     Friend WithEvents Label19 As Label
     Friend WithEvents ComboBox7 As ComboBox
@@ -1272,15 +1292,13 @@ Partial Class SettingsMenu
     Friend WithEvents Label16 As Label
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents Label17 As Label
-    Friend WithEvents DateTimePicker5 As DateTimePicker
     Friend WithEvents DateTimePicker6 As DateTimePicker
     Friend WithEvents Label14 As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents Button13 As Button
     Friend WithEvents Button14 As Button
     Friend WithEvents Button15 As Button
-    Friend WithEvents dir_bck_set As Panel
-    Friend WithEvents daily_sched_pnl As Panel
+    Friend WithEvents SfDateTimeEdit1 As Syncfusion.WinForms.Input.SfDateTimeEdit
     Friend WithEvents Button9 As Button
     Friend WithEvents Label13 As Label
     Friend WithEvents Button10 As Button
@@ -1291,20 +1309,25 @@ Partial Class SettingsMenu
     Friend WithEvents Label11 As Label
     Friend WithEvents ComboBox4 As ComboBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents DateTimePicker3 As DateTimePicker
     Friend WithEvents DateTimePicker4 As DateTimePicker
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Button7 As Button
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents SfDateTimeEdit2 As Syncfusion.WinForms.Input.SfDateTimeEdit
+    Friend WithEvents bck_info_pnl As Panel
+    Friend WithEvents tsk_info_panel As Panel
+    Friend WithEvents pdf_set_pnl As Panel
     Friend WithEvents CheckBox8 As CheckBox
+    Friend WithEvents Button26 As Button
+    Friend WithEvents Button27 As Button
+    Friend WithEvents Button28 As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents Button25 As Button
+    Friend WithEvents Button17 As Button
+    Friend WithEvents Button19 As Button
+    Friend WithEvents Button20 As Button
+    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents Button22 As Button
+    Friend WithEvents Button23 As Button
+    Friend WithEvents RichTextBox2 As RichTextBox
 End Class

@@ -12,18 +12,15 @@ Module SettingsModul
         End Using
     End Sub
     Public Sub WriteForAutoBackup(confPath As String, cliSrcPath As String, cliDestPath As String, cliDatePath As String, timePath As String)
-        Dim trimSrc As String
-        Dim trimDest As String
-        Dim trimBak As String
-        trimSrc = PathVal(confPath, 1).Replace("Source Directory: ", "")
-        trimDest = PathVal(confPath, 2).Replace("Destination Directory: ", "")
-        trimBak = PathVal(confPath, 3).Replace("Backup Preferences: ", "")
-        CheckFileExist(cliSrcPath, trimSrc)
-        CheckFileExist(cliDestPath, trimDest)
-        If trimBak = "null" Then
+        Dim SourceBackup As String = FindConfig(confPath, "Source Directory: ")
+        Dim DestBackup As String = FindConfig(confPath, "Destination Directory: ")
+        Dim BackupPreferences As String = FindConfig(confPath, "Backup Preferences: ")
+        CheckFileExist(cliSrcPath, SourceBackup)
+        CheckFileExist(cliDestPath, DestBackup)
+        If BackupPreferences = "null" Then
             MsgBox("Please select backup options first !", MsgBoxStyle.Critical, "Office Tools")
         Else
-            If trimBak = "Today" Then
+            If BackupPreferences = "Today" Then
                 If File.Exists(cliDatePath) Then
                     GC.Collect()
                     GC.WaitForPendingFinalizers()
@@ -494,8 +491,22 @@ Module SettingsModul
         End Using
     End Function
     Public Sub WriteFile(filePath As String, noLine As Integer, newText As String)
-        Dim lines() As String = IO.File.ReadAllLines(filePath)
+        Dim lines() As String = File.ReadAllLines(filePath)
         lines(noLine) = newText
-        IO.File.WriteAllLines(filePath, lines)
+        File.WriteAllLines(filePath, lines)
     End Sub
+    Public Function FindConfig(confpath As String, contains As String) As String
+        Dim value As String
+        Using sReader As New StreamReader(confpath)
+            While Not sReader.EndOfStream
+                Dim line As String = sReader.ReadLine()
+                If line.Contains(contains) Then
+                    value = line
+                    Return value
+                End If
+            End While
+            value = "null"
+            Return value
+        End Using
+    End Function
 End Module

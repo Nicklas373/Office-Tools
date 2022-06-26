@@ -2,6 +2,7 @@
 Imports System.IO
 Imports Microsoft.Win32.TaskScheduler
 Imports Syncfusion.Windows.Forms
+Imports Syncfusion.WinForms.Input.Enums
 
 Public Class SettingsMenu
     Inherits SfForm
@@ -24,8 +25,10 @@ Public Class SettingsMenu
         weekly_sched_pnl.Visible = False
         tsk_info_panel.Visible = False
         bck_info_pnl.Visible = False
+        SfDateTimeEdit1.ShowUpDown = True
         DateTimePicker4.Format = DateTimePickerFormat.Time
         DateTimePicker4.ShowUpDown = True
+        SfDateTimeEdit2.ShowUpDown = True
         DateTimePicker6.Format = DateTimePickerFormat.Time
         DateTimePicker6.ShowUpDown = True
         GetBackPref()
@@ -127,33 +130,38 @@ Public Class SettingsMenu
             If ComboBox1.Text = "" Then
                 MessageBoxAdv.Show("Please select backup time !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
-                If File.Exists(confPath) Then
-                    If File.ReadAllLines(confPath).Length < 1 Then
-                        File.Create(confPath).Dispose()
-                        Dim writer As New StreamWriter(confPath, True)
-                        writer.WriteLine("Office Tools Config v1.2")
-                        writer.WriteLine("Source Directory: " & TextBox1.Text)
-                        writer.WriteLine("Destination Directory: " & TextBox2.Text)
-                        writer.WriteLine("Backup Preferences: " & ComboBox1.Text)
-                        writer.Close()
-                        MessageBoxAdv.Show("Config created !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    Else
-                        WriteFile(confPath, 1, "Source Directory: " & TextBox1.Text)
-                        WriteFile(confPath, 2, "Destination Directory: " & TextBox2.Text)
-                        WriteFile(confPath, 3, "Backup Preferences: " & ComboBox1.Text)
-                        MessageBoxAdv.Show("Config updated !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    End If
-                Else
-                    File.Create(confPath).Dispose()
+                Dim SourceBackup As String = FindConfig(confPath, "Source Directory: ")
+                Dim DestBackup As String = FindConfig(confPath, "Destination Directory: ")
+                Dim BackupPreferences As String = FindConfig(confPath, "Backup Preferences: ")
+                If SourceBackup = "null" Then
                     Dim writer As New StreamWriter(confPath, True)
-                    writer.WriteLine("Office Tools Config v1.2")
                     writer.WriteLine("Source Directory: " & TextBox1.Text)
+                    writer.Close()
+                Else
+                    Dim SourceReaderOldConf As String = File.ReadAllText(confPath)
+                    SourceReaderOldConf = SourceReaderOldConf.Replace(SourceBackup, "Source Directory: " & TextBox1.Text)
+                    File.WriteAllText(confPath, SourceReaderOldConf)
+                End If
+                If DestBackup = "null" Then
+                    Dim writer As New StreamWriter(confPath, True)
                     writer.WriteLine("Destination Directory: " & TextBox2.Text)
+                    writer.Close()
+                Else
+                    Dim DestinationReaderOldConf As String = File.ReadAllText(confPath)
+                    DestinationReaderOldConf = DestinationReaderOldConf.Replace(DestBackup, "Destination Directory: " & TextBox2.Text)
+                    File.WriteAllText(confPath, DestinationReaderOldConf)
+                End If
+                If BackupPreferences = "null" Then
+                    Dim writer As New StreamWriter(confPath, True)
                     writer.WriteLine("Backup Preferences: " & ComboBox1.Text)
                     writer.Close()
-                    MessageBoxAdv.Show("Config created !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    Dim BackupPreferencesOldConf As String = File.ReadAllText(confPath)
+                    BackupPreferencesOldConf = BackupPreferencesOldConf.Replace(BackupPreferences, "Backup Preferences: " & ComboBox1.Text)
+                    File.WriteAllText(confPath, BackupPreferencesOldConf)
                 End If
                 WriteForAutoBackup(confPath, cliSrcPath, cliDestPath, cliDatePath, timePath)
+                MessageBoxAdv.Show("Config updated !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 TextBox1.ReadOnly = True
                 TextBox2.ReadOnly = True
                 Button1.Visible = False
@@ -180,7 +188,12 @@ Public Class SettingsMenu
         Button11.Visible = True
         Button9.Visible = False
         Button10.Visible = True
+        SfDateTimeEdit1.Enabled = True
+        DateTimePicker4.Enabled = True
+        TextBox3.Enabled = True
         TextBox3.Text = ""
+        ComboBox4.Enabled = True
+        ComboBox5.Enabled = True
         ComboBox4.ResetText()
         ComboBox5.ResetText()
     End Sub
@@ -188,7 +201,12 @@ Public Class SettingsMenu
         Button11.Visible = False
         Button9.Visible = True
         Button10.Visible = False
+        SfDateTimeEdit1.Enabled = False
+        DateTimePicker4.Enabled = False
+        TextBox3.Enabled = False
         TextBox3.Text = ""
+        ComboBox4.Enabled = True
+        ComboBox5.Enabled = True
         ComboBox4.ResetText()
         ComboBox5.ResetText()
     End Sub
@@ -196,7 +214,7 @@ Public Class SettingsMenu
         If TextBox3.Text = "" Then
             MessageBoxAdv.Show("Recurs day can not empty !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
-            Dim custdate As String = DateTimePicker3.Value.ToLongDateString & " " & DateTimePicker4.Value.ToLongTimeString
+            Dim custdate As String = SfDateTimeEdit1.Value & " " & DateTimePicker4.Value.ToLongTimeString
             If ComboBox4.Text = "Disabled" Then
                 ComboBox5.ResetText()
                 MessageBoxAdv.Show("If repeat task is disabled, then repeat duration will be disable", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -210,13 +228,22 @@ Public Class SettingsMenu
             Button10.Visible = False
             Button9.Visible = True
             Button11.Visible = False
+            SfDateTimeEdit1.Enabled = False
+            DateTimePicker4.Enabled = False
+            TextBox3.Enabled = False
+            ComboBox4.Enabled = False
+            ComboBox5.Enabled = False
         End If
     End Sub
     Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles TextBox3.TextChanged
-        If TextBox3.Text = "0" Then
-            MessageBoxAdv.Show("Can not set 0 days for recurs day !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            MessageBoxAdv.Show("Please set another value", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            TextBox3.Text = ""
+        If IsNumeric(TextBox3.Text) Then
+            If TextBox3.Text = "0" Then
+                MessageBoxAdv.Show("Can not set 0 days for recurs day !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBoxAdv.Show("Please set another value", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                TextBox3.Text = ""
+            End If
+        Else
+            MessageBoxAdv.Show("Recurs day input only for numbers !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
     Private Sub ComboBox4_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox4.SelectedIndexChanged
@@ -236,9 +263,21 @@ Public Class SettingsMenu
         Button14.Visible = True
         Button15.Visible = True
         Button13.Visible = False
+        SfDateTimeEdit2.Enabled = True
+        DateTimePicker6.Enabled = True
+        TextBox3.Enabled = True
         TextBox4.Text = ""
+        ComboBox6.Enabled = True
+        ComboBox7.Enabled = True
         ComboBox6.ResetText()
         ComboBox7.ResetText()
+        CheckBox1.Enabled = True
+        CheckBox2.Enabled = True
+        CheckBox3.Enabled = True
+        CheckBox4.Enabled = True
+        CheckBox5.Enabled = True
+        CheckBox6.Enabled = True
+        CheckBox7.Enabled = True
         CheckBox7.Checked = False
         CheckBox1.Checked = False
         CheckBox2.Checked = False
@@ -251,9 +290,21 @@ Public Class SettingsMenu
         Button14.Visible = False
         Button15.Visible = False
         Button13.Visible = True
+        SfDateTimeEdit2.Enabled = False
+        DateTimePicker6.Enabled = False
+        TextBox4.Enabled = False
         TextBox4.Text = ""
+        ComboBox6.Enabled = False
+        ComboBox7.Enabled = False
         ComboBox6.ResetText()
         ComboBox7.ResetText()
+        CheckBox1.Enabled = False
+        CheckBox2.Enabled = False
+        CheckBox3.Enabled = False
+        CheckBox4.Enabled = False
+        CheckBox5.Enabled = False
+        CheckBox6.Enabled = False
+        CheckBox7.Enabled = False
         CheckBox7.Checked = False
         CheckBox1.Checked = False
         CheckBox2.Checked = False
@@ -269,7 +320,7 @@ Public Class SettingsMenu
             If CheckBox7.Checked = False And CheckBox1.Checked = False And CheckBox2.Checked = False And CheckBox3.Checked = False And CheckBox4.Checked = False And CheckBox5.Checked = False And CheckBox6.Checked = False Then
                 MessageBoxAdv.Show("Recurs in day can not empty !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
-                Dim custdate As String = DateTimePicker5.Value.ToLongDateString & " " & DateTimePicker6.Value.ToLongTimeString
+                Dim custdate As String = SfDateTimeEdit2.Value & " " & DateTimePicker6.Value.ToLongTimeString
                 If ComboBox7.Text = "Disabled" Then
                     ComboBox6.ResetText()
                     MessageBoxAdv.Show("If repeat task is disabled, then repeat duration will be disable", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -283,6 +334,13 @@ Public Class SettingsMenu
                 Button6.Visible = False
                 Button7.Visible = True
                 Button8.Visible = False
+                CheckBox1.Enabled = False
+                CheckBox2.Enabled = False
+                CheckBox3.Enabled = False
+                CheckBox4.Enabled = False
+                CheckBox5.Enabled = False
+                CheckBox6.Enabled = False
+                CheckBox7.Enabled = False
             End If
         End If
     End Sub
@@ -361,19 +419,27 @@ Public Class SettingsMenu
         If TextBox5.Text = "" Then
             MsgBox("PDF Path is empty, please choose PDF Reader !", MsgBoxStyle.Information, "Office Tools")
         Else
-            If File.Exists(confPath) Then
-                If File.ReadAllLines(confPath).Length < 5 Then
-                    My.Computer.FileSystem.WriteAllText(confPath, "PDF Reader Preferences: " & TextBox5.Text, True)
-                    My.Computer.FileSystem.WriteAllText(confPath, vbCrLf & "Auto Open PDF: " & CheckBox8.Checked, True)
-                Else
-                    WriteFile(confPath, 4, "PDF Reader Preferences: " & TextBox5.Text)
-                    WriteFile(confPath, 5, "Auto Open PDF: " & CheckBox8.Checked)
-                End If
-                WriteForAutoBackup(confPath, cliSrcPath, cliDestPath, cliDatePath, timePath)
-                MessageBoxAdv.Show("Config updated !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Dim PDFReaderConf As String = FindConfig(confPath, "PDF Reader Preferences: ")
+            Dim PDFAutoConf As String = FindConfig(confPath, "Auto Open PDF: ")
+            If PDFReaderConf = "null" Then
+                Dim writer As New StreamWriter(confPath, True)
+                writer.WriteLine("PDF Reader Preferences: " & TextBox5.Text)
+                writer.Close()
             Else
-                MessageBoxAdv.Show("Config not found !, Please create on backup location settings !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Dim PDFReaderOldConf As String = File.ReadAllText(confPath)
+                PDFReaderOldConf = PDFReaderOldConf.Replace(PDFReaderConf, "PDF Reader Preferences: " & TextBox5.Text)
+                File.WriteAllText(confPath, PDFReaderOldConf)
             End If
+            If PDFAutoConf = "null" Then
+                Dim writer As New StreamWriter(confPath, True)
+                writer.WriteLine("Auto Open PDF: " & CheckBox8.Checked)
+                writer.Close()
+            Else
+                Dim PDFReaderOldConf As String = File.ReadAllText(confPath)
+                PDFReaderOldConf = PDFReaderOldConf.Replace(PDFAutoConf, "Auto Open PDF: " & CheckBox8.Checked)
+                File.WriteAllText(confPath, PDFReaderOldConf)
+            End If
+            MessageBoxAdv.Show("PDF Config Updated !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
         Button27.Visible = False
         Button28.Visible = False
@@ -396,41 +462,41 @@ Public Class SettingsMenu
         End If
     End Sub
     Private Sub GetBackPref()
-        If File.Exists(confPath) Then
-            If File.ReadAllLines(confPath).Length < 5 Then
-                If PathVal(confPath, 1).Equals("null") Then
-                    TextBox1.Text = ""
-                Else
-                    TextBox1.Text = Replace(PathVal(confPath, 1), "Source Directory: ", "")
-                End If
-                If PathVal(confPath, 2).Equals("null") Then
-                    TextBox2.Text = ""
-                Else
-                    TextBox2.Text = Replace(PathVal(confPath, 2), "Destination Directory: ", "")
-                End If
-                If PathVal(confPath, 3).Equals("null") Then
-                    If PathVal(confPath, 3).Replace("Backup Preferences: ", "").Equals("Anytime") Then
-                        ComboBox1.Text = "Anytime"
-                    ElseIf PathVal(confPath, 3).Replace("Backup Preferences: ", "").Equals("Today") Then
-                        ComboBox1.Text = "Today"
-                    End If
-                End If
-            Else
-                If PathVal(confPath, 4).Equals("null") Then
-                    TextBox5.Text = ""
-                Else
-                    TextBox5.Text = Replace(PathVal(confPath, 4), "PDF Reader Preferences: ", "")
-                End If
-                If PathVal(confPath, 5).Equals("null") Then
-                    CheckBox8.Checked = False
-                Else
-                    If PathVal(confPath, 5).Replace("Auto Open PDF: ", "").Equals("False") Then
-                        CheckBox8.Checked = False
-                    Else
-                        CheckBox8.Checked = True
-                    End If
-                End If
+        Dim SourceBackup As String = FindConfig(confPath, "Source Directory: ")
+        Dim DestBackup As String = FindConfig(confPath, "Destination Directory: ")
+        Dim BackupPreferences As String = FindConfig(confPath, "Backup Preferences: ")
+        Dim PDFReaderConf As String = FindConfig(confPath, "PDF Reader Preferences: ")
+        Dim PDFAutoConf As String = FindConfig(confPath, "Auto Open PDF: ")
+        If SourceBackup = "null" Then
+            TextBox1.Text = ""
+        Else
+            TextBox1.Text = SourceBackup.Remove(0, 18)
+        End If
+        If DestBackup = "null" Then
+            TextBox2.Text = ""
+        Else
+            TextBox2.Text = DestBackup.Remove(0, 23)
+        End If
+        If BackupPreferences = "null" Then
+            ComboBox1.Text = ""
+        Else
+            If BackupPreferences = "Backup Preferences: Anytime" Then
+                ComboBox1.Text = "Anytime"
+            ElseIf BackupPreferences = "Backup Preferences: Today" Then
+                ComboBox1.Text = "Today"
             End If
+        End If
+        If PDFReaderConf = "null" Then
+            TextBox5.Text = ""
+        Else
+            TextBox5.Text = PDFReaderConf.Remove(0, 24)
+        End If
+        If PDFAutoConf = "null" Then
+            CheckBox8.Checked = False
+        ElseIf PDFAutoConf = "Auto Open PDF: True" Then
+            CheckBox8.Checked = True
+        ElseIf PDFAutoConf = "Auto Open PDF: False" Then
+            CheckBox8.Checked = False
         End If
     End Sub
 End Class
