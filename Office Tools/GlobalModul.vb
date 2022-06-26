@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Module GlobalModul
+    Dim confPath As String = "conf/config"
     Dim resSrcPath As String = "conf/res_backup/resSrcPath"
     Dim resDestPath As String = "conf/res_backup/resDestPath"
     Dim resInstPath As String = "conf/res_backup/resInstPath"
@@ -31,8 +32,8 @@ Module GlobalModul
     Dim cliTimeInit As String = "conf/cli_backup/cliTimeInit"
     Public Sub InitCheck()
         Dim num As Integer() = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
-                                17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28}
-        Dim conf As String() = {resSrcPath, resDestPath, resInstPath, resTempPass, resDecResult,
+                                17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29}
+        Dim conf As String() = {confPath, resSrcPath, resDestPath, resInstPath, resTempPass, resDecResult,
                                 resZipLog, resDecMtd, advSrcPath, advDestPath, advCompExt, advCompLevel,
                                 advEncType, advInstPath, advRanStrg, advTempPass, uiProcessorCount, uiSpecFilePath,
                                 uiDatePath, uiDestPath, uiFrDatePath, uiSrcPath, uiReDatePath, uiToDatePath, cliSrcPath,
