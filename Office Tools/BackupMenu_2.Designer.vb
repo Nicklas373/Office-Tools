@@ -200,7 +200,7 @@ Partial Class BackupMenu_2
         Me.Panel3.Location = New System.Drawing.Point(230, 4)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(724, 508)
+        Me.Panel3.Size = New System.Drawing.Size(724, 513)
         Me.Panel3.TabIndex = 9
         '
         'Std_bck_pnl
@@ -255,10 +255,10 @@ Partial Class BackupMenu_2
         Me.arc_bck_pnl.Controls.Add(Me.Button11)
         Me.arc_bck_pnl.Controls.Add(Me.TextBox6)
         Me.arc_bck_pnl.Controls.Add(Me.Button12)
-        Me.arc_bck_pnl.Location = New System.Drawing.Point(0, -10)
+        Me.arc_bck_pnl.Location = New System.Drawing.Point(0, 0)
         Me.arc_bck_pnl.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.arc_bck_pnl.Name = "arc_bck_pnl"
-        Me.arc_bck_pnl.Size = New System.Drawing.Size(724, 524)
+        Me.arc_bck_pnl.Size = New System.Drawing.Size(724, 514)
         Me.arc_bck_pnl.TabIndex = 50
         '
         'arc_res_pnl
@@ -822,10 +822,10 @@ Partial Class BackupMenu_2
         '
         Me.SfDateTimeEdit2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.SfDateTimeEdit2.Format = "MM-dd-yyyy"
-        Me.SfDateTimeEdit2.Location = New System.Drawing.Point(370, 177)
+        Me.SfDateTimeEdit2.Location = New System.Drawing.Point(370, 176)
         Me.SfDateTimeEdit2.Name = "SfDateTimeEdit2"
         Me.SfDateTimeEdit2.ShowUpDown = True
-        Me.SfDateTimeEdit2.Size = New System.Drawing.Size(145, 30)
+        Me.SfDateTimeEdit2.Size = New System.Drawing.Size(145, 31)
         Me.SfDateTimeEdit2.TabIndex = 49
         Me.SfDateTimeEdit2.Watermark = "Choose date"
         '

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -8,13 +8,13 @@
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
     <ApplicationIcon>ico\working_AAH_icon.ico</ApplicationIcon>
-    <Version>1.2.7</Version>
+    <Version>1.2.8</Version>
     <Authors>Dicky Herlambang</Authors>
     <Company>Hana-CI Build Project</Company>
     <PackageId>Office_Tools</PackageId>
     <Description>Office Tools (MigrateToGDrive)
 
-is a customized application that have feature to backup your data with user preference time frames, by using windows task scheduler library, also have support with archiving folder that have feature to encrypt your password by using SHA-256 encryption. In addition by request, it also have feature with compress PDF file by using SyncFusion Library.
+Customized application that have feature to backup your data with user preference time frames, by using windows task scheduler library, also have support with archiving folder that have feature to encrypt your password by using SHA-256 encryption. In addition by request, it also have feature with compress PDF file by using SyncFusion Library.
 
 Additional library:
 - 7-Zip
@@ -27,7 +27,12 @@ Additional library:
     <PackageIconUrl />
     <RepositoryType>public</RepositoryType>
     <PackageTags>#Migrate-To-GDrive, #OfficeTools</PackageTags>
-    <PackageReleaseNotes>v1.2.7 (20220625):
+    <PackageReleaseNotes>v1.2.8 (20220626):
+- Misc fixes and code cleanup
+- Re-written code for config write, update or load in settings algorithm
+- Use syncfusion library for datetimepicker on some of settings menu
+
+v1.2.7 (20220625):
 - Fixup robocopy log are not imported correctly
 - Hotfix update for backup menu
   * Fixup encryption key browse error

@@ -1,3 +1,8 @@
+v1.2.8 (20220626):
+- Misc fixes and code cleanup
+- Re-written code for config write, update or load in settings algorithm
+- Use syncfusion library for datetimepicker on some of settings menu
+
 v1.2.7 (20220625):
 - Fixup robocopy log are not imported correctly
 - Hotfix update for backup menu
