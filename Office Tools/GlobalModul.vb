@@ -1,4 +1,6 @@
 ﻿Imports System.IO
+Imports Syncfusion.Windows.Forms
+
 Module GlobalModul
     Dim confPath As String = "conf/config"
     Dim resSrcPath As String = "conf/res_backup/resSrcPath"
@@ -77,15 +79,16 @@ Module GlobalModul
         End If
     End Sub
     Public Sub ClearLog(log As String, log2 As String, loopNotif As Boolean)
+        MessageBoxAdv.MessageBoxStyle = MessageBoxAdv.Style.Metro
         If File.Exists(log) Then
             File.Delete(log)
             File.Create(log).Dispose()
             If loopNotif Then
-                MsgBox(log2 & " file reset !", MsgBoxStyle.Information, "Office Tools")
+                MessageBoxAdv.Show(log2 & " file reset !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         Else
             If loopNotif Then
-                MsgBox(log2 & " file is not exist !", MsgBoxStyle.Critical, "Office Tools")
+                MessageBoxAdv.Show(log2 & " file is not exist !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         End If
     End Sub
@@ -204,9 +207,10 @@ Module GlobalModul
     End Function
     Public Function ShowLog(log As String, path As String) As String
         Dim value As String
+        MessageBoxAdv.MessageBoxStyle = MessageBoxAdv.Style.Metro
         If File.Exists(path) Then
             If New FileInfo(path).Length.Equals(0) Then
-                MsgBox(log & " is empty !", MsgBoxStyle.Critical, "Office Tools")
+                MessageBoxAdv.Show(log & " is empty !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 value = ""
                 Return value
             Else
@@ -214,7 +218,7 @@ Module GlobalModul
                 Return value
             End If
         Else
-            MsgBox(log & " does not exist !", MsgBoxStyle.Critical, "Office Tools")
+            MessageBoxAdv.Show(log & " does not exist !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
             value = ""
             Return value
         End If

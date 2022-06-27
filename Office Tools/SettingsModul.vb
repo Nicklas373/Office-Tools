@@ -1,13 +1,15 @@
 ﻿Imports System.IO
 Imports Microsoft.Win32.TaskScheduler
+Imports Syncfusion.Windows.Forms
 Module SettingsModul
     Public Sub FindTask(strTaskName As String)
+        MessageBoxAdv.MessageBoxStyle = MessageBoxAdv.Style.Metro
         Using tService As New TaskService()
             Dim tTask As Task = tService.GetTask(strTaskName)
             If tTask Is Nothing Then
-                MsgBox("Scheduler failed to create !", MsgBoxStyle.Critical, "Office Tools")
+                MessageBoxAdv.Show("Scheduler failed to create !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
-                MsgBox("Scheduler successfully created !", MsgBoxStyle.Information, "Office Tools")
+                MessageBoxAdv.Show("Scheduler successfully created !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         End Using
     End Sub
@@ -15,10 +17,11 @@ Module SettingsModul
         Dim SourceBackup As String = FindConfig(confPath, "Source Directory: ")
         Dim DestBackup As String = FindConfig(confPath, "Destination Directory: ")
         Dim BackupPreferences As String = FindConfig(confPath, "Backup Preferences: ")
+        MessageBoxAdv.MessageBoxStyle = MessageBoxAdv.Style.Metro
         CheckFileExist(cliSrcPath, SourceBackup)
         CheckFileExist(cliDestPath, DestBackup)
         If BackupPreferences = "null" Then
-            MsgBox("Please select backup options first !", MsgBoxStyle.Critical, "Office Tools")
+            MessageBoxAdv.Show("Please select backup options first !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             If BackupPreferences = "Today" Then
                 If File.Exists(cliDatePath) Then
@@ -276,6 +279,7 @@ Module SettingsModul
     End Function
     Public Sub DailyTrigger(custDate As String, repDayInt As Integer, custInt As Integer, custrepdur As Integer, custrepint As Integer, cmbx5 As String, cmbx4 As String)
         Dim appPath As String = Application.StartupPath()
+        MessageBoxAdv.MessageBoxStyle = MessageBoxAdv.Style.Metro
         Using tService As New TaskService()
             Dim tTask As Task = tService.GetTask("Office Tools")
             Dim repDurVal As Integer = CustRepDurValDecDaily(cmbx5)
@@ -331,7 +335,7 @@ Module SettingsModul
                     tService.RootFolder.RegisterTaskDefinition("Office Tools", tDefinition)
                     FindTask("Office Tools")
                 Else
-                    MsgBox("Cancel To create scheduler !", MsgBoxStyle.Information, "Office Tools")
+                    MessageBoxAdv.Show("Cancel To create scheduler !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
         End Using
@@ -340,6 +344,7 @@ Module SettingsModul
         Dim appPath As String = Application.StartupPath()
         Dim repDurVal As Integer = CustRepDurValDecWeek(cmbx6)
         Dim repDurInt As Integer = CustRepDurIntDecWeek(cmbx7)
+        MessageBoxAdv.MessageBoxStyle = MessageBoxAdv.Style.Metro
         Using tService As New TaskService()
             Dim tTask As Task = tService.GetTask("Office Tools")
             Dim tDefinition As TaskDefinition = tService.NewTask
@@ -395,7 +400,7 @@ Module SettingsModul
                     tService.RootFolder.RegisterTaskDefinition("Office Tools", tDefinition)
                     FindTask("Office Tools")
                 Else
-                    MsgBox("Cancel create scheduler !", MsgBoxStyle.Information, "Office Tools")
+                    MessageBoxAdv.Show("Cancel To create scheduler !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
         End Using
@@ -472,11 +477,12 @@ Module SettingsModul
     End Function
     Public Function ShowTask(taskName As String) As String
         Dim value As String
+        MessageBoxAdv.MessageBoxStyle = MessageBoxAdv.Style.Metro
         Using tService As New TaskService()
             Dim tTask As Task = tService.GetTask(taskName)
             If tTask Is Nothing Then
-                MsgBox("Office Task scheduler not exist !", MsgBoxStyle.Critical, "Office Tools")
-                MsgBox("Please create new scheduler first !", MsgBoxStyle.Critical, "Office Tools")
+                MessageBoxAdv.Show("Office Task scheduler not exist !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBoxAdv.Show("Please create new scheduler first !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 value = ""
                 Return value
             Else
