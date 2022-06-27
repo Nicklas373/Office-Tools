@@ -8,7 +8,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
     <ApplicationIcon>ico\working_AAH_icon.ico</ApplicationIcon>
-    <Version>1.2.8</Version>
+    <Version>1.2.9</Version>
     <Authors>Dicky Herlambang</Authors>
     <Company>Hana-CI Build Project</Company>
     <PackageId>Office_Tools</PackageId>
@@ -27,7 +27,12 @@ Additional library:
     <PackageIconUrl />
     <RepositoryType>public</RepositoryType>
     <PackageTags>#Migrate-To-GDrive, #OfficeTools</PackageTags>
-    <PackageReleaseNotes>v1.2.8 (20220626):
+    <PackageReleaseNotes>v1.2.9 (20220627):
+- Fixup security leaks after decrypt archive file
+- Misc fixes and code cleanup
+- Migrate to syncfusion msgbox on module
+
+v1.2.8 (20220626):
 - Misc fixes and code cleanup
 - Re-written code for config write, update or load in settings algorithm
 - Use syncfusion library for datetimepicker on some of settings menu
@@ -112,8 +117,8 @@ v1.1.0 (20220419):
 v1.0.0 (20220416):
 - INITIAL RELEASE</PackageReleaseNotes>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <AssemblyVersion>1.2.7.0</AssemblyVersion>
-    <FileVersion>1.2.7.0</FileVersion>
+    <AssemblyVersion>1.2.9.0</AssemblyVersion>
+    <FileVersion>1.2.9.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

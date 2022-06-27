@@ -2,8 +2,6 @@
 Imports System.IO
 Imports Microsoft.Win32.TaskScheduler
 Imports Syncfusion.Windows.Forms
-Imports Syncfusion.WinForms.Input.Enums
-
 Public Class SettingsMenu
     Inherits SfForm
     Dim openfiledialog As New OpenFileDialog

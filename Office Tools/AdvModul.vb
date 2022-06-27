@@ -1,6 +1,5 @@
 ﻿Imports System.IO
 Imports Syncfusion.Windows.Forms
-
 Module AdvModul
     Dim logPath As String = "log/log"
     Dim lastResult As String = "log/lastResult"

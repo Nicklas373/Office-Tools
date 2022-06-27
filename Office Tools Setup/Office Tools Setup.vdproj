@@ -1793,15 +1793,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Office Tools"
-        "ProductCode" = "8:{EEE77537-C996-4458-B8F8-3B03E8223D5E}"
-        "PackageCode" = "8:{D47C0843-B985-4D35-BD1B-D9B8953419D9}"
+        "ProductCode" = "8:{A14050F0-6CEF-4BF5-95F9-1AC157E08ED7}"
+        "PackageCode" = "8:{EFBB1B46-58A2-49F0-B1F1-E3F6E854526A}"
         "UpgradeCode" = "8:{4FE91870-693A-4DB1-8879-F2BE7AE9BFE0}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.2.8"
+        "ProductVersion" = "8:1.2.9"
         "Manufacturer" = "8:Hana-CI Build Project"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -2329,7 +2329,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_8B8E4B1B0B9C43FD9B5C2F300AB0AFDD"
             {
-            "SourcePath" = "8:..\\Office Tools\\obj\\Release\\net6.0-windows\\apphost.exe"
+            "SourcePath" = "8:..\\Office Tools\\obj\\Debug\\net6.0-windows\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_180513EA87FD4A8EA5D7AEFBEADDCDBC"

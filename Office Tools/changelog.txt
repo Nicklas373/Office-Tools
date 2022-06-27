@@ -1,3 +1,8 @@
+v1.2.9 (20220627):
+- Fixup security leaks after decrypt archive file
+- Misc fixes and code cleanup
+- Migrate to syncfusion msgbox on module
+
 v1.2.8 (20220626):
 - Misc fixes and code cleanup
 - Re-written code for config write, update or load in settings algorithm
