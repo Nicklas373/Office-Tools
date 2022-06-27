@@ -449,7 +449,7 @@ Public Class BackupMenu_2
                                     PrepareNotif(lastErr)
                                     CheckFileExist(lastResult, "success")
                                     Dim writer As New StreamWriter(logPath, True)
-                                    writer.WriteLine("# Office Tools v1.1")
+                                    writer.WriteLine("# Office Tools v1.2")
                                     writer.WriteLine("Extract Result               : Success")
                                     writer.WriteLine("Extract Time                 : " & DateTime.Now)
                                     writer.WriteLine("Extract Filename          : " & TextBox11.Text)
@@ -495,6 +495,7 @@ Public Class BackupMenu_2
                                                 PrepareNotif(lastErr)
                                                 ManualBackup("bat\MigrateToGDrive_RB.bat")
                                                 File.Delete(destFolder & "\" & encKeyPath.Remove(0, encKeyPath.Length - 3))
+                                                File.Delete(My.Application.Info.DirectoryPath.ToString & "\" & encKeyPath.Remove(0, encKeyPath.Length - 3))
                                                 decKey = File.ReadAllText(resZipLog)
                                                 decIndKey = decKey.IndexOf("Archives with Errors: 1")
                                                 If decIndKey >= 0 Then
