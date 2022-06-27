@@ -391,7 +391,7 @@ Partial Class SettingsMenu
         Me.CheckBox8.AutoSize = True
         Me.CheckBox8.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.CheckBox8.ForeColor = System.Drawing.Color.AliceBlue
-        Me.CheckBox8.Location = New System.Drawing.Point(16, 69)
+        Me.CheckBox8.Location = New System.Drawing.Point(184, 52)
         Me.CheckBox8.Name = "CheckBox8"
         Me.CheckBox8.Size = New System.Drawing.Size(267, 21)
         Me.CheckBox8.TabIndex = 35
@@ -407,7 +407,7 @@ Partial Class SettingsMenu
         Me.Button26.ForeColor = System.Drawing.Color.AliceBlue
         Me.Button26.Image = CType(resources.GetObject("Button26.Image"), System.Drawing.Image)
         Me.Button26.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button26.Location = New System.Drawing.Point(470, 133)
+        Me.Button26.Location = New System.Drawing.Point(499, 127)
         Me.Button26.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Button26.Name = "Button26"
         Me.Button26.Size = New System.Drawing.Size(97, 44)
@@ -425,7 +425,7 @@ Partial Class SettingsMenu
         Me.Button27.ForeColor = System.Drawing.Color.AliceBlue
         Me.Button27.Image = CType(resources.GetObject("Button27.Image"), System.Drawing.Image)
         Me.Button27.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button27.Location = New System.Drawing.Point(267, 133)
+        Me.Button27.Location = New System.Drawing.Point(296, 127)
         Me.Button27.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Button27.Name = "Button27"
         Me.Button27.Size = New System.Drawing.Size(97, 44)
@@ -445,7 +445,7 @@ Partial Class SettingsMenu
         Me.Button28.ForeColor = System.Drawing.Color.AliceBlue
         Me.Button28.Image = CType(resources.GetObject("Button28.Image"), System.Drawing.Image)
         Me.Button28.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button28.Location = New System.Drawing.Point(159, 133)
+        Me.Button28.Location = New System.Drawing.Point(188, 127)
         Me.Button28.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Button28.Name = "Button28"
         Me.Button28.Size = New System.Drawing.Size(97, 44)

@@ -1,3 +1,7 @@
+v1.3.0 (20220627):
+- Added support for Merge & Split PDF file using SyncFusion
+- Added support for PDF to DOCX & PDF to XLSX conversion using SpirePDF (New Library Introduction)
+
 v1.2.9 (20220627):
 - Fixup security leaks after decrypt archive file
 - Misc fixes and code cleanup
