@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class PDFMenu
     Inherits Syncfusion.WinForms.Controls.SfForm
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class PDFMenu
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PDFMenu))
         Me.Button5 = New System.Windows.Forms.Button()
@@ -54,6 +54,7 @@ Partial Class PDFMenu
         Me.pdf_merge_pnl = New System.Windows.Forms.Panel()
         Me.split_pdf_pnl = New System.Windows.Forms.Panel()
         Me.cnv_pdf_pnl = New System.Windows.Forms.Panel()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
@@ -281,7 +282,7 @@ Partial Class PDFMenu
         Me.Button14.Name = "Button14"
         Me.Button14.Size = New System.Drawing.Size(228, 43)
         Me.Button14.TabIndex = 8
-        Me.Button14.Text = "  PDF Converter"
+        Me.Button14.Text = "  PDF Export"
         Me.Button14.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button14.UseVisualStyleBackColor = True
         '
@@ -513,6 +514,7 @@ Partial Class PDFMenu
         '
         'cnv_pdf_pnl
         '
+        Me.cnv_pdf_pnl.Controls.Add(Me.CheckBox1)
         Me.cnv_pdf_pnl.Controls.Add(Me.Label22)
         Me.cnv_pdf_pnl.Controls.Add(Me.Label23)
         Me.cnv_pdf_pnl.Controls.Add(Me.Label24)
@@ -531,6 +533,19 @@ Partial Class PDFMenu
         Me.cnv_pdf_pnl.Name = "cnv_pdf_pnl"
         Me.cnv_pdf_pnl.Size = New System.Drawing.Size(715, 505)
         Me.cnv_pdf_pnl.TabIndex = 44
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.CheckBox1.ForeColor = System.Drawing.Color.AliceBlue
+        Me.CheckBox1.Location = New System.Drawing.Point(355, 92)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(149, 21)
+        Me.CheckBox1.TabIndex = 58
+        Me.CheckBox1.Text = "Extract Images Only"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.CheckBox1.Visible = False
         '
         'Label22
         '
@@ -581,7 +596,7 @@ Partial Class PDFMenu
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Documents (*.DOCX)", "Spreadsheets (*.XLSX)"})
+        Me.ComboBox1.Items.AddRange(New Object() {"Documents (*.DOCX)", "Spreadsheets (*.XLSX)", "Image (*.JPEG)", "Image (*.PNG)"})
         Me.ComboBox1.Location = New System.Drawing.Point(182, 88)
         Me.ComboBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ComboBox1.Name = "ComboBox1"
@@ -596,9 +611,9 @@ Partial Class PDFMenu
         Me.Label21.ForeColor = System.Drawing.Color.AliceBlue
         Me.Label21.Location = New System.Drawing.Point(6, 92)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(77, 19)
+        Me.Label21.Size = New System.Drawing.Size(68, 19)
         Me.Label21.TabIndex = 52
-        Me.Label21.Text = "Convert To"
+        Me.Label21.Text = "Export To"
         '
         'ProgressBar4
         '
@@ -1071,4 +1086,5 @@ Partial Class PDFMenu
     Friend WithEvents Label23 As Label
     Friend WithEvents Label24 As Label
     Friend WithEvents Label25 As Label
+    Friend WithEvents CheckBox1 As CheckBox
 End Class
