@@ -4,6 +4,7 @@ v1.3.3 (20220629):
     1. Split all
     2. Split by range
     3. Split fixed range
+- Fixup error when split by range or split by fixed range are choose then number page were fill without select PDF source at first
 
 v1.3.2 (20220629):
 - Add support for PDF to XLS & PDF to Image (JPEG & PNG) using SautinSoftPDF (New Library Introduction)
