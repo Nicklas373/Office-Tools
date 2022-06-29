@@ -144,19 +144,38 @@ Public Class PDFMenu
         If fileDialog.ShowDialog() = DialogResult.OK Then
             pdfSplit = "\" + Path.GetFileNameWithoutExtension(fileDialog.FileName)
             TextBox3.Text = fileDialog.FileName
+            Label20.Text = "Total Pages: " & PDFGetPage(TextBox3.Text)
         Else
             TextBox3.Text = ""
         End If
     End Sub
     Private Sub SavePDF_folder_SplitPDF(sender As Object, e As EventArgs) Handles Button12.Click
-        savefldDialog.InitialDirectory = Environment.SpecialFolder.UserProfile
-        savefldDialog.ShowDialog()
+        If ComboBox1.Text = "Split All" Then
+            savefldDialog.InitialDirectory = Environment.SpecialFolder.UserProfile
+            savefldDialog.ShowDialog()
+        ElseIf ComboBox1.Text = "Custom range" Or ComboBox1.Text = "Fixed range" Then
+            saveDialog.DefaultExt = ".pdf"
+            saveDialog.Filter = "PDF File | *.pdf"
+            saveDialog.Title = "Save PDF File"
+            saveDialog.InitialDirectory = Environment.SpecialFolder.UserProfile
+            saveDialog.ShowDialog()
+        Else
+            MessageBoxAdv.Show("Please choose split type first !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
     End Sub
     Private Sub SaveFileDialog_file_SplitPDF(sender As Object, e As EventArgs) Handles Button12.Click
-        If savefldDialog.SelectedPath.ToString = "" Then
-            TextBox5.Text = ""
-        Else
-            TextBox5.Text = savefldDialog.SelectedPath.ToString
+        If ComboBox1.Text = "Split All" Then
+            If savefldDialog.SelectedPath.ToString = "" Then
+                TextBox5.Text = ""
+            Else
+                TextBox5.Text = savefldDialog.SelectedPath.ToString
+            End If
+        ElseIf ComboBox1.Text = "Custom range" Or ComboBox1.Text = "Fixed range" Then
+            If saveDialog.FileName.ToString = "" Then
+                TextBox5.Text = ""
+            Else
+                TextBox5.Text = Path.GetFullPath(saveDialog.FileName.ToString)
+            End If
         End If
     End Sub
     Private Sub SplitPDF_Button(sender As Object, e As EventArgs) Handles Button11.Click
@@ -166,19 +185,27 @@ Public Class PDFMenu
             If TextBox5.Text = "" Then
                 MessageBoxAdv.Show("Destination PDF file location was not selected !, please select destination location first !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
-                pdfSplit2 = TextBox5.Text + pdfSplit
-                SplitPDF(TextBox3.Text, pdfSplit2, TextBox5.Text)
+                If ComboBox1.Text = "Split All" Then
+                    pdfSplit2 = Path.GetDirectoryName(TextBox5.Text) + pdfSplit
+                    SplitPDF(TextBox3.Text, pdfSplit2, TextBox5.Text)
+                ElseIf ComboBox1.Text = "Custom range" Then
+                    PDFSplitRange(TextBox3.Text, Convert.ToInt32(TextBox6.Text), Convert.ToInt32(TextBox7.Text), TextBox5.Text)
+                ElseIf ComboBox1.Text = "Fixed range" Then
+                    PDFSplitRange(TextBox3.Text, Convert.ToInt32(TextBox6.Text), Convert.ToInt32(TextBox6.Text), TextBox5.Text)
+                Else
+                    MessageBoxAdv.Show("Please choose split type first !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
             End If
         End If
     End Sub
-    Private Sub OpenFileDialog_Cnv_PDF_Button(sender As Object, e As EventArgs) Handles Button17.Click
+    Private Sub OpenFileDialog_Cnv_PDF_Button(sender As Object, e As EventArgs)
         fileDialog.DefaultExt = ".pdf"
         fileDialog.Filter = "PDF File | *.pdf"
         fileDialog.Title = "Choose PDF File"
         fileDialog.InitialDirectory = Environment.SpecialFolder.UserProfile
         fileDialog.ShowDialog()
     End Sub
-    Private Sub OpenFileDialog_Cnv_PDF(sender As Object, e As EventArgs) Handles Button17.Click
+    Private Sub OpenFileDialog_Cnv_PDF(sender As Object, e As EventArgs)
         If fileDialog.FileName.ToString = "" Then
             TextBox6.Text = ""
         Else
@@ -186,7 +213,7 @@ Public Class PDFMenu
             Label24.Text = GetFileSize(TextBox6.Text)
         End If
     End Sub
-    Private Sub SaveFileDialog_Cnv_PDF(sender As Object, e As EventArgs) Handles Button16.Click
+    Private Sub SaveFileDialog_Cnv_PDF(sender As Object, e As EventArgs)
         saveDialog.DefaultExt = ".docx|.xlsx|.jpeg"
         saveDialog.Filter = "DOCX File | *.docx|XLS File |*.xls|JPEG File | *.jpeg|PNG File | *.png"
         saveDialog.Title = "Save To"
@@ -209,7 +236,7 @@ Public Class PDFMenu
             TextBox7.Text = ""
         End If
     End Sub
-    Private Sub CnvPDF_Button(sender As Object, e As EventArgs) Handles Button15.Click
+    Private Sub CnvPDF_Button(sender As Object, e As EventArgs)
         If TextBox6.Text = "" Then
             MessageBoxAdv.Show("No PDF file was selected !, please select PDF file first !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
@@ -260,6 +287,73 @@ Public Class PDFMenu
                             MessageBoxAdv.Show("Current ext: " & Strings.Right(TextBox7.Text, 4) & " Current export settings: png", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End If
                     End If
+                End If
+            End If
+        End If
+    End Sub
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        If ComboBox1.Text = "Split All" Then
+            Label27.Visible = False
+            Label19.Visible = False
+            Label20.Visible = False
+            TextBox6.Visible = False
+            TextBox7.Visible = False
+        ElseIf ComboBox1.Text = "Custom range" Then
+            Label27.Visible = True
+            Label19.Visible = True
+            Label20.Visible = True
+            TextBox6.Visible = True
+            TextBox7.Visible = True
+        ElseIf ComboBox1.Text = "Fixed range" Then
+            Label27.Visible = True
+            Label19.Visible = False
+            Label20.Visible = True
+            TextBox6.Visible = True
+            TextBox7.Visible = False
+        End If
+    End Sub
+    Private Sub startPagePDFSplit_Btn(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles TextBox6.KeyPress
+        If Asc(e.KeyChar) <> 13 AndAlso Asc(e.KeyChar) <> 8 AndAlso Not IsNumeric(e.KeyChar) Then
+            MessageBoxAdv.Show("Please enter numbers only !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            e.Handled = True
+        End If
+    End Sub
+    Private Sub endPagePDFSplit_Btn(ByVal sender As Object, ByVal e As KeyPressEventArgs) Handles TextBox7.KeyPress
+        If Asc(e.KeyChar) <> 13 AndAlso Asc(e.KeyChar) <> 8 AndAlso Not IsNumeric(e.KeyChar) Then
+            MessageBoxAdv.Show("Please enter numbers only !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            e.Handled = True
+        End If
+    End Sub
+    Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs) Handles TextBox6.TextChanged
+        Dim sIndex As Integer = Convert.ToInt32(Val(TextBox6.Text))
+        Dim tIndex As Integer = PDFGetPage(TextBox3.Text)
+        If TextBox6.Text = "" Then
+
+        Else
+            If sIndex = 0 Then
+                MessageBoxAdv.Show("Page number start from page 1 !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                TextBox6.Text = "1"
+            Else
+                If sIndex > tIndex Then
+                    TextBox6.Text = ""
+                    MessageBoxAdv.Show("Selected page can not more than total pages !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            End If
+        End If
+    End Sub
+    Private Sub TextBox7_TextChanged(sender As Object, e As EventArgs) Handles TextBox7.TextChanged
+        Dim sIndex As Integer = Convert.ToInt32(Val(TextBox7.Text))
+        Dim tIndex As Integer = PDFGetPage(TextBox3.Text)
+        If TextBox7.Text = "" Then
+
+        Else
+            If sIndex = 0 Then
+                MessageBoxAdv.Show("Page number start from page 1 !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                TextBox7.Text = "1"
+            Else
+                If sIndex > tIndex Then
+                    TextBox7.Text = ""
+                    MessageBoxAdv.Show("Selected page can not more than total pages !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
             End If
         End If
@@ -345,6 +439,32 @@ Public Class PDFMenu
             MessageBoxAdv.Show("Split PDF failed !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
+    Private Async Sub PDFSplitRange(pdfIn As String, sIndex As Integer, eIndex As Integer, pdfOut As String)
+        ProgressBar3.Visible = True
+        ProgressBar3.Style = ProgressBarStyle.Marquee
+        ProgressBar3.MarqueeAnimationSpeed = 40
+        ProgressBar3.Refresh()
+        Dim loadedDocument As New PdfLoadedDocument(pdfIn)
+        Dim document As New PdfDocument()
+        document.ImportPageRange(loadedDocument, sIndex - 1, eIndex - 1)
+        Await Task.Run(Sub() document.Save(pdfOut))
+        loadedDocument.Close(True)
+        document.Close(True)
+        ProgressBar3.Style = ProgressBarStyle.Blocks
+        ProgressBar3.Value = 100
+        If File.Exists(pdfOut) Then
+            MessageBoxAdv.Show("Split PDF success !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            MessageBoxAdv.Show("Split PDF failed !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+    Private Function PDFGetPage(pdfIn As String) As Integer
+        Dim value As Integer
+        Dim loadedDocument As New PdfLoadedDocument(pdfIn)
+        value = loadedDocument.Pages.Count
+        loadedDocument.Close(True)
+        Return value
+    End Function
     Private Sub CnvPDF(pdfFile As String, cnvFile As String, cnvExt As String)
         ProgressBar4.Visible = True
         ProgressBar4.Style = ProgressBarStyle.Marquee

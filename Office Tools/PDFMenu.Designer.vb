@@ -59,16 +59,23 @@ Partial Class PDFMenu
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.ProgressBar4 = New System.Windows.Forms.ProgressBar()
         Me.Button15 = New System.Windows.Forms.Button()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.Button16 = New System.Windows.Forms.Button()
         Me.Button17 = New System.Windows.Forms.Button()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
         Me.ProgressBar3 = New System.Windows.Forms.ProgressBar()
         Me.Button11 = New System.Windows.Forms.Button()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -499,6 +506,13 @@ Partial Class PDFMenu
         'split_pdf_pnl
         '
         Me.split_pdf_pnl.Controls.Add(Me.cnv_pdf_pnl)
+        Me.split_pdf_pnl.Controls.Add(Me.Label20)
+        Me.split_pdf_pnl.Controls.Add(Me.TextBox7)
+        Me.split_pdf_pnl.Controls.Add(Me.Label19)
+        Me.split_pdf_pnl.Controls.Add(Me.TextBox6)
+        Me.split_pdf_pnl.Controls.Add(Me.ComboBox1)
+        Me.split_pdf_pnl.Controls.Add(Me.Label27)
+        Me.split_pdf_pnl.Controls.Add(Me.Label26)
         Me.split_pdf_pnl.Controls.Add(Me.ProgressBar3)
         Me.split_pdf_pnl.Controls.Add(Me.Button11)
         Me.split_pdf_pnl.Controls.Add(Me.Label17)
@@ -519,20 +533,20 @@ Partial Class PDFMenu
         Me.cnv_pdf_pnl.Controls.Add(Me.Label23)
         Me.cnv_pdf_pnl.Controls.Add(Me.Label24)
         Me.cnv_pdf_pnl.Controls.Add(Me.Label25)
-        Me.cnv_pdf_pnl.Controls.Add(Me.ComboBox1)
+        Me.cnv_pdf_pnl.Controls.Add(Me.ComboBox3)
         Me.cnv_pdf_pnl.Controls.Add(Me.Label21)
         Me.cnv_pdf_pnl.Controls.Add(Me.ProgressBar4)
         Me.cnv_pdf_pnl.Controls.Add(Me.Button15)
-        Me.cnv_pdf_pnl.Controls.Add(Me.Label19)
-        Me.cnv_pdf_pnl.Controls.Add(Me.Label20)
-        Me.cnv_pdf_pnl.Controls.Add(Me.TextBox6)
-        Me.cnv_pdf_pnl.Controls.Add(Me.TextBox7)
+        Me.cnv_pdf_pnl.Controls.Add(Me.Label28)
+        Me.cnv_pdf_pnl.Controls.Add(Me.Label29)
+        Me.cnv_pdf_pnl.Controls.Add(Me.TextBox8)
+        Me.cnv_pdf_pnl.Controls.Add(Me.TextBox9)
         Me.cnv_pdf_pnl.Controls.Add(Me.Button16)
         Me.cnv_pdf_pnl.Controls.Add(Me.Button17)
-        Me.cnv_pdf_pnl.Location = New System.Drawing.Point(-4, -2)
+        Me.cnv_pdf_pnl.Location = New System.Drawing.Point(1, 1)
         Me.cnv_pdf_pnl.Name = "cnv_pdf_pnl"
-        Me.cnv_pdf_pnl.Size = New System.Drawing.Size(715, 505)
-        Me.cnv_pdf_pnl.TabIndex = 44
+        Me.cnv_pdf_pnl.Size = New System.Drawing.Size(716, 503)
+        Me.cnv_pdf_pnl.TabIndex = 61
         '
         'CheckBox1
         '
@@ -593,15 +607,15 @@ Partial Class PDFMenu
         Me.Label25.TabIndex = 54
         Me.Label25.Text = "Source File Size"
         '
-        'ComboBox1
+        'ComboBox3
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Documents (*.DOCX)", "Spreadsheets (*.XLSX)", "Image (*.JPEG)", "Image (*.PNG)"})
-        Me.ComboBox1.Location = New System.Drawing.Point(182, 88)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(155, 25)
-        Me.ComboBox1.TabIndex = 53
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Items.AddRange(New Object() {"Documents (*.DOCX)", "Spreadsheets (*.XLSX)", "Image (*.JPEG)", "Image (*.PNG)"})
+        Me.ComboBox3.Location = New System.Drawing.Point(182, 88)
+        Me.ComboBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(155, 25)
+        Me.ComboBox3.TabIndex = 53
         '
         'Label21
         '
@@ -638,55 +652,55 @@ Partial Class PDFMenu
         Me.Button15.Name = "Button15"
         Me.Button15.Size = New System.Drawing.Size(135, 45)
         Me.Button15.TabIndex = 50
-        Me.Button15.Text = "     Convert"
+        Me.Button15.Text = "     Export"
         Me.Button15.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button15.UseVisualStyleBackColor = False
         '
-        'Label19
+        'Label28
         '
-        Me.Label19.AutoSize = True
-        Me.Label19.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label19.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label19.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label19.Location = New System.Drawing.Point(6, 50)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(96, 19)
-        Me.Label19.TabIndex = 49
-        Me.Label19.Text = "Save Location"
+        Me.Label28.AutoSize = True
+        Me.Label28.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label28.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label28.ForeColor = System.Drawing.Color.AliceBlue
+        Me.Label28.Location = New System.Drawing.Point(6, 50)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(96, 19)
+        Me.Label28.TabIndex = 49
+        Me.Label28.Text = "Save Location"
         '
-        'Label20
+        'Label29
         '
-        Me.Label20.AutoSize = True
-        Me.Label20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label20.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label20.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label20.Location = New System.Drawing.Point(6, 12)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(81, 19)
-        Me.Label20.TabIndex = 48
-        Me.Label20.Text = "Source PDF"
-        Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label29.AutoSize = True
+        Me.Label29.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label29.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label29.ForeColor = System.Drawing.Color.AliceBlue
+        Me.Label29.Location = New System.Drawing.Point(6, 12)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(81, 19)
+        Me.Label29.TabIndex = 48
+        Me.Label29.Text = "Source PDF"
+        Me.Label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'TextBox6
+        'TextBox8
         '
-        Me.TextBox6.Location = New System.Drawing.Point(182, 13)
-        Me.TextBox6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.ReadOnly = True
-        Me.TextBox6.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
-        Me.TextBox6.Size = New System.Drawing.Size(320, 25)
-        Me.TextBox6.TabIndex = 45
+        Me.TextBox8.Location = New System.Drawing.Point(182, 13)
+        Me.TextBox8.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.ReadOnly = True
+        Me.TextBox8.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
+        Me.TextBox8.Size = New System.Drawing.Size(320, 25)
+        Me.TextBox8.TabIndex = 45
         '
-        'TextBox7
+        'TextBox9
         '
-        Me.TextBox7.Location = New System.Drawing.Point(182, 50)
-        Me.TextBox7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.ReadOnly = True
-        Me.TextBox7.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
-        Me.TextBox7.Size = New System.Drawing.Size(320, 25)
-        Me.TextBox7.TabIndex = 47
+        Me.TextBox9.Location = New System.Drawing.Point(182, 50)
+        Me.TextBox9.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.ReadOnly = True
+        Me.TextBox9.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
+        Me.TextBox9.Size = New System.Drawing.Size(320, 25)
+        Me.TextBox9.TabIndex = 47
         '
         'Button16
         '
@@ -717,6 +731,82 @@ Partial Class PDFMenu
         Me.Button17.Size = New System.Drawing.Size(42, 34)
         Me.Button17.TabIndex = 44
         Me.Button17.UseVisualStyleBackColor = False
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label20.ForeColor = System.Drawing.Color.AliceBlue
+        Me.Label20.Location = New System.Drawing.Point(351, 128)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(78, 17)
+        Me.Label20.TabIndex = 60
+        Me.Label20.Text = "Total Page :"
+        Me.Label20.Visible = False
+        '
+        'TextBox7
+        '
+        Me.TextBox7.Location = New System.Drawing.Point(276, 124)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.Size = New System.Drawing.Size(62, 25)
+        Me.TextBox7.TabIndex = 59
+        Me.TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox7.Visible = False
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label19.ForeColor = System.Drawing.Color.AliceBlue
+        Me.Label19.Location = New System.Drawing.Point(246, 127)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(24, 19)
+        Me.Label19.TabIndex = 58
+        Me.Label19.Text = "To"
+        Me.Label19.Visible = False
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Location = New System.Drawing.Point(178, 124)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(62, 25)
+        Me.TextBox6.TabIndex = 57
+        Me.TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox6.Visible = False
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Split All", "Custom range", "Fixed range"})
+        Me.ComboBox1.Location = New System.Drawing.Point(178, 86)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(171, 25)
+        Me.ComboBox1.TabIndex = 56
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label27.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label27.ForeColor = System.Drawing.Color.AliceBlue
+        Me.Label27.Location = New System.Drawing.Point(6, 126)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(72, 19)
+        Me.Label27.TabIndex = 55
+        Me.Label27.Text = "Split Page"
+        Me.Label27.Visible = False
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label26.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label26.ForeColor = System.Drawing.Color.AliceBlue
+        Me.Label26.Location = New System.Drawing.Point(5, 88)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(71, 19)
+        Me.Label26.TabIndex = 45
+        Me.Label26.Text = "Split Type"
         '
         'ProgressBar3
         '
@@ -1071,20 +1161,27 @@ Partial Class PDFMenu
     Friend WithEvents Button12 As Button
     Friend WithEvents Button13 As Button
     Friend WithEvents Button14 As Button
-    Friend WithEvents cnv_pdf_pnl As Panel
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Label21 As Label
-    Friend WithEvents ProgressBar4 As ProgressBar
-    Friend WithEvents Button15 As Button
-    Friend WithEvents Label19 As Label
-    Friend WithEvents Label20 As Label
-    Friend WithEvents TextBox6 As TextBox
     Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents Button16 As Button
-    Friend WithEvents Button17 As Button
+    Friend WithEvents Label19 As Label
+    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Label27 As Label
+    Friend WithEvents Label26 As Label
+    Friend WithEvents cnv_pdf_pnl As Panel
+    Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents Label22 As Label
     Friend WithEvents Label23 As Label
     Friend WithEvents Label24 As Label
     Friend WithEvents Label25 As Label
-    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents Label21 As Label
+    Friend WithEvents ProgressBar4 As ProgressBar
+    Friend WithEvents Button15 As Button
+    Friend WithEvents Label28 As Label
+    Friend WithEvents Label29 As Label
+    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents TextBox9 As TextBox
+    Friend WithEvents Button16 As Button
+    Friend WithEvents Button17 As Button
+    Friend WithEvents Label20 As Label
 End Class
