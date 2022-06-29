@@ -1,11 +1,17 @@
 # Office Tools
-Customized application that have feature to backup your data with user preference time frames, by using windows task scheduler library, also have support with archiving folder that have feature to encrypt your password by using SHA-256 encryption. In addition by request, it also have feature with compress PDF file by using SyncFusion Library.
+Customized application that have feature to backup your data with user preference time frames, by using windows task scheduler library,
+also have support with archiving folder that have feature to encrypt your password by using SHA-256 encryption. 
+
+In addition by request, it also have feature with;
+- Compress, Merge and Split PDF file by using SyncFusion Library.
+- Export PDF into documents, spreadsheets and image file by using SautinSoft Library.
 
 # Additional library:
-- 7-Zip (7za Library)
+- 7-Zip (Archiver)
+- SautinSoft (PDF Export)
 - SHA-256 (Encryption / Decryption)
 - SyncFusion (PDF Compression)
-- Windows Task Scheduler (DLL)
+- Windows Task Scheduler (Automated Scheduler)
 
 # App Function
 - Normal Backup
@@ -60,15 +66,31 @@ Customized application that have feature to backup your data with user preferenc
   * Remove MetaData
   * Size (Before & After compression)
 
+- PDF Merge
+  * Source PDF
+  * Save Location
+  * PDF Merged Size
+
+- PDF Split
+  * Source PDF
+  * Save Location
+  
+- PDF Export
+  * Source PDF
+  * Save Location
+  * Export To (*.docx | *.xls | *.jpeg | *.png)
+  * Export Image only from PDF (*.jpeg | *.png)
+  
 # App Compatibility
 - [.NET Desktop Runtime 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 
 # App Screenshoot
 <p align="left">
-<img width="480" height="240" src="https://raw.githubusercontent.com/Nicklas373/Office-Tools/main/Office%20Tools/Screenshots/Home.png">&nbsp;&nbsp;&nbsp;
-<img width="480" height="240" src="https://raw.githubusercontent.com/Nicklas373/Office-Tools/main/Office%20Tools/Screenshots/App_information.png">&nbsp;&nbsp;&nbsp;
-<img width="480" height="240" src="https://raw.githubusercontent.com/Nicklas373/Office-Tools/main/Office%20Tools/Screenshots/Weekly_scheduler.png">&nbsp;&nbsp;&nbsp;
-<img width="480" height="240" src="https://raw.githubusercontent.com/Nicklas373/Office-Tools/main/Office%20Tools/Screenshots/PDF_Compress.png">&nbsp;&nbsp;&nbsp;
+<img width="854" height="480" src="https://raw.githubusercontent.com/Nicklas373/Office-Tools/main/Office%20Tools/Screenshots/Home.png">&nbsp;&nbsp;&nbsp;
+<img width="854" height="480" src="https://raw.githubusercontent.com/Nicklas373/Office-Tools/main/Office%20Tools/Screenshots/Archive_backup.png">&nbsp;&nbsp;&nbsp;
+<img width="854" height="480" src="https://raw.githubusercontent.com/Nicklas373/Office-Tools/main/Office%20Tools/Screenshots/History.png">&nbsp;&nbsp;&nbsp;
+<img width="854" height="480" src="https://raw.githubusercontent.com/Nicklas373/Office-Tools/main/Office%20Tools/Screenshots/PDF_Compress.png">&nbsp;&nbsp;&nbsp;
+<img width="854" height="480" src="https://raw.githubusercontent.com/Nicklas373/Office-Tools/main/Office%20Tools/Screenshots/App_Description.png">&nbsp;&nbsp;&nbsp;
 </p>
 
 # Note
@@ -79,6 +101,7 @@ Customized application that have feature to backup your data with user preferenc
 
 # Additional References
 - [7-ZIP](https://www.7-zip.org/)
+- [SautinSoft](https://sautinsoft.com/products/pdf-focus/)
 - [SyncFusion](https://www.syncfusion.com/)
 
 # Image Source
