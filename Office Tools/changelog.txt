@@ -1,3 +1,10 @@
+v1.3.3 (20220629):
+- Add more options on split PDF menu
+  * Split type:
+    1. Split all
+    2. Split by range
+    3. Split fixed range
+
 v1.3.2 (20220629):
 - Add support for PDF to XLS & PDF to Image (JPEG & PNG) using SautinSoftPDF (New Library Introduction)
 - Add support for extract image only from PDF (JPEG & PNG)
