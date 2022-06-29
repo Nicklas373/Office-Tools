@@ -8,7 +8,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
     <ApplicationIcon>ico\working_AAH_icon.ico</ApplicationIcon>
-    <Version>1.3.0</Version>
+    <Version>1.3.2</Version>
     <Authors>Dicky Herlambang</Authors>
     <Company>Hana-CI Build Project</Company>
     <PackageId>Office_Tools</PackageId>
@@ -19,7 +19,7 @@ Customized application that have feature to backup your data with user preferenc
 Additional library:
 - 7-Zip
 - SHA-256 (Encryption / Decryption)
-- SpirePDF
+- SautinSoft
 - SyncFusion
 - Windows Task Scheduler</Description>
     <Copyright>HANA-CI Build Project 2016-2022</Copyright>
@@ -28,7 +28,12 @@ Additional library:
     <PackageIconUrl />
     <RepositoryType>public</RepositoryType>
     <PackageTags>#Migrate-To-GDrive, #OfficeTools</PackageTags>
-    <PackageReleaseNotes>v1.3.0 (20220627):
+    <PackageReleaseNotes>v1.3.2 (20220629):
+- Add support for PDF to XLS &amp; PDF to Image (JPEG &amp; PNG) using SautinSoftPDF (New Library Introduction)
+- Add support for extract image only from PDF (JPEG &amp; PNG)
+- Drop SpirePDF library
+
+v1.3.0 (20220627):
 - Added support for Merge &amp; Split PDF file using SyncFusion
 - Added support for PDF to DOCX &amp; PDF to XLSX conversion using SpirePDF (New Library Introduction)
 
@@ -122,8 +127,8 @@ v1.1.0 (20220419):
 v1.0.0 (20220416):
 - INITIAL RELEASE</PackageReleaseNotes>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <AssemblyVersion>1.3.0.0</AssemblyVersion>
-    <FileVersion>1.3.0.0</FileVersion>
+    <AssemblyVersion>1.3.2.0</AssemblyVersion>
+    <FileVersion>1.3.2.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -146,6 +151,7 @@ v1.0.0 (20220416):
 
   <ItemGroup>
     <PackageReference Include="FreeSpire.PDF" Version="8.2.0" />
+    <PackageReference Include="sautinsoft.pdffocus" Version="8.4.5.25" />
     <PackageReference Include="Syncfusion.Core.WinForms" Version="20.1.0.61" />
     <PackageReference Include="Syncfusion.Pdf.WinForms" Version="20.1.0.61" />
     <PackageReference Include="Syncfusion.Shared.Base" Version="20.1.0.61" />
