@@ -325,35 +325,45 @@ Public Class PDFMenu
         End If
     End Sub
     Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs) Handles TextBox6.TextChanged
-        Dim sIndex As Integer = Convert.ToInt32(Val(TextBox6.Text))
-        Dim tIndex As Integer = PDFGetPage(TextBox3.Text)
-        If TextBox6.Text = "" Then
-
+        If TextBox3.Text = "" Then
+            TextBox6.Text = ""
+            MessageBoxAdv.Show("Please select source PDF file before input pages !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
-            If sIndex = 0 Then
-                MessageBoxAdv.Show("Page number start from page 1 !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                TextBox6.Text = "1"
+            Dim sIndex As Integer = Convert.ToInt32(Val(TextBox6.Text))
+            Dim tIndex As Integer = PDFGetPage(TextBox3.Text)
+            If TextBox6.Text = "" Then
+
             Else
-                If sIndex > tIndex Then
-                    TextBox6.Text = ""
-                    MessageBoxAdv.Show("Selected page can not more than total pages !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                If sIndex = 0 Then
+                    MessageBoxAdv.Show("Page number start from page 1 !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    TextBox6.Text = "1"
+                Else
+                    If sIndex > tIndex Then
+                        TextBox6.Text = ""
+                        MessageBoxAdv.Show("Selected page can not more than total pages !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
                 End If
             End If
         End If
     End Sub
     Private Sub TextBox7_TextChanged(sender As Object, e As EventArgs) Handles TextBox7.TextChanged
-        Dim sIndex As Integer = Convert.ToInt32(Val(TextBox7.Text))
-        Dim tIndex As Integer = PDFGetPage(TextBox3.Text)
-        If TextBox7.Text = "" Then
-
+        If TextBox3.Text = "" Then
+            TextBox7.Text = ""
+            MessageBoxAdv.Show("Please select source PDF file before input pages !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
-            If sIndex = 0 Then
-                MessageBoxAdv.Show("Page number start from page 1 !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                TextBox7.Text = "1"
+            Dim sIndex As Integer = Convert.ToInt32(Val(TextBox7.Text))
+            Dim tIndex As Integer = PDFGetPage(TextBox3.Text)
+            If TextBox7.Text = "" Then
+
             Else
-                If sIndex > tIndex Then
-                    TextBox7.Text = ""
-                    MessageBoxAdv.Show("Selected page can not more than total pages !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                If sIndex = 0 Then
+                    MessageBoxAdv.Show("Page number start from page 1 !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    TextBox7.Text = "1"
+                Else
+                    If sIndex > tIndex Then
+                        TextBox7.Text = ""
+                        MessageBoxAdv.Show("Selected page can not more than total pages !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
                 End If
             End If
         End If
