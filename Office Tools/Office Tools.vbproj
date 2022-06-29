@@ -150,14 +150,15 @@ v1.0.0 (20220416):
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FreeSpire.PDF" Version="8.2.0" />
     <PackageReference Include="sautinsoft.pdffocus" Version="8.4.5.25" />
     <PackageReference Include="Syncfusion.Core.WinForms" Version="20.1.0.61" />
     <PackageReference Include="Syncfusion.Pdf.WinForms" Version="20.1.0.61" />
     <PackageReference Include="Syncfusion.Shared.Base" Version="20.1.0.61" />
     <PackageReference Include="TaskScheduler" Version="2.10.1" />
       <PackageReference Include="Syncfusion.SfInput.WinForms" Version="20.1.0.61" />
-    <PackageReference Include="Syncfusion.Tools.Windows" Version="20.1.0.61" />
+    <PackageReference Include="Syncfusion.Tools.Windows" Version="20.1.0.61">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
 </ItemGroup>
 
   <ItemGroup>
