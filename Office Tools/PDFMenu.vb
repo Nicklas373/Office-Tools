@@ -142,7 +142,7 @@ Public Class PDFMenu
         fileDialog.Title = "Choose PDF File"
         fileDialog.InitialDirectory = Environment.SpecialFolder.UserProfile
         If fileDialog.ShowDialog() = DialogResult.OK Then
-            pdfSplit = "\" + Path.GetFileNameWithoutExtension(fileDialog.FileName)
+            pdfSplit = "\" + Path.GetFileNameWithoutExtension(fileDialog.SafeFileName)
             TextBox3.Text = fileDialog.FileName
             Label20.Text = "Total Pages: " & PDFGetPage(TextBox3.Text)
         Else
@@ -186,12 +186,23 @@ Public Class PDFMenu
                 MessageBoxAdv.Show("Destination PDF file location was not selected !, please select destination location first !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 If ComboBox1.Text = "Split All" Then
-                    pdfSplit2 = Path.GetDirectoryName(TextBox5.Text) + pdfSplit
-                    SplitPDF(TextBox3.Text, pdfSplit2, TextBox5.Text)
+                    If Strings.Right(TextBox5.Text, 4) = ".pdf" Then
+                        SplitPDF(TextBox3.Text, Path.GetDirectoryName(TextBox5.Text) + pdfSplit, Path.GetDirectoryName(TextBox5.Text))
+                    Else
+                        SplitPDF(TextBox3.Text, TextBox5.Text + pdfSplit, TextBox5.Text)
+                    End If
                 ElseIf ComboBox1.Text = "Custom range" Then
-                    PDFSplitRange(TextBox3.Text, Convert.ToInt32(TextBox6.Text), Convert.ToInt32(TextBox7.Text), TextBox5.Text)
+                    If Strings.Right(TextBox5.Text, 4) = ".pdf" Then
+                        PDFSplitRange(TextBox3.Text, Convert.ToInt32(TextBox6.Text), Convert.ToInt32(TextBox7.Text), TextBox5.Text)
+                    Else
+                        MessageBoxAdv.Show("Destination PDF filename was missing !, Please choose button 'Save Location' and fill PDF filename !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
                 ElseIf ComboBox1.Text = "Fixed range" Then
-                    PDFSplitRange(TextBox3.Text, Convert.ToInt32(TextBox6.Text), Convert.ToInt32(TextBox6.Text), TextBox5.Text)
+                    If Strings.Right(TextBox5.Text, 4) = ".pdf" Then
+                        PDFSplitRange(TextBox3.Text, Convert.ToInt32(TextBox6.Text), Convert.ToInt32(TextBox6.Text), TextBox5.Text)
+                    Else
+                        MessageBoxAdv.Show("Destination PDF filename was missing !, Please choose button 'Save Location' and fill PDF filename !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
                 Else
                     MessageBoxAdv.Show("Please choose split type first !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
@@ -436,7 +447,7 @@ Public Class PDFMenu
         ProgressBar3.Refresh()
         Dim loadedDocument As New PdfLoadedDocument(loadPDF)
         Dim destinationFilePattern As String = outSplitPDF + "_{0}.pdf"
-        loadedDocument.FileStructure.IncrementalUpdate = False
+        loadedDocument.FileStructure.IncrementalUpdate = True
         loadedDocument.Compression = PdfCompressionLevel.Best
         Await Task.Run(Sub() loadedDocument.Split(destinationFilePattern))
         loadedDocument.Close(True)
@@ -463,6 +474,7 @@ Public Class PDFMenu
         ProgressBar3.Style = ProgressBarStyle.Blocks
         ProgressBar3.Value = 100
         If File.Exists(pdfOut) Then
+            Process.Start("explorer.exe", String.Format("/n, /e, {0}", Path.GetDirectoryName(pdfOut)))
             MessageBoxAdv.Show("Split PDF success !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
             MessageBoxAdv.Show("Split PDF failed !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)

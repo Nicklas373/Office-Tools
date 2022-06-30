@@ -553,7 +553,7 @@ Partial Class PDFMenu
         Me.CheckBox1.AutoSize = True
         Me.CheckBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.CheckBox1.ForeColor = System.Drawing.Color.AliceBlue
-        Me.CheckBox1.Location = New System.Drawing.Point(355, 92)
+        Me.CheckBox1.Location = New System.Drawing.Point(352, 92)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(149, 21)
         Me.CheckBox1.TabIndex = 58
@@ -567,7 +567,7 @@ Partial Class PDFMenu
         Me.Label22.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label22.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label22.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label22.Location = New System.Drawing.Point(182, 222)
+        Me.Label22.Location = New System.Drawing.Point(179, 222)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(0, 19)
         Me.Label22.TabIndex = 57
@@ -578,7 +578,7 @@ Partial Class PDFMenu
         Me.Label23.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label23.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label23.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label23.Location = New System.Drawing.Point(7, 223)
+        Me.Label23.Location = New System.Drawing.Point(4, 223)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(129, 19)
         Me.Label23.TabIndex = 56
@@ -590,7 +590,7 @@ Partial Class PDFMenu
         Me.Label24.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label24.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label24.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label24.Location = New System.Drawing.Point(182, 192)
+        Me.Label24.Location = New System.Drawing.Point(179, 192)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(0, 19)
         Me.Label24.TabIndex = 55
@@ -601,7 +601,7 @@ Partial Class PDFMenu
         Me.Label25.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label25.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label25.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label25.Location = New System.Drawing.Point(7, 192)
+        Me.Label25.Location = New System.Drawing.Point(4, 192)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(108, 19)
         Me.Label25.TabIndex = 54
@@ -611,7 +611,7 @@ Partial Class PDFMenu
         '
         Me.ComboBox3.FormattingEnabled = True
         Me.ComboBox3.Items.AddRange(New Object() {"Documents (*.DOCX)", "Spreadsheets (*.XLSX)", "Image (*.JPEG)", "Image (*.PNG)"})
-        Me.ComboBox3.Location = New System.Drawing.Point(182, 88)
+        Me.ComboBox3.Location = New System.Drawing.Point(179, 88)
         Me.ComboBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(155, 25)
@@ -623,7 +623,7 @@ Partial Class PDFMenu
         Me.Label21.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label21.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label21.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label21.Location = New System.Drawing.Point(6, 92)
+        Me.Label21.Location = New System.Drawing.Point(3, 92)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(68, 19)
         Me.Label21.TabIndex = 52
@@ -663,7 +663,7 @@ Partial Class PDFMenu
         Me.Label28.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label28.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label28.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label28.Location = New System.Drawing.Point(6, 50)
+        Me.Label28.Location = New System.Drawing.Point(3, 50)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(96, 19)
         Me.Label28.TabIndex = 49
@@ -675,7 +675,7 @@ Partial Class PDFMenu
         Me.Label29.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label29.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label29.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label29.Location = New System.Drawing.Point(6, 12)
+        Me.Label29.Location = New System.Drawing.Point(3, 12)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(81, 19)
         Me.Label29.TabIndex = 48
@@ -684,7 +684,7 @@ Partial Class PDFMenu
         '
         'TextBox8
         '
-        Me.TextBox8.Location = New System.Drawing.Point(182, 13)
+        Me.TextBox8.Location = New System.Drawing.Point(179, 13)
         Me.TextBox8.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.ReadOnly = True
@@ -694,7 +694,7 @@ Partial Class PDFMenu
         '
         'TextBox9
         '
-        Me.TextBox9.Location = New System.Drawing.Point(182, 50)
+        Me.TextBox9.Location = New System.Drawing.Point(179, 50)
         Me.TextBox9.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TextBox9.Name = "TextBox9"
         Me.TextBox9.ReadOnly = True
@@ -710,7 +710,7 @@ Partial Class PDFMenu
         Me.Button16.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue
         Me.Button16.FlatAppearance.BorderSize = 0
         Me.Button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button16.Location = New System.Drawing.Point(508, 47)
+        Me.Button16.Location = New System.Drawing.Point(505, 47)
         Me.Button16.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button16.Name = "Button16"
         Me.Button16.Size = New System.Drawing.Size(42, 34)
@@ -725,7 +725,7 @@ Partial Class PDFMenu
         Me.Button17.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue
         Me.Button17.FlatAppearance.BorderSize = 0
         Me.Button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button17.Location = New System.Drawing.Point(508, 9)
+        Me.Button17.Location = New System.Drawing.Point(505, 9)
         Me.Button17.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button17.Name = "Button17"
         Me.Button17.Size = New System.Drawing.Size(42, 34)
