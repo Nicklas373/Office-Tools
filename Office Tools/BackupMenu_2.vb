@@ -1,7 +1,7 @@
-﻿Imports Syncfusion.WinForms.Controls
+﻿Imports System.IO
 Imports Syncfusion.Windows.Forms
+Imports Syncfusion.WinForms.Controls
 Imports Syncfusion.WinForms.Input.Enums
-Imports System.IO
 Public Class BackupMenu_2
     Inherits SfForm
     Dim openfiledialog As New OpenFileDialog
@@ -12,6 +12,10 @@ Public Class BackupMenu_2
     Dim lastResult As String = "log/lastResult"
     Dim lastErr As String = "log/lastErr"
     Dim roboPath As String = "log/robolog"
+    Dim advLogPath As String = "log/advlog"
+    Dim resLogPath As String = "log/reslog"
+    Dim advErrPath As String = "log/adverr"
+    Dim resErrPath As String = "log/reserr"
     Dim resSrcPath As String = "conf/res_backup/resSrcPath"
     Dim resDestPath As String = "conf/res_backup/resDestPath"
     Dim resInstPath As String = "conf/res_backup/resInstPath"
@@ -432,7 +436,7 @@ Public Class BackupMenu_2
                                 PrepareNotif(lastErr)
                                 CheckFileExist(lastResult, "err")
                                 CheckFileExist(lastErr, "Extract error, password not match !")
-                                Dim writer As New StreamWriter(errPath, True)
+                                Dim writer As New StreamWriter(resLogPath, True)
                                 writer.WriteLine("# Office Tools v1.2")
                                 writer.WriteLine("Extract Result               : Error")
                                 writer.WriteLine("Extract Time                 : " & DateTime.Now)
@@ -448,7 +452,7 @@ Public Class BackupMenu_2
                                     PrepareNotif(lastResult)
                                     PrepareNotif(lastErr)
                                     CheckFileExist(lastResult, "success")
-                                    Dim writer As New StreamWriter(logPath, True)
+                                    Dim writer As New StreamWriter(resLogPath, True)
                                     writer.WriteLine("# Office Tools v1.2")
                                     writer.WriteLine("Extract Result               : Success")
                                     writer.WriteLine("Extract Time                 : " & DateTime.Now)
@@ -503,7 +507,7 @@ Public Class BackupMenu_2
                                                     PrepareNotif(lastErr)
                                                     CheckFileExist(lastResult, "err")
                                                     CheckFileExist(lastErr, "Extract error, password not match !")
-                                                    Dim writer As New StreamWriter(errPath, True)
+                                                    Dim writer As New StreamWriter(resErrPath, True)
                                                     writer.WriteLine("# Office Tools v1.2")
                                                     writer.WriteLine("Extract Result               : Error")
                                                     writer.WriteLine("Extract Time                 : " & DateTime.Now)
@@ -519,7 +523,7 @@ Public Class BackupMenu_2
                                                         PrepareNotif(lastResult)
                                                         PrepareNotif(lastErr)
                                                         CheckFileExist(lastResult, "success")
-                                                        Dim writer As New StreamWriter(logPath, True)
+                                                        Dim writer As New StreamWriter(resLogPath, True)
                                                         writer.WriteLine("# Office Tools v1.2")
                                                         writer.WriteLine("Extract Result               : Success")
                                                         writer.WriteLine("Extract Time                 : " & DateTime.Now)
