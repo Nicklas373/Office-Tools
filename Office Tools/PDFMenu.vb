@@ -209,29 +209,29 @@ Public Class PDFMenu
             End If
         End If
     End Sub
-    Private Sub OpenFileDialog_Cnv_PDF_Button(sender As Object, e As EventArgs)
+    Private Sub OpenFileDialog_Cnv_PDF_Button(sender As Object, e As EventArgs) Handles Button17.Click
         fileDialog.DefaultExt = ".pdf"
         fileDialog.Filter = "PDF File | *.pdf"
         fileDialog.Title = "Choose PDF File"
         fileDialog.InitialDirectory = Environment.SpecialFolder.UserProfile
         fileDialog.ShowDialog()
     End Sub
-    Private Sub OpenFileDialog_Cnv_PDF(sender As Object, e As EventArgs)
+    Private Sub OpenFileDialog_Cnv_PDF(sender As Object, e As EventArgs) Handles Button17.Click
         If fileDialog.FileName.ToString = "" Then
-            TextBox6.Text = ""
+            TextBox8.Text = ""
         Else
-            TextBox6.Text = Path.GetFullPath(fileDialog.FileName.ToString)
-            Label24.Text = GetFileSize(TextBox6.Text)
+            TextBox8.Text = Path.GetFullPath(fileDialog.FileName.ToString)
+            Label24.Text = GetFileSize(TextBox8.Text)
         End If
     End Sub
-    Private Sub SaveFileDialog_Cnv_PDF(sender As Object, e As EventArgs)
+    Private Sub SaveFileDialog_Cnv_PDF(sender As Object, e As EventArgs) Handles Button16.Click
         saveDialog.DefaultExt = ".docx|.xlsx|.jpeg"
         saveDialog.Filter = "DOCX File | *.docx|XLS File |*.xls|JPEG File | *.jpeg|PNG File | *.png"
         saveDialog.Title = "Save To"
         saveDialog.InitialDirectory = Environment.SpecialFolder.UserProfile
         If saveDialog.ShowDialog() = DialogResult.OK Then
             pdfSplit = "\" + Path.GetFileNameWithoutExtension(saveDialog.FileName)
-            TextBox7.Text = saveDialog.FileName
+            TextBox9.Text = saveDialog.FileName
             If Strings.Right(saveDialog.FileName, 4) = "docx" Then
                 ComboBox1.Text = "Documents (*.DOCX)"
             ElseIf Strings.Right(saveDialog.FileName, 4) = ".xls" Then
@@ -244,58 +244,58 @@ Public Class PDFMenu
                 CheckBox1.Visible = True
             End If
         Else
-            TextBox7.Text = ""
+            TextBox9.Text = ""
         End If
     End Sub
-    Private Sub CnvPDF_Button(sender As Object, e As EventArgs)
-        If TextBox6.Text = "" Then
+    Private Sub CnvPDF_Button(sender As Object, e As EventArgs) Handles Button15.Click
+        If TextBox8.Text = "" Then
             MessageBoxAdv.Show("No PDF file was selected !, please select PDF file first !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
-            If TextBox7.Text = "" Then
+            If TextBox9.Text = "" Then
                 MessageBoxAdv.Show("Destination file location was not selected !, please select destination location first !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 If ComboBox1.Text = "" Then
                     MessageBoxAdv.Show("Convert option was not selected !, please select destination location first !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Else
                     If ComboBox1.Text = "Documents (*.DOCX)" Then
-                        If Strings.Right(TextBox7.Text, 4) = "docx" Then
-                            CnvPDF(TextBox6.Text, TextBox7.Text, "DOCX")
+                        If Strings.Right(TextBox9.Text, 4) = "docx" Then
+                            CnvPDF(TextBox8.Text, TextBox9.Text, "DOCX")
                         Else
                             MessageBoxAdv.Show("Saved filename extensions was not same with extract to settings !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                             MessageBoxAdv.Show("Current ext: " & Strings.Right(TextBox7.Text, 4) & " Current export settings: docx", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End If
                     ElseIf ComboBox1.Text = "Spreadsheets (*.XLSX)" Then
-                        If Strings.Right(TextBox7.Text, 4) = ".xls" Then
-                            CnvPDF(TextBox6.Text, TextBox7.Text, "XLS")
+                        If Strings.Right(TextBox9.Text, 4) = ".xls" Then
+                            CnvPDF(TextBox8.Text, TextBox9.Text, "XLS")
                         Else
                             MessageBoxAdv.Show("Saved filename extensions was not same with extract to settings !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                             MessageBoxAdv.Show("Current ext: " & Strings.Right(TextBox7.Text, 4) & " Current export settings: xls", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End If
                     ElseIf ComboBox1.Text = "Image (*.JPEG)" Then
-                        If Strings.Right(TextBox7.Text, 4) = "jpeg" Then
+                        If Strings.Right(TextBox9.Text, 4) = "jpeg" Then
                             If CheckBox1.Checked Then
-                                ExpImagesFrPDF(TextBox6.Text, TextBox7.Text, "JPEG")
+                                ExpImagesFrPDF(TextBox8.Text, TextBox9.Text, "JPEG")
                             Else
-                                CnvPDF(TextBox6.Text, TextBox7.Text.Substring(0, TextBox7.Text.Length - 5), "JPEG")
+                                CnvPDF(TextBox8.Text, TextBox9.Text.Substring(0, TextBox9.Text.Length - 5), "JPEG")
                             End If
                             Label22.Visible = False
                             Label23.Visible = False
                         Else
                             MessageBoxAdv.Show("Saved filename extensions was not same with extract to settings !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                            MessageBoxAdv.Show("Current ext: " & Strings.Right(TextBox7.Text, 4) & " Current export settings: jpeg", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            MessageBoxAdv.Show("Current ext: " & Strings.Right(TextBox9.Text, 4) & " Current export settings: jpeg", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End If
                     ElseIf ComboBox1.Text = "Image (*.PNG)" Then
-                        If Strings.Right(TextBox7.Text, 4) = "png" Then
+                        If Strings.Right(TextBox9.Text, 4) = "png" Then
                             If CheckBox1.Checked Then
-                                ExpImagesFrPDF(TextBox6.Text, TextBox7.Text, "PNG")
+                                ExpImagesFrPDF(TextBox8.Text, TextBox9.Text, "PNG")
                             Else
-                                CnvPDF(TextBox6.Text, TextBox7.Text.Substring(0, TextBox7.Text.Length - 5), "PNG")
+                                CnvPDF(TextBox8.Text, TextBox9.Text.Substring(0, TextBox9.Text.Length - 5), "PNG")
                             End If
                             Label22.Visible = False
                             Label23.Visible = False
                         Else
                             MessageBoxAdv.Show("Saved filename extensions was not same with extract to settings !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                            MessageBoxAdv.Show("Current ext: " & Strings.Right(TextBox7.Text, 4) & " Current export settings: png", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            MessageBoxAdv.Show("Current ext: " & Strings.Right(TextBox9.Text, 4) & " Current export settings: png", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End If
                     End If
                 End If
