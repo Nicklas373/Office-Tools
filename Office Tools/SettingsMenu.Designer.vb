@@ -24,7 +24,6 @@ Partial Class SettingsMenu
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SettingsMenu))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button24 = New System.Windows.Forms.Button()
         Me.Button21 = New System.Windows.Forms.Button()
         Me.Button18 = New System.Windows.Forms.Button()
         Me.Button16 = New System.Windows.Forms.Button()
@@ -38,14 +37,6 @@ Partial Class SettingsMenu
         Me.weekly_sched_pnl = New System.Windows.Forms.Panel()
         Me.bck_info_pnl = New System.Windows.Forms.Panel()
         Me.tsk_info_panel = New System.Windows.Forms.Panel()
-        Me.pdf_set_pnl = New System.Windows.Forms.Panel()
-        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
-        Me.Button26 = New System.Windows.Forms.Button()
-        Me.Button27 = New System.Windows.Forms.Button()
-        Me.Button28 = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Button25 = New System.Windows.Forms.Button()
         Me.Button17 = New System.Windows.Forms.Button()
         Me.Button19 = New System.Windows.Forms.Button()
         Me.Button20 = New System.Windows.Forms.Button()
@@ -107,13 +98,11 @@ Partial Class SettingsMenu
         Me.weekly_sched_pnl.SuspendLayout()
         Me.bck_info_pnl.SuspendLayout()
         Me.tsk_info_panel.SuspendLayout()
-        Me.pdf_set_pnl.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
-        Me.Panel1.Controls.Add(Me.Button24)
         Me.Panel1.Controls.Add(Me.Button21)
         Me.Panel1.Controls.Add(Me.Button18)
         Me.Panel1.Controls.Add(Me.Button16)
@@ -127,23 +116,6 @@ Partial Class SettingsMenu
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(234, 498)
         Me.Panel1.TabIndex = 6
-        '
-        'Button24
-        '
-        Me.Button24.FlatAppearance.BorderSize = 0
-        Me.Button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button24.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Button24.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Button24.Image = CType(resources.GetObject("Button24.Image"), System.Drawing.Image)
-        Me.Button24.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button24.Location = New System.Drawing.Point(3, 221)
-        Me.Button24.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button24.Name = "Button24"
-        Me.Button24.Size = New System.Drawing.Size(228, 45)
-        Me.Button24.TabIndex = 11
-        Me.Button24.Text = "  PDF Settings"
-        Me.Button24.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button24.UseVisualStyleBackColor = True
         '
         'Button21
         '
@@ -360,7 +332,6 @@ Partial Class SettingsMenu
         '
         'tsk_info_panel
         '
-        Me.tsk_info_panel.Controls.Add(Me.pdf_set_pnl)
         Me.tsk_info_panel.Controls.Add(Me.Button17)
         Me.tsk_info_panel.Controls.Add(Me.Button19)
         Me.tsk_info_panel.Controls.Add(Me.Button20)
@@ -370,129 +341,6 @@ Partial Class SettingsMenu
         Me.tsk_info_panel.Name = "tsk_info_panel"
         Me.tsk_info_panel.Size = New System.Drawing.Size(710, 498)
         Me.tsk_info_panel.TabIndex = 56
-        '
-        'pdf_set_pnl
-        '
-        Me.pdf_set_pnl.Controls.Add(Me.CheckBox8)
-        Me.pdf_set_pnl.Controls.Add(Me.Button26)
-        Me.pdf_set_pnl.Controls.Add(Me.Button27)
-        Me.pdf_set_pnl.Controls.Add(Me.Button28)
-        Me.pdf_set_pnl.Controls.Add(Me.Label1)
-        Me.pdf_set_pnl.Controls.Add(Me.TextBox5)
-        Me.pdf_set_pnl.Controls.Add(Me.Button25)
-        Me.pdf_set_pnl.Location = New System.Drawing.Point(0, 0)
-        Me.pdf_set_pnl.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.pdf_set_pnl.Name = "pdf_set_pnl"
-        Me.pdf_set_pnl.Size = New System.Drawing.Size(716, 499)
-        Me.pdf_set_pnl.TabIndex = 49
-        '
-        'CheckBox8
-        '
-        Me.CheckBox8.AutoSize = True
-        Me.CheckBox8.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.CheckBox8.ForeColor = System.Drawing.Color.AliceBlue
-        Me.CheckBox8.Location = New System.Drawing.Point(184, 52)
-        Me.CheckBox8.Name = "CheckBox8"
-        Me.CheckBox8.Size = New System.Drawing.Size(267, 21)
-        Me.CheckBox8.TabIndex = 35
-        Me.CheckBox8.Text = "Automatically open PDF after compress"
-        Me.CheckBox8.UseVisualStyleBackColor = True
-        '
-        'Button26
-        '
-        Me.Button26.BackColor = System.Drawing.Color.SteelBlue
-        Me.Button26.FlatAppearance.BorderSize = 0
-        Me.Button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button26.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Button26.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Button26.Image = CType(resources.GetObject("Button26.Image"), System.Drawing.Image)
-        Me.Button26.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button26.Location = New System.Drawing.Point(499, 127)
-        Me.Button26.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.Button26.Name = "Button26"
-        Me.Button26.Size = New System.Drawing.Size(97, 44)
-        Me.Button26.TabIndex = 34
-        Me.Button26.Text = "Edit"
-        Me.Button26.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button26.UseVisualStyleBackColor = False
-        '
-        'Button27
-        '
-        Me.Button27.BackColor = System.Drawing.Color.SteelBlue
-        Me.Button27.FlatAppearance.BorderSize = 0
-        Me.Button27.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button27.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Button27.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Button27.Image = CType(resources.GetObject("Button27.Image"), System.Drawing.Image)
-        Me.Button27.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button27.Location = New System.Drawing.Point(296, 127)
-        Me.Button27.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.Button27.Name = "Button27"
-        Me.Button27.Size = New System.Drawing.Size(97, 44)
-        Me.Button27.TabIndex = 33
-        Me.Button27.Text = "  Cancel"
-        Me.Button27.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button27.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button27.UseVisualStyleBackColor = False
-        Me.Button27.Visible = False
-        '
-        'Button28
-        '
-        Me.Button28.BackColor = System.Drawing.Color.SteelBlue
-        Me.Button28.FlatAppearance.BorderSize = 0
-        Me.Button28.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button28.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Button28.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Button28.Image = CType(resources.GetObject("Button28.Image"), System.Drawing.Image)
-        Me.Button28.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button28.Location = New System.Drawing.Point(188, 127)
-        Me.Button28.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.Button28.Name = "Button28"
-        Me.Button28.Size = New System.Drawing.Size(97, 44)
-        Me.Button28.TabIndex = 32
-        Me.Button28.Text = "  Save"
-        Me.Button28.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button28.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button28.UseVisualStyleBackColor = False
-        Me.Button28.Visible = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.ForeColor = System.Drawing.Color.AliceBlue
-        Me.Label1.Location = New System.Drawing.Point(14, 17)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(81, 19)
-        Me.Label1.TabIndex = 20
-        Me.Label1.Text = "PDF Reader"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Location = New System.Drawing.Point(184, 18)
-        Me.TextBox5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.ReadOnly = True
-        Me.TextBox5.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
-        Me.TextBox5.Size = New System.Drawing.Size(276, 25)
-        Me.TextBox5.TabIndex = 19
-        '
-        'Button25
-        '
-        Me.Button25.BackColor = System.Drawing.Color.Transparent
-        Me.Button25.BackgroundImage = CType(resources.GetObject("Button25.BackgroundImage"), System.Drawing.Image)
-        Me.Button25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Button25.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue
-        Me.Button25.FlatAppearance.BorderSize = 0
-        Me.Button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button25.Location = New System.Drawing.Point(474, 11)
-        Me.Button25.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button25.Name = "Button25"
-        Me.Button25.Size = New System.Drawing.Size(42, 34)
-        Me.Button25.TabIndex = 18
-        Me.Button25.UseVisualStyleBackColor = False
         '
         'Button17
         '
@@ -1247,14 +1095,11 @@ Partial Class SettingsMenu
         Me.weekly_sched_pnl.PerformLayout()
         Me.bck_info_pnl.ResumeLayout(False)
         Me.tsk_info_panel.ResumeLayout(False)
-        Me.pdf_set_pnl.ResumeLayout(False)
-        Me.pdf_set_pnl.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Button24 As Button
     Friend WithEvents Button21 As Button
     Friend WithEvents Button18 As Button
     Friend WithEvents Button16 As Button
@@ -1315,14 +1160,6 @@ Partial Class SettingsMenu
     Friend WithEvents SfDateTimeEdit2 As Syncfusion.WinForms.Input.SfDateTimeEdit
     Friend WithEvents bck_info_pnl As Panel
     Friend WithEvents tsk_info_panel As Panel
-    Friend WithEvents pdf_set_pnl As Panel
-    Friend WithEvents CheckBox8 As CheckBox
-    Friend WithEvents Button26 As Button
-    Friend WithEvents Button27 As Button
-    Friend WithEvents Button28 As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents Button25 As Button
     Friend WithEvents Button17 As Button
     Friend WithEvents Button19 As Button
     Friend WithEvents Button20 As Button

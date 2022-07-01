@@ -48,7 +48,6 @@ Public Class SettingsMenu
         weekly_sched_pnl.Visible = False
         bck_info_pnl.Visible = False
         tsk_info_panel.Visible = False
-        pdf_set_pnl.Visible = False
     End Sub
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         dir_bck_set.Visible = True
@@ -56,7 +55,6 @@ Public Class SettingsMenu
         weekly_sched_pnl.Visible = False
         bck_info_pnl.Visible = False
         tsk_info_panel.Visible = False
-        pdf_set_pnl.Visible = False
     End Sub
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
         dir_bck_set.Visible = True
@@ -64,7 +62,6 @@ Public Class SettingsMenu
         weekly_sched_pnl.Visible = True
         bck_info_pnl.Visible = False
         tsk_info_panel.Visible = False
-        pdf_set_pnl.Visible = False
     End Sub
     Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
         dir_bck_set.Visible = True
@@ -72,7 +69,6 @@ Public Class SettingsMenu
         weekly_sched_pnl.Visible = True
         bck_info_pnl.Visible = True
         tsk_info_panel.Visible = False
-        pdf_set_pnl.Visible = False
     End Sub
     Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
         dir_bck_set.Visible = True
@@ -80,15 +76,13 @@ Public Class SettingsMenu
         weekly_sched_pnl.Visible = True
         bck_info_pnl.Visible = True
         tsk_info_panel.Visible = True
-        pdf_set_pnl.Visible = False
     End Sub
-    Private Sub Button24_Click(sender As Object, e As EventArgs) Handles Button24.Click
+    Private Sub Button24_Click(sender As Object, e As EventArgs)
         dir_bck_set.Visible = True
         daily_sched_pnl.Visible = True
         weekly_sched_pnl.Visible = True
         bck_info_pnl.Visible = True
         tsk_info_panel.Visible = True
-        pdf_set_pnl.Visible = True
     End Sub
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         Close()
@@ -400,65 +394,6 @@ Public Class SettingsMenu
         ComboBox1.ResetText()
         RichTextBox2.Text = ""
     End Sub
-    Private Sub Edit_PDF_Browse_Settings(sender As Object, e As EventArgs) Handles Button26.Click
-        TextBox5.ReadOnly = False
-        Button28.Visible = True
-        Button27.Visible = True
-        Button26.Visible = False
-    End Sub
-    Private Sub Cancel_PDF_Browse_Settings(sender As Object, e As EventArgs) Handles Button27.Click
-        TextBox5.Text = ""
-        TextBox5.ReadOnly = True
-        Button27.Visible = False
-        Button28.Visible = False
-        Button26.Visible = True
-    End Sub
-    Private Sub Save_PDF_Browse_Settings(sender As Object, e As EventArgs) Handles Button28.Click
-        If TextBox5.Text = "" Then
-            MsgBox("PDF Path is empty, please choose PDF Reader !", MsgBoxStyle.Information, "Office Tools")
-        Else
-            Dim PDFReaderConf As String = FindConfig(confPath, "PDF Reader Preferences: ")
-            Dim PDFAutoConf As String = FindConfig(confPath, "Auto Open PDF: ")
-            If PDFReaderConf = "null" Then
-                Dim writer As New StreamWriter(confPath, True)
-                writer.WriteLine("PDF Reader Preferences: " & TextBox5.Text)
-                writer.Close()
-            Else
-                Dim PDFReaderOldConf As String = File.ReadAllText(confPath)
-                PDFReaderOldConf = PDFReaderOldConf.Replace(PDFReaderConf, "PDF Reader Preferences: " & TextBox5.Text)
-                File.WriteAllText(confPath, PDFReaderOldConf)
-            End If
-            If PDFAutoConf = "null" Then
-                Dim writer As New StreamWriter(confPath, True)
-                writer.WriteLine("Auto Open PDF: " & CheckBox8.Checked)
-                writer.Close()
-            Else
-                Dim PDFReaderOldConf As String = File.ReadAllText(confPath)
-                PDFReaderOldConf = PDFReaderOldConf.Replace(PDFAutoConf, "Auto Open PDF: " & CheckBox8.Checked)
-                File.WriteAllText(confPath, PDFReaderOldConf)
-            End If
-            MessageBoxAdv.Show("PDF Config Updated !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
-        Button27.Visible = False
-        Button28.Visible = False
-        TextBox5.ReadOnly = True
-        Button26.Visible = True
-    End Sub
-    Private Sub Pdf_Settings_Browse_Button(sender As Object, e As EventArgs) Handles Button25.Click
-        If TextBox5.ReadOnly = True Then
-            MessageBoxAdv.Show("Configuration menu is locked, Please click edit !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Else
-            openfiledialog.InitialDirectory = Environment.SpecialFolder.UserProfile
-            openfiledialog.DefaultExt = ".exe"
-            openfiledialog.Filter = "Executables Files|*.exe"
-            openfiledialog.ShowDialog()
-        End If
-    End Sub
-    Private Sub Pdf_Settings_Browse_Handler(sender As Object, e As EventArgs) Handles Button25.Click
-        If TextBox5.ReadOnly = False Then
-            TextBox5.Text = openfiledialog.FileName.ToString
-        End If
-    End Sub
     Private Sub GetBackPref()
         Dim SourceBackup As String = FindConfig(confPath, "Source Directory: ")
         Dim DestBackup As String = FindConfig(confPath, "Destination Directory: ")
@@ -483,18 +418,6 @@ Public Class SettingsMenu
             ElseIf BackupPreferences = "Backup Preferences: Today" Then
                 ComboBox1.Text = "Today"
             End If
-        End If
-        If PDFReaderConf = "null" Then
-            TextBox5.Text = ""
-        Else
-            TextBox5.Text = PDFReaderConf.Remove(0, 24)
-        End If
-        If PDFAutoConf = "null" Then
-            CheckBox8.Checked = False
-        ElseIf PDFAutoConf = "Auto Open PDF: True" Then
-            CheckBox8.Checked = True
-        ElseIf PDFAutoConf = "Auto Open PDF: False" Then
-            CheckBox8.Checked = False
         End If
     End Sub
 End Class
