@@ -12,7 +12,6 @@ Public Class PDFMenu
     Dim confPath As String = "conf/config"
     Dim pdfMergeList As New List(Of String)()
     Dim pdfSplit As String
-    Dim pdfSplit2 As String
     Private Sub PDF_Compress_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AllowTransparency = False
         Style.TitleBar.IconBackColor = Color.FromArgb(15, 161, 212)
@@ -403,12 +402,8 @@ Public Class PDFMenu
             Dim PDFAutoConf As String = FindConfig(confPath, "Auto Open PDF: ")
             MessageBoxAdv.Show("Compress PDF success !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Label10.Text = GetFileSize(TextBox2.Text)
-            If PDFReader = "null" Then
-            Else
-                If PDFAutoConf = "Auto Open PDF: True" Then
-                    Process.Start(PDFReader.Remove(0, 24), TextBox2.Text)
-                End If
-            End If
+            Dim pdfViewer = New PDFViewer(TextBox2.Text)
+            pdfViewer.Show()
         Else
             MessageBoxAdv.Show("Compress PDF failed !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
@@ -430,12 +425,8 @@ Public Class PDFMenu
             Dim PDFReader As String = FindConfig(confPath, "PDF Reader Preferences: ")
             Dim PDFAutoConf As String = FindConfig(confPath, "Auto Open PDF: ")
             Label15.Text = GetFileSize(TextBox4.Text)
-            If PDFReader = "null" Then
-            Else
-                If PDFAutoConf = "Auto Open PDF: True" Then
-                    Process.Start(PDFReader.Remove(0, 24), TextBox4.Text)
-                End If
-            End If
+            Dim pdfViewer = New PDFViewer(TextBox4.Text)
+            pdfViewer.Show()
         Else
             MessageBoxAdv.Show("Merge PDF failed !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
@@ -474,8 +465,9 @@ Public Class PDFMenu
         ProgressBar3.Style = ProgressBarStyle.Blocks
         ProgressBar3.Value = 100
         If File.Exists(pdfOut) Then
-            Process.Start("explorer.exe", String.Format("/n, /e, {0}", Path.GetDirectoryName(pdfOut)))
             MessageBoxAdv.Show("Split PDF success !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Dim pdfViewer = New PDFViewer(pdfOut)
+            pdfViewer.Show()
         Else
             MessageBoxAdv.Show("Split PDF failed !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
