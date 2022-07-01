@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -8,7 +8,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
     <ApplicationIcon>ico\working_AAH_icon.ico</ApplicationIcon>
-    <Version>1.3.6</Version>
+    <Version>1.3.7</Version>
     <Authors>Dicky Herlambang</Authors>
     <Company>Hana-CI Build Project</Company>
     <PackageId>Office_Tools</PackageId>
@@ -32,7 +32,11 @@ Additional library:
     <PackageIconUrl />
     <RepositoryType>public</RepositoryType>
     <PackageTags>#Migrate-To-GDrive, #OfficeTools</PackageTags>
-    <PackageReleaseNotes>v1.3.6 (20220107):
+    <PackageReleaseNotes>v1.3.7 (20220107):
+- Drop separate PDFConfig
+- Implement PDFViewer Features
+
+v1.3.6 (20220107):
 - Fixes issue with backup algorithm on some devices
 - Fixes issue on PDF Convert menu
 
@@ -145,8 +149,8 @@ v1.1.0 (20220419):
 v1.0.0 (20220416):
 - INITIAL RELEASE</PackageReleaseNotes>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <AssemblyVersion>1.3.6</AssemblyVersion>
-    <FileVersion>1.3.6</FileVersion>
+    <AssemblyVersion>1.3.7</AssemblyVersion>
+    <FileVersion>1.3.7</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -177,6 +181,7 @@ v1.0.0 (20220416):
     <PackageReference Include="Syncfusion.Tools.Windows" Version="20.1.0.61">
       <TreatAsUsed>true</TreatAsUsed>
     </PackageReference>
+    <PackageReference Include="Syncfusion.PdfViewer.Windows" Version="20.1.0.61" />
 </ItemGroup>
 
   <ItemGroup>
