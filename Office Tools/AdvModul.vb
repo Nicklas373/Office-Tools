@@ -10,14 +10,14 @@ Module AdvModul
     Dim uiFrDatePath As String = "conf/nrm_backup/nrmFrDatePath"
     Dim uiReDatePath As String = "conf/nrm_backup/nrmReDatePath"
     Dim uiToDatePath As String = "conf/nrm_backup/nrmToDatePath"
-    Public Sub BeginCopy(Cmbx1 As String, Lbl7 As String, Tbx2 As String, Dtp1 As Date, Dtp2 As Date)
+    Public Sub BeginCopy(Cmbx1 As String, Tbx1 As String, Tbx2 As String, Dtp1 As Date, Dtp2 As Date)
         If File.Exists(roboPath) Then
             PrepareNotif(roboPath)
         End If
         If Cmbx1 = "Anytime" Then
             Dim uiTrimSrc As String
             Dim uiTrimDest As String
-            uiTrimSrc = Lbl7
+            uiTrimSrc = Tbx1
             uiTrimDest = Tbx2
             If Directory.Exists(uiTrimSrc) Then
                 If Directory.Exists(uiTrimDest) Then
@@ -54,7 +54,7 @@ Module AdvModul
             End If
             Dim uiTrimSrc As String
             Dim uiTrimDest As String
-            uiTrimSrc = Lbl7
+            uiTrimSrc = Tbx1
             uiTrimDest = Tbx2
             If Directory.Exists(uiTrimSrc) Then
                 If Directory.Exists(uiTrimDest) Then
@@ -123,7 +123,7 @@ Module AdvModul
             End If
             Dim uiTrimSrc As String
             Dim uiTrimDest As String
-            uiTrimSrc = Lbl7
+            uiTrimSrc = Tbx1
             uiTrimDest = Tbx2
             If Directory.Exists(uiTrimSrc) Then
                 If Directory.Exists(uiTrimDest) Then

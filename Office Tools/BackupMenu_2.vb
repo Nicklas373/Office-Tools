@@ -121,7 +121,7 @@ Public Class BackupMenu_2
                         ProgressBar1.Style = ProgressBarStyle.Marquee
                         ProgressBar1.MarqueeAnimationSpeed = 40
                         CheckFileExist(uiSpecFilePath, "*")
-                        BeginCopy(ComboBox1.Text, Label7.Text, TextBox2.Text, SfDateTimeEdit1.Value, SfDateTimeEdit2.Value)
+                        BeginCopy(ComboBox1.Text, TextBox1.Text, TextBox2.Text, SfDateTimeEdit1.Value, SfDateTimeEdit2.Value)
                         ProgressBar1.Value = 100
                         ProgressBar1.Style = ProgressBarStyle.Blocks
                     ElseIf ComboBox2.Text = "Backup File" Then
@@ -129,7 +129,7 @@ Public Class BackupMenu_2
                         ProgressBar1.Style = ProgressBarStyle.Marquee
                         ProgressBar1.MarqueeAnimationSpeed = 40
                         CheckFileExist(uiSpecFilePath, TextBox1.Text.ToString)
-                        BeginCopy(ComboBox1.Text, Label7.Text, TextBox2.Text, SfDateTimeEdit1.Value, SfDateTimeEdit2.Value)
+                        BeginCopy(ComboBox1.Text, TextBox1.Text, TextBox2.Text, SfDateTimeEdit1.Value, SfDateTimeEdit2.Value)
                         ProgressBar1.Value = 100
                         ProgressBar1.Style = ProgressBarStyle.Blocks
                     Else
@@ -558,14 +558,11 @@ Public Class BackupMenu_2
     Private Sub Open_Folder_File_Std_Backup_Handler(sender As Object, e As EventArgs) Handles Button5.Click
         If ComboBox2.Text = "Backup Folder" Then
             TextBox1.Text = openfolderdialog.SelectedPath.ToString
-            Label7.Text = openfolderdialog.SelectedPath.ToString
         ElseIf ComboBox2.Text = "Backup File" Then
-            TextBox1.Text = Path.GetFileName(openfiledialog.FileName.ToString)
             If openfiledialog.FileName.ToString = "" Then
-                Label7.Text = ""
+                TextBox1.Text = ""
             Else
-                actualDir = Path.GetFullPath(openfiledialog.FileName.ToString)
-                Label7.Text = Path.GetDirectoryName(actualDir)
+                TextBox1.Text = Path.GetFullPath(openfiledialog.FileName.ToString)
             End If
         End If
     End Sub
