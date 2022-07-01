@@ -1,5 +1,6 @@
-v1.3.5 (20220107):
-- Misc fixes backup algorithm
+v1.3.6 (20220107):
+- Fixes issue with backup algorithm on some devices
+- Fixes issue on PDF Convert menu
 
 v1.3.4 (20220630):
 - Fixup algorithm on file / folder output on split PDF
