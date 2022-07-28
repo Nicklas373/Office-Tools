@@ -1,3 +1,7 @@
+v1.3.8 (20220729):
+- Fixup issue with image extraction only from PDF
+- Update 7-Zip to version 22.01
+
 v1.3.7 (20220107):
 - Drop separate PDFConfig
 - Implement PDFViewer Features
