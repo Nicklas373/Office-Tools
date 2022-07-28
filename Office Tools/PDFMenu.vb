@@ -273,7 +273,7 @@ Public Class PDFMenu
                     ElseIf ComboBox1.Text = "Image (*.JPEG)" Then
                         If Strings.Right(TextBox9.Text, 4) = "jpeg" Then
                             If CheckBox1.Checked Then
-                                ExpImagesFrPDF(TextBox8.Text, TextBox9.Text, "JPEG")
+                                ExpImagesFrPDF(TextBox8.Text, TextBox9.Text, "jpeg")
                             Else
                                 CnvPDF(TextBox8.Text, TextBox9.Text.Substring(0, TextBox9.Text.Length - 5), "JPEG")
                             End If
@@ -284,9 +284,9 @@ Public Class PDFMenu
                             MessageBoxAdv.Show("Current ext: " & Strings.Right(TextBox9.Text, 4) & " Current export settings: jpeg", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End If
                     ElseIf ComboBox1.Text = "Image (*.PNG)" Then
-                        If Strings.Right(TextBox9.Text, 4) = "png" Then
+                        If Strings.Right(TextBox9.Text, 4) = ".png" Then
                             If CheckBox1.Checked Then
-                                ExpImagesFrPDF(TextBox8.Text, TextBox9.Text, "PNG")
+                                ExpImagesFrPDF(TextBox8.Text, TextBox9.Text, "png")
                             Else
                                 CnvPDF(TextBox8.Text, TextBox9.Text.Substring(0, TextBox9.Text.Length - 5), "PNG")
                             End If
@@ -525,7 +525,7 @@ Public Class PDFMenu
                 f.ImageOptions.Dpi = 200
                 f.ToImage(Path.GetDirectoryName(TextBox7.Text), Path.GetFileNameWithoutExtension(cnvFile))
             End If
-            If File.Exists(Path.GetDirectoryName(TextBox7.Text) & "\" & Path.GetFileNameWithoutExtension(cnvFile) & "1.jpg") Then
+            If File.Exists(Path.GetDirectoryName(TextBox7.Text) & "\" & Path.GetFileNameWithoutExtension(cnvFile) & "_1.jpg") Then
                 ProgressBar4.Style = ProgressBarStyle.Blocks
                 ProgressBar4.Value = 100
                 MessageBoxAdv.Show("Convert PDF success !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -540,7 +540,7 @@ Public Class PDFMenu
                 f.ImageOptions.Dpi = 200
                 f.ToImage(Path.GetDirectoryName(TextBox7.Text), Path.GetFileNameWithoutExtension(cnvFile))
             End If
-            If File.Exists(Path.GetDirectoryName(TextBox7.Text) & "\" & Path.GetFileNameWithoutExtension(cnvFile) & "1.png") Then
+            If File.Exists(Path.GetDirectoryName(TextBox7.Text) & "\" & Path.GetFileNameWithoutExtension(cnvFile) & "_1.png") Then
                 ProgressBar4.Style = ProgressBarStyle.Blocks
                 ProgressBar4.Value = 100
                 MessageBoxAdv.Show("Convert PDF success !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -562,15 +562,15 @@ Public Class PDFMenu
             Dim img As Image() = lpage.ExtractImages()
             If img Is Nothing Then Continue For
             For Each img1 As Image In img
-                If cnvExt = "JPEG" Then
-                    Await Task.Run(Sub() img1.Save(cnvfile & "_" & n & cnvExt, ImageFormat.Png))
-                ElseIf cnvExt = "PNG" Then
-                    Await Task.Run(Sub() img1.Save(cnvfile & "_" & n & cnvExt, ImageFormat.Jpeg))
+                If cnvExt = "jpeg" Then
+                    Await Task.Run(Sub() img1.Save(Path.GetDirectoryName(cnvfile) & "\" & Path.GetFileNameWithoutExtension(cnvfile) & "_" & n & "." & cnvExt, ImageFormat.Jpeg))
+                ElseIf cnvExt = "png" Then
+                    Await Task.Run(Sub() img1.Save(Path.GetDirectoryName(cnvfile) & "\" & Path.GetFileNameWithoutExtension(cnvfile) & "_" & n & "." & cnvExt, ImageFormat.Png))
                 End If
             Next img1
         Next lpage
         ldoc.Dispose()
-        If File.Exists(cnvfile & "_1" & cnvExt) Then
+        If File.Exists(Path.GetDirectoryName(cnvfile) & "\" & Path.GetFileNameWithoutExtension(cnvfile) & "_1" & "." & cnvExt) Then
             ProgressBar4.Style = ProgressBarStyle.Blocks
             ProgressBar4.Value = 100
             MessageBoxAdv.Show("Extract Image success !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
