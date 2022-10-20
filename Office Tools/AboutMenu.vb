@@ -26,7 +26,7 @@ Public Class AboutMenu
         history_pnl.Visible = False
         TextBox1.Text = My.Application.Info.ProductName
         TextBox2.Text = My.Application.Info.Version.ToString
-        TextBox3.Text = "July, 01 2022"
+        TextBox3.Text = "October, 20 2022"
         TextBox4.Text = My.Application.Info.Copyright
         TextBox5.Text = My.Application.Info.DirectoryPath
         TextBox6.Text = "PLACEHOLDER"

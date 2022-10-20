@@ -4,6 +4,7 @@ also have support with archiving folder that have feature to encrypt your passwo
 
 In addition by request, it also have feature with;
 - Compress, Merge and Split PDF file by using SyncFusion Library.
+- Export Image into PDF by using SyncFusion Library.
 - Export PDF into documents, spreadsheets and image file by using SautinSoft Library.
 
 # Additional library:
@@ -80,6 +81,11 @@ In addition by request, it also have feature with;
   * Save Location
   * Export To (*.docx | *.xls | *.jpeg | *.png)
   * Export Image only from PDF (*.jpeg | *.png)
+
+  Image Export
+  * Source Image (*.png | *.jpg | *.jpeg| *.bmp| *.tiff)
+  * Save Location
+  * Export To (*.pdf)
   
 # App Compatibility
 - [.NET Desktop Runtime 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
