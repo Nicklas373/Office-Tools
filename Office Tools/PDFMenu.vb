@@ -1,9 +1,12 @@
 ﻿Imports System.Drawing.Imaging
 Imports System.IO
 Imports Syncfusion.Pdf
+Imports Syncfusion.Pdf.Graphics
 Imports Syncfusion.Pdf.Parsing
 Imports Syncfusion.Windows.Forms
 Imports Syncfusion.WinForms.Controls
+Imports PdfBitmap = Syncfusion.Pdf.Graphics.PdfBitmap
+
 Public Class PDFMenu
     Inherits SfForm
     Dim fileDialog As New OpenFileDialog
@@ -74,24 +77,35 @@ Public Class PDFMenu
         pdf_merge_pnl.Visible = False
         split_pdf_pnl.Visible = False
         cnv_pdf_pnl.Visible = False
+        cnv_img_pnl.Visible = False
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         pdf_com_pnl.Visible = True
         pdf_merge_pnl.Visible = True
         split_pdf_pnl.Visible = False
         cnv_pdf_pnl.Visible = False
+        cnv_img_pnl.Visible = False
     End Sub
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
         pdf_com_pnl.Visible = True
         pdf_merge_pnl.Visible = True
         split_pdf_pnl.Visible = True
         cnv_pdf_pnl.Visible = False
+        cnv_img_pnl.Visible = False
     End Sub
     Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
         pdf_com_pnl.Visible = True
         pdf_merge_pnl.Visible = True
         split_pdf_pnl.Visible = True
         cnv_pdf_pnl.Visible = True
+        cnv_img_pnl.Visible = False
+    End Sub
+    Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
+        pdf_com_pnl.Visible = True
+        pdf_merge_pnl.Visible = True
+        split_pdf_pnl.Visible = True
+        cnv_pdf_pnl.Visible = True
+        cnv_img_pnl.Visible = True
     End Sub
     Private Sub OpenFileDialog_MergePDF(sender As Object, e As EventArgs) Handles Button9.Click
         Dim tempList As String
@@ -301,6 +315,45 @@ Public Class PDFMenu
             End If
         End If
     End Sub
+    Private Sub OpenFileDialog_Img_PDF_Button(sender As Object, e As EventArgs) Handles Button21.Click
+        fileDialog.DefaultExt = ".png|.jpg|.jpeg|.bmp|.tiff|.webp"
+        fileDialog.FilterIndex = 1
+        fileDialog.Filter = "PNG|*.png|JPEG|*.jpg;*jpeg|Bitmap|*.bmp|TIFF|*.tiff|Webp|*.webp"
+        fileDialog.Title = "Choose PDF File"
+        fileDialog.InitialDirectory = Environment.SpecialFolder.UserProfile
+        fileDialog.ShowDialog()
+    End Sub
+    Private Sub OpenFileDialog_Img_PDF(sender As Object, e As EventArgs) Handles Button21.Click
+        If fileDialog.FileName.ToString = "" Then
+            TextBox10.Text = ""
+        Else
+            TextBox10.Text = Path.GetFullPath(fileDialog.FileName.ToString)
+            Label32.Text = GetFileSize(TextBox10.Text)
+        End If
+    End Sub
+    Private Sub SaveFileDialog_Img_PDF(sender As Object, e As EventArgs) Handles Button20.Click
+        saveDialog.DefaultExt = ".pdf"
+        saveDialog.Filter = "PDF File | *.pdf"
+        saveDialog.Title = "Save To"
+        saveDialog.InitialDirectory = Environment.SpecialFolder.UserProfile
+        If saveDialog.ShowDialog() = DialogResult.OK Then
+            pdfSplit = "\" + Path.GetFileNameWithoutExtension(saveDialog.FileName)
+            TextBox11.Text = saveDialog.FileName
+        Else
+            TextBox11.Text = ""
+        End If
+    End Sub
+    Private Sub ImgPDF_Button(sender As Object, e As EventArgs) Handles Button19.Click
+        If TextBox10.Text = "" Then
+            MessageBoxAdv.Show("No image file was selected !, please select image file first !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            If TextBox11.Text = "" Then
+                MessageBoxAdv.Show("Save file location was not selected !, please select save location first !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                ExpImagesToPDF(TextBox10.Text, TextBox11.Text)
+            End If
+        End If
+    End Sub
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
         If ComboBox1.Text = "Split All" Then
             Label27.Visible = False
@@ -396,7 +449,7 @@ Public Class PDFMenu
         Await Task.Run(Sub() ldoc.Save(pdfPathOut))
         ProgressBar1.Style = ProgressBarStyle.Blocks
         ProgressBar1.Value = 100
-        ldoc.Close(True)
+        Await Task.Run(Sub() ldoc.Close(True))
         If File.Exists(TextBox2.Text) Then
             Dim PDFReader As String = FindConfig(confPath, "PDF Reader Preferences: ")
             Dim PDFAutoConf As String = FindConfig(confPath, "Auto Open PDF: ")
@@ -415,11 +468,11 @@ Public Class PDFMenu
         ProgressBar2.Style = ProgressBarStyle.Marquee
         ProgressBar2.MarqueeAnimationSpeed = 40
         ProgressBar2.Refresh()
-        PdfDocument.Merge(finalDoc, source)
+        Await Task.Run(Sub() PdfDocument.Merge(finalDoc, source))
         Await Task.Run(Sub() finalDoc.Save(destname))
         ProgressBar2.Style = ProgressBarStyle.Blocks
         ProgressBar2.Value = 100
-        finalDoc.Close(True)
+        Await Task.Run(Sub() finalDoc.Close(True))
         If File.Exists(TextBox4.Text) Then
             MessageBoxAdv.Show("Merge PDF success !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Dim PDFReader As String = FindConfig(confPath, "PDF Reader Preferences: ")
@@ -441,7 +494,7 @@ Public Class PDFMenu
         loadedDocument.FileStructure.IncrementalUpdate = True
         loadedDocument.Compression = PdfCompressionLevel.Best
         Await Task.Run(Sub() loadedDocument.Split(destinationFilePattern))
-        loadedDocument.Close(True)
+        Await Task.Run(Sub() loadedDocument.Close(True))
         ProgressBar3.Style = ProgressBarStyle.Blocks
         ProgressBar3.Value = 100
         If File.Exists(outSplitPDF + "_1.pdf") Then
@@ -460,8 +513,8 @@ Public Class PDFMenu
         Dim document As New PdfDocument()
         document.ImportPageRange(loadedDocument, sIndex - 1, eIndex - 1)
         Await Task.Run(Sub() document.Save(pdfOut))
-        loadedDocument.Close(True)
-        document.Close(True)
+        Await Task.Run(Sub() loadedDocument.Close(True))
+        Await Task.Run(Sub() document.Close(True))
         ProgressBar3.Style = ProgressBarStyle.Blocks
         ProgressBar3.Value = 100
         If File.Exists(pdfOut) Then
@@ -484,9 +537,9 @@ Public Class PDFMenu
         ProgressBar4.Style = ProgressBarStyle.Marquee
         ProgressBar4.MarqueeAnimationSpeed = 40
         ProgressBar4.Refresh()
+        Dim f As New SautinSoft.PdfFocus()
+        f.OpenPdf(pdfFile)
         If cnvExt = "DOCX" Then
-            Dim f As New SautinSoft.PdfFocus()
-            f.OpenPdf(pdfFile)
             If f.PageCount > 0 Then
                 f.WordOptions.Format = SautinSoft.PdfFocus.CWordOptions.eWordDocument.Docx
                 Dim result As Integer = f.ToWord(cnvFile)
@@ -502,8 +555,6 @@ Public Class PDFMenu
                 MessageBoxAdv.Show("Convert PDF failed !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         ElseIf cnvExt = "XLS" Then
-            Dim f As New SautinSoft.PdfFocus()
-            f.OpenPdf(pdfFile)
             If f.PageCount > 0 Then
                 f.ToExcel(cnvFile)
                 If File.Exists(cnvFile) Then
@@ -518,8 +569,6 @@ Public Class PDFMenu
                 MessageBoxAdv.Show("Convert PDF failed !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         ElseIf cnvExt = "JPEG" Then
-            Dim f As New SautinSoft.PdfFocus
-            f.OpenPdf(pdfFile)
             If f.PageCount > 0 Then
                 f.ImageOptions.ImageFormat = ImageFormat.Jpeg
                 f.ImageOptions.Dpi = 200
@@ -533,8 +582,6 @@ Public Class PDFMenu
                 MessageBoxAdv.Show("Convert PDF failed !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         ElseIf cnvExt = "PNG" Then
-            Dim f As New SautinSoft.PdfFocus
-            f.OpenPdf(pdfFile)
             If f.PageCount > 0 Then
                 f.ImageOptions.ImageFormat = ImageFormat.Png
                 f.ImageOptions.Dpi = 200
@@ -579,5 +626,30 @@ Public Class PDFMenu
             ProgressBar4.Value = 100
             MessageBoxAdv.Show("Extract Image failed !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
+    End Sub
+    Private Async Sub ExpImagesToPDF(imgfile As String, cnvfile As String)
+        ProgressBar5.Visible = True
+        ProgressBar5.Style = ProgressBarStyle.Marquee
+        ProgressBar5.MarqueeAnimationSpeed = 40
+        ProgressBar5.Refresh()
+        Dim doc As New PdfDocument()
+        Dim page As PdfPage = doc.Pages.Add()
+        Dim graphics As PdfGraphics = page.Graphics
+        Dim image As New PdfBitmap(imgfile)
+        graphics.DrawImage(image, 0, 0)
+        cnvfile = Path.GetDirectoryName(TextBox11.Text) & "\" & Path.GetFileNameWithoutExtension(imgfile) & ".pdf"
+        Await Task.Run(Sub() doc.Save(cnvfile))
+        If File.Exists(cnvfile) Then
+            ProgressBar5.Style = ProgressBarStyle.Blocks
+            ProgressBar5.Value = 100
+            Label30.Text = GetFileSize(cnvfile)
+            MessageBoxAdv.Show("Convert Image success !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Dim pdfViewer = New PDFViewer(cnvfile)
+            pdfViewer.Show()
+        Else
+            MessageBoxAdv.Show("Convert Image failed !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Label30.Text = "Error"
+        End If
+        Await Task.Run(Sub() doc.Close(True))
     End Sub
 End Class

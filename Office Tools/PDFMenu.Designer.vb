@@ -37,6 +37,7 @@ Partial Class PDFMenu
         Me.Label4 = New System.Windows.Forms.Label()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button18 = New System.Windows.Forms.Button()
         Me.Button14 = New System.Windows.Forms.Button()
         Me.Button10 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -52,6 +53,19 @@ Partial Class PDFMenu
         Me.Button8 = New System.Windows.Forms.Button()
         Me.pdf_com_pnl = New System.Windows.Forms.Panel()
         Me.pdf_merge_pnl = New System.Windows.Forms.Panel()
+        Me.cnv_img_pnl = New System.Windows.Forms.Panel()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.ProgressBar5 = New System.Windows.Forms.ProgressBar()
+        Me.Button19 = New System.Windows.Forms.Button()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.TextBox11 = New System.Windows.Forms.TextBox()
+        Me.Button20 = New System.Windows.Forms.Button()
+        Me.Button21 = New System.Windows.Forms.Button()
         Me.split_pdf_pnl = New System.Windows.Forms.Panel()
         Me.cnv_pdf_pnl = New System.Windows.Forms.Panel()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
@@ -101,6 +115,7 @@ Partial Class PDFMenu
         Me.Panel1.SuspendLayout()
         Me.pdf_com_pnl.SuspendLayout()
         Me.pdf_merge_pnl.SuspendLayout()
+        Me.cnv_img_pnl.SuspendLayout()
         Me.split_pdf_pnl.SuspendLayout()
         Me.cnv_pdf_pnl.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -263,6 +278,7 @@ Partial Class PDFMenu
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel1.Controls.Add(Me.Button18)
         Me.Panel1.Controls.Add(Me.Button14)
         Me.Panel1.Controls.Add(Me.Button10)
         Me.Panel1.Controls.Add(Me.Button1)
@@ -275,6 +291,23 @@ Partial Class PDFMenu
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(234, 512)
         Me.Panel1.TabIndex = 7
+        '
+        'Button18
+        '
+        Me.Button18.FlatAppearance.BorderSize = 0
+        Me.Button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button18.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Button18.ForeColor = System.Drawing.Color.AliceBlue
+        Me.Button18.Image = CType(resources.GetObject("Button18.Image"), System.Drawing.Image)
+        Me.Button18.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button18.Location = New System.Drawing.Point(1, 186)
+        Me.Button18.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button18.Name = "Button18"
+        Me.Button18.Size = New System.Drawing.Size(228, 43)
+        Me.Button18.TabIndex = 9
+        Me.Button18.Text = "  Image Export"
+        Me.Button18.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button18.UseVisualStyleBackColor = True
         '
         'Button14
         '
@@ -485,6 +518,7 @@ Partial Class PDFMenu
         '
         'pdf_merge_pnl
         '
+        Me.pdf_merge_pnl.Controls.Add(Me.cnv_img_pnl)
         Me.pdf_merge_pnl.Controls.Add(Me.split_pdf_pnl)
         Me.pdf_merge_pnl.Controls.Add(Me.Label15)
         Me.pdf_merge_pnl.Controls.Add(Me.Label16)
@@ -502,6 +536,174 @@ Partial Class PDFMenu
         Me.pdf_merge_pnl.Name = "pdf_merge_pnl"
         Me.pdf_merge_pnl.Size = New System.Drawing.Size(713, 509)
         Me.pdf_merge_pnl.TabIndex = 36
+        '
+        'cnv_img_pnl
+        '
+        Me.cnv_img_pnl.Controls.Add(Me.Label30)
+        Me.cnv_img_pnl.Controls.Add(Me.Label31)
+        Me.cnv_img_pnl.Controls.Add(Me.Label32)
+        Me.cnv_img_pnl.Controls.Add(Me.Label33)
+        Me.cnv_img_pnl.Controls.Add(Me.ProgressBar5)
+        Me.cnv_img_pnl.Controls.Add(Me.Button19)
+        Me.cnv_img_pnl.Controls.Add(Me.Label35)
+        Me.cnv_img_pnl.Controls.Add(Me.Label36)
+        Me.cnv_img_pnl.Controls.Add(Me.TextBox10)
+        Me.cnv_img_pnl.Controls.Add(Me.TextBox11)
+        Me.cnv_img_pnl.Controls.Add(Me.Button20)
+        Me.cnv_img_pnl.Controls.Add(Me.Button21)
+        Me.cnv_img_pnl.Location = New System.Drawing.Point(3, 5)
+        Me.cnv_img_pnl.Name = "cnv_img_pnl"
+        Me.cnv_img_pnl.Size = New System.Drawing.Size(716, 503)
+        Me.cnv_img_pnl.TabIndex = 62
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label30.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label30.ForeColor = System.Drawing.Color.AliceBlue
+        Me.Label30.Location = New System.Drawing.Point(179, 222)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(0, 19)
+        Me.Label30.TabIndex = 57
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label31.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label31.ForeColor = System.Drawing.Color.AliceBlue
+        Me.Label31.Location = New System.Drawing.Point(4, 223)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(129, 19)
+        Me.Label31.TabIndex = 56
+        Me.Label31.Text = "Converted File Size"
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label32.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label32.ForeColor = System.Drawing.Color.AliceBlue
+        Me.Label32.Location = New System.Drawing.Point(179, 192)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(0, 19)
+        Me.Label32.TabIndex = 55
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label33.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label33.ForeColor = System.Drawing.Color.AliceBlue
+        Me.Label33.Location = New System.Drawing.Point(4, 192)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(108, 19)
+        Me.Label33.TabIndex = 54
+        Me.Label33.Text = "Source File Size"
+        '
+        'ProgressBar5
+        '
+        Me.ProgressBar5.Location = New System.Drawing.Point(9, 387)
+        Me.ProgressBar5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ProgressBar5.Name = "ProgressBar5"
+        Me.ProgressBar5.Size = New System.Drawing.Size(688, 22)
+        Me.ProgressBar5.TabIndex = 51
+        Me.ProgressBar5.Visible = False
+        '
+        'Button19
+        '
+        Me.Button19.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button19.FlatAppearance.BorderSize = 0
+        Me.Button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button19.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Button19.ForeColor = System.Drawing.Color.AliceBlue
+        Me.Button19.Image = CType(resources.GetObject("Button19.Image"), System.Drawing.Image)
+        Me.Button19.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button19.Location = New System.Drawing.Point(291, 428)
+        Me.Button19.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.Button19.Name = "Button19"
+        Me.Button19.Size = New System.Drawing.Size(135, 45)
+        Me.Button19.TabIndex = 50
+        Me.Button19.Text = "     Export"
+        Me.Button19.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button19.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button19.UseVisualStyleBackColor = False
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label35.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label35.ForeColor = System.Drawing.Color.AliceBlue
+        Me.Label35.Location = New System.Drawing.Point(3, 50)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(96, 19)
+        Me.Label35.TabIndex = 49
+        Me.Label35.Text = "Save Location"
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label36.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label36.ForeColor = System.Drawing.Color.AliceBlue
+        Me.Label36.Location = New System.Drawing.Point(3, 12)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(94, 19)
+        Me.Label36.TabIndex = 48
+        Me.Label36.Text = "Source Image"
+        Me.Label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'TextBox10
+        '
+        Me.TextBox10.Location = New System.Drawing.Point(179, 13)
+        Me.TextBox10.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.ReadOnly = True
+        Me.TextBox10.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
+        Me.TextBox10.Size = New System.Drawing.Size(320, 25)
+        Me.TextBox10.TabIndex = 45
+        '
+        'TextBox11
+        '
+        Me.TextBox11.Location = New System.Drawing.Point(179, 50)
+        Me.TextBox11.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.ReadOnly = True
+        Me.TextBox11.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
+        Me.TextBox11.Size = New System.Drawing.Size(320, 25)
+        Me.TextBox11.TabIndex = 47
+        '
+        'Button20
+        '
+        Me.Button20.BackColor = System.Drawing.Color.Transparent
+        Me.Button20.BackgroundImage = CType(resources.GetObject("Button20.BackgroundImage"), System.Drawing.Image)
+        Me.Button20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Button20.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue
+        Me.Button20.FlatAppearance.BorderSize = 0
+        Me.Button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button20.Location = New System.Drawing.Point(505, 47)
+        Me.Button20.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button20.Name = "Button20"
+        Me.Button20.Size = New System.Drawing.Size(42, 34)
+        Me.Button20.TabIndex = 46
+        Me.Button20.UseVisualStyleBackColor = False
+        '
+        'Button21
+        '
+        Me.Button21.BackColor = System.Drawing.Color.Transparent
+        Me.Button21.BackgroundImage = CType(resources.GetObject("Button21.BackgroundImage"), System.Drawing.Image)
+        Me.Button21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Button21.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue
+        Me.Button21.FlatAppearance.BorderSize = 0
+        Me.Button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button21.Location = New System.Drawing.Point(505, 9)
+        Me.Button21.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button21.Name = "Button21"
+        Me.Button21.Size = New System.Drawing.Size(42, 34)
+        Me.Button21.TabIndex = 44
+        Me.Button21.UseVisualStyleBackColor = False
         '
         'split_pdf_pnl
         '
@@ -1100,6 +1302,8 @@ Partial Class PDFMenu
         Me.pdf_com_pnl.PerformLayout()
         Me.pdf_merge_pnl.ResumeLayout(False)
         Me.pdf_merge_pnl.PerformLayout()
+        Me.cnv_img_pnl.ResumeLayout(False)
+        Me.cnv_img_pnl.PerformLayout()
         Me.split_pdf_pnl.ResumeLayout(False)
         Me.split_pdf_pnl.PerformLayout()
         Me.cnv_pdf_pnl.ResumeLayout(False)
@@ -1184,4 +1388,18 @@ Partial Class PDFMenu
     Friend WithEvents Button16 As Button
     Friend WithEvents Button17 As Button
     Friend WithEvents Label20 As Label
+    Friend WithEvents Button18 As Button
+    Friend WithEvents cnv_img_pnl As Panel
+    Friend WithEvents Label30 As Label
+    Friend WithEvents Label31 As Label
+    Friend WithEvents Label32 As Label
+    Friend WithEvents Label33 As Label
+    Friend WithEvents ProgressBar5 As ProgressBar
+    Friend WithEvents Button19 As Button
+    Friend WithEvents Label35 As Label
+    Friend WithEvents Label36 As Label
+    Friend WithEvents TextBox10 As TextBox
+    Friend WithEvents TextBox11 As TextBox
+    Friend WithEvents Button20 As Button
+    Friend WithEvents Button21 As Button
 End Class
