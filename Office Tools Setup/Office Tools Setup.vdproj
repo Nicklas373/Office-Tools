@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_070F70B355994F4D9BA8B19016D25EF1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_09CEA17B6E67460D8C5A7F3463FE9319"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -255,12 +261,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_C4E5EF402BD845C99E04BC328249C573"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_CB710C4B76CB427E9F537860F9156F97"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -469,6 +469,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_070F70B355994F4D9BA8B19016D25EF1"
+            {
+            "SourcePath" = "8:..\\Office Tools\\changelog.txt"
+            "TargetName" = "8:changelog.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_180513EA87FD4A8EA5D7AEFBEADDCDBC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_09CEA17B6E67460D8C5A7F3463FE9319"
             {
             "SourcePath" = "8:..\\Office Tools\\conf\\res_backup\\resInstPath"
@@ -1269,26 +1289,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C4E5EF402BD845C99E04BC328249C573"
-            {
-            "SourcePath" = "8:..\\Office Tools\\changelog.txt"
-            "TargetName" = "8:changelog.txt"
-            "Tag" = "8:"
-            "Folder" = "8:_180513EA87FD4A8EA5D7AEFBEADDCDBC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CB710C4B76CB427E9F537860F9156F97"
             {
             "SourcePath" = "8:..\\Office Tools\\log\\lastResult"
@@ -1793,15 +1793,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Office Tools"
-        "ProductCode" = "8:{3494E2A7-E411-41C7-8E1F-F45ED43BEF3F}"
-        "PackageCode" = "8:{AC0E0236-CFE6-4D4A-A913-04F20D8862E1}"
+        "ProductCode" = "8:{4AE8BF81-26B4-4C19-8A02-B4FA64BFB924}"
+        "PackageCode" = "8:{0CE2E40E-A8C5-486F-A6DD-B521A23D72A7}"
         "UpgradeCode" = "8:{4FE91870-693A-4DB1-8879-F2BE7AE9BFE0}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.3.8"
+        "ProductVersion" = "8:1.3.9"
         "Manufacturer" = "8:Hana-CI Build Project"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -2329,7 +2329,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_8B8E4B1B0B9C43FD9B5C2F300AB0AFDD"
             {
-            "SourcePath" = "8:..\\Office Tools\\obj\\Debug\\net6.0-windows\\apphost.exe"
+            "SourcePath" = "8:..\\Office Tools\\obj\\Release\\net6.0-windows\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_180513EA87FD4A8EA5D7AEFBEADDCDBC"

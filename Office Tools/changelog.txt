@@ -1,3 +1,6 @@
+v1.3.9 (20221020):
+- Introduce feature image to pdf converter
+
 v1.3.8 (20220729):
 - Fixup issue with image extraction only from PDF
 - Update 7-Zip to version 22.01
