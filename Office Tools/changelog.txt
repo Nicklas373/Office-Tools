@@ -1,3 +1,7 @@
+v1.4.0 (20221118):
+- Fixup issue while copy for file was selected on normal backup
+- Fixup issue with network share copy data
+
 v1.3.9 (20221020):
 - Introduce feature image to pdf converter
 
