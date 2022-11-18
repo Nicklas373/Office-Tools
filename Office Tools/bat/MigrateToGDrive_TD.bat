@@ -9,7 +9,7 @@ set fday=00%Day%
 set today=%Year%%fmonth:~-2%%fday:~2%
 if exist "%TsrcPath%" (
 	if exist "%TdestPath%" (
-		call robocopy "%TsrcPath%" "%TdestPath%" * /S /DCOPY:DAT /MAXAGE:%today% /MT:%Tprocessor% /LOG+:log/log /TS /FP /TEE /V /ETA /R:5
+		call robocopy "%TsrcPath%" "%TdestPath%" * /S /DCOPY:DAT /MAXAGE:%today% /MT:%Tprocessor% /LOG+:log/log /TS /FP /TEE /V /ETA /R:5 /Z /J
 		if %ERRORLEVEL% == 0 goto :next
 		if %ERRORLEVEL% == 4 goto :err4
 		if %ERRORLEVEL% == 8 goto :err8

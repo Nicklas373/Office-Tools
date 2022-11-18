@@ -1,13 +1,13 @@
 @echo off
-set /p TsrcPath=<conf/nrm_backup/nrmSrcPath
-set /p TdestPath=<conf/nrm_backup/nrmDestPath
-set /p TFrdatePath=<conf/nrm_backup/nrmFrDatePath
-set /p TTodatePath=<conf/nrm_backup/nrmToDatePath
-set /p Tprocessor=<conf/nrm_backup/nrmProcessor
-set /p TspecfilePath=<conf/nrm_backup/nrmSpecfilePath
+set /p TsrcPath=<conf\nrm_backup\nrmSrcPath
+set /p TdestPath=<conf\nrm_backup\nrmDestPath
+set /p TFrdatePath=<conf\nrm_backup\nrmFrDatePath
+set /p TTodatePath=<conf\nrm_backup\nrmToDatePath
+set /p Tprocessor=<conf\nrm_backup\nrmProcessor
+set /p TspecfilePath=<conf\nrm_backup\nrmSpecfilePath
 if exist "%TsrcPath%" (
 	if exist "%TdestPath%" (
-		call robocopy "%TsrcPath%" "%TdestPath%" %TspecfilePath% /S /DCOPY:DAT /MAXAGE:%TFrdatePath% /MINAGE:%TTodatePath% /MT:%Tprocessor% /LOG+:log/robolog /TS /FP /TEE /V /ETA /R:5
+		call robocopy "%TsrcPath%" "%TdestPath%" /S /DCOPY:DAT /MAXAGE:%TFrdatePath% /MINAGE:%TTodatePath% /MT:%Tprocessor% /LOG+:log/robolog /TS /FP /TEE /V /ETA /R:5 /Z /J
 		if %ERRORLEVEL% == 0 goto :next
 		if %ERRORLEVEL% == 4 goto :err4
 		if %ERRORLEVEL% == 8 goto :err8
@@ -17,7 +17,7 @@ if exist "%TsrcPath%" (
 		echo Backup Result			: Error >> "log/err"
 		echo Reason			: Unspecified Error: %errorlevel% >> "log/err"
 		echo Source Path			: %TsrcPath% >> "log/err"
-		echo Destination Path		: %TdestPath% >> "log/err"
+		echo Destination Path			: %TdestPath% >> "log/err"
 		echo Backup Time			: %date% - %time% >> "log/err"
 		echo Backup Pref			: From Date %TFrdatePath% to %TTodatePath% >> "log/err"
 		echo Backup Type			: Manual >> "log/err"
@@ -31,7 +31,7 @@ if exist "%TsrcPath%" (
 		echo Reason			: Some mismatched files or directories were detected ! >> "log/err"
 		echo Some mismatched files or directories were detected ! >> "log/lastErr"
 		echo Source Path			: %TsrcPath% >> "log/err" 
-		echo Destination Path		: %TdestPath% >> "log/err" 
+		echo Destination Path			: %TdestPath% >> "log/err" 
 		echo Backup Time			: %date% - %time% >> "log/err"
 		echo Backup Pref			: From Date %TFrdatePath% to %TTodatePath% >> "log/err"
 		echo Backup Type			: Manual >> "log/err"
@@ -45,7 +45,7 @@ if exist "%TsrcPath%" (
 		echo Reason			: Some files or directories could not be copied !>> "log/err"
 		echo Some files or directories could not be copied ! >> "log/lastErr"
 		echo Source Path			: %TsrcPath%
-		echo Destination Path		: %TdestPath%
+		echo Destination Path			: %TdestPath%
 		echo Backup Time			: %date% - %time% >> "log/err"
 		echo Backup Pref			: From Date %TFrdatePath% to %TTodatePath% >> "log/err"
 		echo Backup Type			: Manual >> "log/err"
@@ -59,7 +59,7 @@ if exist "%TsrcPath%" (
 		echo Reason			: Serious error. Robocopy did not copy any files ! >> "log/err"
 		echo Serious error. Robocopy did not copy any files ! >> "log/lastErr"
 		echo Source Path			: %TsrcPath%
-		echo Destination Path		: %TdestPath%
+		echo Destination Path			: %TdestPath%
 		echo Backup Time			: %date% - %time% >> "log/err"
 		echo Backup Pref			: From Date %TFrdatePath% to %TTodatePath% >> "log/err"
 		echo Backup Type			: Manual >> "log/err"
@@ -72,7 +72,7 @@ if exist "%TsrcPath%" (
 		echo # Office Tools v1.2 >> "log/log"
 		echo Backup Result			: Success >> "log/log"
 		echo Source Path			: %TsrcPath% >> "log/log"
-		echo Destination Path		: %TdestPath% >> "log/log"
+		echo Destination Path			: %TdestPath% >> "log/log"
 		echo Backup Time			: %date% - %time% >> "log/log"
 		echo Backup Pref			: From Date %TFrdatePath% to %TTodatePath% >> "log/log"
 		echo Backup Type			: Manual >> "log/log"
@@ -85,7 +85,7 @@ if exist "%TsrcPath%" (
 		echo Reason			: Destination path not exist >> "log/err"
 		echo Destination path not exist >> "log/lastErr"
 		echo Source Path			: %TsrcPath% >> "log/err"
-		echo Destination Path		: %TdestPath% >> "log/err"
+		echo Destination Path			: %TdestPath% >> "log/err"
 		echo Backup Time			: %date% - %time% >> "log/err"
 		echo Backup Pref			: From Date %TFrdatePath% to %TTodatePath% >> "log/err"
 		echo Backup Type			: Manual >> "log/err"
@@ -99,7 +99,7 @@ if exist "%TsrcPath%" (
 	echo Reason			: Source path not exist >> "log/err"
 	echo Reason			: Source path not exist >> "log/lastErr"
 	echo Source Path			: %TsrcPath% >> "log/err"
-	echo Destination Path		: %TdestPath% >> "log/err"
+	echo Destination Path			: %TdestPath% >> "log/err"
 	echo Backup Time			: %date% - %time% >> "log/err"
 	echo Backup Pref			: From Date %TFrdatePath% to %TTodatePath% >> "log/err"
 	echo Backup Type			: Manual >> "log/err"

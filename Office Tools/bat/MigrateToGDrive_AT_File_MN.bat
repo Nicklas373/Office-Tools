@@ -5,7 +5,7 @@ set /p Tprocessor=<conf/nrm_backup/nrmProcessor
 set /p TspecfilePath=<conf/nrm_backup/nrmSpecfilePath
 if exist "%TsrcPath%" (
 	if exist "%TdestPath%" (
-		call robocopy "%TsrcPath%" "%TdestPath%" %TspecfilePath% /S /DCOPY:DAT /MT:%Tprocessor% /LOG+:log/robolog /TS /FP /TEE /V /ETA /R:5
+		call robocopy "%TsrcPath%" "%TdestPath%" "%TspecfilePath%" /S /DCOPY:DAT /MT:%Tprocessor% /LOG+:log/robolog /TS /FP /TEE /V /ETA /R:5 /Z /J
 		if %ERRORLEVEL% == 0 goto :next
 		if %ERRORLEVEL% == 1 goto :next
 		if %ERRORLEVEL% == 2 goto :warn
