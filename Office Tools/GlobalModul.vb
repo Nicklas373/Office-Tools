@@ -96,8 +96,8 @@ Module GlobalModul
         Dim psi As New ProcessStartInfo(bat) With {
             .RedirectStandardError = False,
             .RedirectStandardOutput = False,
-            .CreateNoWindow = True,
-            .WindowStyle = ProcessWindowStyle.Hidden,
+            .CreateNoWindow = False,
+            .WindowStyle = ProcessWindowStyle.Normal,
             .UseShellExecute = False
         }
         Dim process As Process = Process.Start(psi)

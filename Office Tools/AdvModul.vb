@@ -6,11 +6,12 @@ Module AdvModul
     Dim lastErr As String = "log/lastErr"
     Dim roboPath As String = "log/robolog"
     Dim uiSrcPath As String = "conf/nrm_backup/nrmSrcPath"
+    Dim uiFilePath As String = "conf/nrm_backup/nrmSpecFilePath"
     Dim uiDestPath As String = "conf/nrm_backup/nrmDestPath"
     Dim uiFrDatePath As String = "conf/nrm_backup/nrmFrDatePath"
     Dim uiReDatePath As String = "conf/nrm_backup/nrmReDatePath"
     Dim uiToDatePath As String = "conf/nrm_backup/nrmToDatePath"
-    Public Sub BeginCopy(Cmbx1 As String, Tbx1 As String, Tbx2 As String, Dtp1 As Date, Dtp2 As Date)
+    Public Sub BeginCopy(Cmbx1 As String, Cmbx2 As String, Tbx1 As String, Tbx2 As String, Dtp1 As Date, Dtp2 As Date, actualDir As String, actualFile As String)
         If File.Exists(roboPath) Then
             PrepareNotif(roboPath)
         End If
@@ -19,21 +20,41 @@ Module AdvModul
             Dim uiTrimDest As String
             uiTrimSrc = Tbx1
             uiTrimDest = Tbx2
-            If Directory.Exists(uiTrimSrc) Then
-                If Directory.Exists(uiTrimDest) Then
-                    CheckFileExist(uiSrcPath, uiTrimSrc)
-                    CheckFileExist(uiDestPath, uiTrimDest)
-                    PrepareNotif(lastResult)
-                    PrepareNotif(lastErr)
-                    ManualBackup("bat/MigrateToGDrive_AT_MN.bat")
-                    WriteFrRobo()
+            If Cmbx2 = "Backup Folder" Then
+                If Directory.Exists(uiTrimSrc) Then
+                    If Directory.Exists(uiTrimDest) Then
+                        CheckFileExist(uiSrcPath, actualDir)
+                        CheckFileExist(uiDestPath, uiTrimDest)
+                        PrepareNotif(lastResult)
+                        PrepareNotif(lastErr)
+                        ManualBackup("bat/MigrateToGDrive_AT_Folder_MN.bat")
+                        WriteFrRobo()
+                    Else
+                        CheckFileExist(lastResult, "err")
+                        CheckFileExist(lastErr, "Destination folder not exist !")
+                    End If
                 Else
                     CheckFileExist(lastResult, "err")
-                    CheckFileExist(lastErr, "Destination folder not exist !")
+                    CheckFileExist(lastErr, "Source folder not exist !")
                 End If
-            Else
-                CheckFileExist(lastResult, "err")
-                CheckFileExist(lastErr, "Source folder not exist !")
+            ElseIf Cmbx2 = "Backup File" Then
+                If File.Exists(uiTrimSrc) Then
+                    If Directory.Exists(uiTrimDest) Then
+                        CheckFileExist(uiSrcPath, actualDir)
+                        CheckFileExist(uiFilePath, actualFile)
+                        CheckFileExist(uiDestPath, uiTrimDest)
+                        PrepareNotif(lastResult)
+                        PrepareNotif(lastErr)
+                        ManualBackup("bat/MigrateToGDrive_AT_File_MN.bat")
+                        WriteFrRobo()
+                    Else
+                        CheckFileExist(lastResult, "err")
+                        CheckFileExist(lastErr, "Destination folder not exist !")
+                    End If
+                Else
+                    CheckFileExist(lastResult, "err")
+                    CheckFileExist(lastErr, "Source file not exist !")
+                End If
             End If
         ElseIf Cmbx1 = "Today" Then
             If File.Exists(uiReDatePath) Then
@@ -56,21 +77,41 @@ Module AdvModul
             Dim uiTrimDest As String
             uiTrimSrc = Tbx1
             uiTrimDest = Tbx2
-            If Directory.Exists(uiTrimSrc) Then
-                If Directory.Exists(uiTrimDest) Then
-                    CheckFileExist(uiSrcPath, uiTrimSrc)
-                    CheckFileExist(uiDestPath, uiTrimDest)
-                    PrepareNotif(lastResult)
-                    PrepareNotif(lastErr)
-                    ManualBackup("bat/MigrateToGDrive_TD_MN.bat")
-                    WriteFrRobo()
+            If Cmbx2 = "Backup File" Then
+                If File.Exists(uiTrimSrc) Then
+                    If Directory.Exists(uiTrimDest) Then
+                        CheckFileExist(uiSrcPath, actualDir)
+                        CheckFileExist(uiDestPath, uiTrimDest)
+                        CheckFileExist(uiFilePath, actualFile)
+                        PrepareNotif(lastResult)
+                        PrepareNotif(lastErr)
+                        ManualBackup("bat/MigrateToGDrive_TD_File_MN.bat")
+                        WriteFrRobo()
+                    Else
+                        CheckFileExist(lastResult, "err")
+                        CheckFileExist(lastErr, "Destination folder not exist !")
+                    End If
                 Else
                     CheckFileExist(lastResult, "err")
-                    CheckFileExist(lastErr, "Destination folder not exist !")
+                    CheckFileExist(lastErr, "Source file not exist !")
                 End If
-            Else
-                CheckFileExist(lastResult, "err")
-                CheckFileExist(lastErr, "Source folder not exist !")
+            ElseIf Cmbx2 = "Backup Folder" Then
+                If Directory.Exists(uiTrimSrc) Then
+                    If Directory.Exists(uiTrimDest) Then
+                        CheckFileExist(uiSrcPath, actualDir)
+                        CheckFileExist(uiDestPath, uiTrimDest)
+                        PrepareNotif(lastResult)
+                        PrepareNotif(lastErr)
+                        ManualBackup("bat/MigrateToGDrive_TD_Folder_MN.bat")
+                        WriteFrRobo()
+                    Else
+                        CheckFileExist(lastResult, "err")
+                        CheckFileExist(lastErr, "Destination folder not exist !")
+                    End If
+                Else
+                    CheckFileExist(lastResult, "err")
+                    CheckFileExist(lastErr, "Source folder not exist !")
+                End If
             End If
         ElseIf Cmbx1 = "From Date" Then
             If File.Exists(uiFrDatePath) Then
@@ -125,21 +166,41 @@ Module AdvModul
             Dim uiTrimDest As String
             uiTrimSrc = Tbx1
             uiTrimDest = Tbx2
-            If Directory.Exists(uiTrimSrc) Then
-                If Directory.Exists(uiTrimDest) Then
-                    CheckFileExist(uiSrcPath, uiTrimSrc)
-                    CheckFileExist(uiDestPath, uiTrimDest)
-                    PrepareNotif(lastResult)
-                    PrepareNotif(lastErr)
-                    ManualBackup("bat/MigrateToGDrive_FD_MN.bat")
-                    WriteFrRobo()
+            If Cmbx2 = "Backup File" Then
+                If File.Exists(uiTrimSrc) Then
+                    If Directory.Exists(uiTrimDest) Then
+                        CheckFileExist(uiSrcPath, actualDir)
+                        CheckFileExist(uiDestPath, uiTrimDest)
+                        CheckFileExist(uiFilePath, actualFile)
+                        PrepareNotif(lastResult)
+                        PrepareNotif(lastErr)
+                        ManualBackup("bat/MigrateToGDrive_FD_File_MN.bat")
+                        WriteFrRobo()
+                    Else
+                        CheckFileExist(lastResult, "err")
+                        CheckFileExist(lastErr, "Destination folder not exist !")
+                    End If
                 Else
                     CheckFileExist(lastResult, "err")
-                    CheckFileExist(lastErr, "Destination folder not exist !")
+                    CheckFileExist(lastErr, "Source file not exist !")
                 End If
-            Else
-                CheckFileExist(lastResult, "err")
-                CheckFileExist(lastErr, "Source folder not exist !")
+            ElseIf Cmbx2 = "Backup Folder" Then
+                If Directory.Exists(uiTrimSrc) Then
+                    If Directory.Exists(uiTrimDest) Then
+                        CheckFileExist(uiSrcPath, uiTrimSrc)
+                        CheckFileExist(uiDestPath, uiTrimDest)
+                        PrepareNotif(lastResult)
+                        PrepareNotif(lastErr)
+                        ManualBackup("bat/MigrateToGDrive_FD_Folder_MN.bat")
+                        WriteFrRobo()
+                    Else
+                        CheckFileExist(lastResult, "err")
+                        CheckFileExist(lastErr, "Destination folder not exist !")
+                    End If
+                Else
+                    CheckFileExist(lastResult, "err")
+                    CheckFileExist(lastErr, "Source folder not exist !")
+                End If
             End If
         End If
     End Sub

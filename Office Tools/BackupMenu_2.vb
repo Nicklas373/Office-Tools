@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports Syncfusion.Windows.Forms
 Imports Syncfusion.WinForms.Controls
 Imports Syncfusion.WinForms.Input.Enums
@@ -35,6 +36,7 @@ Public Class BackupMenu_2
     Dim uiProcessorCount As String = "conf/nrm_backup/nrmProcessor"
     Dim uiSpecFilePath As String = "conf/nrm_backup/nrmSpecfilePath"
     Dim actualDir As String
+    Dim actualFile As String
     Dim compressLevel As String
     Dim compressType As String
     Dim compressExt As String
@@ -91,10 +93,16 @@ Public Class BackupMenu_2
     Private Sub Open_Folder_File_Std_Backup_Button(sender As Object, e As EventArgs) Handles Button5.Click
         If ComboBox2.Text = "Backup Folder" Then
             openfolderdialog.InitialDirectory = Environment.SpecialFolder.UserProfile
-            openfolderdialog.ShowDialog()
+            If openfolderdialog.ShowDialog() = DialogResult.OK Then
+                actualDir = openfolderdialog.SelectedPath
+                MsgBox(actualDir)
+            End If
         ElseIf ComboBox2.Text = "Backup File" Then
             openfiledialog.InitialDirectory = Environment.SpecialFolder.UserProfile
-            openfiledialog.ShowDialog()
+            If openfiledialog.ShowDialog() = DialogResult.OK Then
+                actualDir = Path.GetDirectoryName(openfiledialog.FileName)
+                actualFile = openfiledialog.SafeFileName
+            End If
         Else
             MessageBoxAdv.Show("Backup options was not selected !, Please select copy options first !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
@@ -121,7 +129,7 @@ Public Class BackupMenu_2
                         ProgressBar1.Style = ProgressBarStyle.Marquee
                         ProgressBar1.MarqueeAnimationSpeed = 40
                         CheckFileExist(uiSpecFilePath, "*")
-                        BeginCopy(ComboBox1.Text, TextBox1.Text, TextBox2.Text, SfDateTimeEdit1.Value, SfDateTimeEdit2.Value)
+                        BeginCopy(ComboBox1.Text, ComboBox2.Text, TextBox1.Text, TextBox2.Text, SfDateTimeEdit1.Value, SfDateTimeEdit2.Value, actualDir, "")
                         ProgressBar1.Value = 100
                         ProgressBar1.Style = ProgressBarStyle.Blocks
                     ElseIf ComboBox2.Text = "Backup File" Then
@@ -129,7 +137,7 @@ Public Class BackupMenu_2
                         ProgressBar1.Style = ProgressBarStyle.Marquee
                         ProgressBar1.MarqueeAnimationSpeed = 40
                         CheckFileExist(uiSpecFilePath, TextBox1.Text.ToString)
-                        BeginCopy(ComboBox1.Text, TextBox1.Text, TextBox2.Text, SfDateTimeEdit1.Value, SfDateTimeEdit2.Value)
+                        BeginCopy(ComboBox1.Text, ComboBox2.Text, TextBox1.Text, TextBox2.Text, SfDateTimeEdit1.Value, SfDateTimeEdit2.Value, actualDir, actualFile)
                         ProgressBar1.Value = 100
                         ProgressBar1.Style = ProgressBarStyle.Blocks
                     Else
