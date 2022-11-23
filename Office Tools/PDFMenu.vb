@@ -450,12 +450,12 @@ Public Class PDFMenu
         ProgressBar1.Style = ProgressBarStyle.Blocks
         ProgressBar1.Value = 100
         Await Task.Run(Sub() ldoc.Close(True))
-        If File.Exists(TextBox2.Text) Then
+        If File.Exists(pdfPathOut) Then
             Dim PDFReader As String = FindConfig(confPath, "PDF Reader Preferences: ")
             Dim PDFAutoConf As String = FindConfig(confPath, "Auto Open PDF: ")
             MessageBoxAdv.Show("Compress PDF success !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Label10.Text = GetFileSize(TextBox2.Text)
-            Dim pdfViewer = New PDFViewer(TextBox2.Text)
+            Label10.Text = GetFileSize(pdfPathOut)
+            Dim pdfViewer = New PDFViewer(pdfPathOut)
             pdfViewer.Show()
         Else
             MessageBoxAdv.Show("Compress PDF failed !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -473,12 +473,12 @@ Public Class PDFMenu
         ProgressBar2.Style = ProgressBarStyle.Blocks
         ProgressBar2.Value = 100
         Await Task.Run(Sub() finalDoc.Close(True))
-        If File.Exists(TextBox4.Text) Then
+        If File.Exists(destname) Then
             MessageBoxAdv.Show("Merge PDF success !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Dim PDFReader As String = FindConfig(confPath, "PDF Reader Preferences: ")
             Dim PDFAutoConf As String = FindConfig(confPath, "Auto Open PDF: ")
-            Label15.Text = GetFileSize(TextBox4.Text)
-            Dim pdfViewer = New PDFViewer(TextBox4.Text)
+            Label15.Text = GetFileSize(destname)
+            Dim pdfViewer = New PDFViewer(destname)
             pdfViewer.Show()
         Else
             MessageBoxAdv.Show("Merge PDF failed !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
