@@ -1,3 +1,6 @@
+v1.4.1 (20221123):
+- Fixup issue with missing filename for PDF Tools
+
 v1.4.0 (20221118):
 - Fixup issue while copy for file was selected on normal backup
 - Fixup issue with network share copy data

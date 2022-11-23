@@ -15,7 +15,13 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_070F70B355994F4D9BA8B19016D25EF1"
+        "MsmKey" = "8:_0416E434D9AD4481B959ADD36E6502C3"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_064F2785786B4839BAE9401103E2015E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -27,25 +33,25 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_1381976F249C4F2EB650B420BBDB246F"
+        "MsmKey" = "8:_105F7265D1D74761AFC9D7B6C79D4548"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_13DCDF0587E94166AC026764B1241710"
+        "MsmKey" = "8:_1BC87DA6B74049C6BCB008927C5724EA"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_15C0C14885AE4CC5AC1DF81C4818B10D"
+        "MsmKey" = "8:_1E60BE29288D427AB246745235770127"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_1BD4DD57EFC24FFCAA289F5AF5DAB55E"
+        "MsmKey" = "8:_1E9C871EFB904BB9BDB462DC6428A2C1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -69,31 +75,37 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_32323CD30CD449369CBC104BF1B7BADF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_348B9834A1C64380A946EB65B45671B2"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_372F9D8ADC3F49A4BC02FB8346C79E60"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_37EBE64080BB4952B0272054EBBF98AE"
+        "MsmKey" = "8:_3DF8B1B7134A4A169E88FB31751B3FA3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_3D0D858919594FFDA27376F7C9B8518B"
+        "MsmKey" = "8:_42E9B94CF2F245D7A80DB9FD33FAD6EA"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_4302C5350B1A45E48D78602DC32799A2"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_4A4A72898C89485B8278818741D6401D"
+        "MsmKey" = "8:_499442DE9F2A4A5583788EDEE79F7362"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -105,31 +117,31 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_5533D1666C944AF1983480D234A182F0"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_5658BE5172C84548BEC0F38F0CA422BD"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_57D3B7E8C0D04E18B4762F3685D97D2A"
+        "MsmKey" = "8:_5706367B22D34165A5ECFE62474BF135"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_580872B1AE924675B76CDCF84CE6B84D"
+        "MsmKey" = "8:_5A09685AC7724BEC865F4485DCD03082"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_5F1C4246FD2048ED85EF1EB71F54123F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_629F7CD50B534821BC93055857C292AB"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -147,13 +159,25 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_74849B191515423A8BE37F4CF1257DB6"
+        "MsmKey" = "8:_67F6BCB9CDD84477B054A7065C514FDA"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_77C53A9E061244D7BE678C28B376983A"
+        "MsmKey" = "8:_6DFF427F4C374A5E8C86172D3985E6E2"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6F8314D85A7748A8BED4DE484CB48C04"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_73697DBAF5714FC48267A1D01AE50EB9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -165,13 +189,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_7CF92131DE0D49A38EFBC8502B4807B7"
+        "MsmKey" = "8:_80779B42444E4554958F3BCA8C602FC9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_80779B42444E4554958F3BCA8C602FC9"
+        "MsmKey" = "8:_824992036B91411D8E04833D35D963A3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -189,7 +213,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_878F8F91D5B440B69E5974051D167F77"
+        "MsmKey" = "8:_89AF9CAAD106441191E3136006ABB773"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -201,31 +225,31 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_9071A588D2404C50AFA69E4A778A220E"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_9252820B6147400793FEF590BC9C8D5C"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_976771EEB1C8480E8C39B285918E11E9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_9CEF4B472E4C4BDB8862F4B5191A0AE6"
+        "MsmKey" = "8:_99B0F4A6B17C4A8A9614D4CFAE2B9926"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_A2206E060BD5463C9C257BE1A3B7993C"
+        "MsmKey" = "8:_9F4825C3D0EC401B807FB3899FE662C0"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A8D74E5B5FD34F1780691E7DC174FB74"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_AC1F39534ABF4675A75D793DA8C7D1A4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -243,12 +267,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_C281B84ABB284BC8810B579EDD05CCE1"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_C2B8BAF91253493190C10BF86570CD35"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -261,7 +279,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_CB710C4B76CB427E9F537860F9156F97"
+        "MsmKey" = "8:_C6E9CBC6037C46318F098DFF8146D91D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -273,7 +291,25 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_D8A82BCD658D40399E0BADB438D414D6"
+        "MsmKey" = "8:_D1FBD84A3EDE47FE9CE93C32A8C851C8"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D66CFDA197EE4EE9BA969A6C652B8BDF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D7E255756E984AB3B30739B3F20872A8"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DB48B67471E94EF38A0A783DE9CC4070"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -291,7 +327,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_DCD2C38837DD4E80935B2DAC6911F6C3"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_DF3AD18D138E49F6A0568DAF017A2AAA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DF9F65F23D2344408F51DBC5E1F27FA2"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -321,18 +369,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_F0F9E0F784444FB0895E3AB5129BACFB"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F1CEB38B4F824B1F9E99F749E3E033A5"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_F1FF7DE08AE94B38858026454D4E27FB"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -345,25 +381,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_F3BEC0F17D1540518420FE1FA7CAFBBE"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_F8E653E06A87459FA38C4A4213762DB1"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_FC4C0058E52D40C6BB9C49D814E3E597"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_FFB29B477281413DBE0E441B62A8E8DA"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -469,12 +487,32 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_070F70B355994F4D9BA8B19016D25EF1"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0416E434D9AD4481B959ADD36E6502C3"
             {
-            "SourcePath" = "8:..\\Office Tools\\changelog.txt"
-            "TargetName" = "8:changelog.txt"
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\7z\\7za.dll"
+            "TargetName" = "8:7za.dll"
             "Tag" = "8:"
-            "Folder" = "8:_180513EA87FD4A8EA5D7AEFBEADDCDBC"
+            "Folder" = "8:_09068DC55F8C42B1AD3C03FBE46CE5A5"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_064F2785786B4839BAE9401103E2015E"
+            {
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\log\\robolog"
+            "TargetName" = "8:robolog"
+            "Tag" = "8:"
+            "Folder" = "8:_3392D2FFA3D940168E81B1F897028A4E"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -509,50 +547,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1381976F249C4F2EB650B420BBDB246F"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_105F7265D1D74761AFC9D7B6C79D4548"
             {
-            "SourcePath" = "8:..\\Office Tools\\7z\\history.txt"
-            "TargetName" = "8:history.txt"
-            "Tag" = "8:"
-            "Folder" = "8:_09068DC55F8C42B1AD3C03FBE46CE5A5"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_13DCDF0587E94166AC026764B1241710"
-            {
-            "SourcePath" = "8:..\\Office Tools\\7z\\License.txt"
-            "TargetName" = "8:License.txt"
-            "Tag" = "8:"
-            "Folder" = "8:_09068DC55F8C42B1AD3C03FBE46CE5A5"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_15C0C14885AE4CC5AC1DF81C4818B10D"
-            {
-            "SourcePath" = "8:..\\Office Tools\\bat\\MigrateToGDrive_FD_MN.bat"
-            "TargetName" = "8:MigrateToGDrive_FD_MN.bat"
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\bat\\MigrateToGDrive_AR_PE.bat"
+            "TargetName" = "8:MigrateToGDrive_AR_PE.bat"
             "Tag" = "8:"
             "Folder" = "8:_DEE02A47C00F4A57B27F883591E7C1EA"
             "Condition" = "8:"
@@ -569,10 +567,50 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1BD4DD57EFC24FFCAA289F5AF5DAB55E"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1BC87DA6B74049C6BCB008927C5724EA"
             {
-            "SourcePath" = "8:..\\Office Tools\\bat\\MigrateToGDrive_AT_MN.bat"
-            "TargetName" = "8:MigrateToGDrive_AT_MN.bat"
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\log\\adverr"
+            "TargetName" = "8:adverr"
+            "Tag" = "8:"
+            "Folder" = "8:_3392D2FFA3D940168E81B1F897028A4E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1E60BE29288D427AB246745235770127"
+            {
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\bat\\MigrateToGDrive_AR_NP.bat"
+            "TargetName" = "8:MigrateToGDrive_AR_NP.bat"
+            "Tag" = "8:"
+            "Folder" = "8:_DEE02A47C00F4A57B27F883591E7C1EA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1E9C871EFB904BB9BDB462DC6428A2C1"
+            {
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\bat\\MigrateToGDrive_AT_Folder_MN.bat"
+            "TargetName" = "8:MigrateToGDrive_AT_Folder_MN.bat"
             "Tag" = "8:"
             "Folder" = "8:_DEE02A47C00F4A57B27F883591E7C1EA"
             "Condition" = "8:"
@@ -649,6 +687,46 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_32323CD30CD449369CBC104BF1B7BADF"
+            {
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\bat\\MigrateToGDrive_TD_Folder_MN.bat"
+            "TargetName" = "8:MigrateToGDrive_TD_Folder_MN.bat"
+            "Tag" = "8:"
+            "Folder" = "8:_DEE02A47C00F4A57B27F883591E7C1EA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_348B9834A1C64380A946EB65B45671B2"
+            {
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\log\\reslog"
+            "TargetName" = "8:reslog"
+            "Tag" = "8:"
+            "Folder" = "8:_3392D2FFA3D940168E81B1F897028A4E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_372F9D8ADC3F49A4BC02FB8346C79E60"
             {
             "SourcePath" = "8:..\\Office Tools\\conf\\cli_backup\\cliSrcPath"
@@ -669,10 +747,30 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_37EBE64080BB4952B0272054EBBF98AE"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3DF8B1B7134A4A169E88FB31751B3FA3"
             {
-            "SourcePath" = "8:..\\Office Tools\\log\\log"
-            "TargetName" = "8:log"
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\bat\\MigrateToGDrive_TD.bat"
+            "TargetName" = "8:MigrateToGDrive_TD.bat"
+            "Tag" = "8:"
+            "Folder" = "8:_DEE02A47C00F4A57B27F883591E7C1EA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_42E9B94CF2F245D7A80DB9FD33FAD6EA"
+            {
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\log\\reserr"
+            "TargetName" = "8:reserr"
             "Tag" = "8:"
             "Folder" = "8:_3392D2FFA3D940168E81B1F897028A4E"
             "Condition" = "8:"
@@ -689,52 +787,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3D0D858919594FFDA27376F7C9B8518B"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_499442DE9F2A4A5583788EDEE79F7362"
             {
-            "SourcePath" = "8:..\\Office Tools\\log\\adverr"
-            "TargetName" = "8:adverr"
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\bat\\MigrateToGDrive_FD_File_MN.bat"
+            "TargetName" = "8:MigrateToGDrive_FD_File_MN.bat"
             "Tag" = "8:"
-            "Folder" = "8:_3392D2FFA3D940168E81B1F897028A4E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4302C5350B1A45E48D78602DC32799A2"
-            {
-            "SourcePath" = "8:..\\Office Tools\\log\\reslog"
-            "TargetName" = "8:reslog"
-            "Tag" = "8:"
-            "Folder" = "8:_3392D2FFA3D940168E81B1F897028A4E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4A4A72898C89485B8278818741D6401D"
-            {
-            "SourcePath" = "8:..\\Office Tools\\7z\\7zxa.dll"
-            "TargetName" = "8:7zxa.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_09068DC55F8C42B1AD3C03FBE46CE5A5"
+            "Folder" = "8:_DEE02A47C00F4A57B27F883591E7C1EA"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -769,26 +827,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5533D1666C944AF1983480D234A182F0"
-            {
-            "SourcePath" = "8:..\\Office Tools\\bat\\MigrateToGDrive_Init.bat"
-            "TargetName" = "8:MigrateToGDrive_Init.bat"
-            "Tag" = "8:"
-            "Folder" = "8:_DEE02A47C00F4A57B27F883591E7C1EA"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5658BE5172C84548BEC0F38F0CA422BD"
             {
             "SourcePath" = "8:..\\Office Tools\\conf\\adv_backup\\advInstPath"
@@ -809,12 +847,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_57D3B7E8C0D04E18B4762F3685D97D2A"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5706367B22D34165A5ECFE62474BF135"
             {
-            "SourcePath" = "8:..\\Office Tools\\bat\\MigrateToGDrive_AR_P.bat"
-            "TargetName" = "8:MigrateToGDrive_AR_P.bat"
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\log\\lastErr"
+            "TargetName" = "8:lastErr"
             "Tag" = "8:"
-            "Folder" = "8:_DEE02A47C00F4A57B27F883591E7C1EA"
+            "Folder" = "8:_3392D2FFA3D940168E81B1F897028A4E"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -829,10 +867,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_580872B1AE924675B76CDCF84CE6B84D"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5A09685AC7724BEC865F4485DCD03082"
             {
-            "SourcePath" = "8:..\\Office Tools\\bat\\MigrateToGDrive_TD_MN.bat"
-            "TargetName" = "8:MigrateToGDrive_TD_MN.bat"
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\bat\\MigrateToGDrive_AT_File_MN.bat"
+            "TargetName" = "8:MigrateToGDrive_AT_File_MN.bat"
             "Tag" = "8:"
             "Folder" = "8:_DEE02A47C00F4A57B27F883591E7C1EA"
             "Condition" = "8:"
@@ -855,6 +893,26 @@
             "TargetName" = "8:advTempPass"
             "Tag" = "8:"
             "Folder" = "8:_65AED631A19F4F3C8BD5717E753FA36D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_629F7CD50B534821BC93055857C292AB"
+            {
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\bat\\MigrateToGDrive_AR_P.bat"
+            "TargetName" = "8:MigrateToGDrive_AR_P.bat"
+            "Tag" = "8:"
+            "Folder" = "8:_DEE02A47C00F4A57B27F883591E7C1EA"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -909,10 +967,30 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_74849B191515423A8BE37F4CF1257DB6"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_67F6BCB9CDD84477B054A7065C514FDA"
             {
-            "SourcePath" = "8:..\\Office Tools\\bat\\MigrateToGDrive_AR_PE.bat"
-            "TargetName" = "8:MigrateToGDrive_AR_PE.bat"
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\7z\\history.txt"
+            "TargetName" = "8:history.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_09068DC55F8C42B1AD3C03FBE46CE5A5"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6DFF427F4C374A5E8C86172D3985E6E2"
+            {
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\bat\\MigrateToGDrive_AT.bat"
+            "TargetName" = "8:MigrateToGDrive_AT.bat"
             "Tag" = "8:"
             "Folder" = "8:_DEE02A47C00F4A57B27F883591E7C1EA"
             "Condition" = "8:"
@@ -929,12 +1007,32 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_77C53A9E061244D7BE678C28B376983A"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6F8314D85A7748A8BED4DE484CB48C04"
             {
-            "SourcePath" = "8:..\\Office Tools\\bat\\MigrateToGDrive_AT.bat"
-            "TargetName" = "8:MigrateToGDrive_AT.bat"
+            "SourcePath" = "8:C:\\Program Files (x86)\\Hana-CI Build Project\\Office Tools\\changelog.txt"
+            "TargetName" = "8:changelog.txt"
             "Tag" = "8:"
-            "Folder" = "8:_DEE02A47C00F4A57B27F883591E7C1EA"
+            "Folder" = "8:_180513EA87FD4A8EA5D7AEFBEADDCDBC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_73697DBAF5714FC48267A1D01AE50EB9"
+            {
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\7z\\7za.exe"
+            "TargetName" = "8:7za.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_09068DC55F8C42B1AD3C03FBE46CE5A5"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -969,12 +1067,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7CF92131DE0D49A38EFBC8502B4807B7"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_80779B42444E4554958F3BCA8C602FC9"
             {
-            "SourcePath" = "8:..\\Office Tools\\log\\expLog"
-            "TargetName" = "8:expLog"
+            "SourcePath" = "8:..\\Office Tools\\conf\\nrm_backup\\nrmDatePath"
+            "TargetName" = "8:nrmDatePath"
             "Tag" = "8:"
-            "Folder" = "8:_3392D2FFA3D940168E81B1F897028A4E"
+            "Folder" = "8:_01A59CB47B254490BE37F6C5AAD98B74"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -989,12 +1087,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_80779B42444E4554958F3BCA8C602FC9"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_824992036B91411D8E04833D35D963A3"
             {
-            "SourcePath" = "8:..\\Office Tools\\conf\\nrm_backup\\nrmDatePath"
-            "TargetName" = "8:nrmDatePath"
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\bat\\MigrateToGDrive_FD_Folder_MN.bat"
+            "TargetName" = "8:MigrateToGDrive_FD_Folder_MN.bat"
             "Tag" = "8:"
-            "Folder" = "8:_01A59CB47B254490BE37F6C5AAD98B74"
+            "Folder" = "8:_DEE02A47C00F4A57B27F883591E7C1EA"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1049,10 +1147,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_878F8F91D5B440B69E5974051D167F77"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_89AF9CAAD106441191E3136006ABB773"
             {
-            "SourcePath" = "8:..\\Office Tools\\log\\robolog"
-            "TargetName" = "8:robolog"
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\log\\log"
+            "TargetName" = "8:log"
             "Tag" = "8:"
             "Folder" = "8:_3392D2FFA3D940168E81B1F897028A4E"
             "Condition" = "8:"
@@ -1089,46 +1187,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9071A588D2404C50AFA69E4A778A220E"
-            {
-            "SourcePath" = "8:..\\Office Tools\\log\\reserr"
-            "TargetName" = "8:reserr"
-            "Tag" = "8:"
-            "Folder" = "8:_3392D2FFA3D940168E81B1F897028A4E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9252820B6147400793FEF590BC9C8D5C"
-            {
-            "SourcePath" = "8:..\\Office Tools\\log\\advlog"
-            "TargetName" = "8:advlog"
-            "Tag" = "8:"
-            "Folder" = "8:_3392D2FFA3D940168E81B1F897028A4E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_976771EEB1C8480E8C39B285918E11E9"
             {
             "SourcePath" = "8:..\\Office Tools\\working_AAH_icon.ico"
@@ -1149,12 +1207,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9CEF4B472E4C4BDB8862F4B5191A0AE6"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_99B0F4A6B17C4A8A9614D4CFAE2B9926"
             {
-            "SourcePath" = "8:..\\Office Tools\\log\\err"
-            "TargetName" = "8:err"
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\bat\\MigrateToGDrive_TD_File_MN.bat"
+            "TargetName" = "8:MigrateToGDrive_TD_File_MN.bat"
             "Tag" = "8:"
-            "Folder" = "8:_3392D2FFA3D940168E81B1F897028A4E"
+            "Folder" = "8:_DEE02A47C00F4A57B27F883591E7C1EA"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1169,12 +1227,52 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A2206E060BD5463C9C257BE1A3B7993C"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9F4825C3D0EC401B807FB3899FE662C0"
             {
-            "SourcePath" = "8:..\\Office Tools\\7z\\readme.txt"
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\bat\\MigrateToGDrive_Init.bat"
+            "TargetName" = "8:MigrateToGDrive_Init.bat"
+            "Tag" = "8:"
+            "Folder" = "8:_DEE02A47C00F4A57B27F883591E7C1EA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A8D74E5B5FD34F1780691E7DC174FB74"
+            {
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\7z\\readme.txt"
             "TargetName" = "8:readme.txt"
             "Tag" = "8:"
             "Folder" = "8:_09068DC55F8C42B1AD3C03FBE46CE5A5"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AC1F39534ABF4675A75D793DA8C7D1A4"
+            {
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\log\\expLog"
+            "TargetName" = "8:expLog"
+            "Tag" = "8:"
+            "Folder" = "8:_3392D2FFA3D940168E81B1F897028A4E"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1229,26 +1327,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C281B84ABB284BC8810B579EDD05CCE1"
-            {
-            "SourcePath" = "8:..\\Office Tools\\bat\\MigrateToGDrive_AR_NP.bat"
-            "TargetName" = "8:MigrateToGDrive_AR_NP.bat"
-            "Tag" = "8:"
-            "Folder" = "8:_DEE02A47C00F4A57B27F883591E7C1EA"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C2B8BAF91253493190C10BF86570CD35"
             {
             "SourcePath" = "8:..\\Office Tools\\conf\\nrm_backup\\nrmReDatePath"
@@ -1289,12 +1367,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CB710C4B76CB427E9F537860F9156F97"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C6E9CBC6037C46318F098DFF8146D91D"
             {
-            "SourcePath" = "8:..\\Office Tools\\log\\lastResult"
-            "TargetName" = "8:lastResult"
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\7z\\License.txt"
+            "TargetName" = "8:License.txt"
             "Tag" = "8:"
-            "Folder" = "8:_3392D2FFA3D940168E81B1F897028A4E"
+            "Folder" = "8:_09068DC55F8C42B1AD3C03FBE46CE5A5"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1329,12 +1407,72 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D8A82BCD658D40399E0BADB438D414D6"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D1FBD84A3EDE47FE9CE93C32A8C851C8"
             {
-            "SourcePath" = "8:..\\Office Tools\\bat\\MigrateToGDrive_TD.bat"
-            "TargetName" = "8:MigrateToGDrive_TD.bat"
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\log\\compLog"
+            "TargetName" = "8:compLog"
             "Tag" = "8:"
-            "Folder" = "8:_DEE02A47C00F4A57B27F883591E7C1EA"
+            "Folder" = "8:_3392D2FFA3D940168E81B1F897028A4E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D66CFDA197EE4EE9BA969A6C652B8BDF"
+            {
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\7z\\7zxa.dll"
+            "TargetName" = "8:7zxa.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_09068DC55F8C42B1AD3C03FBE46CE5A5"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D7E255756E984AB3B30739B3F20872A8"
+            {
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\log\\advlog"
+            "TargetName" = "8:advlog"
+            "Tag" = "8:"
+            "Folder" = "8:_3392D2FFA3D940168E81B1F897028A4E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DB48B67471E94EF38A0A783DE9CC4070"
+            {
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\log\\err"
+            "TargetName" = "8:err"
+            "Tag" = "8:"
+            "Folder" = "8:_3392D2FFA3D940168E81B1F897028A4E"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1389,12 +1527,52 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DCD2C38837DD4E80935B2DAC6911F6C3"
+            {
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\log\\lastResult"
+            "TargetName" = "8:lastResult"
+            "Tag" = "8:"
+            "Folder" = "8:_3392D2FFA3D940168E81B1F897028A4E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DF3AD18D138E49F6A0568DAF017A2AAA"
             {
             "SourcePath" = "8:..\\Office Tools\\conf\\nrm_backup\\nrmDestPath"
             "TargetName" = "8:nrmDestPath"
             "Tag" = "8:"
             "Folder" = "8:_01A59CB47B254490BE37F6C5AAD98B74"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DF9F65F23D2344408F51DBC5E1F27FA2"
+            {
+            "SourcePath" = "8:..\\..\\..\\Office Tools\\Office Tools\\bat\\MigrateToGDrive_RB.bat"
+            "TargetName" = "8:MigrateToGDrive_RB.bat"
+            "Tag" = "8:"
+            "Folder" = "8:_DEE02A47C00F4A57B27F883591E7C1EA"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1489,46 +1667,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F0F9E0F784444FB0895E3AB5129BACFB"
-            {
-            "SourcePath" = "8:..\\Office Tools\\7z\\7za.dll"
-            "TargetName" = "8:7za.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_09068DC55F8C42B1AD3C03FBE46CE5A5"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F1CEB38B4F824B1F9E99F749E3E033A5"
-            {
-            "SourcePath" = "8:..\\Office Tools\\log\\lastErr"
-            "TargetName" = "8:lastErr"
-            "Tag" = "8:"
-            "Folder" = "8:_3392D2FFA3D940168E81B1F897028A4E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F1FF7DE08AE94B38858026454D4E27FB"
             {
             "SourcePath" = "8:..\\Office Tools\\conf\\res_backup\\resDecType"
@@ -1569,72 +1707,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F3BEC0F17D1540518420FE1FA7CAFBBE"
-            {
-            "SourcePath" = "8:..\\Office Tools\\bat\\MigrateToGDrive_RB.bat"
-            "TargetName" = "8:MigrateToGDrive_RB.bat"
-            "Tag" = "8:"
-            "Folder" = "8:_DEE02A47C00F4A57B27F883591E7C1EA"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F8E653E06A87459FA38C4A4213762DB1"
             {
             "SourcePath" = "8:..\\Office Tools\\conf\\adv_backup\\advEncType"
             "TargetName" = "8:advEncType"
             "Tag" = "8:"
             "Folder" = "8:_65AED631A19F4F3C8BD5717E753FA36D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FC4C0058E52D40C6BB9C49D814E3E597"
-            {
-            "SourcePath" = "8:..\\Office Tools\\log\\compLog"
-            "TargetName" = "8:compLog"
-            "Tag" = "8:"
-            "Folder" = "8:_3392D2FFA3D940168E81B1F897028A4E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FFB29B477281413DBE0E441B62A8E8DA"
-            {
-            "SourcePath" = "8:..\\Office Tools\\7z\\7za.exe"
-            "TargetName" = "8:7za.exe"
-            "Tag" = "8:"
-            "Folder" = "8:_09068DC55F8C42B1AD3C03FBE46CE5A5"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1793,18 +1871,18 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Office Tools"
-        "ProductCode" = "8:{4AE8BF81-26B4-4C19-8A02-B4FA64BFB924}"
-        "PackageCode" = "8:{0CE2E40E-A8C5-486F-A6DD-B521A23D72A7}"
+        "ProductCode" = "8:{1B14E088-066C-4B09-A92A-C4B6FBF34789}"
+        "PackageCode" = "8:{F9266031-991A-4A5B-8887-E999036B103F}"
         "UpgradeCode" = "8:{4FE91870-693A-4DB1-8879-F2BE7AE9BFE0}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.3.9"
+        "ProductVersion" = "8:1.4.1"
         "Manufacturer" = "8:Hana-CI Build Project"
         "ARPHELPTELEPHONE" = "8:"
-        "ARPHELPLINK" = "8:"
+        "ARPHELPLINK" = "8:https://github.com/Nicklas373/Office-Tools"
         "Title" = "8:Office Tools"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Dicky Herlambang"
