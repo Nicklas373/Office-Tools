@@ -5,7 +5,6 @@ Imports Syncfusion.Pdf.Graphics
 Imports Syncfusion.Pdf.Parsing
 Imports Syncfusion.Windows.Forms
 Imports Syncfusion.WinForms.Controls
-Imports PdfBitmap = Syncfusion.Pdf.Graphics.PdfBitmap
 
 Public Class PDFMenu
     Inherits SfForm
@@ -267,49 +266,45 @@ Public Class PDFMenu
             If TextBox9.Text = "" Then
                 MessageBoxAdv.Show("Destination file location was not selected !, please select destination location first !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
-                If ComboBox1.Text = "" Then
-                    MessageBoxAdv.Show("Convert option was not selected !, please select destination location first !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Else
-                    If ComboBox1.Text = "Documents (*.DOCX)" Then
-                        If Strings.Right(TextBox9.Text, 4) = "docx" Then
-                            CnvPDF(TextBox8.Text, TextBox9.Text, "DOCX")
+                If ComboBox3.Text = "Documents (*.DOCX)" Then
+                    If Strings.Right(TextBox9.Text, 4) = "docx" Then
+                        CnvPDF(TextBox8.Text, TextBox9.Text, "DOCX")
+                    Else
+                        MessageBoxAdv.Show("Saved filename extensions was not same with extract to settings !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        MessageBoxAdv.Show("Current ext: " & Strings.Right(TextBox7.Text, 4) & " Current export settings: docx", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                ElseIf ComboBox3.Text = "Spreadsheets (*.XLSX)" Then
+                    If Strings.Right(TextBox9.Text, 4) = ".xls" Then
+                        CnvPDF(TextBox8.Text, TextBox9.Text, "XLS")
+                    Else
+                        MessageBoxAdv.Show("Saved filename extensions was not same with extract to settings !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        MessageBoxAdv.Show("Current ext: " & Strings.Right(TextBox7.Text, 4) & " Current export settings: xls", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                ElseIf ComboBox3.Text = "Image (*.JPEG)" Then
+                    If Strings.Right(TextBox9.Text, 4) = "jpeg" Then
+                        If CheckBox1.Checked Then
+                            ExpImagesFrPDF(TextBox8.Text, TextBox9.Text, "jpeg")
                         Else
-                            MessageBoxAdv.Show("Saved filename extensions was not same with extract to settings !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                            MessageBoxAdv.Show("Current ext: " & Strings.Right(TextBox7.Text, 4) & " Current export settings: docx", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            CnvPDF(TextBox8.Text, TextBox9.Text.Substring(0, TextBox9.Text.Length - 5), "JPEG")
                         End If
-                    ElseIf ComboBox1.Text = "Spreadsheets (*.XLSX)" Then
-                        If Strings.Right(TextBox9.Text, 4) = ".xls" Then
-                            CnvPDF(TextBox8.Text, TextBox9.Text, "XLS")
+                        Label22.Visible = False
+                        Label23.Visible = False
+                    Else
+                        MessageBoxAdv.Show("Saved filename extensions was not same with extract to settings !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        MessageBoxAdv.Show("Current ext: " & Strings.Right(TextBox9.Text, 4) & " Current export settings: jpeg", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                ElseIf ComboBox3.Text = "Image (*.PNG)" Then
+                    If Strings.Right(TextBox9.Text, 4) = ".png" Then
+                        If CheckBox1.Checked Then
+                            ExpImagesFrPDF(TextBox8.Text, TextBox9.Text, "png")
                         Else
-                            MessageBoxAdv.Show("Saved filename extensions was not same with extract to settings !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                            MessageBoxAdv.Show("Current ext: " & Strings.Right(TextBox7.Text, 4) & " Current export settings: xls", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            CnvPDF(TextBox8.Text, TextBox9.Text.Substring(0, TextBox9.Text.Length - 5), "PNG")
                         End If
-                    ElseIf ComboBox1.Text = "Image (*.JPEG)" Then
-                        If Strings.Right(TextBox9.Text, 4) = "jpeg" Then
-                            If CheckBox1.Checked Then
-                                ExpImagesFrPDF(TextBox8.Text, TextBox9.Text, "jpeg")
-                            Else
-                                CnvPDF(TextBox8.Text, TextBox9.Text.Substring(0, TextBox9.Text.Length - 5), "JPEG")
-                            End If
-                            Label22.Visible = False
-                            Label23.Visible = False
-                        Else
-                            MessageBoxAdv.Show("Saved filename extensions was not same with extract to settings !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                            MessageBoxAdv.Show("Current ext: " & Strings.Right(TextBox9.Text, 4) & " Current export settings: jpeg", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                        End If
-                    ElseIf ComboBox1.Text = "Image (*.PNG)" Then
-                        If Strings.Right(TextBox9.Text, 4) = ".png" Then
-                            If CheckBox1.Checked Then
-                                ExpImagesFrPDF(TextBox8.Text, TextBox9.Text, "png")
-                            Else
-                                CnvPDF(TextBox8.Text, TextBox9.Text.Substring(0, TextBox9.Text.Length - 5), "PNG")
-                            End If
-                            Label22.Visible = False
-                            Label23.Visible = False
-                        Else
-                            MessageBoxAdv.Show("Saved filename extensions was not same with extract to settings !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                            MessageBoxAdv.Show("Current ext: " & Strings.Right(TextBox9.Text, 4) & " Current export settings: png", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                        End If
+                        Label22.Visible = False
+                        Label23.Visible = False
+                    Else
+                        MessageBoxAdv.Show("Saved filename extensions was not same with extract to settings !", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        MessageBoxAdv.Show("Current ext: " & Strings.Right(TextBox9.Text, 4) & " Current export settings: png", "Office Tools", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
                 End If
             End If
