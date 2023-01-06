@@ -95,7 +95,6 @@ Public Class BackupMenu_2
             openfolderdialog.InitialDirectory = Environment.SpecialFolder.UserProfile
             If openfolderdialog.ShowDialog() = DialogResult.OK Then
                 actualDir = openfolderdialog.SelectedPath
-                MsgBox(actualDir)
             End If
         ElseIf ComboBox2.Text = "Backup File" Then
             openfiledialog.InitialDirectory = Environment.SpecialFolder.UserProfile

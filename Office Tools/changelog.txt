@@ -1,3 +1,7 @@
+v1.4.2 (20230106):
+- Fixup issue with convert PDF
+- Fixup unwanted message notification after select backup path
+
 v1.4.1 (20221123):
 - Fixup issue with missing filename for PDF Tools
 

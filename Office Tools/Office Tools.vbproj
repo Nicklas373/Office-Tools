@@ -8,7 +8,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
     <ApplicationIcon>ico\working_AAH_icon.ico</ApplicationIcon>
-    <Version>1.3.9</Version>
+    <Version>1.4.2</Version>
     <Authors>Dicky Herlambang</Authors>
     <Company>Hana-CI Build Project</Company>
     <PackageId>Office_Tools</PackageId>
@@ -34,7 +34,11 @@ Additional library:
     <PackageIconUrl />
     <RepositoryType>public</RepositoryType>
     <PackageTags>#Migrate-To-GDrive, #OfficeTools</PackageTags>
-    <PackageReleaseNotes>v1.4.1 (20221123):
+    <PackageReleaseNotes>v1.4.2 (20230106):
+- Fixup issue with convert PDF
+- Fixup unwanted message notification after select backup path
+
+v1.4.1 (20221123):
 - Fixup issue with missing filename for PDF Tools
 
 v1.4.0 (20221118):
@@ -165,8 +169,8 @@ v1.1.0 (20220419):
 v1.0.0 (20220416):
 - INITIAL RELEASE</PackageReleaseNotes>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <AssemblyVersion>1.4.1</AssemblyVersion>
-    <FileVersion>1.4.1</FileVersion>
+    <AssemblyVersion>1.4.2</AssemblyVersion>
+    <FileVersion>1.4.2</FileVersion>
     <Title>Office Tools</Title>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageProjectUrl>https://github.com/Nicklas373/Office-Tools</PackageProjectUrl>
@@ -191,7 +195,7 @@ v1.0.0 (20220416):
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="sautinsoft.pdffocus" Version="8.4.5.25" />
+    <PackageReference Include="sautinsoft.pdffocus" Version="8.5.10.20" />
     <PackageReference Include="Syncfusion.Core.WinForms" Version="20.1.0.61" />
     <PackageReference Include="Syncfusion.Pdf.WinForms" Version="20.1.0.61" />
     <PackageReference Include="Syncfusion.Shared.Base" Version="20.1.0.61" />
